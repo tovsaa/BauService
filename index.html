@@ -1,0 +1,2858 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BauService Dionisie Bat – Qualität & Service aus einer Hand</title>
+  <meta name="description" content="BauService Dionisie Bat – Ihr zuverlässiger Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege & Umgebung." />
+  <meta name="keywords" content="BauService, Eschwege, Hausmeisterservice, Bodenverlegung, Fenster, Türen, Renovierung, Werra-Meißner-Kreis, Nordhessen" />
+  <meta name="author" content="Dionisie Bat" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BauService Dionisie Bat – Qualität & Service aus einer Hand" />
+  <meta property="og:description" content="Ihr zuverlässiger Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege & Umgebung." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="BauService Dionisie Bat" />
+  <!-- TODO: when domain is set, fill og:url and og:image with absolute URLs.
+       og:image should be a 1200x630 PNG with the brand mark for nice previews. -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BauService Dionisie Bat – Qualität & Service aus einer Hand" />
+  <meta name="twitter:description" content="Ihr zuverlässiger Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege & Umgebung." />
+
+  <!-- Favicon — inline SVG using the BauService brand mark -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 458 430'><rect width='458' height='430' fill='%230a0a0a'/><g transform='translate(0,430) scale(0.1,-0.1)' fill='%23d4a544'><path d='M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z'/><path d='M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z'/></g></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       VARIABLES & RESET
+       ========================================================= */
+    :root {
+      --bg: #0a0a0a;
+      --bg-soft: #111111;
+      --card: #161616;
+      --card-hover: #1c1c1c;
+      --border: #232323;
+      --gold: #d4a544;
+      --gold-bright: #e6b855;
+      --gold-soft: rgba(212, 165, 68, 0.12);
+      --text: #ffffff;
+      --text-muted: #a8a8a8;
+      --text-dim: #8a8a8a;
+      --radius: 4px;
+      --max-width: 1200px;
+      --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      /* Якоря (#start, #leistungen и т.д.) учитывают высоту фиксированной шапки —
+         иначе клик по пункту меню оставляет верх секции под шапкой. */
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    /* === Remove blue mobile tap highlight; provide custom keyboard focus === */
+    a, button, input, textarea, select, [role="button"] {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+    }
+
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus {
+      outline: none;
+    }
+
+    /* Keyboard-only focus ring (accessibility, doesn't trigger on tap) */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: none; /* form fields have their own border treatment */
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================================================
+       UTILS
+       ========================================================= */
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+
+    .gold-divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold) 0%, rgba(212, 165, 68, 0.2) 100%);
+      position: relative;
+      margin-top: 14px;
+    }
+
+    .gold-divider::before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      transform: translate(-50%, -50%) rotate(45deg);
+      left: 32%;
+      top: 50%;
+    }
+
+    /* =========================================================
+       BUTTONS
+       ========================================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 16px 28px;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #1a1a1a;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -10px rgba(212, 165, 68, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid var(--gold);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold-soft);
+      transform: translateY(-2px);
+    }
+
+    .btn .arrow,
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      transition: transform var(--transition);
+    }
+
+    .btn:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 14px 0;
+      background: rgba(10, 10, 10, 0.7);
+      backdrop-filter: blur(8px) saturate(140%);
+      -webkit-backdrop-filter: blur(8px) saturate(140%);
+      border-bottom: 1px solid transparent;
+      transition: padding 300ms cubic-bezier(0.4, 0, 0.2, 1),
+                  background 300ms ease,
+                  border-color 300ms ease,
+                  box-shadow 300ms ease;
+    }
+
+    /* === STATE: scrolled — sharper, with shadow === */
+    .header.scrolled {
+      padding: 8px 0;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border-bottom-color: rgba(212, 165, 68, 0.12);
+      box-shadow: 0 8px 32px -12px rgba(0, 0, 0, 0.6);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    /* === LOGO — shrinks slightly when scrolled === */
+    .logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo svg {
+      width: 56px;
+      height: 52px;
+      display: block;
+      transition: transform var(--transition), width 300ms ease, height 300ms ease;
+    }
+
+    .header.scrolled .logo svg {
+      width: 46px;
+      height: 43px;
+    }
+
+    .logo:hover svg { transform: scale(1.05); }
+
+    /* === NAV === */
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 200ms ease;
+      position: relative;
+      padding: 6px 2px;
+    }
+
+    /* Animated underline — same shape for hover AND active (no jumping) */
+    .nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: translateX(-50%);
+      transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 2px;
+    }
+
+    .nav a:hover {
+      color: #fff;
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    /* Active item: gold text, line stays put */
+    .nav a.active {
+      color: var(--gold);
+    }
+
+    /* === HEADER RIGHT === */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .phone-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      transition: color var(--transition);
+    }
+
+    .phone-link:hover { color: var(--gold); }
+
+    .phone-link svg {
+      width: 18px;
+      height: 18px;
+      color: var(--gold);
+      transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .phone-link:hover svg { transform: rotate(-12deg) scale(1.1); }
+
+    /* === Burger / FAB ===
+       Desktop: hidden (we have .nav)
+       Mobile: floating circle in the bottom-right corner — thumb-reachable. */
+    .menu-toggle {
+      display: none;
+      width: 56px;
+      height: 56px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow:
+        0 10px 28px -6px rgba(212, 165, 68, 0.55),
+        0 4px 16px rgba(0, 0, 0, 0.45);
+      transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+                  background 200ms ease,
+                  box-shadow 200ms ease;
+      position: fixed;
+      bottom: max(20px, env(safe-area-inset-bottom, 20px));
+      right: 20px;
+      z-index: 110; /* above mobile menu overlay */
+    }
+
+    .menu-toggle:hover {
+      background: var(--gold-bright);
+      transform: scale(1.05);
+    }
+
+    .menu-toggle:active {
+      transform: scale(0.94);
+      box-shadow:
+        0 6px 18px -4px rgba(212, 165, 68, 0.5),
+        0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2.5px;
+      background: #1a1a1a; /* dark icon on gold disc */
+      border-radius: 2px;
+      transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 200ms ease;
+      transform-origin: center;
+    }
+
+    /* X-state when menu is open */
+    body.menu-open .menu-toggle span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    body.menu-open .menu-toggle span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    body.menu-open .menu-toggle span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* === MOBILE MENU OVERLAY === */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 105;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px);
+      transition: opacity 350ms ease,
+                  visibility 350ms ease,
+                  transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 80px 24px 40px;
+    }
+
+    body.menu-open .mobile-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Decorative gold corner accents */
+    .mobile-menu::before,
+    .mobile-menu::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 1px solid var(--gold);
+      opacity: 0.4;
+    }
+    .mobile-menu::before {
+      top: 24px; left: 24px;
+      border-right: none;
+      border-bottom: none;
+    }
+    .mobile-menu::after {
+      bottom: 24px; right: 24px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .mobile-menu a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative;
+      padding: 6px 12px;
+      transition: color 200ms ease, transform 250ms ease;
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    body.menu-open .mobile-menu a {
+      animation: menuItemIn 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    body.menu-open .mobile-menu a:nth-child(1) { animation-delay: 120ms; }
+    body.menu-open .mobile-menu a:nth-child(2) { animation-delay: 180ms; }
+    body.menu-open .mobile-menu a:nth-child(3) { animation-delay: 240ms; }
+    body.menu-open .mobile-menu a:nth-child(4) { animation-delay: 300ms; }
+    body.menu-open .mobile-menu a:nth-child(5) { animation-delay: 360ms; }
+
+    @keyframes menuItemIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mobile-menu a:hover { color: var(--gold); }
+
+    .mobile-menu a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: translateX(-50%);
+      transition: width 250ms ease;
+    }
+
+    .mobile-menu a:hover::after { width: 60%; }
+
+    .mobile-menu .mobile-cta {
+      display: inline-flex;
+      margin-top: 20px;
+      animation-delay: 440ms !important;
+      padding: 16px 32px;
+      align-self: center;
+      width: auto;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+    }
+    .mobile-menu .mobile-cta::after { display: none; }
+
+    .mobile-menu-contact {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-dim);
+      letter-spacing: 0.05em;
+      opacity: 0;
+      transition: opacity 400ms ease 500ms;
+    }
+
+    body.menu-open .mobile-menu-contact { opacity: 1; }
+
+    .mobile-menu-contact a {
+      color: var(--gold);
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      padding: 0;
+    }
+    .mobile-menu-contact a::after { display: none; }
+
+    /* Lock body scroll when menu open */
+    body.menu-open { overflow: hidden; }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 140px 0 100px;
+      overflow: hidden;
+      background: #0a0a0a;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Layered ambient lighting — gives the section depth without an image */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 80% 45%, rgba(212, 165, 68, 0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 60% at 15% 85%, rgba(212, 165, 68, 0.06) 0%, transparent 55%),
+        linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+      pointer-events: none;
+    }
+
+    /* Subtle grid texture for premium feel */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212, 165, 68, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 165, 68, 0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 80%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Tiny location pill above the title */
+    .hero-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      align-self: flex-start;
+      animation: fadeUp 0.7s 0s both;
+    }
+
+    .hero-meta::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(38px, 5.2vw, 64px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.005em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      color: #fff;
+      animation: fadeUp 0.8s 0.1s both;
+    }
+
+    /* Visually separate the two words for rhythm */
+    .hero h1 .amp {
+      color: var(--gold);
+      font-weight: 400;
+      margin: 0 0.1em;
+    }
+
+    .hero .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(22px, 2.6vw, 32px);
+      color: var(--gold);
+      margin-bottom: 36px;
+      font-weight: 500;
+      position: relative;
+      padding-left: 0;
+      animation: fadeUp 0.8s 0.18s both;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 440px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s 0.26s both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.34s both;
+    }
+
+    /* WhatsApp button: gets a green tint on hover (recognisable brand color) */
+    .btn-whatsapp {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 220ms ease;
+    }
+    .btn-whatsapp svg { color: #25d366; }
+    .btn-whatsapp:hover {
+      border-color: #25d366;
+      background: rgba(37, 211, 102, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* === HERO VISUAL — branded scene that stands in for a real photo === */
+    .hero-image {
+      position: relative;
+      animation: fadeUp 0.9s 0.3s both;
+    }
+
+    .hero-visual {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at center, #1f1f1f 0%, #0d0d0d 75%);
+      box-shadow:
+        0 30px 80px -20px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(212, 165, 68, 0.12) inset;
+    }
+
+    /* Spotlight from above */
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212, 165, 68, 0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Floor reflection — soft golden gradient at bottom */
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 35%;
+      background:
+        linear-gradient(180deg, transparent, rgba(212, 165, 68, 0.06) 70%, rgba(212, 165, 68, 0.12) 100%);
+      pointer-events: none;
+    }
+
+    /* Decorative corner brackets — gold L-shapes */
+    .hero-visual .corner {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid var(--gold);
+      opacity: 0.7;
+    }
+    .hero-visual .corner-tl { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+    .hero-visual .corner-tr { top: 20px; right: 20px; border-left: none; border-bottom: none; }
+    .hero-visual .corner-bl { bottom: 20px; left: 20px; border-right: none; border-top: none; }
+    .hero-visual .corner-br { bottom: 20px; right: 20px; border-left: none; border-top: none; }
+
+    /* The brand mark inside the visual */
+    .hero-visual-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 40px;
+      z-index: 2;
+    }
+
+    .hero-brand-logo {
+      width: clamp(120px, 28%, 180px);
+      filter: drop-shadow(0 0 30px rgba(212, 165, 68, 0.3));
+      animation: floatY 6s ease-in-out infinite;
+    }
+
+    .hero-brand-tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .hero-brand-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--gold);
+      text-align: center;
+      margin-top: -16px;
+    }
+
+    /* Decorative divider with diamond between tagline + sub */
+    .hero-brand-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 60%;
+      max-width: 240px;
+    }
+    .hero-brand-divider .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .hero-brand-divider .diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Optional scroll-cue at the bottom of the hero */
+    .hero-scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 32px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s 1s both;
+      z-index: 3;
+    }
+    .hero-scroll-cue .line {
+      width: 1px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(0.6); transform-origin: top; opacity: 0.4; }
+      50%      { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    }
+
+    /* =========================================================
+       SERVICES
+       ========================================================= */
+    .services {
+      padding: 120px 0 100px;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .services-header {
+      margin-bottom: 64px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 24px 32px;
+      text-align: center;
+      transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 250ms ease,
+                  background 250ms ease,
+                  box-shadow 350ms ease;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* Top accent line — grows from left on hover */
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Soft golden glow that bloomes on hover */
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--radius);
+      background: radial-gradient(circle at 50% 0%, rgba(212, 165, 68, 0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity 350ms ease;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .service-card:hover {
+      background: var(--card-hover);
+      border-color: rgba(212, 165, 68, 0.35);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover::after { opacity: 1; }
+
+    /* Number badge — top-left corner */
+    .service-num {
+      position: absolute;
+      top: 14px;
+      left: 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      opacity: 0.5;
+      transition: opacity 250ms ease;
+    }
+    .service-card:hover .service-num { opacity: 1; }
+
+    /* Icon — sits inside a subtle circle */
+    .service-icon {
+      width: 72px;
+      height: 72px;
+      margin: 8px auto 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(212, 165, 68, 0.06);
+      border: 1px solid rgba(212, 165, 68, 0.18);
+      color: var(--gold);
+      transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-icon svg {
+      width: 34px;
+      height: 34px;
+      stroke-width: 1.5;
+      transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(212, 165, 68, 0.12);
+      border-color: rgba(212, 165, 68, 0.5);
+      transform: scale(1.06);
+    }
+
+    .service-card:hover .service-icon svg {
+      transform: rotate(-6deg) scale(1.05);
+    }
+
+    .service-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      line-height: 1.4;
+      color: #fff;
+    }
+
+    /* Gradient divider between title and description — soft, not loud */
+    .service-card h3::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 14px auto 0;
+      opacity: 0.7;
+      transition: width 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-card:hover h3::after {
+      width: 56px;
+    }
+
+    .service-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    /* Arrow indicator — appears on hover */
+    .service-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 250ms ease, transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-arrow svg {
+      width: 12px;
+      height: 12px;
+      transition: transform 250ms ease;
+    }
+    .service-card:hover .service-arrow {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .service-card:hover .service-arrow svg {
+      transform: translateX(3px);
+    }
+
+    /* === Reveal on scroll ===
+       Progressive enhancement: by default cards are visible. JS adds a `.js`
+       class to the document root, which then hides them until they enter the
+       viewport. Without JS (or before JS runs) the cards stay visible — better
+       for SEO, screen readers, and pre-render snapshots. */
+    .js .service-card:not(.in-view) {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .service-card.in-view {
+      animation: cardIn 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    .service-card.in-view:nth-child(1) { animation-delay: 0ms; }
+    .service-card.in-view:nth-child(2) { animation-delay: 80ms; }
+    .service-card.in-view:nth-child(3) { animation-delay: 160ms; }
+    .service-card.in-view:nth-child(4) { animation-delay: 240ms; }
+    .service-card.in-view:nth-child(5) { animation-delay: 320ms; }
+
+    @keyframes cardIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+    .about {
+      padding: 110px 0;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      margin-top: 14px;
+    }
+
+    /* Subtle accent for each line of the title — gold dot before each word */
+    .about h2 .accent {
+      color: var(--gold);
+    }
+
+    .about p {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    /* Owner signature line */
+    .about-signature {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: -8px 0 28px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .about-signature::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .about-signature strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 15px;
+      color: #e8e8e8;
+    }
+
+    .features-list .check {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    /* === Skewed gallery (desktop) ============================== */
+    .about-gallery {
+      position: relative;
+      display: flex;
+      gap: 10px;
+      height: 440px;
+    }
+
+    .gallery-tile {
+      flex: 1;
+      transform: skewX(-10deg);
+      overflow: hidden;
+      border-radius: 4px;
+      position: relative;
+      transition: flex 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+      background: #141414;
+    }
+
+    /* The scene inside is un-skewed by an inner counter-skew */
+    .gallery-tile-inner {
+      position: absolute;
+      inset: 0;
+      transform: skewX(10deg) scale(1.2);
+      transform-origin: center;
+      overflow: hidden;
+      transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .gallery-tile:hover { flex: 1.4; }
+    .gallery-tile:hover .gallery-tile-inner { transform: skewX(10deg) scale(1.28); }
+
+    /* Each tile gets its own thematic SVG-scene background.
+       The scenes are pure CSS+SVG so they never break and require no external images. */
+    .scene {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Gradient overlay so titles read clearly on top of any tile */
+    .gallery-tile::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.5) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Tile label — small text in bottom-left, like a photo caption */
+    .gallery-tile-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      transform: skewX(10deg); /* counter the parent skew */
+      transform-origin: left bottom;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 300ms ease 100ms;
+    }
+    .gallery-tile:hover .gallery-tile-label { opacity: 1; }
+
+    /* === Brand badge floating over the gallery === */
+    .gallery-badge {
+      position: absolute;
+      bottom: 28px;
+      left: 32px;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 16px 32px;
+      text-align: center;
+      z-index: 5;
+    }
+
+    .gallery-badge .label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .gallery-badge .sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--gold);
+      margin-top: 6px;
+    }
+
+    .gallery-badge::before,
+    .gallery-badge::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+    .gallery-badge::before { top: 6px; }
+    .gallery-badge::after { bottom: 6px; }
+
+    /* =========================================================
+       PROJECTS
+       ========================================================= */
+    .projects {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .projects-header {
+      margin-bottom: 56px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+
+    /* Each project tile is a branded card. Until real photos are available,
+       it shows a big gold numeral + project type. To swap in a real photo,
+       replace the .project-tile contents with: <img src="…" alt="…"/> */
+    .project-tile {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: var(--radius);
+      position: relative;
+      background: linear-gradient(135deg, #161616 0%, #0e0e0e 100%);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 250ms ease,
+                  box-shadow 350ms ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 28px 24px;
+    }
+
+    .project-tile:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 165, 68, 0.35);
+      box-shadow: 0 24px 60px -24px rgba(0,0,0,0.7);
+    }
+
+    /* If a real <img> is later swapped in, hide the placeholder paddings */
+    .project-tile img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .project-tile:hover img { transform: scale(1.06); }
+
+    /* Diagonal gold streak in the corner — decorative */
+    .project-tile::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, transparent 50%, rgba(212, 165, 68, 0.12) 50%);
+      transition: opacity 350ms ease;
+      pointer-events: none;
+    }
+
+    .project-tile::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 250ms ease;
+    }
+    .project-tile:has(img):hover::after { opacity: 1; }
+
+    /* Big numeral — the visual anchor of each placeholder card */
+    .project-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+      transition: opacity 250ms ease;
+    }
+    .project-num .small {
+      font-size: 0.4em;
+      vertical-align: super;
+      opacity: 0.6;
+      margin-left: 2px;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+    }
+
+    /* Tiny gold line above the project type */
+    .project-meta::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 8px;
+      transition: width 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .project-tile:hover .project-meta::before { width: 56px; }
+
+    .project-type {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+    }
+
+    .project-location {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* "View" pill in the corner — appears on hover */
+    .project-view {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 165, 68, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0.6;
+    }
+    .project-view svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 300ms ease;
+    }
+    .project-tile:hover .project-view {
+      background: var(--gold);
+      color: #1a1a1a;
+      border-color: var(--gold);
+      opacity: 1;
+      transform: rotate(-45deg);
+    }
+
+    /* === CTA below grid === */
+    .projects-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .projects-cta-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--gold);
+      padding: 14px 32px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+    }
+
+    .btn-ghost:hover {
+      background: var(--gold);
+      color: #1a1a1a;
+    }
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+    .contact {
+      padding: 100px 0 60px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 15px;
+      color: #e0e0e0;
+    }
+
+    .contact-list .icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+
+    .contact-list li:hover .icon {
+      border-color: var(--gold);
+      background: var(--gold-soft);
+    }
+
+    .contact-list .icon svg { width: 16px; height: 16px; }
+
+    /* Social links — small row of round buttons */
+    .contact-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .contact-socials-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-top: 32px;
+      margin-bottom: 14px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: block;
+    }
+
+    .social-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d8d8d8;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 250ms ease;
+    }
+
+    /* Brand-tinted hovers — each network gets its own accent */
+    .social-link:hover {
+      transform: translateY(-2px);
+    }
+    .social-link.wa:hover {
+      border-color: #25d366;
+      color: #25d366;
+    }
+    .social-link.fb:hover {
+      border-color: #1877f2;
+      color: #1877f2;
+    }
+    .social-link.tt:hover {
+      border-color: #ff0050;
+      color: #ff0050;
+    }
+
+    /* Tooltip on hover */
+    .social-link::after {
+      content: attr(aria-label);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 20, 20, 0.95);
+      color: var(--gold);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 165, 68, 0.3);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 200ms ease;
+    }
+    .social-link:hover::after { opacity: 1; }
+
+    /* QR card */
+    .qr-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .qr-card .qr-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .qr-frame {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+      aspect-ratio: 1;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 10px;
+      border: 2px solid var(--gold);
+      position: relative;
+    }
+
+    .qr-frame::before,
+    .qr-frame::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--gold);
+    }
+    .qr-frame::before { top: -8px; left: -8px; border-right: none; border-bottom: none; }
+    .qr-frame::after { bottom: -8px; right: -8px; border-left: none; border-top: none; }
+
+    /* Form */
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .footer {
+      background: linear-gradient(180deg, #0a0a0a 0%, #060606 100%);
+      border-top: 1px solid rgba(212, 165, 68, 0.1);
+      padding: 64px 0 0;
+      color: var(--text-muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle gold glow at top edge */
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+    }
+
+    /* Column 1: Brand + tagline */
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .footer-brand .logo svg {
+      width: 64px;
+      height: 60px;
+    }
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--gold);
+    }
+    .footer-tagline-strong {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 280px;
+    }
+
+    /* Column heading style — small gold caps */
+    .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-list a {
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: color 200ms ease, padding-left 250ms ease;
+      display: inline-block;
+    }
+    .footer-list a:hover {
+      color: var(--gold);
+      padding-left: 4px;
+    }
+
+    /* Contact block in footer */
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      transition: color 200ms ease;
+    }
+    .footer-contact-item:hover { color: #fff; }
+    .footer-contact-item svg {
+      width: 14px;
+      height: 14px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Footer social icons (smaller than contact section) */
+    .footer-socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .footer-socials a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all 220ms ease;
+    }
+    .footer-socials a svg {
+      width: 14px;
+      height: 14px;
+    }
+    .footer-socials a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* Bottom row — copyright + legal */
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-legal a {
+      color: var(--text-dim);
+      transition: color 200ms ease;
+    }
+    .footer-legal a:hover { color: var(--gold); }
+
+    .footer-credit {
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      opacity: 0.7;
+    }
+    .footer-credit a { color: var(--gold); }
+    .footer-credit a:hover { text-decoration: underline; }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width: 1024px) {
+      .nav { gap: 24px; }
+      .nav a { font-size: 12px; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .projects-grid { grid-template-columns: repeat(3, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .qr-card { max-width: 320px; margin: 0 auto; }
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .header-right .phone-link { display: none; }
+      .menu-toggle { display: flex; }
+      .header .header-right .btn { display: none; }
+      .hero {
+        min-height: auto;
+        padding: 110px 0 60px;
+      }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero-image { order: 2; } /* image AFTER text on mobile */
+      .hero-visual { aspect-ratio: 16 / 11; }
+      .hero-visual .corner { width: 28px; height: 28px; }
+      .hero-visual .corner-tl { top: 14px; left: 14px; }
+      .hero-visual .corner-tr { top: 14px; right: 14px; }
+      .hero-visual .corner-bl { bottom: 14px; left: 14px; }
+      .hero-visual .corner-br { bottom: 14px; right: 14px; }
+      .hero-meta { font-size: 10px; margin-bottom: 20px; }
+      .hero-scroll-cue { display: none; }
+      .services { padding: 70px 0; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .about { padding: 70px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+
+      /* Disable skew on mobile — display tiles as a clean horizontal strip */
+      .about-gallery {
+        height: auto;
+        gap: 6px;
+        flex-wrap: wrap; /* badge wraps to its own row below the tiles */
+      }
+      .gallery-tile {
+        transform: none;
+        aspect-ratio: 1 / 1.2;
+        flex: 1 1 calc(33% - 4px);
+      }
+      .gallery-tile-inner {
+        transform: scale(1.05);
+      }
+      .gallery-tile:hover { flex: 1 1 calc(33% - 4px); } /* no flex grow on touch */
+      .gallery-tile:hover .gallery-tile-inner { transform: scale(1.05); }
+      .gallery-tile-label { transform: none; opacity: 1; bottom: 10px; left: 10px; font-size: 9px; }
+
+      /* Badge becomes a normal block under the tiles */
+      .gallery-badge {
+        position: static;
+        flex-basis: 100%;
+        margin-top: 14px;
+        align-self: center;
+        width: max-content;
+        max-width: 100%;
+      }
+      .projects { padding: 70px 0; }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact { padding: 70px 0 40px; }
+
+      /* Footer collapses to a single column on mobile */
+      .footer { padding-top: 48px; }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-bottom: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+      .footer-legal { justify-content: center; }
+      /* Copyright wraps to 2 lines: name on top, "Alle Rechte" below */
+      .footer-copy .footer-divider { display: none; }
+      .footer-copy .footer-rights { display: block; margin-top: 4px; opacity: 0.7; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; align-items: stretch; }
+      .hero-buttons .btn { justify-content: center; }
+
+      /* Cards switch to horizontal layout: icon left, text right.
+         Uses a 2-column grid inside each card so the icon column stays narrow. */
+      .services-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card {
+        text-align: left;
+        padding: 22px 22px 22px 18px;
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 18px;
+        align-items: center;
+      }
+      .service-num {
+        top: 10px;
+        left: auto;
+        right: 14px;
+        font-size: 10px;
+      }
+      .service-icon {
+        width: 56px;
+        height: 56px;
+        margin: 0;
+      }
+      .service-icon svg { width: 28px; height: 28px; }
+      .service-card h3 {
+        margin-bottom: 8px;
+        min-height: 0;
+        text-align: left;
+      }
+      .service-card h3::after {
+        margin-left: 0; /* align divider to the left edge of the title */
+        margin-right: auto;
+      }
+      .service-card p {
+        margin-bottom: 0;
+        font-size: 12px;
+      }
+      .service-arrow { display: none; } /* hide on mobile — whole card is the affordance */
+
+      /* Projects: switch from 2-col grid to a single-column horizontal layout.
+         Numeral on the left, meta on the right — same pattern as services. */
+      .projects-grid { grid-template-columns: 1fr; gap: 10px; }
+      .project-tile {
+        aspect-ratio: auto;
+        padding: 18px 22px;
+        display: grid;
+        grid-template-columns: 70px 1fr 36px;
+        grid-template-rows: 1fr;       /* force single row */
+        gap: 18px;
+        align-items: center;
+      }
+      .project-tile::before {
+        width: 60px;
+        height: 60px;
+      }
+      .project-num {
+        font-size: 38px;
+        margin: 0;
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .project-meta {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .project-meta::before { display: none; }
+      .project-type { font-size: 13px; }
+      .project-location { font-size: 10px; letter-spacing: 0.12em; }
+      .project-view {
+        position: static;
+        grid-column: 3;
+        grid-row: 1;
+        width: 32px;
+        height: 32px;
+        align-self: center;
+        justify-self: center;
+      }
+      .project-view svg { width: 12px; height: 12px; }
+      .project-tile:hover {
+        transform: none; /* no lift on touch */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================= HEADER ========================= -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#start" class="logo" aria-label="BauService">
+        <!-- Original BauService logo, vectorized from the PDF business card -->
+        <svg viewBox="0 0 458 430" fill="#d4a544" xmlns="http://www.w3.org/2000/svg" aria-label="BauService Logo">
+          <g transform="translate(0,430) scale(0.1,-0.1)">
+            <path d="M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z"/>
+            <path d="M1180 2440 l0 -440 120 0 120 0 0 440 0 440 -120 0 -120 0 0 -440z"/>
+            <path d="M1460 2780 l0 -100 43 0 c60 0 82 -18 82 -70 0 -52 -22 -70 -82 -70 l-43 0 0 -100 0 -100 39 0 c22 0 51 -4 65 -10 23 -8 26 -15 26 -59 0 -59 -14 -71 -84 -71 l-46 0 0 -100 0 -100 104 0 c203 0 270 57 270 230 1 111 -19 154 -87 191 l-48 26 29 12 c67 28 102 95 102 196 0 75 -18 125 -59 166 -46 46 -91 59 -213 59 l-98 0 0 -100z"/>
+            <path d="M2121 2813 c-56 -191 -220 -762 -226 -785 l-7 -28 119 0 120 0 67 263 67 263 -36 140 c-20 76 -41 156 -46 177 -15 57 -35 47 -58 -30z"/>
+            <path d="M2280 2615 l68 -265 -46 0 -47 0 -18 -77 c-9 -43 -20 -88 -23 -100 -6 -22 -4 -22 92 -25 l97 -3 20 -72 19 -73 123 0 123 0 -105 363 c-58 199 -115 396 -127 437 l-22 75 -111 3 -110 3 67 -266z"/>
+            <path d="M2762 2513 c3 -360 3 -369 26 -410 42 -80 121 -112 270 -113 l82 0 0 94 0 94 -56 4 c-40 3 -61 10 -70 23 -11 15 -14 87 -14 347 l0 328 -121 0 -120 0 3 -367z"/>
+            <path d="M3180 2434 l0 -446 43 7 c107 17 168 74 187 174 5 30 10 201 10 382 l0 329 -120 0 -120 0 0 -446z"/>
+            <path d="M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z"/>
+            <path d="M1070 1527 l0 -56 85 -3 85 -3 0 47 c0 26 -3 49 -7 51 -5 3 -43 8 -85 12 l-78 7 0 -55z"/>
+            <path d="M3080 1526 l0 -56 80 0 80 0 0 44 c0 25 -4 47 -9 50 -5 3 -41 9 -80 12 l-71 7 0 -57z"/>
+            <path d="M944 1536 c-32 -32 -34 -37 -34 -106 0 -65 2 -74 28 -100 18 -17 44 -31 68 -35 21 -3 57 -9 79 -13 l40 -7 3 -83 c3 -91 6 -93 67 -68 18 8 41 25 50 39 22 33 30 116 16 159 -18 55 -42 70 -131 82 l-80 10 0 78 0 78 -36 0 c-28 0 -44 -8 -70 -34z"/>
+            <path d="M1350 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+            <path d="M1510 1520 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
+            <path d="M1770 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+            <path d="M1930 1521 l0 -50 38 -3 c35 -3 37 -5 40 -42 4 -43 -7 -56 -50 -56 -27 0 -28 -2 -28 -49 0 -38 4 -50 16 -53 10 -2 27 -31 43 -73 l27 -70 72 -3 c40 -2 72 0 72 3 0 4 -14 41 -32 82 -27 66 -29 77 -16 87 8 6 20 21 26 33 15 27 16 167 2 194 -18 33 -64 49 -140 49 l-70 0 0 -49z"/>
+            <path d="M2200 1558 c1 -7 29 -107 64 -223 l63 -210 68 -3 c52 -2 66 0 63 10 -3 7 -31 109 -63 226 l-58 212 -69 0 c-48 0 -68 -4 -68 -12z"/>
+            <path d="M2460 1445 l-33 -125 26 -96 c26 -97 32 -112 43 -102 5 6 134 427 134 441 0 4 -31 7 -69 7 l-68 0 -33 -125z"/>
+            <path d="M2690 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+            <path d="M2979 1547 c-19 -13 -39 -38 -46 -57 -15 -43 -17 -232 -3 -281 21 -75 95 -105 232 -93 l78 7 0 48 0 49 -80 0 c-68 0 -81 3 -90 19 -6 11 -10 87 -10 175 l0 156 -24 0 c-12 0 -38 -10 -57 -23z"/>
+            <path d="M3320 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+            <path d="M3480 1520 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
+            <path d="M1510 1350 l0 -50 70 0 70 0 0 50 0 50 -70 0 -70 0 0 -50z"/>
+            <path d="M3480 1350 l0 -50 75 0 75 0 0 50 0 50 -75 0 -75 0 0 -50z"/>
+            <path d="M920 1171 l0 -48 68 -6 c128 -13 122 -15 122 48 l0 55 -95 0 -95 0 0 -49z"/>
+            <path d="M1510 1170 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
+            <path d="M3480 1170 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
+          </g>
+        </svg>
+      </a>
+
+      <nav class="nav">
+        <a href="#start" class="active">Start</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="#kontakt" class="btn btn-primary">Angebot anfragen</a>
+        <a href="tel:+4917636321349" class="phone-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          +49 176 36321349
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Action Button — sits in the bottom-right on mobile so the user's thumb can reach it without stretching -->
+  <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- ========================= MOBILE MENU OVERLAY ========================= -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Hauptmenü" aria-modal="true">
+    <a href="#start">Start</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#ueber-uns">Über uns</a>
+    <a href="#projekte">Projekte</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#kontakt" class="btn btn-primary mobile-cta">Angebot anfragen</a>
+
+    <div class="mobile-menu-contact">
+      <span>Direkt anrufen</span>
+      <a href="tel:+4917636321349">+49 176 36321349</a>
+    </div>
+  </div>
+
+  <!-- ========================= HERO ========================= -->
+  <section id="start" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="hero-meta">Eschwege &amp; Umgebung · DE</span>
+        <h1>Qualität <span class="amp">&amp;</span> Service</h1>
+        <div class="subtitle">aus einer Hand</div>
+        <p>Ihr zuverlässiger Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege &amp; Umgebung.</p>
+        <div class="hero-buttons">
+          <a href="#kontakt" class="btn btn-primary">
+            Angebot anfragen
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/4917636321349" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+            </svg>
+            WhatsApp schreiben
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <!-- Branded scene — replaces the missing van photo until the client supplies one.
+             To use a real photo, swap the entire .hero-visual block for an <img> tag. -->
+        <div class="hero-visual">
+          <span class="corner corner-tl"></span>
+          <span class="corner corner-tr"></span>
+          <span class="corner corner-bl"></span>
+          <span class="corner corner-br"></span>
+
+          <div class="hero-visual-content">
+            <!-- BauService logo, large -->
+            <svg class="hero-brand-logo" viewBox="0 0 458 430" fill="#d4a544" xmlns="http://www.w3.org/2000/svg" aria-label="BauService">
+              <g transform="translate(0,430) scale(0.1,-0.1)">
+                <path d="M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z"/>
+                <path d="M1180 2440 l0 -440 120 0 120 0 0 440 0 440 -120 0 -120 0 0 -440z"/>
+                <path d="M1460 2780 l0 -100 43 0 c60 0 82 -18 82 -70 0 -52 -22 -70 -82 -70 l-43 0 0 -100 0 -100 39 0 c22 0 51 -4 65 -10 23 -8 26 -15 26 -59 0 -59 -14 -71 -84 -71 l-46 0 0 -100 0 -100 104 0 c203 0 270 57 270 230 1 111 -19 154 -87 191 l-48 26 29 12 c67 28 102 95 102 196 0 75 -18 125 -59 166 -46 46 -91 59 -213 59 l-98 0 0 -100z"/>
+                <path d="M2121 2813 c-56 -191 -220 -762 -226 -785 l-7 -28 119 0 120 0 67 263 67 263 -36 140 c-20 76 -41 156 -46 177 -15 57 -35 47 -58 -30z"/>
+                <path d="M2280 2615 l68 -265 -46 0 -47 0 -18 -77 c-9 -43 -20 -88 -23 -100 -6 -22 -4 -22 92 -25 l97 -3 20 -72 19 -73 123 0 123 0 -105 363 c-58 199 -115 396 -127 437 l-22 75 -111 3 -110 3 67 -266z"/>
+                <path d="M2762 2513 c3 -360 3 -369 26 -410 42 -80 121 -112 270 -113 l82 0 0 94 0 94 -56 4 c-40 3 -61 10 -70 23 -11 15 -14 87 -14 347 l0 328 -121 0 -120 0 3 -367z"/>
+                <path d="M3180 2434 l0 -446 43 7 c107 17 168 74 187 174 5 30 10 201 10 382 l0 329 -120 0 -120 0 0 -446z"/>
+                <path d="M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z"/>
+                <path d="M1070 1527 l0 -56 85 -3 85 -3 0 47 c0 26 -3 49 -7 51 -5 3 -43 8 -85 12 l-78 7 0 -55z"/>
+                <path d="M3080 1526 l0 -56 80 0 80 0 0 44 c0 25 -4 47 -9 50 -5 3 -41 9 -80 12 l-71 7 0 -57z"/>
+                <path d="M944 1536 c-32 -32 -34 -37 -34 -106 0 -65 2 -74 28 -100 18 -17 44 -31 68 -35 21 -3 57 -9 79 -13 l40 -7 3 -83 c3 -91 6 -93 67 -68 18 8 41 25 50 39 22 33 30 116 16 159 -18 55 -42 70 -131 82 l-80 10 0 78 0 78 -36 0 c-28 0 -44 -8 -70 -34z"/>
+                <path d="M1350 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+                <path d="M1510 1520 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
+                <path d="M1770 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+                <path d="M1930 1521 l0 -50 38 -3 c35 -3 37 -5 40 -42 4 -43 -7 -56 -50 -56 -27 0 -28 -2 -28 -49 0 -38 4 -50 16 -53 10 -2 27 -31 43 -73 l27 -70 72 -3 c40 -2 72 0 72 3 0 4 -14 41 -32 82 -27 66 -29 77 -16 87 8 6 20 21 26 33 15 27 16 167 2 194 -18 33 -64 49 -140 49 l-70 0 0 -49z"/>
+                <path d="M2200 1558 c1 -7 29 -107 64 -223 l63 -210 68 -3 c52 -2 66 0 63 10 -3 7 -31 109 -63 226 l-58 212 -69 0 c-48 0 -68 -4 -68 -12z"/>
+                <path d="M2460 1445 l-33 -125 26 -96 c26 -97 32 -112 43 -102 5 6 134 427 134 441 0 4 -31 7 -69 7 l-68 0 -33 -125z"/>
+                <path d="M2690 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+                <path d="M2979 1547 c-19 -13 -39 -38 -46 -57 -15 -43 -17 -232 -3 -281 21 -75 95 -105 232 -93 l78 7 0 48 0 49 -80 0 c-68 0 -81 3 -90 19 -6 11 -10 87 -10 175 l0 156 -24 0 c-12 0 -38 -10 -57 -23z"/>
+                <path d="M3320 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+                <path d="M3480 1520 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
+                <path d="M1510 1350 l0 -50 70 0 70 0 0 50 0 50 -70 0 -70 0 0 -50z"/>
+                <path d="M3480 1350 l0 -50 75 0 75 0 0 50 0 50 -75 0 -75 0 0 -50z"/>
+                <path d="M920 1171 l0 -48 68 -6 c128 -13 122 -15 122 48 l0 55 -95 0 -95 0 0 -49z"/>
+                <path d="M1510 1170 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
+                <path d="M3480 1170 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
+              </g>
+            </svg>
+
+            <div class="hero-brand-divider">
+              <span class="line"></span>
+              <span class="diamond"></span>
+              <span class="line"></span>
+            </div>
+
+            <div class="hero-brand-tagline">Qualität &amp; Service</div>
+            <div class="hero-brand-sub">aus einer Hand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="hero-scroll-cue">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ========================= SERVICES ========================= -->
+  <section id="leistungen" class="services">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-label">Unsere Leistungen</div>
+        <h2 class="section-title">Alles aus einer Hand</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. Floors — stack icon (layered planks) -->
+        <article class="service-card">
+          <span class="service-num">01</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/>
+              <path d="M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/>
+              <rect width="8" height="8" x="14" y="14" rx="2"/>
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Verlegung von<br>Vinyl, Laminat &amp; Parkett</h3>
+            <p>Vinyl, Laminat und Parkett – fachgerecht verlegt, mit sauberem Übergang und langer Lebensdauer.</p>
+            <span class="service-arrow">
+              Mehr erfahren
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- 2. Windows & Doors — house with frame -->
+        <article class="service-card">
+          <span class="service-num">02</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <line x1="12" y1="3" x2="12" y2="21"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Fenster &amp; Türen</h3>
+            <p>Lieferung und passgenaue Montage neuer Fenster und Außentüren – Kunststoff, Holz oder Aluminium.</p>
+            <span class="service-arrow">
+              Mehr erfahren
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- 3. Interior Doors — door icon (Lucide door-closed) -->
+        <article class="service-card">
+          <span class="service-num">03</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 12h.01"/>
+              <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/>
+              <path d="M2 20h20"/>
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Innentüren</h3>
+            <p>Auswahl, Lieferung und Einbau hochwertiger Innentüren – vom klassischen Design bis modern und schlicht.</p>
+            <span class="service-arrow">
+              Mehr erfahren
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- 4. Janitorial Service — Lucide wrench (clean, single, recognizable) -->
+        <article class="service-card">
+          <span class="service-num">04</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/>
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Hausmeisterservice</h3>
+            <p>Reparaturen, Wartung und regelmäßige Pflege Ihrer Immobilie – ein verlässlicher Ansprechpartner für alle Fälle.</p>
+            <span class="service-arrow">
+              Mehr erfahren
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- 5. Materials Delivery — Lucide truck -->
+        <article class="service-card">
+          <span class="service-num">05</span>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+              <path d="M15 18H9"/>
+              <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+              <circle cx="17" cy="18" r="2"/>
+              <circle cx="7" cy="18" r="2"/>
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Baustoffe &amp; Materialien<br>mit Lieferung</h3>
+            <p>Sand, Zement, Gipsplatten, Werkzeug und mehr – direkt von uns auf Ihre Baustelle geliefert.</p>
+            <span class="service-arrow">
+              Mehr erfahren
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= ABOUT ========================= -->
+  <section id="ueber-uns" class="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <div class="section-label">Über uns</div>
+        <h2>Zuverlässig. <span class="accent">Sauber.</span><br>Professionell.</h2>
+
+        <div class="about-signature">
+          Inhaber · <strong>Dionisie Bat</strong>
+        </div>
+
+        <p>BauService Dionisie Bat steht für Qualität, Zuverlässigkeit und faire Preise. Wir arbeiten sauber, termingerecht und mit höchstem Anspruch an jedes Projekt — vom ersten Beratungstermin bis zur fertigen Übergabe.</p>
+
+        <ul class="features-list">
+          <li>
+            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Kostenlose Beratung &amp; Aufmaß
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Faire Festpreise – ohne versteckte Kosten
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Saubere &amp; professionelle Arbeit
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Zuverlässig &amp; termingerecht
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Erfahrenes Fachteam vor Ort
+          </li>
+        </ul>
+      </div>
+
+      <div class="about-gallery">
+          <!-- TILE 1: Window scene -->
+          <div class="gallery-tile">
+            <div class="gallery-tile-inner">
+              <svg class="scene" viewBox="0 0 200 240" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <!-- Wall background -->
+                <defs>
+                  <linearGradient id="wallGrad1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1a1a1a"/>
+                    <stop offset="100%" stop-color="#0e0e0e"/>
+                  </linearGradient>
+                  <linearGradient id="skyGrad1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#3a3220"/>
+                    <stop offset="100%" stop-color="#1a1a1a"/>
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="240" fill="url(#wallGrad1)"/>
+                <!-- Window frame outer -->
+                <rect x="40" y="50" width="120" height="160" fill="url(#skyGrad1)" stroke="#d4a544" stroke-width="2"/>
+                <!-- Window cross -->
+                <line x1="100" y1="50" x2="100" y2="210" stroke="#d4a544" stroke-width="1.5"/>
+                <line x1="40" y1="130" x2="160" y2="130" stroke="#d4a544" stroke-width="1.5"/>
+                <!-- City silhouette behind glass -->
+                <path d="M40 180 L55 180 L55 165 L70 165 L70 175 L85 175 L85 155 L100 155 L100 170 L115 170 L115 160 L130 160 L130 175 L145 175 L145 168 L160 168 L160 210 L40 210 Z" fill="#0a0a0a" opacity="0.7"/>
+                <!-- Light glints -->
+                <circle cx="65" cy="75" r="1.5" fill="#d4a544" opacity="0.6"/>
+                <circle cx="135" cy="100" r="1" fill="#d4a544" opacity="0.4"/>
+                <!-- Floor line -->
+                <line x1="0" y1="225" x2="200" y2="225" stroke="#d4a544" stroke-width="0.5" opacity="0.3"/>
+              </svg>
+            </div>
+            <span class="gallery-tile-label">Fenster</span>
+          </div>
+
+          <!-- TILE 2: Door scene -->
+          <div class="gallery-tile">
+            <div class="gallery-tile-inner">
+              <svg class="scene" viewBox="0 0 200 240" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="wallGrad2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1f1f1f"/>
+                    <stop offset="100%" stop-color="#0d0d0d"/>
+                  </linearGradient>
+                  <linearGradient id="doorGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2a2a2a"/>
+                    <stop offset="100%" stop-color="#161616"/>
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="240" fill="url(#wallGrad2)"/>
+                <!-- Door frame -->
+                <rect x="55" y="35" width="90" height="190" fill="url(#doorGrad)" stroke="#d4a544" stroke-width="2"/>
+                <!-- Inner panel rectangles -->
+                <rect x="68" y="55" width="64" height="55" fill="none" stroke="#d4a544" stroke-width="0.8" opacity="0.5"/>
+                <rect x="68" y="120" width="64" height="55" fill="none" stroke="#d4a544" stroke-width="0.8" opacity="0.5"/>
+                <!-- Handle -->
+                <circle cx="130" cy="135" r="2.5" fill="#d4a544"/>
+                <line x1="130" y1="137" x2="130" y2="148" stroke="#d4a544" stroke-width="1.5"/>
+                <!-- Floor line -->
+                <line x1="0" y1="225" x2="200" y2="225" stroke="#d4a544" stroke-width="0.5" opacity="0.4"/>
+                <!-- Light from above -->
+                <ellipse cx="100" cy="35" rx="60" ry="20" fill="#d4a544" opacity="0.08"/>
+              </svg>
+            </div>
+            <span class="gallery-tile-label">Innentüren</span>
+          </div>
+
+          <!-- TILE 3: Floor / parquet scene -->
+          <div class="gallery-tile">
+            <div class="gallery-tile-inner">
+              <svg class="scene" viewBox="0 0 200 240" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1c1610"/>
+                    <stop offset="100%" stop-color="#0a0805"/>
+                  </linearGradient>
+                  <linearGradient id="plankGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#3d2f1c"/>
+                    <stop offset="50%" stop-color="#5a4225"/>
+                    <stop offset="100%" stop-color="#3d2f1c"/>
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="240" fill="url(#floorGrad)"/>
+                <!-- Wall (top portion) -->
+                <rect x="0" y="0" width="200" height="80" fill="#0e0e0e"/>
+                <line x1="0" y1="80" x2="200" y2="80" stroke="#d4a544" stroke-width="0.5" opacity="0.4"/>
+                <!-- Parquet planks (perspective) -->
+                <g opacity="0.85">
+                  <rect x="-10" y="85" width="220" height="22" fill="url(#plankGrad)" stroke="#0a0805" stroke-width="1"/>
+                  <rect x="-10" y="107" width="220" height="22" fill="url(#plankGrad)" stroke="#0a0805" stroke-width="1" opacity="0.92"/>
+                  <rect x="-10" y="129" width="220" height="22" fill="url(#plankGrad)" stroke="#0a0805" stroke-width="1" opacity="0.85"/>
+                  <rect x="-10" y="151" width="220" height="22" fill="url(#plankGrad)" stroke="#0a0805" stroke-width="1" opacity="0.78"/>
+                  <rect x="-10" y="173" width="220" height="22" fill="url(#plankGrad)" stroke="#0a0805" stroke-width="1" opacity="0.7"/>
+                  <rect x="-10" y="195" width="220" height="22" fill="url(#plankGrad)" stroke="#0a0805" stroke-width="1" opacity="0.6"/>
+                  <rect x="-10" y="217" width="220" height="22" fill="url(#plankGrad)" stroke="#0a0805" stroke-width="1" opacity="0.5"/>
+                </g>
+                <!-- Plank seams (vertical) -->
+                <line x1="60" y1="85" x2="60" y2="107" stroke="#0a0805" stroke-width="1"/>
+                <line x1="135" y1="107" x2="135" y2="129" stroke="#0a0805" stroke-width="1"/>
+                <line x1="80" y1="129" x2="80" y2="151" stroke="#0a0805" stroke-width="1"/>
+                <line x1="140" y1="151" x2="140" y2="173" stroke="#0a0805" stroke-width="1"/>
+                <line x1="55" y1="173" x2="55" y2="195" stroke="#0a0805" stroke-width="1"/>
+                <line x1="120" y1="195" x2="120" y2="217" stroke="#0a0805" stroke-width="1"/>
+                <!-- Subtle reflection of light on floor -->
+                <ellipse cx="100" cy="170" rx="80" ry="35" fill="#d4a544" opacity="0.06"/>
+              </svg>
+            </div>
+            <span class="gallery-tile-label">Bodenbeläge</span>
+          </div>
+
+          <div class="gallery-badge">
+            <div class="label">Qualität &amp; Service</div>
+            <div class="sub">aus einer Hand</div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- ========================= PROJECTS ========================= -->
+  <section id="projekte" class="projects">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-label">Projekte</div>
+        <h2 class="section-title">Unsere Arbeiten</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Branded placeholder cards. To swap a real photo in, replace the
+             entire .project-tile contents with: <img src="…" alt="…"/> -->
+        <article class="project-tile">
+          <div class="project-num">01</div>
+          <span class="project-view" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <div class="project-meta">
+            <div class="project-type">Bodenverlegung<br>Vinyl &amp; Parkett</div>
+            <div class="project-location">Eschwege · DE</div>
+          </div>
+        </article>
+
+        <article class="project-tile">
+          <div class="project-num">02</div>
+          <span class="project-view" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <div class="project-meta">
+            <div class="project-type">Innentüren<br>Komplettmontage</div>
+            <div class="project-location">Werra-Meißner-Kreis</div>
+          </div>
+        </article>
+
+        <article class="project-tile">
+          <div class="project-num">03</div>
+          <span class="project-view" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <div class="project-meta">
+            <div class="project-type">Fenstereinbau<br>Kunststoff</div>
+            <div class="project-location">Eschwege · DE</div>
+          </div>
+        </article>
+
+        <article class="project-tile">
+          <div class="project-num">04</div>
+          <span class="project-view" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <div class="project-meta">
+            <div class="project-type">Komplettsanierung<br>Wohnung</div>
+            <div class="project-location">Bad Sooden-Allendorf</div>
+          </div>
+        </article>
+
+        <article class="project-tile">
+          <div class="project-num">05</div>
+          <span class="project-view" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <div class="project-meta">
+            <div class="project-type">Hausmeisterservice<br>Mehrfamilienhaus</div>
+            <div class="project-location">Eschwege · DE</div>
+          </div>
+        </article>
+
+        <article class="project-tile">
+          <div class="project-num">06</div>
+          <span class="project-view" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <div class="project-meta">
+            <div class="project-type">Materiallieferung<br>Baustelle</div>
+            <div class="project-location">Region Nordhessen</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-cta">
+        <p class="projects-cta-text">Sie haben ein eigenes Projekt im Kopf?<br>Wir besprechen es gerne mit Ihnen — kostenlos und unverbindlich.</p>
+        <a href="#kontakt" class="btn btn-ghost">
+          Ihr Projekt besprechen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CONTACT ========================= -->
+  <section id="kontakt" class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Kontakt</div>
+          <h2>Kontaktieren Sie uns</h2>
+          <ul class="contact-list">
+            <li>
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </span>
+              <a href="tel:+4917636321349">+49 176 36321349</a>
+            </li>
+            <li>
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              <a href="mailto:baudionis@gmail.com">baudionis@gmail.com</a>
+            </li>
+            <li>
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <a href="https://maps.app.goo.gl/TYTUQefiNP4CikUP8" target="_blank" rel="noopener">Eschwege &amp; Umgebung · auf Karte zeigen</a>
+            </li>
+          </ul>
+
+          <span class="contact-socials-label">Folgen Sie uns</span>
+          <div class="contact-socials">
+            <a href="https://wa.me/message/A4RZPFXZZRIJP1?src=qr"
+               class="social-link wa"
+               target="_blank" rel="noopener"
+               aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/share/g/1BgxKNyYAv/?mibextid=wwXIfr"
+               class="social-link fb"
+               target="_blank" rel="noopener"
+               aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.531l-.439 2.085-.343 1.582h-2.749v8.245C19.469 23.062 24 18.062 24 12.001 24 5.373 18.627 0 12 0S0 5.373 0 12c0 6.06 4.531 11.061 9.101 11.691z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@bau_service"
+               class="social-link tt"
+               target="_blank" rel="noopener"
+               aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="qr-card">
+          <div class="qr-label">Scannen &amp;<br>WhatsApp öffnen</div>
+          <div class="qr-frame">
+            <!-- WhatsApp QR — data URI, embedded inline so it works offline.
+                 Encodes: https://wa.me/message/A4RZPFXZZRIJP1?src=qr -->
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbwAAAG8AQAAAACNyy1yAAACcElEQVR42u2cwW3lMAxEh4vc6Q62/7LSgVTB5CCJopy/l2DxaQRjfAS2rHchBmOKomLEj67+Bz+8BAoUKPB3gyCTszoBsK3BeGzzPqaxKaoCK0DnuMaQ/Z1C5aeR3Co9pimqAmtAM7Mr2Wy3Ido5vuQa0xRVgW8HP27PBrAbx9cfgDd0o6Iq8HngTE2Hr14IO1VwBD7EVw/n7Bec6NdQLAD2i/dpiqrACq32bZvmNKfNm2Yx4i1PU1QFlmj1NFXj0GS38Yu3VFQFVoKIqhRbylfTq1Ffzfeqrwos89WxkgLYL1sJ6hhBt11f7UbAXPVVgSjct5rumg12lP2d43GbrXxVYJ1WSYY+X3z6T6Gu+YqqwBqthp1Oa10Szd0Cp5IVVYEFYOyibhftNvoBsp2iGxvMjE1RFVjkq+GozvDSnRuklpVpqsoBBBbmAEuQMyNt91T2WFhJqwILfdXn322tZ6NgvNXaSmD92uq001DsLAKkipa0KrBw3yr0ua21pS2tKLR6qFpRFViTA8RvWOj3rOCmamlVYOHaKnnm2QCQUtadJEirAktzgKN+hWMvICoAK0NQVAXW+WqMtPPGj2ZA9QMIrM9XuRPUPXIWr1JDi6Iq8M3gB1ab3+oGnP2BmGcBLgLjgMAYp6IqsDQHiGt+9P3eIrj3XpUDCCxcW8Xl/GcGm7a0VAcQ+Ii9AGwXfbGNBagOILBWq1uEuUiFewvrtlZpVWDF2ipfBsAb1pnrOMdKYKyz2A3eFFWB5b6KtD91mK2nhZV8VeAD8tVbV8DLM4PKVwU+pA6w11a8HwlMyy5FVeCbQdP/YBcoUKDA/wp+AZdd9yym0kukAAAAAElFTkSuQmCC" alt="WhatsApp QR-Code"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="#start" class="logo" aria-label="BauService">
+            <svg viewBox="0 0 458 430" fill="#d4a544" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(0,430) scale(0.1,-0.1)">
+                <path d="M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z"/>
+                <path d="M1180 2440 l0 -440 120 0 120 0 0 440 0 440 -120 0 -120 0 0 -440z"/>
+                <path d="M1460 2780 l0 -100 43 0 c60 0 82 -18 82 -70 0 -52 -22 -70 -82 -70 l-43 0 0 -100 0 -100 39 0 c22 0 51 -4 65 -10 23 -8 26 -15 26 -59 0 -59 -14 -71 -84 -71 l-46 0 0 -100 0 -100 104 0 c203 0 270 57 270 230 1 111 -19 154 -87 191 l-48 26 29 12 c67 28 102 95 102 196 0 75 -18 125 -59 166 -46 46 -91 59 -213 59 l-98 0 0 -100z"/>
+                <path d="M2121 2813 c-56 -191 -220 -762 -226 -785 l-7 -28 119 0 120 0 67 263 67 263 -36 140 c-20 76 -41 156 -46 177 -15 57 -35 47 -58 -30z"/>
+                <path d="M2280 2615 l68 -265 -46 0 -47 0 -18 -77 c-9 -43 -20 -88 -23 -100 -6 -22 -4 -22 92 -25 l97 -3 20 -72 19 -73 123 0 123 0 -105 363 c-58 199 -115 396 -127 437 l-22 75 -111 3 -110 3 67 -266z"/>
+                <path d="M2762 2513 c3 -360 3 -369 26 -410 42 -80 121 -112 270 -113 l82 0 0 94 0 94 -56 4 c-40 3 -61 10 -70 23 -11 15 -14 87 -14 347 l0 328 -121 0 -120 0 3 -367z"/>
+                <path d="M3180 2434 l0 -446 43 7 c107 17 168 74 187 174 5 30 10 201 10 382 l0 329 -120 0 -120 0 0 -446z"/>
+                <path d="M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z"/>
+                <path d="M1070 1527 l0 -56 85 -3 85 -3 0 47 c0 26 -3 49 -7 51 -5 3 -43 8 -85 12 l-78 7 0 -55z"/>
+                <path d="M3080 1526 l0 -56 80 0 80 0 0 44 c0 25 -4 47 -9 50 -5 3 -41 9 -80 12 l-71 7 0 -57z"/>
+                <path d="M944 1536 c-32 -32 -34 -37 -34 -106 0 -65 2 -74 28 -100 18 -17 44 -31 68 -35 21 -3 57 -9 79 -13 l40 -7 3 -83 c3 -91 6 -93 67 -68 18 8 41 25 50 39 22 33 30 116 16 159 -18 55 -42 70 -131 82 l-80 10 0 78 0 78 -36 0 c-28 0 -44 -8 -70 -34z"/>
+                <path d="M1350 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+                <path d="M1510 1520 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
+                <path d="M1770 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+                <path d="M1930 1521 l0 -50 38 -3 c35 -3 37 -5 40 -42 4 -43 -7 -56 -50 -56 -27 0 -28 -2 -28 -49 0 -38 4 -50 16 -53 10 -2 27 -31 43 -73 l27 -70 72 -3 c40 -2 72 0 72 3 0 4 -14 41 -32 82 -27 66 -29 77 -16 87 8 6 20 21 26 33 15 27 16 167 2 194 -18 33 -64 49 -140 49 l-70 0 0 -49z"/>
+                <path d="M2200 1558 c1 -7 29 -107 64 -223 l63 -210 68 -3 c52 -2 66 0 63 10 -3 7 -31 109 -63 226 l-58 212 -69 0 c-48 0 -68 -4 -68 -12z"/>
+                <path d="M2460 1445 l-33 -125 26 -96 c26 -97 32 -112 43 -102 5 6 134 427 134 441 0 4 -31 7 -69 7 l-68 0 -33 -125z"/>
+                <path d="M2690 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+                <path d="M2979 1547 c-19 -13 -39 -38 -46 -57 -15 -43 -17 -232 -3 -281 21 -75 95 -105 232 -93 l78 7 0 48 0 49 -80 0 c-68 0 -81 3 -90 19 -6 11 -10 87 -10 175 l0 156 -24 0 c-12 0 -38 -10 -57 -23z"/>
+                <path d="M3320 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
+                <path d="M3480 1520 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
+                <path d="M1510 1350 l0 -50 70 0 70 0 0 50 0 50 -70 0 -70 0 0 -50z"/>
+                <path d="M3480 1350 l0 -50 75 0 75 0 0 50 0 50 -75 0 -75 0 0 -50z"/>
+                <path d="M920 1171 l0 -48 68 -6 c128 -13 122 -15 122 48 l0 55 -95 0 -95 0 0 -49z"/>
+                <path d="M1510 1170 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
+                <path d="M3480 1170 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
+              </g>
+            </svg>
+          </a>
+          <div class="footer-tagline">
+            <span class="footer-tagline-strong">Qualität &amp; Service</span>
+            aus einer Hand
+          </div>
+          <p class="footer-desc">Ihr Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege &amp; Umgebung.</p>
+        </div>
+
+        <!-- Column 2: Navigation -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-list">
+            <li><a href="#start">Start</a></li>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#projekte">Projekte</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="footer-col">
+          <h4>Leistungen</h4>
+          <ul class="footer-list">
+            <li><a href="#leistungen">Boden­verlegung</a></li>
+            <li><a href="#leistungen">Fenster &amp; Türen</a></li>
+            <li><a href="#leistungen">Innentüren</a></li>
+            <li><a href="#leistungen">Hausmeister­service</a></li>
+            <li><a href="#leistungen">Material­lieferung</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul class="footer-list">
+            <li>
+              <a href="tel:+4917636321349" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +49 176 36321349
+              </a>
+            </li>
+            <li>
+              <a href="mailto:baudionis@gmail.com" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                baudionis@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://maps.app.goo.gl/TYTUQefiNP4CikUP8" target="_blank" rel="noopener" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Eschwege &amp; Umgebung
+              </a>
+            </li>
+          </ul>
+
+          <!-- Compact social icons -->
+          <div class="footer-socials">
+            <a href="https://wa.me/message/A4RZPFXZZRIJP1?src=qr" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/share/g/1BgxKNyYAv/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.531l-.439 2.085-.343 1.582h-2.749v8.245C19.469 23.062 24 18.062 24 12.001 24 5.373 18.627 0 12 0S0 5.373 0 12c0 6.06 4.531 11.061 9.101 11.691z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@bau_service" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom row -->
+      <div class="footer-bottom">
+        <div class="footer-copy">© <span id="current-year">2026</span> BauService Dionisie Bat <span class="footer-divider">—</span> <span class="footer-rights">Alle Rechte vorbehalten.</span></div>
+        <div class="footer-legal">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mark that JS is enabled — activates progressive enhancements
+    // (e.g. hides cards before scroll-reveal animation kicks in).
+    document.documentElement.classList.add('js');
+
+    // ===== Active nav item =====
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav a, .mobile-menu a');
+
+    function setActive(id) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+
+    // Tracks intersection state for each section. We pick whichever section is
+    // currently "in the viewport zone" (not just the one whose middle line was
+    // last crossed) — this fixes corner cases where the observer doesn't fire
+    // again after a smooth scroll back to the top.
+    const visibility = new Map();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => visibility.set(entry.target.id, entry.intersectionRatio));
+
+      // 1) If we're scrolled to the very top, the first section wins —
+      //    regardless of what the observer thinks. This is the bug fix:
+      //    smooth-scroll back to top wasn't always re-triggering the observer.
+      if (window.scrollY < 80) {
+        setActive(sections[0].id);
+        return;
+      }
+
+      // 2) If we're at the very bottom of the page, the last section wins.
+      //    (Otherwise short last sections can be skipped by the middle-line trick.)
+      const atBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 4;
+      if (atBottom) {
+        setActive(sections[sections.length - 1].id);
+        return;
+      }
+
+      // 3) Otherwise, pick the most-visible section.
+      let bestId = null, best = 0;
+      for (const [id, ratio] of visibility) {
+        if (ratio > best) { best = ratio; bestId = id; }
+      }
+      if (bestId) setActive(bestId);
+    }, {
+      // Small inset on top to discount the area hidden under the fixed header.
+      rootMargin: '-80px 0px -40% 0px',
+      threshold: [0, 0.25, 0.5, 0.75, 1]
+    });
+
+    sections.forEach(s => observer.observe(s));
+
+    // Optimistic highlight: when the user clicks a nav link, switch the
+    // active state immediately rather than waiting for the smooth scroll
+    // and the observer to catch up.
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) setActive(href.slice(1));
+      });
+    });
+
+    // Also re-evaluate on plain scroll, so the top/bottom edge cases get fixed
+    // even when the observer is silent.
+    let scrollTick = false;
+    window.addEventListener('scroll', () => {
+      if (scrollTick) return;
+      scrollTick = true;
+      requestAnimationFrame(() => {
+        scrollTick = false;
+        if (window.scrollY < 80) setActive(sections[0].id);
+        else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
+          setActive(sections[sections.length - 1].id);
+        }
+      });
+    }, { passive: true });
+
+    // ===== Header: scrolled state =====
+    const header = document.querySelector('.header');
+    const setScrolled = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    setScrolled();
+    window.addEventListener('scroll', setScrolled, { passive: true });
+
+    // ===== Mobile menu =====
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const body = document.body;
+
+    const closeMenu = () => {
+      body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
+    const openMenu = () => {
+      body.classList.add('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    };
+
+    menuToggle.addEventListener('click', () => {
+      body.classList.contains('menu-open') ? closeMenu() : openMenu();
+    });
+
+    // Close on link click
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && body.classList.contains('menu-open')) closeMenu();
+    });
+
+    // Close if window resized to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && body.classList.contains('menu-open')) closeMenu();
+    });
+
+    // ===== Scroll-triggered reveal for service cards =====
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          cardObserver.unobserve(entry.target); // animate once
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.service-card').forEach(card => cardObserver.observe(card));
+
+    // ===== Footer: dynamic current year =====
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

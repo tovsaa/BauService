@@ -130,22 +130,30 @@
     }
 
     .gold-divider {
-      width: 80px;
+      width: 100%;
       height: 1px;
-      background: linear-gradient(90deg, var(--gold) 0%, rgba(212, 165, 68, 0.2) 100%);
+      /* Symmetric gradient — fades out on both ends, brightest in the centre.
+         The fade is wider than before so a long line still feels delicate. */
+      background: linear-gradient(90deg,
+                                  transparent 0%,
+                                  rgba(212, 165, 68, 0.3) 30%,
+                                  var(--gold) 50%,
+                                  rgba(212, 165, 68, 0.3) 70%,
+                                  transparent 100%);
       position: relative;
-      margin-top: 14px;
+      margin-top: 18px;
     }
 
     .gold-divider::before {
       content: '';
       position: absolute;
-      width: 5px;
-      height: 5px;
+      width: 7px;
+      height: 7px;
       background: var(--gold);
       transform: translate(-50%, -50%) rotate(45deg);
-      left: 32%;
+      left: 50%;
       top: 50%;
+      box-shadow: 0 0 0 3px var(--bg); /* clear gap around diamond so the line doesn't pierce it */
     }
 
     /* =========================================================
@@ -406,16 +414,13 @@
       -webkit-backdrop-filter: blur(20px);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 36px;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-12px);
       transition: opacity 350ms ease,
                   visibility 350ms ease,
                   transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
-      padding: 80px 24px 40px;
+      padding: 80px 24px calc(40px + env(safe-area-inset-bottom, 0px));
     }
 
     body.menu-open .mobile-menu {
@@ -433,6 +438,7 @@
       height: 80px;
       border: 1px solid var(--gold);
       opacity: 0.4;
+      pointer-events: none;
     }
     .mobile-menu::before {
       top: 24px; left: 24px;
@@ -443,6 +449,16 @@
       bottom: 24px; right: 24px;
       border-left: none;
       border-top: none;
+    }
+
+    /* Navigation block — fills available space, links centered vertically */
+    .mobile-menu-nav {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
     }
 
     .mobile-menu a {
@@ -459,14 +475,14 @@
       transform: translateY(12px);
     }
 
-    body.menu-open .mobile-menu a {
+    body.menu-open .mobile-menu-nav a {
       animation: menuItemIn 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
-    body.menu-open .mobile-menu a:nth-child(1) { animation-delay: 120ms; }
-    body.menu-open .mobile-menu a:nth-child(2) { animation-delay: 180ms; }
-    body.menu-open .mobile-menu a:nth-child(3) { animation-delay: 240ms; }
-    body.menu-open .mobile-menu a:nth-child(4) { animation-delay: 300ms; }
-    body.menu-open .mobile-menu a:nth-child(5) { animation-delay: 360ms; }
+    body.menu-open .mobile-menu-nav a:nth-child(1) { animation-delay: 120ms; }
+    body.menu-open .mobile-menu-nav a:nth-child(2) { animation-delay: 180ms; }
+    body.menu-open .mobile-menu-nav a:nth-child(3) { animation-delay: 240ms; }
+    body.menu-open .mobile-menu-nav a:nth-child(4) { animation-delay: 300ms; }
+    body.menu-open .mobile-menu-nav a:nth-child(5) { animation-delay: 360ms; }
 
     @keyframes menuItemIn {
       to { opacity: 1; transform: translateY(0); }
@@ -474,7 +490,7 @@
 
     .mobile-menu a:hover { color: var(--gold); }
 
-    .mobile-menu a::after {
+    .mobile-menu-nav a::after {
       content: '';
       position: absolute;
       left: 50%;
@@ -485,38 +501,46 @@
       transform: translateX(-50%);
       transition: width 250ms ease;
     }
+    .mobile-menu-nav a:hover::after { width: 60%; }
 
-    .mobile-menu a:hover::after { width: 60%; }
+    /* Footer block: CTA + phone, stacked, with safe distance from FAB toggle */
+    .mobile-menu-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      /* Reserve space for the FAB (56px button + 20px offset) on the right */
+      padding-bottom: 80px;
+    }
+
+    body.menu-open .mobile-menu-footer {
+      animation: menuItemIn 500ms cubic-bezier(0.4, 0, 0.2, 1) 440ms forwards;
+      opacity: 0;
+      transform: translateY(12px);
+    }
 
     .mobile-menu .mobile-cta {
       display: inline-flex;
-      margin-top: 20px;
-      animation-delay: 440ms !important;
       padding: 16px 32px;
-      align-self: center;
-      width: auto;
       font-size: 13px;
       letter-spacing: 0.12em;
+      width: auto;
+      animation: none;
+      opacity: 1;
+      transform: none;
     }
     .mobile-menu .mobile-cta::after { display: none; }
 
     .mobile-menu-contact {
-      position: absolute;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       font-size: 13px;
       color: var(--text-dim);
       letter-spacing: 0.05em;
-      opacity: 0;
-      transition: opacity 400ms ease 500ms;
+      opacity: 1;
     }
-
-    body.menu-open .mobile-menu-contact { opacity: 1; }
 
     .mobile-menu-contact a {
       color: var(--gold);
@@ -524,6 +548,9 @@
       letter-spacing: 0.05em;
       font-weight: 600;
       padding: 0;
+      animation: none !important;
+      opacity: 1;
+      transform: none;
     }
     .mobile-menu-contact a::after { display: none; }
 
@@ -1151,19 +1178,27 @@
       z-index: 2;
     }
 
-    /* Tile label — small text in bottom-left, like a photo caption */
+    /* Tile label — small "photo caption" pill in the top-left corner.
+       Top placement avoids the .gallery-badge that sits in the bottom-left.
+       Dark backdrop + gold border keep the text readable on any scene. */
     .gallery-tile-label {
       position: absolute;
-      bottom: 16px;
+      top: 16px;
       left: 16px;
       transform: skewX(10deg); /* counter the parent skew */
-      transform-origin: left bottom;
+      transform-origin: left top;
       font-family: 'Montserrat', sans-serif;
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.2em;
       color: var(--gold);
       text-transform: uppercase;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(212, 165, 68, 0.45);
+      border-radius: 3px;
+      padding: 6px 10px;
       z-index: 3;
       opacity: 0;
       transition: opacity 300ms ease 100ms;
@@ -1824,7 +1859,10 @@
       }
       .gallery-tile:hover { flex: 1 1 calc(33% - 4px); } /* no flex grow on touch */
       .gallery-tile:hover .gallery-tile-inner { transform: scale(1.05); }
-      .gallery-tile-label { transform: none; opacity: 1; bottom: 10px; left: 10px; font-size: 9px; }
+      /* Labels are hidden on mobile — tiles are too narrow for them to help,
+         and the SVG scenes themselves communicate the topic. Labels remain
+         on desktop where they appear on hover as a "photo caption". */
+      .gallery-tile-label { display: none; }
 
       /* Badge becomes a normal block under the tiles */
       .gallery-badge {
@@ -2010,16 +2048,20 @@
 
   <!-- ========================= MOBILE MENU OVERLAY ========================= -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Hauptmenü" aria-modal="true">
-    <a href="#start">Start</a>
-    <a href="#leistungen">Leistungen</a>
-    <a href="#ueber-uns">Über uns</a>
-    <a href="#projekte">Projekte</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="#kontakt" class="btn btn-primary mobile-cta">Angebot anfragen</a>
+    <nav class="mobile-menu-nav">
+      <a href="#start">Start</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
 
-    <div class="mobile-menu-contact">
-      <span>Direkt anrufen</span>
-      <a href="tel:+4917636321349">+49 176 36321349</a>
+    <div class="mobile-menu-footer">
+      <a href="#kontakt" class="btn btn-primary mobile-cta">Angebot anfragen</a>
+      <div class="mobile-menu-contact">
+        <span>Direkt anrufen</span>
+        <a href="tel:+4917636321349">+49 176 36321349</a>
+      </div>
     </div>
   </div>
 

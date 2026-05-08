@@ -26,10 +26,50 @@
   <!-- Favicon — inline SVG using the BauService brand mark -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 458 430'><rect width='458' height='430' fill='%230a0a0a'/><g transform='translate(0,430) scale(0.1,-0.1)' fill='%23d4a544'><path d='M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z'/><path d='M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z'/></g></svg>" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <!-- Fonts: self-hosted (no third-party requests, DSGVO-friendly) -->
+  <style>
+    /* Montserrat (400, 500, 600, 700, 800) */
+    @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap;
+      src: url('fonts/montserrat-latin-400-normal.woff2') format('woff2'),
+           url('fonts/montserrat-latin-400-normal.woff')  format('woff'); }
+    @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-display: swap;
+      src: url('fonts/montserrat-latin-500-normal.woff2') format('woff2'),
+           url('fonts/montserrat-latin-500-normal.woff')  format('woff'); }
+    @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 600; font-display: swap;
+      src: url('fonts/montserrat-latin-600-normal.woff2') format('woff2'),
+           url('fonts/montserrat-latin-600-normal.woff')  format('woff'); }
+    @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700; font-display: swap;
+      src: url('fonts/montserrat-latin-700-normal.woff2') format('woff2'),
+           url('fonts/montserrat-latin-700-normal.woff')  format('woff'); }
+    @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 800; font-display: swap;
+      src: url('fonts/montserrat-latin-800-normal.woff2') format('woff2'),
+           url('fonts/montserrat-latin-800-normal.woff')  format('woff'); }
+
+    /* Manrope (300, 400, 500, 600, 700) */
+    @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 300; font-display: swap;
+      src: url('fonts/manrope-latin-300-normal.woff2') format('woff2'),
+           url('fonts/manrope-latin-300-normal.woff')  format('woff'); }
+    @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400; font-display: swap;
+      src: url('fonts/manrope-latin-400-normal.woff2') format('woff2'),
+           url('fonts/manrope-latin-400-normal.woff')  format('woff'); }
+    @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 500; font-display: swap;
+      src: url('fonts/manrope-latin-500-normal.woff2') format('woff2'),
+           url('fonts/manrope-latin-500-normal.woff')  format('woff'); }
+    @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 600; font-display: swap;
+      src: url('fonts/manrope-latin-600-normal.woff2') format('woff2'),
+           url('fonts/manrope-latin-600-normal.woff')  format('woff'); }
+    @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 700; font-display: swap;
+      src: url('fonts/manrope-latin-700-normal.woff2') format('woff2'),
+           url('fonts/manrope-latin-700-normal.woff')  format('woff'); }
+
+    /* Cormorant Garamond italic (400, 500) */
+    @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; font-display: swap;
+      src: url('fonts/cormorant-garamond-latin-400-italic.woff2') format('woff2'),
+           url('fonts/cormorant-garamond-latin-400-italic.woff')  format('woff'); }
+    @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap;
+      src: url('fonts/cormorant-garamond-latin-500-italic.woff2') format('woff2'),
+           url('fonts/cormorant-garamond-latin-500-italic.woff')  format('woff'); }
+  </style>
 
   <style>
     /* =========================================================
@@ -1980,6 +2020,125 @@
         transform: none; /* no lift on touch */
       }
     }
+
+    /* =========================================================
+       IMPRESSUM MODAL
+       ========================================================= */
+    .legal-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 20px;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      animation: legalFadeIn 200ms ease-out;
+    }
+    .legal-modal.open { display: flex; }
+
+    @keyframes legalFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .legal-modal-dialog {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 48px 40px 40px;
+      margin: auto 0;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      animation: legalSlideUp 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes legalSlideUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .legal-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all var(--transition);
+    }
+    .legal-modal-close:hover {
+      color: var(--gold);
+      background: var(--gold-soft);
+      transform: rotate(90deg);
+    }
+    .legal-modal-close svg { width: 18px; height: 18px; }
+
+    .legal-modal h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .legal-modal .legal-sublabel {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .legal-modal h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 24px 0 8px;
+    }
+    .legal-modal h3:first-of-type { margin-top: 8px; }
+
+    .legal-modal p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .legal-modal p strong { color: var(--text); font-weight: 600; }
+    .legal-modal a {
+      color: var(--gold);
+      transition: color var(--transition);
+    }
+    .legal-modal a:hover { color: var(--gold-bright); }
+
+    .legal-modal hr {
+      border: 0;
+      height: 1px;
+      background: var(--border);
+      margin: 28px 0 0;
+    }
+
+    body.legal-open { overflow: hidden; }
+
+    @media (max-width: 600px) {
+      .legal-modal { padding: 20px 12px; }
+      .legal-modal-dialog { padding: 44px 24px 28px; }
+      .legal-modal h2 { font-size: 22px; }
+      .legal-modal p { font-size: 14px; }
+    }
   </style>
 </head>
 <body>
@@ -2755,12 +2914,60 @@
       <div class="footer-bottom">
         <div class="footer-copy">© <span id="current-year">2026</span> BauService Dionisie Bat <span class="footer-divider">—</span> <span class="footer-rights">Alle Rechte vorbehalten.</span></div>
         <div class="footer-legal">
-          <a href="#">Impressum</a>
+          <a href="#impressum" class="impressum-trigger">Impressum</a>
           <a href="#">Datenschutz</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ========================= IMPRESSUM MODAL ========================= -->
+  <div class="legal-modal" id="impressum-modal" role="dialog" aria-modal="true" aria-labelledby="impressum-title" aria-hidden="true">
+    <div class="legal-modal-dialog">
+      <button class="legal-modal-close" type="button" aria-label="Schließen" data-legal-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="legal-sublabel">Rechtliches</div>
+      <h2 id="impressum-title">Impressum</h2>
+
+      <h3>Angaben gemäß § 5 TMG</h3>
+      <p>
+        <strong>BauService Dionisie Bat</strong><br>
+        Inhaber: Dionisie Bat<br>
+        Burgstraße 16A<br>
+        37269 Eschwege<br>
+        Deutschland
+      </p>
+
+      <h3>Kontakt</h3>
+      <p>
+        Telefon: <a href="tel:+4917636321349">0176 36321349</a><br>
+        E-Mail: <a href="mailto:baudionis@gmail.com">baudionis@gmail.com</a>
+      </p>
+
+      <h3>Umsatzsteuer-ID</h3>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+        <strong>DE407798830</strong>
+      </p>
+
+      <h3>Steuernummer</h3>
+      <p><strong>108/036/0871</strong></p>
+
+      <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+      <p>
+        Dionisie Bat<br>
+        Burgstraße 16A<br>
+        37269 Eschwege
+      </p>
+
+      <hr>
+    </div>
+  </div>
 
   <script>
     // Mark that JS is enabled — activates progressive enhancements
@@ -2895,6 +3102,48 @@
     // ===== Footer: dynamic current year =====
     const yearEl = document.getElementById('current-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // ===== Impressum modal =====
+    const legalModal = document.getElementById('impressum-modal');
+    const legalTriggers = document.querySelectorAll('.impressum-trigger');
+
+    const openLegal = (e) => {
+      if (e) e.preventDefault();
+      legalModal.classList.add('open');
+      legalModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('legal-open');
+      // Focus the close button so keyboard users land somewhere meaningful
+      const closeBtn = legalModal.querySelector('[data-legal-close]');
+      if (closeBtn) closeBtn.focus();
+    };
+
+    const closeLegal = () => {
+      legalModal.classList.remove('open');
+      legalModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('legal-open');
+    };
+
+    legalTriggers.forEach(t => t.addEventListener('click', openLegal));
+
+    // Close on X button click
+    legalModal.querySelectorAll('[data-legal-close]').forEach(btn => {
+      btn.addEventListener('click', closeLegal);
+    });
+
+    // Close when clicking on the dim backdrop (but not the dialog itself)
+    legalModal.addEventListener('click', (e) => {
+      if (e.target === legalModal) closeLegal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && legalModal.classList.contains('open')) closeLegal();
+    });
+
+    // Open Impressum directly if URL has #impressum (e.g. user shares the link)
+    if (window.location.hash === '#impressum') {
+      openLegal();
+    }
   </script>
 </body>
 </html>

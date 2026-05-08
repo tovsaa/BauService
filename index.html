@@ -2022,6 +2022,164 @@
     }
 
     /* =========================================================
+       REVIEWS / BEWERTUNGEN
+       Verified third-party reviews from MyHammer.
+       Section sits between "Projekte" and "Kontakt" — classic
+       social-proof placement right before the call-to-action.
+       Header pattern matches Services/Projekte sections exactly:
+       section-label → h2 → gold-divider, left-aligned.
+       ========================================================= */
+    .reviews {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    /* Reuse the projects-header rhythm (margin-bottom: 56px) but
+       allow room for a small inline "MyHammer" tag after the divider. */
+    .reviews-header {
+      margin-bottom: 56px;
+    }
+    .reviews-header-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .reviews-header-meta .stars {
+      display: inline-flex;
+      gap: 2px;
+      color: var(--gold);
+    }
+    .reviews-header-meta .stars svg { width: 14px; height: 14px; }
+    .reviews-header-meta .meta-source { color: var(--text-muted); }
+    .reviews-header-meta .meta-source strong {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* Cards grid */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 768px) {
+      .reviews-grid { grid-template-columns: 1fr; gap: 12px; }
+      .reviews { padding: 70px 0; }
+      .reviews-header { margin-bottom: 40px; }
+    }
+
+    .review-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px 24px;
+      position: relative;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    /* Same gold accent line as service-card on hover */
+    .review-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .review-card:hover {
+      background: var(--card-hover);
+      border-color: rgba(212, 165, 68, 0.35);
+    }
+    .review-card:hover::before { transform: scaleX(1); }
+
+    /* Decorative quote mark in the corner */
+    .review-card::after {
+      content: '\201C';
+      position: absolute;
+      top: 4px;
+      right: 22px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 78px;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.14;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+    .review-card:hover::after { opacity: 0.22; }
+
+    .review-stars {
+      display: inline-flex;
+      gap: 3px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .review-stars svg { width: 16px; height: 16px; }
+
+    .review-text {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .review-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+    .review-meta-text { flex: 1; min-width: 0; }
+    .review-author {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+    .review-job {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 2px;
+      letter-spacing: 0.02em;
+    }
+    .review-date {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    /* Bottom CTA — matches the .projects-cta pattern (centered, ghost button) */
+    .reviews-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+    .reviews-cta-text {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    /* =========================================================
        IMPRESSUM MODAL
        ========================================================= */
     .legal-modal {
@@ -2185,6 +2343,7 @@
         <a href="#leistungen">Leistungen</a>
         <a href="#ueber-uns">Über uns</a>
         <a href="#projekte">Projekte</a>
+        <a href="#bewertungen">Bewertungen</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
@@ -2212,6 +2371,7 @@
       <a href="#leistungen">Leistungen</a>
       <a href="#ueber-uns">Über uns</a>
       <a href="#projekte">Projekte</a>
+      <a href="#bewertungen">Bewertungen</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
 
@@ -2457,7 +2617,19 @@
             <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
-            Kostenlose Beratung &amp; Aufmaß
+            Kostenlose Beratung
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Kostenloses Aufmaß
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            RAL Montage
           </li>
           <li>
             <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -2469,19 +2641,7 @@
             <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="20 6 9 17 4 12"/>
             </svg>
-            Saubere &amp; professionelle Arbeit
-          </li>
-          <li>
-            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            Zuverlässig &amp; termingerecht
-          </li>
-          <li>
-            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            Erfahrenes Fachteam vor Ort
+            Saubere &amp; termingerechte Arbeit
           </li>
         </ul>
       </div>
@@ -2709,6 +2869,112 @@
     </div>
   </section>
 
+  <!-- ========================= REVIEWS / BEWERTUNGEN ========================= -->
+  <section id="bewertungen" class="reviews">
+    <div class="container">
+      <div class="reviews-header">
+        <div class="section-label">Bewertungen</div>
+        <h2 class="section-title">Stimmen unserer Kunden</h2>
+        <div class="gold-divider"></div>
+        <div class="reviews-header-meta">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          <span class="meta-source">Geprüfte Bewertungen auf <strong>MyHammer</strong></span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">Die Fa. BauService hat ihren Auftrag sehr schnell vom Angebot bis zur Ausführung erledigt. Eine klare Weiterempfehlung. Es wurde sehr sauber und genau gearbeitet. In wenigen Stunden wurden 3 Fenster ausgebaut und durch neue ersetzt.</p>
+          <div class="review-meta">
+            <div class="review-meta-text">
+              <div class="review-author">Kunde aus Eschwege</div>
+              <div class="review-job">Einbau und Austausch von Fenstern</div>
+            </div>
+            <div class="review-date">18.09.2025</div>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">Türen ausgetauscht und durch neue mit Zarge ersetzt. Schnelle und unkomplizierte Abwicklung. Sehr gute Arbeit. Sehr zufrieden. Gerne wieder!</p>
+          <div class="review-meta">
+            <div class="review-meta-text">
+              <div class="review-author">Kunde aus Werra-Meißner</div>
+              <div class="review-job">Einbau und Austausch von Türen</div>
+            </div>
+            <div class="review-date">30.08.2025</div>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">Sehr sympathisch und der Zaun war innerhalb weniger Tage vollständig montiert. Wirklich sehr schön geworden. Herzlichen Dank.</p>
+          <div class="review-meta">
+            <div class="review-meta-text">
+              <div class="review-author">Kunde aus der Region</div>
+              <div class="review-job">Aufbau und Austausch von Zäunen</div>
+            </div>
+            <div class="review-date">23.03.2026</div>
+          </div>
+        </article>
+
+        <!-- Review 4 -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">Sehr zuverlässig und professionell.</p>
+          <div class="review-meta">
+            <div class="review-meta-text">
+              <div class="review-author">Kunde aus der Region</div>
+              <div class="review-job">Kleine Handwerks- und Montageleistungen</div>
+            </div>
+            <div class="review-date">08.10.2025</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="reviews-cta">
+        <p class="reviews-cta-text">Alle verifizierten Bewertungen finden Sie auf unserem MyHammer-Profil.</p>
+        <a href="https://www.my-hammer.de/auftragnehmer/bat-dionisie" target="_blank" rel="noopener" class="btn btn-ghost">
+          Profil auf MyHammer ansehen
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ========================= CONTACT ========================= -->
   <section id="kontakt" class="contact">
     <div class="container">
@@ -2914,8 +3180,8 @@
       <div class="footer-bottom">
         <div class="footer-copy">© <span id="current-year">2026</span> BauService Dionisie Bat <span class="footer-divider">—</span> <span class="footer-rights">Alle Rechte vorbehalten.</span></div>
         <div class="footer-legal">
-          <a href="#impressum" class="impressum-trigger">Impressum</a>
-          <a href="#">Datenschutz</a>
+          <a href="#impressum" data-legal="impressum">Impressum</a>
+          <a href="#datenschutz" data-legal="datenschutz">Datenschutz</a>
         </div>
       </div>
     </div>
@@ -2963,6 +3229,115 @@
         Dionisie Bat<br>
         Burgstraße 16A<br>
         37269 Eschwege
+      </p>
+
+      <hr>
+    </div>
+  </div>
+
+  <!-- ========================= DATENSCHUTZ MODAL ========================= -->
+  <div class="legal-modal" id="datenschutz-modal" role="dialog" aria-modal="true" aria-labelledby="datenschutz-title" aria-hidden="true">
+    <div class="legal-modal-dialog">
+      <button class="legal-modal-close" type="button" aria-label="Schließen" data-legal-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="legal-sublabel">Rechtliches</div>
+      <h2 id="datenschutz-title">Datenschutzerklärung</h2>
+
+      <h3>1. Verantwortlicher</h3>
+      <p>
+        Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br><br>
+        <strong>BauService Dionisie Bat</strong><br>
+        Inhaber: Dionisie Bat<br>
+        Burgstraße 16A<br>
+        37269 Eschwege<br>
+        Deutschland<br><br>
+        Telefon: <a href="tel:+4917636321349">0176 36321349</a><br>
+        E-Mail: <a href="mailto:baudionis@gmail.com">baudionis@gmail.com</a>
+      </p>
+
+      <h3>2. Allgemeine Hinweise</h3>
+      <p>
+        Diese Website (<strong>bauservice-esw.de</strong>) ist eine reine Informationsseite. Es werden keine Kontaktformulare, Newsletter, Analyse- oder Tracking-Dienste eingesetzt. Eine personenbezogene Datenerhebung findet nur in dem Umfang statt, der für den technischen Betrieb der Website erforderlich ist (siehe Abschnitt „Hosting").
+      </p>
+
+      <h3>3. Hosting (GitHub Pages)</h3>
+      <p>
+        Diese Website wird über <strong>GitHub Pages</strong>, einen Dienst der GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA, gehostet. Beim Aufruf der Website werden technisch notwendige Daten an GitHub übertragen (insbesondere IP-Adresse, Datum und Uhrzeit, abgerufene Datei, übertragene Datenmenge, User-Agent und Referrer-URL). Diese Daten werden in Server-Logfiles verarbeitet, um den sicheren und stabilen Betrieb der Website zu gewährleisten.
+      </p>
+      <p>
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer technisch fehlerfreien Darstellung und Sicherheit der Website).
+      </p>
+      <p>
+        Da GitHub Inc. ein US-amerikanisches Unternehmen ist, erfolgt eine Datenübermittlung in die USA (Drittland). GitHub ist unter dem EU-U.S. Data Privacy Framework (DPF) zertifiziert; ergänzend gelten Standardvertragsklauseln nach Art. 46 Abs. 2 DSGVO. Weitere Informationen zur Datenverarbeitung durch GitHub: <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">docs.github.com/site-policy/privacy-policies/github-privacy-statement</a>.
+      </p>
+
+      <h3>4. SSL-/TLS-Verschlüsselung</h3>
+      <p>
+        Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://" in der Adresszeile Ihres Browsers.
+      </p>
+
+      <h3>5. Schriftarten</h3>
+      <p>
+        Diese Website nutzt lokal eingebundene Schriftarten (self-hosted). Eine Verbindung zu Servern Dritter (z. B. Google Fonts) findet beim Aufruf der Seite <strong>nicht</strong> statt.
+      </p>
+
+      <h3>6. Kontaktaufnahme</h3>
+      <p>
+        Wenn Sie uns per Telefon oder E-Mail kontaktieren, werden Ihre Angaben (Name, Kontaktdaten, Anliegen) ausschließlich zur Bearbeitung Ihrer Anfrage verarbeitet. Die Daten werden nicht an Dritte weitergegeben.
+      </p>
+      <p>
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen Anfragen bzw. Art. 6 Abs. 1 lit. f DSGVO bei sonstigen Anliegen. Die Daten werden gelöscht, sobald sie für die Zweckerreichung nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungsfristen entgegenstehen.
+      </p>
+      <p>
+        Hinweis: Eingehende E-Mails werden über das Postfach <strong>baudionis@gmail.com</strong> empfangen, das von Google LLC (USA) bereitgestellt wird. Auf die Nutzung von Gmail wird hingewiesen.
+      </p>
+
+      <h3>7. Externe Links und Online-Präsenzen</h3>
+      <p>
+        Diese Website enthält Links zu externen Diensten (WhatsApp, Facebook, TikTok, Google Maps). Diese werden <strong>erst beim aktiven Anklicken</strong> aufgerufen — vorher findet keine Datenübertragung an die jeweiligen Anbieter statt. Beim Klick auf einen solchen Link verlassen Sie diese Website; es gelten dann die Datenschutzbestimmungen des jeweiligen Anbieters:
+      </p>
+      <p>
+        WhatsApp (Meta Platforms Ireland Ltd.): <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">whatsapp.com/legal/privacy-policy-eea</a><br>
+        Facebook (Meta Platforms Ireland Ltd.): <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">facebook.com/privacy/policy</a><br>
+        TikTok (TikTok Technology Ltd.): <a href="https://www.tiktok.com/legal/privacy-policy-eea" target="_blank" rel="noopener">tiktok.com/legal/privacy-policy-eea</a><br>
+        Google Maps (Google Ireland Ltd.): <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+      </p>
+
+      <h3>8. Ihre Rechte als betroffene Person</h3>
+      <p>
+        Sie haben jederzeit das Recht auf:
+      </p>
+      <p>
+        • <strong>Auskunft</strong> über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO)<br>
+        • <strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)<br>
+        • <strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)<br>
+        • <strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO)<br>
+        • <strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)<br>
+        • <strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO)<br>
+        • <strong>Widerruf</strong> erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)
+      </p>
+      <p>
+        Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an die unter Abschnitt 1 genannten Kontaktdaten.
+      </p>
+
+      <h3>9. Beschwerderecht bei der Aufsichtsbehörde</h3>
+      <p>
+        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Zuständig ist:
+      </p>
+      <p>
+        <strong>Der Hessische Beauftragte für Datenschutz und Informationsfreiheit</strong><br>
+        Postfach 3163, 65021 Wiesbaden<br>
+        <a href="https://datenschutz.hessen.de" target="_blank" rel="noopener">datenschutz.hessen.de</a>
+      </p>
+
+      <h3>10. Aktualität und Änderung dieser Datenschutzerklärung</h3>
+      <p>
+        Diese Datenschutzerklärung ist aktuell gültig. Durch die Weiterentwicklung der Website oder geänderte gesetzliche bzw. behördliche Vorgaben kann eine Anpassung erforderlich werden. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
       </p>
 
       <hr>
@@ -3103,46 +3478,68 @@
     const yearEl = document.getElementById('current-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // ===== Impressum modal =====
-    const legalModal = document.getElementById('impressum-modal');
-    const legalTriggers = document.querySelectorAll('.impressum-trigger');
+    // ===== Legal modals (Impressum / Datenschutz) =====
+    const legalModals = {
+      impressum:   document.getElementById('impressum-modal'),
+      datenschutz: document.getElementById('datenschutz-modal')
+    };
 
-    const openLegal = (e) => {
-      if (e) e.preventDefault();
-      legalModal.classList.add('open');
-      legalModal.setAttribute('aria-hidden', 'false');
+    const openLegal = (key) => {
+      const modal = legalModals[key];
+      if (!modal) return;
+      // Close any other open modal first
+      Object.values(legalModals).forEach(m => {
+        m.classList.remove('open');
+        m.setAttribute('aria-hidden', 'true');
+      });
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      // Reset scroll inside the dialog when reopening
+      modal.scrollTop = 0;
+      const dialog = modal.querySelector('.legal-modal-dialog');
+      if (dialog) dialog.scrollTop = 0;
       document.body.classList.add('legal-open');
-      // Focus the close button so keyboard users land somewhere meaningful
-      const closeBtn = legalModal.querySelector('[data-legal-close]');
+      const closeBtn = modal.querySelector('[data-legal-close]');
       if (closeBtn) closeBtn.focus();
     };
 
     const closeLegal = () => {
-      legalModal.classList.remove('open');
-      legalModal.setAttribute('aria-hidden', 'true');
+      Object.values(legalModals).forEach(m => {
+        m.classList.remove('open');
+        m.setAttribute('aria-hidden', 'true');
+      });
       document.body.classList.remove('legal-open');
     };
 
-    legalTriggers.forEach(t => t.addEventListener('click', openLegal));
+    // Trigger links: <a data-legal="impressum"> / <a data-legal="datenschutz">
+    document.querySelectorAll('[data-legal]').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLegal(trigger.dataset.legal);
+      });
+    });
 
-    // Close on X button click
-    legalModal.querySelectorAll('[data-legal-close]').forEach(btn => {
+    // Close buttons inside any legal modal
+    document.querySelectorAll('.legal-modal [data-legal-close]').forEach(btn => {
       btn.addEventListener('click', closeLegal);
     });
 
-    // Close when clicking on the dim backdrop (but not the dialog itself)
-    legalModal.addEventListener('click', (e) => {
-      if (e.target === legalModal) closeLegal();
+    // Click on backdrop closes the modal
+    Object.values(legalModals).forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeLegal();
+      });
     });
 
-    // Close on Escape key
+    // Escape key closes any open legal modal
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && legalModal.classList.contains('open')) closeLegal();
+      if (e.key === 'Escape' && document.body.classList.contains('legal-open')) closeLegal();
     });
 
-    // Open Impressum directly if URL has #impressum (e.g. user shares the link)
-    if (window.location.hash === '#impressum') {
-      openLegal();
+    // Deep-link support: bauservice-esw.de/#impressum or /#datenschutz
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash === 'impressum' || initialHash === 'datenschutz') {
+      openLegal(initialHash);
     }
   </script>
 </body>

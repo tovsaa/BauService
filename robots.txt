@@ -1,0 +1,8 @@
+# robots.txt for bauservice-esw.de
+# Allow all bots to crawl everything
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bauservice-esw.de/sitemap.xml

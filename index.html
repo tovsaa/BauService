@@ -3,25 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BauService Dionisie Bat – Qualität & Service aus einer Hand</title>
-  <meta name="description" content="BauService Dionisie Bat – Ihr zuverlässiger Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege & Umgebung." />
-  <meta name="keywords" content="BauService, Eschwege, Hausmeisterservice, Bodenverlegung, Fenster, Türen, Renovierung, Werra-Meißner-Kreis, Nordhessen" />
+
+  <!-- =========================================================
+       SEO META
+       Title pattern matches what works for German local handwerker:
+       Brand · main service line · location. Max ~60 chars stays under
+       the SERP truncation point. Description fills the value prop and
+       the radius of operation.
+       ========================================================= -->
+  <title>BauService Dionisie Bat – Fenster, Türen &amp; Montage in Eschwege</title>
+  <meta name="description" content="Mobiler Handwerksbetrieb aus Eschwege im Werra-Meißner-Kreis. Fenster- &amp; Türenmontage, Bodenverlegung, Trockenbau, Rollläden und Hausmeisterservice — im Umkreis von 50 km. Kostenlose Beratung &amp; Aufmaß. RAL Montage." />
+  <meta name="keywords" content="Handwerker Eschwege, Fenstermontage Eschwege, Türenmontage, Bodenverlegung, Vinyl, Laminat, Trockenbau, Rollläden, Hausmeisterservice, Werra-Meißner-Kreis, Bad Sooden-Allendorf, Witzenhausen, Sontra, Wanfried, Nordhessen, RAL Montage, BauService Dionisie Bat" />
   <meta name="author" content="Dionisie Bat" />
+  <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Geo tags help search engines and some directories anchor the site
+       to the physical location (Eschwege, Hessen, DE). -->
+  <meta name="geo.region" content="DE-HE" />
+  <meta name="geo.placename" content="Eschwege" />
+  <meta name="geo.position" content="51.1832;10.0526" />
+  <meta name="ICBM" content="51.1832, 10.0526" />
+
+  <!-- Canonical: tells Google which URL is the authoritative one,
+       even if the site is reachable via www / non-www / trailing slash. -->
+  <link rel="canonical" href="https://bauservice-esw.de/" />
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn previews) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="BauService Dionisie Bat – Qualität & Service aus einer Hand" />
-  <meta property="og:description" content="Ihr zuverlässiger Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege & Umgebung." />
+  <meta property="og:title" content="BauService Dionisie Bat – Fenster, Türen &amp; Montage in Eschwege" />
+  <meta property="og:description" content="Mobiler Handwerksbetrieb aus Eschwege im Werra-Meißner-Kreis. Fenster, Türen, Boden, Trockenbau &amp; Hausmeisterservice — Umkreis 50 km. Kostenlose Beratung." />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:site_name" content="BauService Dionisie Bat" />
-  <!-- TODO: when domain is set, fill og:url and og:image with absolute URLs.
-       og:image should be a 1200x630 PNG with the brand mark for nice previews. -->
+  <meta property="og:url" content="https://bauservice-esw.de/" />
+  <!-- TODO: add og:image (1200x630 PNG with brand) when ready -->
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BauService Dionisie Bat – Qualität & Service aus einer Hand" />
-  <meta name="twitter:description" content="Ihr zuverlässiger Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege & Umgebung." />
+  <meta name="twitter:title" content="BauService Dionisie Bat – Fenster, Türen &amp; Montage in Eschwege" />
+  <meta name="twitter:description" content="Mobiler Handwerksbetrieb aus Eschwege im Werra-Meißner-Kreis. Fenster, Türen, Boden, Trockenbau &amp; Hausmeisterservice — Umkreis 50 km." />
+
+  <!-- =========================================================
+       STRUCTURED DATA (Schema.org / JSON-LD)
+       Helps Google understand the business identity and connect
+       this website to the Google Business Profile.
+       NOTE: aggregateRating intentionally omitted — Google's policy
+       disallows self-served review markup. Real ratings are pulled
+       from the Business Profile by Google itself.
+       ========================================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://bauservice-esw.de/#business",
+    "name": "BauService Dionisie Bat",
+    "alternateName": "BauService Eschwege",
+    "description": "Mobiler Handwerksbetrieb aus Eschwege im Werra-Meißner-Kreis. Spezialisiert auf Fenster- und Türenmontage, Bodenverlegung (Vinyl, Laminat, Parkett), Trockenbau, Rollläden, Hausmeisterservice und kleinere Renovierungsarbeiten. Tätig im Umkreis von 50 km um Eschwege.",
+    "url": "https://bauservice-esw.de/",
+    "telephone": "+49-176-36321349",
+    "email": "baudionis@gmail.com",
+    "image": "https://bauservice-esw.de/",
+    "priceRange": "€€",
+    "founder": {
+      "@type": "Person",
+      "name": "Dionisie Bat"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Burgstraße 16A",
+      "addressLocality": "Eschwege",
+      "postalCode": "37269",
+      "addressRegion": "Hessen",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.1832,
+      "longitude": 10.0526
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Eschwege" },
+      { "@type": "City", "name": "Bad Sooden-Allendorf" },
+      { "@type": "City", "name": "Witzenhausen" },
+      { "@type": "City", "name": "Sontra" },
+      { "@type": "City", "name": "Wanfried" },
+      { "@type": "City", "name": "Hessisch Lichtenau" },
+      { "@type": "City", "name": "Wehretal" },
+      { "@type": "AdministrativeArea", "name": "Werra-Meißner-Kreis" },
+      { "@type": "AdministrativeArea", "name": "Nordhessen" }
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.1832,
+        "longitude": 10.0526
+      },
+      "geoRadius": "50000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Handwerksleistungen",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fenster- und Türenmontage",
+            "description": "Einbau, Austausch und Demontage von Fenstern und Türen — RAL-konforme Montage."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bodenverlegung",
+            "description": "Verlegen von Vinyl, Laminat und Parkett — fachgerecht und sauber."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Trockenbau",
+            "description": "Wände, Decken und Abtrennungen — von der Planung bis zur Ausführung."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Rollläden",
+            "description": "Einbau elektrischer und manueller Rollläden."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Hausmeisterservice",
+            "description": "Wartung und kleinere Reparaturen für Mehrfamilienhäuser und Wohnobjekte."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Renovierungsarbeiten",
+            "description": "Kleinere Renovierungs- und Sanierungsarbeiten nach Absprache."
+          }
+        }
+      ]
+    },
+    "sameAs": [
+      "https://www.my-hammer.de/auftragnehmer/bat-dionisie",
+      "https://maps.app.goo.gl/wNxwmtXpaULvotZN6"
+    ]
+  }
+  </script>
+
+  <!-- WebSite schema — gives Google the canonical site identity -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://bauservice-esw.de/#website",
+    "url": "https://bauservice-esw.de/",
+    "name": "BauService Dionisie Bat",
+    "inLanguage": "de-DE",
+    "publisher": { "@id": "https://bauservice-esw.de/#business" }
+  }
+  </script>
 
   <!-- Favicon — inline SVG using the BauService brand mark -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 458 430'><rect width='458' height='430' fill='%230a0a0a'/><g transform='translate(0,430) scale(0.1,-0.1)' fill='%23d4a544'><path d='M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z'/><path d='M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z'/></g></svg>" />
@@ -2034,34 +2186,9 @@
       position: relative;
     }
 
-    /* Reuse the projects-header rhythm (margin-bottom: 56px) but
-       allow room for a small inline "MyHammer" tag after the divider. */
+    /* Reuse the projects-header rhythm (margin-bottom: 56px). */
     .reviews-header {
       margin-bottom: 56px;
-    }
-    .reviews-header-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 22px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      font-weight: 600;
-    }
-    .reviews-header-meta .stars {
-      display: inline-flex;
-      gap: 2px;
-      color: var(--gold);
-    }
-    .reviews-header-meta .stars svg { width: 14px; height: 14px; }
-    .reviews-header-meta .meta-source { color: var(--text-muted); }
-    .reviews-header-meta .meta-source strong {
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: 0.04em;
     }
 
     /* Cards grid */
@@ -2177,6 +2304,16 @@
       color: var(--text-muted);
       font-size: 15px;
       margin-bottom: 20px;
+    }
+    .reviews-cta-buttons {
+      display: inline-flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media (max-width: 480px) {
+      .reviews-cta-buttons { flex-direction: column; width: 100%; }
+      .reviews-cta-buttons .btn { width: 100%; }
     }
 
     /* =========================================================
@@ -2388,10 +2525,10 @@
   <section id="start" class="hero">
     <div class="container hero-grid">
       <div class="hero-text">
-        <span class="hero-meta">Eschwege &amp; Umgebung · DE</span>
+        <span class="hero-meta">Eschwege · Werra-Meißner-Kreis · DE</span>
         <h1>Qualität <span class="amp">&amp;</span> Service</h1>
         <div class="subtitle">aus einer Hand</div>
-        <p>Ihr zuverlässiger Partner für Fenster, Türen, Bodenbeläge und Hausmeisterservice in Eschwege &amp; Umgebung.</p>
+        <p>Ihr zuverlässiger Handwerksbetrieb für Fenster- &amp; Türenmontage, Bodenverlegung, Trockenbau und Hausmeisterservice in Eschwege und im Umkreis von 50 km.</p>
         <div class="hero-buttons">
           <a href="#kontakt" class="btn btn-primary">
             Angebot anfragen
@@ -2862,16 +2999,6 @@
         <div class="section-label">Bewertungen</div>
         <h2 class="section-title">Stimmen unserer Kunden</h2>
         <div class="gold-divider"></div>
-        <div class="reviews-header-meta">
-          <span class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </span>
-          <span class="meta-source">Geprüfte Bewertungen auf <strong>MyHammer</strong></span>
-        </div>
       </div>
 
       <div class="reviews-grid">
@@ -2953,10 +3080,15 @@
       </div>
 
       <div class="reviews-cta">
-        <p class="reviews-cta-text">Alle verifizierten Bewertungen finden Sie auf unserem MyHammer-Profil.</p>
-        <a href="https://www.my-hammer.de/auftragnehmer/bat-dionisie" target="_blank" rel="noopener" class="btn btn-ghost">
-          Profil auf MyHammer ansehen
-        </a>
+        <p class="reviews-cta-text">Alle Bewertungen finden Sie auf unseren Profilen.</p>
+        <div class="reviews-cta-buttons">
+          <a href="https://maps.app.goo.gl/wNxwmtXpaULvotZN6" target="_blank" rel="noopener" class="btn btn-ghost">
+            Profil auf Google
+          </a>
+          <a href="https://www.my-hammer.de/auftragnehmer/bat-dionisie" target="_blank" rel="noopener" class="btn btn-ghost">
+            Profil auf MyHammer
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -2993,7 +3125,7 @@
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
               </span>
-              <a href="https://maps.app.goo.gl/TYTUQefiNP4CikUP8" target="_blank" rel="noopener">Eschwege &amp; Umgebung · auf Karte zeigen</a>
+              <a href="https://maps.app.goo.gl/TYTUQefiNP4CikUP8" target="_blank" rel="noopener">Eschwege, Bad Sooden-Allendorf, Witzenhausen, Sontra, Wanfried &amp; Umgebung · Werra-Meißner-Kreis</a>
             </li>
           </ul>
 
@@ -3285,13 +3417,14 @@
 
       <h3>7. Externe Links und Online-Präsenzen</h3>
       <p>
-        Diese Website enthält Links zu externen Diensten (WhatsApp, Facebook, TikTok, Google Maps). Diese werden <strong>erst beim aktiven Anklicken</strong> aufgerufen — vorher findet keine Datenübertragung an die jeweiligen Anbieter statt. Beim Klick auf einen solchen Link verlassen Sie diese Website; es gelten dann die Datenschutzbestimmungen des jeweiligen Anbieters:
+        Diese Website enthält Links zu externen Diensten (WhatsApp, Facebook, TikTok, Google Maps, MyHammer). Diese werden <strong>erst beim aktiven Anklicken</strong> aufgerufen — vorher findet keine Datenübertragung an die jeweiligen Anbieter statt. Beim Klick auf einen solchen Link verlassen Sie diese Website; es gelten dann die Datenschutzbestimmungen des jeweiligen Anbieters:
       </p>
       <p>
         WhatsApp (Meta Platforms Ireland Ltd.): <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">whatsapp.com/legal/privacy-policy-eea</a><br>
         Facebook (Meta Platforms Ireland Ltd.): <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">facebook.com/privacy/policy</a><br>
         TikTok (TikTok Technology Ltd.): <a href="https://www.tiktok.com/legal/privacy-policy-eea" target="_blank" rel="noopener">tiktok.com/legal/privacy-policy-eea</a><br>
-        Google Maps (Google Ireland Ltd.): <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+        Google Maps / Google Unternehmensprofil (Google Ireland Ltd.): <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a><br>
+        MyHammer (MyHammer AG): <a href="https://www.my-hammer.de/datenschutz" target="_blank" rel="noopener">my-hammer.de/datenschutz</a>
       </p>
 
       <h3>8. Ihre Rechte als betroffene Person</h3>

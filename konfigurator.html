@@ -994,7 +994,9 @@
     }
     .param-group:last-child { margin-bottom: 0; }
     .param-label {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-family: 'Montserrat', sans-serif;
       font-size: 11px;
       font-weight: 700;
@@ -1003,6 +1005,149 @@
       color: var(--text-muted);
       margin-bottom: 12px;
     }
+    .param-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .param-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Section dividers — group params into "Allgemein", "Grundparameter",
+       "Erweiterte Optionen". The third section is collapsible. */
+    .param-section {
+      margin-bottom: 28px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+    }
+    .param-section:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .param-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 20px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .param-section-title .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(212, 165, 68, 0.15);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    /* Accordion toggle for the "Erweiterte Optionen" section */
+    .param-section-toggle {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 14px 16px;
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .param-section-toggle:hover {
+      border-color: var(--gold);
+      background: rgba(212, 165, 68, 0.04);
+    }
+    .param-section-toggle .toggle-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .param-section-toggle .toggle-badge {
+      font-family: 'Manrope', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      color: var(--gold);
+      background: rgba(212, 165, 68, 0.12);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    .param-section-toggle .chevron {
+      width: 14px;
+      height: 14px;
+      transition: transform var(--transition);
+    }
+    .param-section-toggle.open .chevron {
+      transform: rotate(180deg);
+    }
+    .param-section-body {
+      margin-top: 24px;
+    }
+
+    /* Compact Dekor row — when innen === aussen, show one Farbe row and a
+       small link below it to expand into two separate rows. */
+    .dekor-split-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      background: transparent;
+      border: none;
+      padding: 4px 0;
+      color: var(--text-muted);
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+    .dekor-split-toggle:hover {
+      color: var(--gold-bright);
+    }
+    .dekor-split-toggle::before {
+      content: '+';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      line-height: 14px;
+      text-align: center;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+    .dekor-split-toggle.expanded::before { content: '×'; font-size: 14px; }
 
     /* Size inputs (two number fields side by side) */
     .size-row {
@@ -1050,6 +1195,29 @@
       margin: 0;
     }
     .size-input input[type="number"] { -moz-appearance: textfield; }
+
+    /* Free-text input for Bezeichnung (room label). Matches .size-input visuals
+       but full-width without the right-side unit overlay. */
+    .text-input {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      transition: border-color var(--transition);
+    }
+    .text-input:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .text-input::placeholder {
+      color: var(--text-dim);
+      font-weight: 400;
+    }
 
     /* Option pills (used for material, opening, color, etc.) */
     .opt-pills {
@@ -1627,6 +1795,34 @@
           dreh:      'Drehfenster',
           dreh_kipp: 'Dreh-Kipp-Fenster'
         },
+        anschlag: {
+          links:     'DIN links (Bänder links)',
+          rechts:    'DIN rechts (Bänder rechts)'
+        },
+        sprossen: {
+          keine:        'Keine Sprossen',
+          h1:           '1 Sprosse horizontal',
+          v1:           '1 Sprosse vertikal',
+          kreuz:        'Kreuzsprosse',
+          h2v1:         '2 horizontal + 1 vertikal'
+        },
+        oberlicht: {
+          keine:        'Ohne Oberlicht / Unterlicht',
+          oberlicht:    'Mit Oberlicht (Festverglasung oben)',
+          unterlicht:   'Mit Unterlicht (Festverglasung unten)'
+        },
+        ornament: {
+          keine:        'Klares Glas',
+          satiniert:    'Satiniertes Glas (mattiert)',
+          chinchilla:   'Chinchilla (strukturiert)',
+          silvit:       'Silvit (feines Muster)'
+        },
+        griff: {
+          standard:     'Standardgriff (weiß)',
+          silber:       'Silber',
+          altgold:      'Altgold',
+          braun:        'Braun'
+        },
         color: {
           weiss:     'Weiß',
           anthrazit: 'Anthrazit',
@@ -1648,6 +1844,10 @@
         schloss: {
           standard:    'Standardschloss',
           mehrfach:    'Mehrfachverriegelung'
+        },
+        anschlag: {
+          links:     'DIN links (Bänder links)',
+          rechts:    'DIN rechts (Bänder rechts)'
         },
         color: {
           weiss:     'Weiß',
@@ -1675,7 +1875,36 @@
           + 'Dreh-Kipp = seitlich + oben kippbar zum Lüften ohne Zugluft.',
         fluegel:
           'Mehrere Flügel sind übliche Bauart bei Fenstern ab 140 cm Breite. '
-          + 'Ein zusätzlicher Flügel macht das Fenster teurer, aber leichter zu bedienen.'
+          + 'Ein zusätzlicher Flügel macht das Fenster teurer, aber leichter zu bedienen.',
+        oberlicht:
+          'Oberlicht = ein zusätzliches, festverglastes Feld oben über dem '
+          + 'eigentlichen Fenster. Unterlicht = das gleiche unten. '
+          + 'Wird verwendet, um mehr Tageslicht zu bekommen, ohne den '
+          + 'beweglichen Bereich zu vergrößern. Oberlicht ist die häufigere '
+          + 'Variante (z.B. bei Treppenhäusern oder Eingangstüren).',
+        anschlag:
+          'DIN-Anschlag = Seite, auf der die Bänder (Scharniere) sitzen, '
+          + 'gesehen von innen. '
+          + 'DIN links = Bänder links, Griff rechts. '
+          + 'DIN rechts = Bänder rechts, Griff links. '
+          + 'Wichtig für die richtige Bestellung beim Hersteller.',
+        sprossen:
+          'Sprossen = dekorative Leisten, die das Fenster optisch in mehrere '
+          + 'Felder unterteilen (Landhaus- oder Altbau-Stil). '
+          + 'Wir bieten standardmäßig aufgesetzte Sprossen (auf das Glas geklebt) '
+          + 'oder Sprossen im Scheibenzwischenraum (SZR, zwischen den Glasscheiben). '
+          + 'Genaue Ausführung wird vor Ort besprochen.',
+        ornament:
+          'Ornamentglas = strukturiertes oder mattiertes Glas für Sichtschutz '
+          + 'bei voller Lichtdurchlässigkeit. '
+          + 'Satiniert = gleichmäßig mattiert (Bad, WC). '
+          + 'Chinchilla = unregelmäßiges Pflanzen-Muster (Klassiker für Hausflur). '
+          + 'Silvit = feines geometrisches Muster.',
+        griff:
+          'Farbe des Fenstergriffs. Standardmäßig weiß. '
+          + 'Bei farbigen Rahmen (Anthrazit, RAL) passt ein silberner oder '
+          + 'farbiger Griff oft besser. Beschlagabdeckkappen werden in der '
+          + 'gleichen Farbe geliefert.'
       },
       tuer: {
         material:
@@ -1692,7 +1921,12 @@
         schloss:
           'Mehrfachverriegelung = drei bis fünf Verriegelungspunkte über die '
           + 'gesamte Türhöhe statt nur einem Riegel. Deutlich sicherer und '
-          + 'verhindert ein Aufhebeln der Tür.'
+          + 'verhindert ein Aufhebeln der Tür.',
+        anschlag:
+          'DIN-Anschlag = Seite, auf der die Bänder (Scharniere) sitzen, '
+          + 'gesehen von innen. '
+          + 'DIN links = Bänder links, Griff rechts, Tür öffnet nach links. '
+          + 'DIN rechts = Bänder rechts, Griff links, Tür öffnet nach rechts.'
       }
     };
 
@@ -1706,6 +1940,124 @@
       return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
         return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[c];
       });
+    }
+
+    // ==============================================================
+    // PARAM ICONS — small stroke-only SVGs shown before each label
+    // ==============================================================
+    // 24×24 viewBox, drawn at 16px in the UI. Stroke-only so they pick up
+    // currentColor (set to var(--gold) via the .param-icon class).
+    var ICONS = {
+      position:    '<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+      count:       '<svg viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>',
+      size:        '<svg viewBox="0 0 24 24"><polyline points="5 9 2 12 5 15"/><polyline points="9 5 12 2 15 5"/><polyline points="15 19 12 22 9 19"/><polyline points="19 9 22 12 19 15"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>',
+      material:    '<svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+      opening:     '<svg viewBox="0 0 24 24"><path d="M7 7h10v10"/><polyline points="7 17 17 7"/></svg>',
+      anschlag:    '<svg viewBox="0 0 24 24"><polyline points="7 8 3 12 7 16"/><polyline points="17 8 21 12 17 16"/><line x1="3" y1="12" x2="21" y2="12"/></svg>',
+      fluegel:     '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>',
+      oberlicht:   '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/></svg>',
+      sprossen:    '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>',
+      ornament:    '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>',
+      griff:       '<svg viewBox="0 0 24 24"><rect x="10" y="4" width="4" height="14" rx="1"/><circle cx="12" cy="4" r="2"/></svg>',
+      color:       '<svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>',
+      ausfuehrung: '<svg viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"/><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17"/><circle cx="15" cy="12" r="1"/></svg>',
+      sicherheit:  '<svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg>',
+      schloss:     '<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>'
+    };
+
+    function iconHtml(name) {
+      var svg = ICONS[name] || '';
+      return '<span class="param-icon" aria-hidden="true">' + svg + '</span>';
+    }
+
+    // ==============================================================
+    // UI STATE (transient — NOT persisted to URL/localStorage)
+    // ==============================================================
+    // These track view-only concerns: whether the "Erweiterte Optionen"
+    // accordion is open, and whether the user has opted into separate
+    // innen/außen colour pickers. They are inferred from the saved state
+    // on bootstrap (if anything inside the advanced section differs from
+    // defaults, the accordion opens automatically).
+    var ui = {
+      advancedOpen: { fenster: false, tuer: false },
+      colorSplit:   { fenster: false, tuer: false }
+    };
+
+    // Section helpers — wrap a body of param-groups in a titled section.
+    function sectionHtml(stepNum, title, body, extraClass) {
+      var cls = 'param-section' + (extraClass ? ' ' + extraClass : '');
+      return '<div class="' + cls + '">'
+        + '<h3 class="param-section-title"><span class="step-num">' + stepNum
+        + '</span>' + escapeHtml(title) + '</h3>'
+        + body
+        + '</div>';
+    }
+
+    function advancedToggleHtml(type, count) {
+      var open = !!ui.advancedOpen[type];
+      var badge = (count > 0) ? '<span class="toggle-badge">' + count
+        + (count === 1 ? ' angepasst' : ' angepasst') + '</span>' : '';
+      var chevron = '<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+        + ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+      return '<button type="button" class="param-section-toggle' + (open ? ' open' : '')
+        + '" data-advanced-toggle="' + type + '">'
+        + '<span class="toggle-left">' + (open ? 'Erweiterte Optionen verbergen' : 'Erweiterte Optionen anzeigen')
+        + badge + '</span>' + chevron + '</button>';
+    }
+
+    // Render the colour block — either compact (one Farbe row that sets both
+    // sides) or split (two separate rows for innen/außen). Toggle link below
+    // switches between the two modes.
+    function dekorBlockHtml(type) {
+      var s = state[type];
+      var split = ui.colorSplit[type] || (s.color_innen !== s.color_aussen);
+      var html = '';
+      if (split) {
+        html += '<div class="param-group">'
+          +   '<label class="param-label">' + iconHtml('color') + 'Dekor innen</label>'
+          +   '<div class="opt-pills" data-field="color_innen">'
+          +     pill('color_innen', 'weiss',     'Weiß',             '',          s.color_innen)
+          +     pill('color_innen', 'anthrazit', 'Anthrazit',        '',          s.color_innen)
+          +     pill('color_innen', 'ral',       'RAL-Sonderfarbe',  '',          s.color_innen)
+          +   '</div>'
+          + '</div>'
+          + '<div class="param-group">'
+          +   '<label class="param-label">' + iconHtml('color') + 'Dekor außen</label>'
+          +   '<div class="opt-pills" data-field="color_aussen">'
+          +     pill('color_aussen', 'weiss',     'Weiß',             '',          s.color_aussen)
+          +     pill('color_aussen', 'anthrazit', 'Anthrazit',        '',          s.color_aussen)
+          +     pill('color_aussen', 'ral',       'RAL-Sonderfarbe',  '',          s.color_aussen)
+          +   '</div>'
+          +   '<button type="button" class="dekor-split-toggle expanded" data-dekor-toggle="' + type + '">'
+          +     'Innen und außen gleich'
+          +   '</button>'
+          + '</div>';
+      } else {
+        // Compact: single Farbe row that controls BOTH sides
+        html += '<div class="param-group">'
+          +   '<label class="param-label">' + iconHtml('color') + 'Farbe (innen &amp; außen)</label>'
+          +   '<div class="opt-pills" data-field="color_both">'
+          +     pill('color_both', 'weiss',     'Weiß',             '',          s.color_innen)
+          +     pill('color_both', 'anthrazit', 'Anthrazit',        '',          s.color_innen)
+          +     pill('color_both', 'ral',       'RAL-Sonderfarbe',  '',          s.color_innen)
+          +   '</div>'
+          +   '<button type="button" class="dekor-split-toggle" data-dekor-toggle="' + type + '">'
+          +     'Innen und außen unterschiedlich'
+          +   '</button>'
+          + '</div>';
+      }
+      return html;
+    }
+
+    function countAdvancedChanges(type) {
+      if (type !== 'fenster') return 0; // Tür has no separate advanced section
+      var s = state.fenster, d = DEFAULTS.fenster;
+      var n = 0;
+      if (s.oberlicht !== d.oberlicht) n++;
+      if (s.sprossen  !== d.sprossen)  n++;
+      if (s.ornament  !== d.ornament)  n++;
+      if (s.griff     !== d.griff)     n++;
+      return n;
     }
 
     // ==============================================================
@@ -1743,13 +2095,21 @@
     // ==============================================================
     var state = {
       type: 'fenster',
+      bezeichnung: '',     // free-text label, e.g. "EG Wohnzimmer Nord"
+      anzahl: 1,           // how many identical elements
       fenster: {
         width:   120,        // cm
         height:  140,        // cm
         material: 'pvc_3fach',
         opening: 'dreh_kipp',
+        anschlag: 'links',
         fluegel: 1,
-        color:   'weiss'
+        oberlicht: 'keine',
+        sprossen: 'keine',
+        ornament: 'keine',
+        griff:    'standard',
+        color_innen:  'weiss',
+        color_aussen: 'weiss'
       },
       tuer: {
         sondermass: false,
@@ -1759,18 +2119,49 @@
         ausfuehrung: 'glaseinsatz',
         sicherheit: 'standard',
         schloss:    'standard',
-        color:      'anthrazit'
+        anschlag:   'links',
+        color_innen:  'weiss',
+        color_aussen: 'anthrazit'
       }
     };
 
     // ==============================================================
     // PARAM TEMPLATES (HTML for each tab)
     // ==============================================================
-    function paramTemplateFenster() {
-      var s = state.fenster;
+    // Common block (Bezeichnung + Anzahl) prepended to both Fenster and Tür
+    // templates. These belong to the configuration as a whole, not to the
+    // specific element type — they answer "wohin?" and "wieviele?", which
+    // the handwerker needs regardless of element type.
+    function commonTemplateTop() {
       return ''
         + '<div class="param-group">'
-        +   '<label class="param-label">Größe</label>'
+        +   '<label class="param-label" for="cBezeichnung">' + iconHtml('position') + 'Position / Raumbezeichnung'
+        +     '<span class="param-sub" style="font-weight:400;color:var(--text-dim);margin-left:6px;font-size:13px">optional</span>'
+        +   '</label>'
+        +   '<input type="text" id="cBezeichnung" class="text-input" maxlength="60"'
+        +     ' placeholder="z.B. EG Wohnzimmer, Bad 1.OG, Schlafzimmer Nord"'
+        +     ' value="' + escapeAttr(state.bezeichnung || '') + '" />'
+        + '</div>'
+
+        + '<div class="param-group">'
+        +   '<label class="param-label" for="cAnzahl">' + iconHtml('count') + 'Anzahl gleicher Elemente</label>'
+        +   '<div class="size-input" style="max-width:160px">'
+        +     '<input type="number" min="1" max="99" step="1" id="cAnzahl" value="' + state.anzahl + '" />'
+        +     '<span class="unit">Stück</span>'
+        +   '</div>'
+        + '</div>';
+    }
+
+    function paramTemplateFenster() {
+      var s = state.fenster;
+
+      // ── Section 1: Position & Anzahl ─────────────────────────────
+      var section1 = commonTemplateTop();
+
+      // ── Section 2: Grundparameter ────────────────────────────────
+      var section2 = ''
+        + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('size') + 'Größe</label>'
         +   sizePresetsHtml('fenster', s.width, s.height)
         +   '<div class="size-row">'
         +     '<div class="size-input">'
@@ -1786,50 +2177,110 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">Material &amp; Verglasung' + ttIcon(TOOLTIPS.fenster.material) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + 'Material &amp; Verglasung' + ttIcon(TOOLTIPS.fenster.material) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
-        +     pill('material', 'pvc_2fach',  'PVC SALAMANDER',       '2-fach Verglasung',          s.material) +
-              pill('material', 'pvc_3fach',  'PVC SALAMANDER',       '3-fach Wärmeschutz',        s.material) +
-              pill('material', 'aluminium',  'Aluminium ALUPROF',    'Premium-System',             s.material)
+        +     pill('material', 'pvc_2fach',  'PVC SALAMANDER',       '2-fach Verglasung',          s.material)
+        +     pill('material', 'pvc_3fach',  'PVC SALAMANDER',       '3-fach Wärmeschutz',        s.material)
+        +     pill('material', 'aluminium',  'Aluminium ALUPROF',    'Premium-System',             s.material)
         +   '</div>'
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">Öffnungsart' + ttIcon(TOOLTIPS.fenster.opening) + '</label>'
+        +   '<label class="param-label">' + iconHtml('opening') + 'Öffnungsart' + ttIcon(TOOLTIPS.fenster.opening) + '</label>'
         +   '<div class="opt-pills" data-field="opening">'
-        +     pill('opening', 'fest',       'Festverglasung',     'nicht zu öffnen',         s.opening) +
-              pill('opening', 'dreh',       'Drehfenster',        'seitlich öffnen',         s.opening) +
-              pill('opening', 'dreh_kipp',  'Dreh-Kipp-Fenster',  'seitlich + kippbar',      s.opening)
+        +     pill('opening', 'fest',       'Festverglasung',     'nicht zu öffnen',         s.opening)
+        +     pill('opening', 'dreh',       'Drehfenster',        'seitlich öffnen',         s.opening)
+        +     pill('opening', 'dreh_kipp',  'Dreh-Kipp-Fenster',  'seitlich + kippbar',      s.opening)
         +   '</div>'
         + '</div>'
 
+        + (s.opening !== 'fest' ?
+            '<div class="param-group">'
+          +   '<label class="param-label">' + iconHtml('anschlag') + 'DIN-Anschlag' + ttIcon(TOOLTIPS.fenster.anschlag) + '</label>'
+          +   '<div class="opt-pills" data-field="anschlag">'
+          +     pill('anschlag', 'links',   'DIN links',   'Bänder links',  s.anschlag)
+          +     pill('anschlag', 'rechts',  'DIN rechts',  'Bänder rechts', s.anschlag)
+          +   '</div>'
+          + '</div>'
+          : ''
+        )
+
         + '<div class="param-group">'
-        +   '<label class="param-label">Anzahl Flügel' + ttIcon(TOOLTIPS.fenster.fluegel) + '</label>'
+        +   '<label class="param-label">' + iconHtml('fluegel') + 'Anzahl Flügel' + ttIcon(TOOLTIPS.fenster.fluegel) + '</label>'
         +   '<div class="opt-pills" data-field="fluegel">'
-        +     pill('fluegel', '1', '1 Flügel', '', String(s.fluegel)) +
-              pill('fluegel', '2', '2 Flügel', '', String(s.fluegel)) +
-              pill('fluegel', '3', '3 Flügel', '', String(s.fluegel))
+        +     pill('fluegel', '1', '1 Flügel', '', String(s.fluegel))
+        +     pill('fluegel', '2', '2 Flügel', '', String(s.fluegel))
+        +     pill('fluegel', '3', '3 Flügel', '', String(s.fluegel))
+        +   '</div>'
+        + '</div>'
+
+        + dekorBlockHtml('fenster');
+
+      // ── Section 3: Erweiterte Optionen (accordion) ──────────────
+      var advCount = countAdvancedChanges('fenster');
+      var advOpen  = !!ui.advancedOpen.fenster;
+      var section3Body = advOpen ? (''
+        + '<div class="param-section-body">'
+        + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('oberlicht') + 'Oberlicht / Unterlicht' + ttIcon(TOOLTIPS.fenster.oberlicht) + '</label>'
+        +   '<div class="opt-pills" data-field="oberlicht">'
+        +     pill('oberlicht', 'keine',      'Ohne',        '',                       s.oberlicht)
+        +     pill('oberlicht', 'oberlicht',  'Oberlicht',   'festes Feld oben',       s.oberlicht)
+        +     pill('oberlicht', 'unterlicht', 'Unterlicht',  'festes Feld unten',      s.oberlicht)
         +   '</div>'
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">Farbe</label>'
-        +   '<div class="opt-pills" data-field="color">'
-        +     pill('color', 'weiss',     'Weiß',             '',          s.color) +
-              pill('color', 'anthrazit', 'Anthrazit',        '',          s.color) +
-              pill('color', 'ral',       'RAL-Sonderfarbe',  '',          s.color)
+        +   '<label class="param-label">' + iconHtml('sprossen') + 'Sprossen' + ttIcon(TOOLTIPS.fenster.sprossen) + '</label>'
+        +   '<div class="opt-pills" data-field="sprossen">'
+        +     pill('sprossen', 'keine', 'Keine',        '',                   s.sprossen)
+        +     pill('sprossen', 'h1',    '1 horizontal', '',                   s.sprossen)
+        +     pill('sprossen', 'v1',    '1 vertikal',   '',                   s.sprossen)
+        +     pill('sprossen', 'kreuz', 'Kreuz',        '',                   s.sprossen)
+        +     pill('sprossen', 'h2v1',  '2H + 1V',      'Sechserteilung',     s.sprossen)
         +   '</div>'
-        + '</div>';
+        + '</div>'
+
+        + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('ornament') + 'Ornamentglas' + ttIcon(TOOLTIPS.fenster.ornament) + '</label>'
+        +   '<div class="opt-pills" data-field="ornament">'
+        +     pill('ornament', 'keine',      'Klar',        'normales Glas',  s.ornament)
+        +     pill('ornament', 'satiniert',  'Satiniert',   'mattiert',       s.ornament)
+        +     pill('ornament', 'chinchilla', 'Chinchilla',  'Struktur',       s.ornament)
+        +     pill('ornament', 'silvit',     'Silvit',      'feines Muster',  s.ornament)
+        +   '</div>'
+        + '</div>'
+
+        + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('griff') + 'Fenstergriff' + ttIcon(TOOLTIPS.fenster.griff) + '</label>'
+        +   '<div class="opt-pills" data-field="griff">'
+        +     pill('griff', 'standard', 'Standard',  'weiß',  s.griff)
+        +     pill('griff', 'silber',   'Silber',    '',      s.griff)
+        +     pill('griff', 'altgold',  'Altgold',   '',      s.griff)
+        +     pill('griff', 'braun',    'Braun',     '',      s.griff)
+        +   '</div>'
+        + '</div>'
+        + '</div>'
+      ) : '';
+
+      return sectionHtml(1, 'Position & Anzahl', section1)
+        + sectionHtml(2, 'Grundparameter', section2)
+        + sectionHtml(3, 'Erweiterte Optionen', advancedToggleHtml('fenster', advCount) + section3Body);
     }
 
     function paramTemplateTuer() {
       var s = state.tuer;
+
+      // ── Section 1: Position & Anzahl ─────────────────────────────
+      var section1 = commonTemplateTop();
+
+      // ── Section 2: Tür-Parameter ─────────────────────────────────
       var sizeSection = ''
         + '<div class="param-group">'
-        +   '<label class="param-label">Größe</label>'
+        +   '<label class="param-label">' + iconHtml('size') + 'Größe</label>'
         +   '<div class="opt-pills" data-field="sondermass">'
-        +     pill('sondermass', 'false',  'Standardmaß',  '90 × 210 cm',  String(s.sondermass)) +
-              pill('sondermass', 'true',   'Sondermaß',    'eigene Werte', String(s.sondermass))
+        +     pill('sondermass', 'false',  'Standardmaß',  '90 × 210 cm',  String(s.sondermass))
+        +     pill('sondermass', 'true',   'Sondermaß',    'eigene Werte', String(s.sondermass))
         +   '</div>';
       if (s.sondermass) {
         sizeSection += ''
@@ -1850,48 +2301,52 @@
       }
       sizeSection += '</div>';
 
-      return sizeSection
+      var section2 = sizeSection
         + '<div class="param-group">'
-        +   '<label class="param-label">Material' + ttIcon(TOOLTIPS.tuer.material) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + 'Material' + ttIcon(TOOLTIPS.tuer.material) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
-        +     pill('material', 'pvc',        'PVC',                  'preiswerter',    s.material) +
-              pill('material', 'aluminium',  'Aluminium',            'Premium, sicher', s.material)
+        +     pill('material', 'pvc',        'PVC',                  'preiswerter',    s.material)
+        +     pill('material', 'aluminium',  'Aluminium',            'Premium, sicher', s.material)
         +   '</div>'
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">Ausführung' + ttIcon(TOOLTIPS.tuer.ausfuehrung) + '</label>'
+        +   '<label class="param-label">' + iconHtml('ausfuehrung') + 'Ausführung' + ttIcon(TOOLTIPS.tuer.ausfuehrung) + '</label>'
         +   '<div class="opt-pills" data-field="ausfuehrung">'
-        +     pill('ausfuehrung', 'vollblatt',   'Vollblatt',            'ohne Glas',     s.ausfuehrung) +
-              pill('ausfuehrung', 'glaseinsatz', 'Mit Glaseinsatz',      '',              s.ausfuehrung) +
-              pill('ausfuehrung', 'seitenteile', 'Mit Seitenteilen',     '',              s.ausfuehrung)
+        +     pill('ausfuehrung', 'vollblatt',   'Vollblatt',            'ohne Glas',     s.ausfuehrung)
+        +     pill('ausfuehrung', 'glaseinsatz', 'Mit Glaseinsatz',      '',              s.ausfuehrung)
+        +     pill('ausfuehrung', 'seitenteile', 'Mit Seitenteilen',     '',              s.ausfuehrung)
         +   '</div>'
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">Sicherheit' + ttIcon(TOOLTIPS.tuer.sicherheit) + '</label>'
+        +   '<label class="param-label">' + iconHtml('sicherheit') + 'Sicherheit' + ttIcon(TOOLTIPS.tuer.sicherheit) + '</label>'
         +   '<div class="opt-pills" data-field="sicherheit">'
-        +     pill('sicherheit', 'standard', 'Standard',            '',         s.sicherheit) +
-              pill('sicherheit', 'rc2',      'RC2 Einbruchschutz',  '',         s.sicherheit)
+        +     pill('sicherheit', 'standard', 'Standard',            '',         s.sicherheit)
+        +     pill('sicherheit', 'rc2',      'RC2 Einbruchschutz',  '',         s.sicherheit)
         +   '</div>'
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">Schloss' + ttIcon(TOOLTIPS.tuer.schloss) + '</label>'
+        +   '<label class="param-label">' + iconHtml('schloss') + 'Schloss' + ttIcon(TOOLTIPS.tuer.schloss) + '</label>'
         +   '<div class="opt-pills" data-field="schloss">'
-        +     pill('schloss', 'standard',  'Standardschloss',         '',       s.schloss) +
-              pill('schloss', 'mehrfach',  'Mehrfachverriegelung',    '',       s.schloss)
+        +     pill('schloss', 'standard',  'Standardschloss',         '',       s.schloss)
+        +     pill('schloss', 'mehrfach',  'Mehrfachverriegelung',    '',       s.schloss)
         +   '</div>'
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">Farbe</label>'
-        +   '<div class="opt-pills" data-field="color">'
-        +     pill('color', 'weiss',     'Weiß',             '',          s.color) +
-              pill('color', 'anthrazit', 'Anthrazit',        '',          s.color) +
-              pill('color', 'ral',       'RAL-Sonderfarbe',  '',          s.color)
+        +   '<label class="param-label">' + iconHtml('anschlag') + 'DIN-Anschlag' + ttIcon(TOOLTIPS.tuer.anschlag) + '</label>'
+        +   '<div class="opt-pills" data-field="anschlag">'
+        +     pill('anschlag', 'links',   'DIN links',   'Bänder links',  s.anschlag)
+        +     pill('anschlag', 'rechts',  'DIN rechts',  'Bänder rechts', s.anschlag)
         +   '</div>'
-        + '</div>';
+        + '</div>'
+
+        + dekorBlockHtml('tuer');
+
+      return sectionHtml(1, 'Position & Anzahl', section1)
+        + sectionHtml(2, 'Tür-Parameter', section2);
     }
 
     function pill(field, value, main, sub, current) {
@@ -1940,42 +2395,94 @@
       var frameStroke = minDim < 100 ? 2 : 3;
       var inner = minDim < 100 ? 5 : 8;
 
+      // Oberlicht / Unterlicht — fixed festverglaste panels that share the
+      // outer frame but split the height. Each takes 25% of total height; the
+      // main (movable) area takes the remaining 75%.
+      var hasOber  = s.oberlicht === 'oberlicht';
+      var hasUnter = s.oberlicht === 'unterlicht';
+      var oberH    = hasOber  ? h * 0.25 : 0;
+      var unterH   = hasUnter ? h * 0.25 : 0;
+      var mainY    = fy + oberH;
+      var mainH    = h - oberH - unterH;
+
       var parts = [];
-      // Outer frame
+      // Outer frame — spans the full window including any Ober-/Unterlicht
       parts.push('<rect x="' + fx + '" y="' + fy + '" width="' + w + '" height="' + h
         + '" fill="rgba(120, 160, 200, 0.04)" stroke="#d4a544" stroke-width="' + frameStroke + '"/>');
-      // Inner thick frame (sash)
-      parts.push('<rect x="' + (fx + inner) + '" y="' + (fy + inner) + '" width="' + (w - inner * 2)
-        + '" height="' + (h - inner * 2) + '" fill="none" stroke="rgba(212, 165, 68, 0.45)" stroke-width="1"/>');
 
-      // Mullions for multi-sash windows
+      // Horizontal mullion separating Ober-/Unterlicht from the main area
+      if (hasOber) {
+        parts.push('<line x1="' + (fx + inner) + '" y1="' + (fy + oberH) + '" x2="'
+          + (fx + w - inner) + '" y2="' + (fy + oberH)
+          + '" stroke="#d4a544" stroke-width="' + frameStroke + '"/>');
+      }
+      if (hasUnter) {
+        parts.push('<line x1="' + (fx + inner) + '" y1="' + (mainY + mainH) + '" x2="'
+          + (fx + w - inner) + '" y2="' + (mainY + mainH)
+          + '" stroke="#d4a544" stroke-width="' + frameStroke + '"/>');
+      }
+
+      // Ornament wash in the Ober-/Unterlicht panels (they are part of the
+      // same glazing as the main area, so they share the ornament look).
+      if (s.ornament && s.ornament !== 'keine') {
+        if (hasOber) {
+          parts.push('<rect x="' + (fx + inner) + '" y="' + (fy + inner) + '" width="'
+            + (w - inner * 2) + '" height="' + (oberH - inner)
+            + '" fill="rgba(220, 230, 240, 0.18)"/>');
+        }
+        if (hasUnter) {
+          parts.push('<rect x="' + (fx + inner) + '" y="' + (mainY + mainH) + '" width="'
+            + (w - inner * 2) + '" height="' + (unterH - inner)
+            + '" fill="rgba(220, 230, 240, 0.18)"/>');
+        }
+      }
+
+      // Inner thick frame (sash) — only around the main movable area
+      parts.push('<rect x="' + (fx + inner) + '" y="' + (mainY + (hasOber ? 0 : inner)) + '" width="'
+        + (w - inner * 2) + '" height="' + (mainH - (hasOber ? 0 : inner) - (hasUnter ? 0 : inner))
+        + '" fill="none" stroke="rgba(212, 165, 68, 0.45)" stroke-width="1"/>');
+
+      // Vertical mullions for multi-sash windows — only span the main area
       var n = s.fluegel;
       for (var i = 1; i < n; i++) {
         var mx = fx + (w / n) * i;
-        parts.push('<line x1="' + mx + '" y1="' + (fy + inner) + '" x2="' + mx + '" y2="'
-          + (fy + h - inner) + '" stroke="#d4a544" stroke-width="' + frameStroke + '"/>');
+        var mullionTop    = mainY + (hasOber  ? 0 : inner);
+        var mullionBottom = mainY + mainH - (hasUnter ? 0 : inner);
+        parts.push('<line x1="' + mx + '" y1="' + mullionTop + '" x2="' + mx + '" y2="'
+          + mullionBottom + '" stroke="#d4a544" stroke-width="' + frameStroke + '"/>');
       }
 
       // Opening indicators inside each sash — follow DIN convention:
-      //   "Dreh"     = V-shape pointing to the hinge side (we draw left hinge by default).
+      //   "Dreh"     = V-shape pointing to the hinge side (apex at hinge).
       //   "Kipp"     = triangle with the apex at the TOP (hinge at the bottom).
       //   "Dreh-Kipp"= both symbols superimposed.
-      // The apex of each symbol is where the hinge sits.
+      // The apex of each Dreh-symbol is where the hinge sits — left for DIN links,
+      // right for DIN rechts.
       var indStroke = 'rgba(212, 165, 68, 0.55)';
+      var hingeLeft = (s.anschlag !== 'rechts'); // default = links
       for (var k = 0; k < n; k++) {
         var sx = fx + (w / n) * k + inner;
-        var sy = fy + inner;
+        var sy = mainY + (hasOber ? 0 : inner);
         var sw = (w / n) - inner * 2;
-        var sh = h - inner * 2;
+        var sh = mainH - (hasOber ? 0 : inner) - (hasUnter ? 0 : inner);
         if (sw <= 0 || sh <= 0) continue;
 
+        // Ornament glass — show a frosted/textured wash inside the sash to
+        // signal that the glass isn't fully transparent. Subtle enough not
+        // to compete with the opening indicators drawn on top.
+        if (s.ornament && s.ornament !== 'keine') {
+          parts.push('<rect x="' + sx + '" y="' + sy + '" width="' + sw + '" height="' + sh
+            + '" fill="rgba(220, 230, 240, 0.18)"/>');
+        }
+
         if (s.opening === 'dreh' || s.opening === 'dreh_kipp') {
-          // V-shape: apex at LEFT-middle, opening to the right edge
-          // (lines from right-top and right-bottom converge at left-middle)
+          // V-shape: apex at hinge-side, opening to the opposite edge.
+          var apexX = hingeLeft ? sx : (sx + sw);
+          var farX  = hingeLeft ? (sx + sw) : sx;
           parts.push('<polyline points="'
-            + (sx + sw) + ',' + sy + ' '
-            + sx + ',' + (sy + sh / 2) + ' '
-            + (sx + sw) + ',' + (sy + sh)
+            + farX + ',' + sy + ' '
+            + apexX + ',' + (sy + sh / 2) + ' '
+            + farX + ',' + (sy + sh)
             + '" fill="none" stroke="' + indStroke + '" stroke-width="1"/>');
         }
         if (s.opening === 'dreh_kipp') {
@@ -1988,6 +2495,32 @@
             + '" fill="none" stroke="' + indStroke + '" stroke-width="1" stroke-dasharray="3,3"/>');
         }
         // "fest" = no indicator (just the empty sash)
+
+        // Sprossen (decorative grilles inside the glass). Rendered last so they
+        // sit visually "on top" of the opening indicators. Skipped on very small
+        // sashes (< 30 px) to avoid visual clutter.
+        if (s.sprossen && s.sprossen !== 'keine' && sw >= 30 && sh >= 30) {
+          var sprStroke = 'rgba(212, 165, 68, 0.7)';
+          var sprWidth = 1.5;
+          var midX = sx + sw / 2;
+          var midY = sy + sh / 2;
+          var hLine = function (y) {
+            parts.push('<line x1="' + sx + '" y1="' + y + '" x2="' + (sx + sw) + '" y2="' + y
+              + '" stroke="' + sprStroke + '" stroke-width="' + sprWidth + '"/>');
+          };
+          var vLine = function (x) {
+            parts.push('<line x1="' + x + '" y1="' + sy + '" x2="' + x + '" y2="' + (sy + sh)
+              + '" stroke="' + sprStroke + '" stroke-width="' + sprWidth + '"/>');
+          };
+          if (s.sprossen === 'h1')     { hLine(midY); }
+          if (s.sprossen === 'v1')     { vLine(midX); }
+          if (s.sprossen === 'kreuz')  { hLine(midY); vLine(midX); }
+          if (s.sprossen === 'h2v1')   {
+            hLine(sy + sh / 3);
+            hLine(sy + sh * 2 / 3);
+            vLine(midX);
+          }
+        }
       }
 
       // Size labels
@@ -2069,8 +2602,29 @@
           + (gy + gh) + '" stroke="rgba(212,165,68,0.35)" stroke-width="1"/>');
       }
 
-      // Handle (on the right side, mid-height)
-      var hx = dx + w - 14;
+      // Handle (opposite side of the hinges) and DIN V-indicator (apex at hinge side).
+      // DIN links = hinges left  → handle right, V-apex left.
+      // DIN rechts = hinges right → handle left, V-apex right.
+      var hingeLeftDoor = (s.anschlag !== 'rechts');
+
+      // DIN V-symbol: apex at hinge side, opening to the opposite edge.
+      // We use the door's inner area (between the inner frame line) so it doesn't
+      // overlap the frame.
+      var dvInset = inner + 2;
+      var dvLeft  = dx + dvInset;
+      var dvRight = dx + w - dvInset;
+      var dvTop   = dy + dvInset;
+      var dvBottom = dy + h - dvInset;
+      var dvApexX = hingeLeftDoor ? dvLeft : dvRight;
+      var dvFarX  = hingeLeftDoor ? dvRight : dvLeft;
+      parts.push('<polyline points="'
+        + dvFarX + ',' + dvTop + ' '
+        + dvApexX + ',' + (dvTop + (dvBottom - dvTop) / 2) + ' '
+        + dvFarX + ',' + dvBottom
+        + '" fill="none" stroke="rgba(212,165,68,0.45)" stroke-width="1"/>');
+
+      // Handle on the side opposite the hinges
+      var hx = hingeLeftDoor ? (dx + w - 14) : (dx + 11);
       var hy = dy + h * 0.55;
       parts.push('<rect x="' + hx + '" y="' + hy + '" width="3" height="20" fill="#d4a544"/>');
       parts.push('<circle cx="' + (hx + 1.5) + '" cy="' + (hy + 26) + '" r="2.5" fill="#d4a544"/>');
@@ -2108,13 +2662,34 @@
     function summaryFenster() {
       var s = state.fenster;
       var L = LABELS.fenster;
-      return [
+      var rows = [
         { dt: 'Größe',      dd: s.width + ' × ' + s.height + ' cm' },
         { dt: 'Material',   dd: L.material[s.material] },
-        { dt: 'Öffnung',    dd: L.opening[s.opening] },
-        { dt: 'Flügel',     dd: s.fluegel + (s.fluegel === 1 ? ' Flügel' : ' Flügel') },
-        { dt: 'Farbe',      dd: L.color[s.color] }
+        { dt: 'Öffnung',    dd: L.opening[s.opening] }
       ];
+      if (s.opening !== 'fest') {
+        rows.push({ dt: 'DIN-Anschlag', dd: L.anschlag[s.anschlag] });
+      }
+      rows.push({ dt: 'Flügel', dd: s.fluegel + ' Flügel' });
+      if (s.oberlicht && s.oberlicht !== 'keine') {
+        rows.push({ dt: 'Aufteilung', dd: L.oberlicht[s.oberlicht] });
+      }
+      if (s.sprossen && s.sprossen !== 'keine') {
+        rows.push({ dt: 'Sprossen', dd: L.sprossen[s.sprossen] });
+      }
+      if (s.ornament && s.ornament !== 'keine') {
+        rows.push({ dt: 'Ornamentglas', dd: L.ornament[s.ornament] });
+      }
+      if (s.griff && s.griff !== 'standard') {
+        rows.push({ dt: 'Fenstergriff', dd: L.griff[s.griff] });
+      }
+      if (s.color_innen === s.color_aussen) {
+        rows.push({ dt: 'Farbe', dd: L.color[s.color_innen] });
+      } else {
+        rows.push({ dt: 'Dekor innen', dd: L.color[s.color_innen] });
+        rows.push({ dt: 'Dekor außen', dd: L.color[s.color_aussen] });
+      }
+      return rows;
     }
     function summaryTuer() {
       var s = state.tuer;
@@ -2125,8 +2700,14 @@
         { dt: 'Ausführung',    dd: L.ausfuehrung[s.ausfuehrung] },
         { dt: 'Sicherheit',    dd: L.sicherheit[s.sicherheit] },
         { dt: 'Schloss',       dd: L.schloss[s.schloss] },
-        { dt: 'Farbe',         dd: L.color[s.color] }
+        { dt: 'DIN-Anschlag',  dd: L.anschlag[s.anschlag] }
       ];
+      if (s.color_innen === s.color_aussen) {
+        rows.push({ dt: 'Farbe', dd: L.color[s.color_innen] });
+      } else {
+        rows.push({ dt: 'Dekor innen', dd: L.color[s.color_innen] });
+        rows.push({ dt: 'Dekor außen', dd: L.color[s.color_aussen] });
+      }
       return rows;
     }
 
@@ -2165,6 +2746,27 @@
         });
       });
 
+      // Wire up common inputs (Bezeichnung text, Anzahl number).
+      // Bezeichnung uses renderPreview() instead of render() to avoid
+      // re-rendering the input on every keystroke (which would steal focus).
+      var bz = document.getElementById('cBezeichnung');
+      if (bz) {
+        bz.addEventListener('input', function () {
+          state.bezeichnung = bz.value;
+          renderPreview();
+        });
+      }
+      var az = document.getElementById('cAnzahl');
+      if (az) {
+        az.addEventListener('input', function () {
+          var v = parseInt(az.value, 10);
+          if (isNaN(v) || v < 1) v = 1;
+          if (v > 99) v = 99;
+          state.anzahl = v;
+          renderPreview();
+        });
+      }
+
       // Wire up size-preset chips
       params.querySelectorAll('.size-preset').forEach(function (chip) {
         chip.addEventListener('click', function () {
@@ -2178,6 +2780,32 @@
         });
       });
 
+      // Wire up the "Erweiterte Optionen" accordion toggle
+      params.querySelectorAll('[data-advanced-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var type = btn.getAttribute('data-advanced-toggle');
+          ui.advancedOpen[type] = !ui.advancedOpen[type];
+          render();
+        });
+      });
+
+      // Wire up the Dekor split/merge toggle
+      params.querySelectorAll('[data-dekor-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var type = btn.getAttribute('data-dekor-toggle');
+          var s = state[type];
+          if (ui.colorSplit[type] || s.color_innen !== s.color_aussen) {
+            // Currently split → merge into a single value (use innen as canonical)
+            s.color_aussen = s.color_innen;
+            ui.colorSplit[type] = false;
+          } else {
+            // Currently compact → opt into split mode
+            ui.colorSplit[type] = true;
+          }
+          render();
+        });
+      });
+
       renderPreview();
     }
 
@@ -2186,8 +2814,16 @@
       var canvas = document.getElementById('canvasContainer');
       canvas.innerHTML = state.type === 'fenster' ? svgFenster() : svgTuer();
 
-      // Summary
+      // Summary — prepend common rows (Position, Anzahl) if relevant
       var rows = state.type === 'fenster' ? summaryFenster() : summaryTuer();
+      var common = [];
+      if (state.bezeichnung && state.bezeichnung.trim()) {
+        common.push({ dt: 'Position', dd: state.bezeichnung.trim() });
+      }
+      if (state.anzahl && state.anzahl > 1) {
+        common.push({ dt: 'Anzahl', dd: state.anzahl + ' Stück' });
+      }
+      rows = common.concat(rows);
       var html = rows.map(function (r) {
         return '<div class="row"><dt>' + escapeHtml(r.dt) + '</dt><dd>' + escapeHtml(r.dd) + '</dd></div>';
       }).join('');
@@ -2205,7 +2841,14 @@
       // Coerce types
       if (field === 'fluegel')    value = parseInt(value, 10);
       if (field === 'sondermass') value = (value === 'true');
-      s[field] = value;
+      // color_both is a UI pseudo-field that controls both innen + außen
+      // (used in the compact Dekor mode). Write to both real fields.
+      if (field === 'color_both') {
+        s.color_innen = value;
+        s.color_aussen = value;
+      } else {
+        s[field] = value;
+      }
       render(); // re-render params (in case Sondermaß toggled) + preview
     }
 
@@ -2221,11 +2864,15 @@
     function buildMessage() {
       var rows = state.type === 'fenster' ? summaryFenster() : summaryTuer();
       var title = state.type === 'fenster' ? 'Fenster' : 'Außentür';
+      var anz = (state.anzahl > 1) ? (' (' + state.anzahl + '× gleich)') : '';
 
       var lines = [];
       lines.push('Hallo, ich habe einen Konfigurator-Vorschlag für mein Projekt:');
       lines.push('');
-      lines.push('📋 ' + title.toUpperCase());
+      lines.push('📋 ' + title.toUpperCase() + anz);
+      if (state.bezeichnung && state.bezeichnung.trim()) {
+        lines.push('  • Position: ' + state.bezeichnung.trim());
+      }
       rows.forEach(function (r) {
         lines.push('  • ' + r.dt + ': ' + r.dd);
       });
@@ -2243,8 +2890,12 @@
     }
 
     function encodeConfig(cfg) {
-      // Compact representation: only what's needed
+      // Compact representation: only what's needed.
+      // Common fields (Bezeichnung "b", Anzahl "a") are only emitted when they
+      // differ from defaults — keeps URLs short for the common case.
       var compact = { t: cfg.type, f: cfg.fenster, d: cfg.tuer };
+      if (cfg.bezeichnung && cfg.bezeichnung.trim()) compact.b = cfg.bezeichnung.trim();
+      if (cfg.anzahl && cfg.anzahl > 1) compact.a = cfg.anzahl;
       var json = JSON.stringify(compact);
       var b64 = btoa(unescape(encodeURIComponent(json)));
       // URL-safe base64
@@ -2356,8 +3007,11 @@
         clearStateStorage();
         // Reset state to original defaults (we cloned via JSON inside DEFAULTS below)
         state.type = DEFAULTS.type;
+        state.bezeichnung = DEFAULTS.bezeichnung;
+        state.anzahl = DEFAULTS.anzahl;
         Object.assign(state.fenster, JSON.parse(JSON.stringify(DEFAULTS.fenster)));
         Object.assign(state.tuer,    JSON.parse(JSON.stringify(DEFAULTS.tuer)));
+        inferUiState();
         // Wipe ?c= from URL so a refresh stays clean
         if (window.history && window.history.replaceState) {
           var clean = window.location.pathname + window.location.hash;
@@ -2423,6 +3077,8 @@
           state.type = loaded.t;
           if (loaded.f) Object.assign(state.fenster, loaded.f);
           if (loaded.d) Object.assign(state.tuer, loaded.d);
+          if (typeof loaded.b === 'string') state.bezeichnung = loaded.b;
+          if (typeof loaded.a === 'number' && loaded.a >= 1) state.anzahl = loaded.a;
           bootstrapped = true;
         }
       }
@@ -2434,8 +3090,36 @@
         state.type = saved.type;
         if (saved.fenster) Object.assign(state.fenster, saved.fenster);
         if (saved.tuer)    Object.assign(state.tuer,    saved.tuer);
+        if (typeof saved.bezeichnung === 'string') state.bezeichnung = saved.bezeichnung;
+        if (typeof saved.anzahl === 'number' && saved.anzahl >= 1) state.anzahl = saved.anzahl;
       }
     }
+
+    // Migration: older configurations had a single `color` field per element.
+    // It's been split into `color_innen` / `color_aussen`. Presence of legacy
+    // `color` means the save came from an older version — overwrite defaults
+    // with that single colour for both sides (preserves user intent), then
+    // drop the legacy field.
+    ['fenster', 'tuer'].forEach(function (key) {
+      var s = state[key];
+      if (s && typeof s.color === 'string') {
+        s.color_innen = s.color;
+        s.color_aussen = s.color;
+        delete s.color;
+      }
+    });
+
+    // Initial UI state inferences. Used after bootstrap and after Reset to
+    // reset the accordion / split-mode in a consistent way.
+    function inferUiState() {
+      ui.advancedOpen.fenster = countAdvancedChanges('fenster') > 0;
+      ui.advancedOpen.tuer = false; // Tür has no separate advanced section
+      ['fenster', 'tuer'].forEach(function (key) {
+        var s = state[key];
+        ui.colorSplit[key] = !!(s && s.color_innen !== s.color_aussen);
+      });
+    }
+    inferUiState();
 
     // Sync active tab to the (possibly restored) state.type
     document.querySelectorAll('.type-tab').forEach(function (t) {

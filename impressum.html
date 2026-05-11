@@ -4,22 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Projekte – Unsere Arbeiten | BauService Dionisie Bat</title>
-  <meta name="description" content="17 abgeschlossene Projekte aus unserem Portfolio: Fenster, Türen, Bodenverlegung und mehr — in Eschwege, Kassel, Göttingen, Bebra, Eisenach und der Region Werra-Meißner. Alle Arbeiten mit RAL-Montage und sauberer Ausführung." />
+  <title>Impressum | BauService Dionisie Bat</title>
+  <meta name="description" content="Impressum — Angaben gemäß § 5 TMG für BauService Dionisie Bat aus Eschwege im Werra-Meißner-Kreis." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a0a" />
   <meta name="geo.region" content="DE-HE" />
   <meta name="geo.placename" content="Eschwege" />
 
-  <link rel="canonical" href="https://bauservice-esw.de/projekte.html" />
+  <link rel="canonical" href="https://bauservice-esw.de/impressum.html" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Projekte – Unsere Arbeiten | BauService Dionisie Bat" />
-  <meta property="og:description" content="17 abgeschlossene Projekte: Fenster, Türen, Bodenverlegung. Region Werra-Meißner & Umkreis 60 km." />
+  <meta property="og:title" content="Impressum | BauService Dionisie Bat" />
+  <meta property="og:description" content="Impressum — Angaben gemäß § 5 TMG für BauService Dionisie Bat aus Eschwege im Werra-Meißner-Kreis." />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:site_name" content="BauService Dionisie Bat" />
-  <meta property="og:url" content="https://bauservice-esw.de/projekte.html" />
+  <meta property="og:url" content="https://bauservice-esw.de/impressum.html" />
 
+  
+
+  
+
+  
   <!-- Breadcrumb structured data -->
   <script type="application/ld+json">
   {
@@ -27,21 +32,8 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://bauservice-esw.de/" },
-      { "@type": "ListItem", "position": 2, "name": "Projekte", "item": "https://bauservice-esw.de/projekte.html" }
+      { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://bauservice-esw.de/impressum.html" }
     ]
-  }
-  </script>
-
-  <!-- ItemList schema for the project portfolio -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Projekte – Unsere Arbeiten",
-    "description": "Portfolio abgeschlossener Projekte: Fenster, Türen, Bodenverlegung, RAL-Montage.",
-    "url": "https://bauservice-esw.de/projekte.html",
-    "isPartOf": { "@id": "https://bauservice-esw.de/#website" },
-    "about": { "@id": "https://bauservice-esw.de/#business" }
   }
   </script>
 
@@ -301,21 +293,6 @@
     }
     .page-top-meta strong { color: var(--text); font-weight: 600; }
 
-    /* Mobile: tighter top spacing so users see project cards sooner */
-    @media (max-width: 600px) {
-      .page-top { padding: 100px 0 28px; }
-      .page-top-meta { font-size: 14px; }
-      .breadcrumb { margin-bottom: 18px; font-size: 11px; }
-      .projects-list { padding: 24px 0 60px !important; }
-      .projects-grid { gap: 14px !important; }
-      .proj-gallery {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px !important;
-      }
-      .proj-detail { padding: 22px 18px 26px !important; }
-      .proj-desc { font-size: 14.5px; margin-bottom: 22px; }
-    }
-
     /* === FILTER BAR === */
     .filter-bar {
       padding: 32px 0 24px;
@@ -362,36 +339,6 @@
     }
     .filter-pill.active .count { color: #1a1a1a; }
 
-    /* On narrow screens the 5 pills don't fit on one line — letting them wrap
-       makes the sticky bar tall enough to obscure the first card. Switch to
-       horizontal scrolling instead: one row of pills, swipe to see more. */
-    @media (max-width: 600px) {
-      .filter-bar {
-        padding: 14px 0;
-        top: 70px;
-      }
-      .filter-pills {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        overflow-y: hidden;
-        gap: 8px;
-        padding: 2px 0 4px;
-        /* Hide scrollbar on iOS/Android */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        -webkit-overflow-scrolling: touch;
-      }
-      .filter-pills::-webkit-scrollbar { display: none; }
-      .filter-pill {
-        flex-shrink: 0;
-        padding: 8px 14px;
-        font-size: 11px;
-        letter-spacing: 0.1em;
-        gap: 6px;
-      }
-      .filter-pill .count { font-size: 10px; }
-    }
-
     /* === PROJECT GRID & CARDS === */
     .projects-list {
       padding: 48px 0 80px;
@@ -399,11 +346,7 @@
     }
     .projects-grid {
       display: grid;
-      /* min(360px, 100%) lets the grid track shrink below 360px when the
-         container is narrower than that (small phones). Without min(), the
-         track stays at 360px and overflows a 312px-wide container, pushing
-         the right edge of every card off-screen. */
-      grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
       gap: 22px;
     }
     .proj-card {
@@ -430,8 +373,8 @@
     .proj-card.expanded .proj-cover-wrap {
       grid-row: 1 / 2;
       grid-column: 2 / 3;
-      aspect-ratio: 3 / 4;
-      max-height: 480px;
+      aspect-ratio: 4 / 3;
+      max-height: 320px;
     }
     .proj-card.expanded .proj-summary-text {
       grid-row: 1 / 2;
@@ -453,7 +396,7 @@
       .proj-card.expanded .proj-cover-wrap {
         grid-row: 1 / 2;
         grid-column: 2 / 3;
-        aspect-ratio: 3 / 4;
+        aspect-ratio: 16 / 10;
         max-height: none;
       }
       .proj-card.expanded .proj-summary-text {
@@ -464,37 +407,6 @@
       .proj-card.expanded .proj-toggle {
         grid-row: 1 / 3;
         grid-column: 3 / 4;
-      }
-    }
-
-    /* On phones (≤600px) the expanded state mirrors the mobile-collapsed
-       layout — single column with the badge overlaying the photo. Without
-       this rule the expanded card would revert to the 60px+1fr+auto grid
-       above, which makes the photo tiny and hides the number badge. */
-    @media (max-width: 600px) {
-      .proj-card.expanded .proj-card-summary {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-      }
-      .proj-card.expanded .proj-cover-wrap {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-        aspect-ratio: 3 / 4;
-      }
-      .proj-card.expanded .proj-summary-text {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-        padding: 16px 18px 56px;
-      }
-      .proj-card.expanded .proj-toggle {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-        align-self: end;
-        justify-self: end;
-        width: 44px;
-        height: 44px;
-        border-left: none;
-        margin: 0 8px 8px 0;
       }
     }
     .proj-card:not(.expanded):hover {
@@ -534,7 +446,7 @@
       grid-row: 1 / 2;
       grid-column: 2 / 3;
       position: relative;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 16 / 10;
       overflow: hidden;
       background: var(--bg);
     }
@@ -617,73 +529,13 @@
     .proj-card-summary[aria-expanded="true"] .proj-toggle svg { transform: rotate(180deg); }
 
     @media (max-width: 600px) {
-      /* === MOBILE CARD LAYOUT ===
-         The desktop layout (60px sidebar + image + arrow) doesn't work on
-         a 390px screen — the image gets cramped and the floating mobile-menu
-         button covers the right column. Switch to a single-column layout:
-         photo full-width on top, the project number sits as a small badge in
-         the corner, and the expand chevron moves to the bottom-right. */
-      .proj-card-summary {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        position: relative;
-      }
       .proj-num {
-        /* Becomes a small badge in the top-left corner of the photo */
-        position: absolute;
-        top: 10px;
-        left: 12px;
-        z-index: 2;
         writing-mode: horizontal-tb;
         transform: none;
-        font-size: 22px;
-        padding: 4px 12px;
-        background: rgba(0, 0, 0, 0.65);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        border: 1px solid rgba(212, 165, 68, 0.35);
-        border-radius: 2px;
-        line-height: 1;
-        flex: none;
-        display: inline-flex;
+        font-size: 28px;
+        padding: 16px 0 16px;
         align-items: center;
       }
-      .proj-cover-wrap {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-        aspect-ratio: 3 / 4;
-      }
-      .proj-summary-text {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-        padding: 16px 18px 56px;  /* extra bottom space for the chevron */
-      }
-      .proj-toggle {
-        /* Chevron moves to the bottom-right corner */
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-        align-self: end;
-        justify-self: end;
-        width: 44px;
-        height: 44px;
-        border-left: none;
-        margin: 0 8px 8px 0;
-        color: var(--text-muted);
-      }
-      .proj-title {
-        font-size: 16px;
-        margin-bottom: 8px;
-      }
-      .proj-meta { font-size: 12.5px; }
-    }
-
-    /* Even smaller screens (~360px and below): tighten further */
-    @media (max-width: 380px) {
-      .proj-summary-text { padding: 14px 16px 52px; }
-      .proj-title { font-size: 15px; }
-      .proj-tag { font-size: 9px; padding: 3px 8px; }
-      /* When the locality + photo count don't both fit on one line, wrap. */
-      .proj-meta { flex-wrap: wrap; row-gap: 4px; }
     }
 
     /* === PROJECT DETAIL (expanded view) === */
@@ -706,7 +558,7 @@
       gap: 12px;
     }
     .gallery-item {
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 4 / 5;
       overflow: hidden;
       border-radius: 2px;
       background: var(--bg-soft);
@@ -744,7 +596,7 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 5 / 7;
       position: relative;
       overflow: hidden;
     }
@@ -935,7 +787,43 @@
     .footer-bottom a:hover { color: var(--gold); }
     .footer-legal { display: flex; gap: 22px; }
 
-  </style>
+  
+    /* === LEGAL PAGE CONTENT (Impressum, Datenschutzerklärung) === */
+    .legal-page {
+      padding: 60px 0 80px;
+    }
+    .legal-content {
+      max-width: 760px;
+      /* Aligned left within .container so the body lines up with the H1 above */
+    }
+    .legal-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--gold);
+      margin: 40px 0 12px;
+      letter-spacing: 0.02em;
+    }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 18px;
+      font-size: 15.5px;
+    }
+    .legal-content p strong { color: var(--text); font-weight: 600; }
+    .legal-content a {
+      color: var(--gold);
+      transition: color var(--transition);
+      word-break: break-word;
+    }
+    .legal-content a:hover { color: var(--gold-bright); }
+    @media (max-width: 768px) {
+      .legal-page { padding: 32px 0 48px; }
+      .legal-content h2 { font-size: 17px; margin: 32px 0 10px; }
+      .legal-content p { font-size: 14.5px; }
+    }
+</style>
 </head>
 <body>
 
@@ -978,7 +866,7 @@
         <a href="index.html#start">Start</a>
         <a href="index.html#leistungen">Leistungen</a>
         <a href="index.html#ueber-uns">Über uns</a>
-        <a href="projekte.html" class="active">Projekte</a>
+        <a href="projekte.html">Projekte</a>
         <a href="index.html#bewertungen">Bewertungen</a>
         <a href="index.html#kontakt">Kontakt</a>
       </nav>
@@ -1016,102 +904,61 @@
     </div>
   </div>
 
+  
   <!-- ==================== PAGE TOP / BREADCRUMB ==================== -->
   <section class="page-top">
     <div class="container">
       <div class="breadcrumb">
         <a href="index.html">Startseite</a>
         <span class="sep">›</span>
-        <span class="current">Projekte</span>
+        <span class="current">Impressum</span>
       </div>
-      <div class="section-label">Portfolio</div>
-      <h1 class="section-title">Unsere Arbeiten</h1>
+      <div class="section-label">Rechtliches</div>
+      <h1 class="section-title">Impressum</h1>
       <div class="gold-divider"></div>
-      <p class="page-top-meta">
-        <strong><span id="projects-count">17</span> abgeschlossene Projekte</strong> aus Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach und der weiteren Region. Klicken Sie auf eine Karte, um Details und alle Bilder zu sehen.
-      </p>
     </div>
   </section>
 
-  <!-- ==================== FILTER BAR ==================== -->
-  <div class="filter-bar">
+  <!-- ==================== LEGAL CONTENT ==================== -->
+  <section class="legal-page">
     <div class="container">
-      <div class="filter-pills" role="tablist" aria-label="Projekte filtern">
-        <button class="filter-pill active" data-filter="alle" role="tab" aria-selected="true">
-          Alle <span class="count" data-count="alle">0</span>
-        </button>
-        <button class="filter-pill" data-filter="fenster" role="tab" aria-selected="false">
-          Fenster <span class="count" data-count="fenster">0</span>
-        </button>
-        <button class="filter-pill" data-filter="innentueren" role="tab" aria-selected="false">
-          Innentüren <span class="count" data-count="innentueren">0</span>
-        </button>
-        <button class="filter-pill" data-filter="aussentueren" role="tab" aria-selected="false">
-          Außentüren <span class="count" data-count="aussentueren">0</span>
-        </button>
-        <button class="filter-pill" data-filter="bodenverlegung" role="tab" aria-selected="false">
-          Bodenverlegung <span class="count" data-count="bodenverlegung">0</span>
-        </button>
-      </div>
-    </div>
-  </div>
+      <div class="legal-content">
 
-  <!-- ==================== PROJECTS LIST ==================== -->
-  <section class="projects-list">
-    <div class="container">
-      <div class="projects-grid" id="projects-grid">
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>
+          <strong>BauService Dionisie Bat</strong><br>
+          Inhaber: Dionisie Bat<br>
+          Burgstraße 16A<br>
+          37269 Eschwege<br>
+          Deutschland
+        </p>
 
+        <h2>Kontakt</h2>
+        <p>
+          Telefon: <a href="tel:+4917636321349">0176 36321349</a><br>
+          E-Mail: <a href="mailto:baudionis@gmail.com">baudionis@gmail.com</a>
+        </p>
 
-        <!-- Skeleton placeholders shown while data is loading.
-             Replaced by real cards from Supabase once fetch resolves. -->
-        <div class="proj-skeleton" aria-hidden="true"></div>
-        <div class="proj-skeleton" aria-hidden="true"></div>
-        <div class="proj-skeleton" aria-hidden="true"></div>
-        <div class="proj-skeleton" aria-hidden="true"></div>
-        <div class="proj-skeleton" aria-hidden="true"></div>
-        <div class="proj-skeleton" aria-hidden="true"></div>
+        <h2>Umsatzsteuer-ID</h2>
+        <p>
+          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+          <strong>DE407798830</strong>
+        </p>
 
-        <div class="empty-state" id="empty-state">
-          <div class="empty-state-title">Keine Projekte in dieser Kategorie</div>
-          <p>Wechseln Sie auf einen anderen Filter, um weitere Arbeiten zu sehen.</p>
-        </div>
+        <h2>Steuernummer</h2>
+        <p><strong>108/036/0871</strong></p>
 
-        <div class="error-state hidden" id="error-state">
-          <div class="empty-state-title">Projekte konnten nicht geladen werden</div>
-          <p>Bitte versuchen Sie es später noch einmal oder rufen Sie uns direkt an: <a href="tel:+4917636321349" style="color:var(--gold)">+49 176 36321349</a></p>
-        </div>
+        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <p>
+          Dionisie Bat<br>
+          Burgstraße 16A<br>
+          37269 Eschwege
+        </p>
 
-      </div>
-
-      <div class="projects-cta">
-        <p class="projects-cta-text">Ihr Projekt ist nicht dabei?<br>Lassen Sie es uns gemeinsam besprechen — kostenlos und unverbindlich.</p>
-        <a href="index.html#kontakt" class="btn btn-primary">
-          Angebot anfragen
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
       </div>
     </div>
   </section>
-
-  <!-- ==================== LIGHTBOX ==================== -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Bildansicht" aria-modal="true">
-    <button class="lightbox-close" aria-label="Schließen">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <button class="lightbox-prev" aria-label="Vorheriges Bild">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <button class="lightbox-next" aria-label="Nächstes Bild">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
-    <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
-  </div>
-
-  <!-- ==================== FOOTER ==================== -->
+<!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1157,34 +1004,16 @@
       </div>
     </div>
   </footer>
-
   <!-- ==================== SCRIPTS ==================== -->
   <script>
   (function () {
     'use strict';
 
-    // ==============================================================
-    // CONFIG
-    // ==============================================================
-    // Supabase project + publishable (anon) key.
-    // The publishable key only grants the permissions that RLS allows for
-    // the `anon` role — for `projects` that's SELECT where active=true.
-    var SUPABASE_URL = 'https://oevqnbgqxlczpyawdchw.supabase.co';
-    var SUPABASE_KEY = 'sb_publishable_TXtwa82-CZchdpxxKblOqg_49pHSa-6';
+    // Footer year — kept in sync without manual edits
+    var ye = document.getElementById('footer-year');
+    if (ye) ye.textContent = new Date().getFullYear();
 
-    var TAG_LABELS = {
-      fenster:        'Fenster',
-      innentueren:    'Innentüren',
-      aussentueren:   'Außentüren',
-      bodenverlegung: 'Bodenverlegung'
-    };
-    var VALID_FILTERS = ['alle', 'fenster', 'innentueren', 'aussentueren', 'bodenverlegung'];
-
-    // ==============================================================
-    // FOOTER YEAR + MOBILE MENU (unchanged behaviour from the static page)
-    // ==============================================================
-    document.getElementById('footer-year').textContent = new Date().getFullYear();
-
+    // Mobile menu toggle — same behaviour as the rest of the site
     var menuToggle = document.querySelector('.menu-toggle');
     var mobileMenu = document.getElementById('mobile-menu');
     if (menuToggle && mobileMenu) {
@@ -1203,339 +1032,7 @@
         });
       });
     }
-
-    // ==============================================================
-    // STATE — all data and live UI state live here.
-    // ==============================================================
-    var state = {
-      projects: [],          // canonical list from the DB (active only)
-      filter:   'alle',      // current category filter
-      expandedId: null       // id of card currently expanded (null = all collapsed)
-    };
-
-    // ==============================================================
-    // UTILITIES
-    // ==============================================================
-    function escapeHtml(s) {
-      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
-        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
-      });
-    }
-    function escapeAttr(s) { return escapeHtml(s); }
-
-    // ==============================================================
-    // FETCH from Supabase
-    // ==============================================================
-    function fetchProjects() {
-      // Order by sort_order asc (admin can reorder via that column).
-      // We request only the columns we need to keep payload tight.
-      var url = SUPABASE_URL +
-        '/rest/v1/projects' +
-        '?select=id,display_id,title,location,description,tags,photos,cover_url' +
-        '&order=sort_order.asc';
-      return fetch(url, {
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: 'Bearer ' + SUPABASE_KEY
-        }
-      }).then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json();
-      });
-    }
-
-    // ==============================================================
-    // RENDER — one card
-    // ==============================================================
-    function renderCard(p) {
-      var tags = Array.isArray(p.tags) ? p.tags : [];
-      var photos = Array.isArray(p.photos) ? p.photos : [];
-      var cover = p.cover_url || (photos[0] && (photos[0].thumb_url || photos[0].url)) || '';
-      var photoCount = photos.length;
-      var photoCountText = photoCount === 1 ? '1 Foto' : photoCount + ' Fotos';
-      var detailId = 'proj-detail-' + p.id;
-
-      // Tag pills (small static badges in the card summary)
-      var tagPillsHtml = tags.map(function (t) {
-        return '<span class="proj-tag">' + escapeHtml(TAG_LABELS[t] || t) + '</span>';
-      }).join('');
-
-      // Gallery items — each is a button that opens the lightbox.
-      // data-full / data-alt are read by the lightbox wiring below.
-      var galleryHtml = photos.map(function (ph, i) {
-        var alt = (p.title || '') + ' – ' + (p.location || '') + ' – Bild ' + (i + 1) + ' von ' + photoCount;
-        var full = ph.url || ph.thumb_url || '';
-        var thumb = ph.thumb_url || ph.url || '';
-        return (
-          '<button class="gallery-item" data-full="' + escapeAttr(full) +
-          '" data-alt="' + escapeAttr(alt) +
-          '" type="button" aria-label="Bild ' + (i + 1) + ' von ' + photoCount + ' vergrößern">' +
-            '<img src="' + escapeAttr(thumb) + '" alt="' + escapeAttr(alt) + '" loading="lazy" decoding="async" />' +
-          '</button>'
-        );
-      }).join('');
-
-      // data-tags joins tags with a space to keep the same simple matching
-      // pattern the static version used.
-      return (
-        '<article class="proj-card" data-tags="' + escapeAttr(tags.join(' ')) +
-        '" data-id="' + escapeAttr(p.display_id || p.id) + '">' +
-          '<button class="proj-card-summary" type="button" aria-expanded="false" aria-controls="' + detailId + '">' +
-            '<span class="proj-num">' + escapeHtml(p.display_id || '') + '</span>' +
-            '<div class="proj-cover-wrap">' +
-              (cover
-                ? '<img class="proj-cover" src="' + escapeAttr(cover) + '" alt="' + escapeAttr((p.title || '') + ' – ' + (p.location || '')) + '" loading="lazy" decoding="async" />'
-                : '') +
-              '<span class="proj-cover-shadow"></span>' +
-            '</div>' +
-            '<div class="proj-summary-text">' +
-              '<div class="proj-tags">' + tagPillsHtml + '</div>' +
-              '<h3 class="proj-title">' + escapeHtml(p.title || '') + '</h3>' +
-              '<div class="proj-meta">' +
-                '<span class="proj-loc">' +
-                  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' +
-                  escapeHtml(p.location || '') +
-                '</span>' +
-                '<span class="proj-photo-count">' + photoCountText + '</span>' +
-              '</div>' +
-            '</div>' +
-            '<span class="proj-toggle" aria-hidden="true">' +
-              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
-            '</span>' +
-          '</button>' +
-          '<div class="proj-detail" id="' + detailId + '" hidden>' +
-            (p.description ? '<p class="proj-desc">' + escapeHtml(p.description) + '</p>' : '') +
-            '<div class="proj-gallery">' + galleryHtml + '</div>' +
-          '</div>' +
-        '</article>'
-      );
-    }
-
-    // ==============================================================
-    // RENDER — full grid (filters + cards + counts)
-    // ==============================================================
-    function renderGrid() {
-      var grid = document.getElementById('projects-grid');
-      var emptyState = document.getElementById('empty-state');
-      var errorState = document.getElementById('error-state');
-
-      // Update top header count (always shows total visible projects)
-      var totalEl = document.getElementById('projects-count');
-      if (totalEl) totalEl.textContent = state.projects.length;
-
-      // Update each filter pill's counter
-      var counts = {
-        alle: state.projects.length,
-        fenster: 0,
-        innentueren: 0,
-        aussentueren: 0,
-        bodenverlegung: 0
-      };
-      state.projects.forEach(function (p) {
-        (p.tags || []).forEach(function (t) {
-          if (t in counts) counts[t] += 1;
-        });
-      });
-      document.querySelectorAll('[data-count]').forEach(function (el) {
-        var k = el.getAttribute('data-count');
-        if (k in counts) el.textContent = counts[k];
-      });
-
-      // Update pill active state
-      document.querySelectorAll('.filter-pill').forEach(function (pill) {
-        var on = pill.getAttribute('data-filter') === state.filter;
-        pill.classList.toggle('active', on);
-        pill.setAttribute('aria-selected', on ? 'true' : 'false');
-      });
-
-      // Filter and render cards
-      var filtered = state.projects.filter(function (p) {
-        if (state.filter === 'alle') return true;
-        return (p.tags || []).indexOf(state.filter) !== -1;
-      });
-
-      // Wipe everything except the empty/error placeholders (which we keep as
-      // siblings in the grid for grid-column-spanning).
-      var keepNodes = [emptyState, errorState];
-      Array.from(grid.children).forEach(function (child) {
-        if (keepNodes.indexOf(child) === -1) grid.removeChild(child);
-      });
-
-      // Insert real cards before the empty-state element
-      var html = filtered.map(renderCard).join('');
-      var frag = document.createRange().createContextualFragment(html);
-      grid.insertBefore(frag, emptyState);
-
-      emptyState.classList.toggle('visible', filtered.length === 0 && state.projects.length > 0);
-      errorState.classList.add('hidden');
-
-      // Mark grid as loaded → skeleton CSS hides itself
-      grid.setAttribute('data-loaded', 'true');
-
-      wireCards();
-    }
-
-    // ==============================================================
-    // Wire up card interactions (expand + gallery → lightbox)
-    // Called after every (re)render — we use fresh elements every time.
-    // ==============================================================
-    function wireCards() {
-      document.querySelectorAll('.proj-card').forEach(function (card) {
-        var summary = card.querySelector('.proj-card-summary');
-        var detail = card.querySelector('.proj-detail');
-        if (!summary || !detail) return;
-
-        summary.addEventListener('click', function () {
-          var willExpand = !card.classList.contains('expanded');
-
-          // Collapse any other open card — only one open at a time
-          document.querySelectorAll('.proj-card.expanded').forEach(function (other) {
-            if (other === card) return;
-            other.classList.remove('expanded');
-            var os = other.querySelector('.proj-card-summary');
-            var od = other.querySelector('.proj-detail');
-            if (os) os.setAttribute('aria-expanded', 'false');
-            if (od) od.hidden = true;
-          });
-
-          card.classList.toggle('expanded', willExpand);
-          summary.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
-          detail.hidden = !willExpand;
-          state.expandedId = willExpand ? card.getAttribute('data-id') : null;
-
-          if (willExpand) {
-            setTimeout(function () {
-              var rect = card.getBoundingClientRect();
-              if (rect.top < 100 || rect.top > window.innerHeight - 200) {
-                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }, 100);
-          }
-        });
-
-        // Gallery → lightbox
-        var gallery = card.querySelector('.proj-gallery');
-        if (!gallery) return;
-        var items = Array.from(gallery.querySelectorAll('.gallery-item')).map(function (btn) {
-          return { src: btn.getAttribute('data-full'), alt: btn.getAttribute('data-alt') };
-        });
-        gallery.querySelectorAll('.gallery-item').forEach(function (btn, idx) {
-          btn.addEventListener('click', function (e) {
-            // Stop the click bubbling to the card summary
-            e.stopPropagation();
-            openLightbox(items, idx);
-          });
-        });
-      });
-    }
-
-    // ==============================================================
-    // FILTER pills
-    // ==============================================================
-    function setFilter(filter) {
-      if (VALID_FILTERS.indexOf(filter) === -1) filter = 'alle';
-      state.filter = filter;
-      // Collapse any open card when changing filter — its card may disappear
-      state.expandedId = null;
-      renderGrid();
-
-      // Reflect in URL without scrolling
-      var url = new URL(window.location.href);
-      if (filter === 'alle') url.searchParams.delete('filter');
-      else url.searchParams.set('filter', filter);
-      history.replaceState(null, '', url.toString());
-    }
-
-    document.querySelectorAll('.filter-pill').forEach(function (pill) {
-      pill.addEventListener('click', function () {
-        setFilter(pill.getAttribute('data-filter'));
-      });
-    });
-
-    // ==============================================================
-    // LIGHTBOX
-    // ==============================================================
-    var lightbox = document.getElementById('lightbox');
-    var lightboxImg = document.getElementById('lightbox-img');
-    var lightboxCounter = document.getElementById('lightbox-counter');
-    var lightboxClose = lightbox.querySelector('.lightbox-close');
-    var lightboxPrev = lightbox.querySelector('.lightbox-prev');
-    var lightboxNext = lightbox.querySelector('.lightbox-next');
-
-    var currentGallery = [];
-    var currentIndex = 0;
-
-    function openLightbox(items, index) {
-      currentGallery = items;
-      currentIndex = index;
-      showCurrent();
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function showCurrent() {
-      var item = currentGallery[currentIndex];
-      if (!item) return;
-      lightboxImg.src = item.src;
-      lightboxImg.alt = item.alt || '';
-      lightboxCounter.textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
-      lightboxPrev.style.display = currentGallery.length > 1 ? 'flex' : 'none';
-      lightboxNext.style.display = currentGallery.length > 1 ? 'flex' : 'none';
-    }
-    function navigate(delta) {
-      currentIndex = (currentIndex + delta + currentGallery.length) % currentGallery.length;
-      showCurrent();
-    }
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', function () { navigate(-1); });
-    lightboxNext.addEventListener('click', function () { navigate(1); });
-    lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') closeLightbox();
-      else if (e.key === 'ArrowLeft') navigate(-1);
-      else if (e.key === 'ArrowRight') navigate(1);
-    });
-    var touchStartX = 0;
-    lightbox.addEventListener('touchstart', function (e) {
-      touchStartX = e.touches[0].clientX;
-    }, { passive: true });
-    lightbox.addEventListener('touchend', function (e) {
-      var dx = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(dx) > 50 && currentGallery.length > 1) {
-        navigate(dx < 0 ? 1 : -1);
-      }
-    }, { passive: true });
-
-    // ==============================================================
-    // BOOTSTRAP
-    // ==============================================================
-    // Read initial filter from URL so /projekte.html?filter=fenster works
-    var urlFilter = new URLSearchParams(window.location.search).get('filter') || 'alle';
-    if (VALID_FILTERS.indexOf(urlFilter) === -1) urlFilter = 'alle';
-    state.filter = urlFilter;
-
-    fetchProjects()
-      .then(function (rows) {
-        state.projects = rows || [];
-        renderGrid();
-      })
-      .catch(function (err) {
-        console.error('Failed to load projects:', err);
-        var grid = document.getElementById('projects-grid');
-        // Hide skeletons and show error message
-        grid.setAttribute('data-loaded', 'true');
-        document.getElementById('error-state').classList.remove('hidden');
-        document.getElementById('empty-state').classList.remove('visible');
-      });
-
   })();
   </script>
-
 </body>
 </html>

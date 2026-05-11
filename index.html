@@ -1477,6 +1477,31 @@
       margin-bottom: 48px;
     }
 
+    /* When the grid carries category tiles (4 of them), use a 4-column layout
+       on desktop so they sit on a single row with breathing room. */
+    .projects-grid--cats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* === Intro sentence above the grid === */
+    .projects-intro {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+    .projects-intro strong { color: var(--text); font-weight: 600; }
+
+    /* Inline link inside the bottom CTA paragraph */
+    .inline-link {
+      color: var(--gold);
+      border-bottom: 1px solid rgba(212, 165, 68, 0.4);
+      transition: border-color var(--transition);
+    }
+    .inline-link:hover { border-bottom-color: var(--gold); }
+
     /* Each project tile is a branded card. Until real photos are available,
        it shows a big gold numeral + project type. To swap in a real photo,
        replace the .project-tile contents with: <img src="…" alt="…"/> */
@@ -1625,7 +1650,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 20px;
+      text-align: center;
     }
 
     .projects-cta-text {
@@ -2023,6 +2049,7 @@
       .nav a { font-size: 12px; }
       .services-grid { grid-template-columns: repeat(3, 1fr); }
       .projects-grid { grid-template-columns: repeat(3, 1fr); }
+      .projects-grid--cats { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: 1fr; gap: 32px; }
       .qr-card { max-width: 320px; margin: 0 auto; }
     }
@@ -2917,6 +2944,10 @@
   </section>
 
   <!-- ========================= PROJECTS ========================= -->
+  <!-- The grid below shows 4 category tiles. Each tile's cover image and
+       project count are populated from Supabase by a small script at the end
+       of <body>. The HTML carries sensible defaults (the previous static values)
+       so it still looks correct if JS is disabled or the API is unreachable. -->
   <section id="projekte" class="projects">
     <div class="container">
       <div class="services-header">
@@ -2925,10 +2956,16 @@
         <div class="gold-divider"></div>
       </div>
 
-      <div class="projects-grid">
-        <!-- Branded placeholder cards. To swap a real photo in, replace the
-             entire .project-tile contents with: <img src="…" alt="…"/> -->
-        <article class="project-tile">
+      <p class="projects-intro">
+        <strong><span id="projects-total-count">17</span> abgeschlossene Projekte</strong> aus Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach und der Region — sortiert nach Kategorie. Klicken Sie auf eine Kategorie für alle Bilder und Details.
+      </p>
+
+      <div class="projects-grid projects-grid--cats" id="category-tiles">
+        <!-- Each tile is a clickable link to /projekte.html with a category
+             filter pre-applied. Counts are populated from Supabase by the
+             script at the end of <body> — static fallback values keep things
+             readable if JS is disabled. -->
+        <a href="projekte.html?filter=fenster" class="project-tile" data-category="fenster" aria-label="Alle Fenster-Projekte ansehen">
           <div class="project-num">01</div>
           <span class="project-view" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2937,12 +2974,12 @@
             </svg>
           </span>
           <div class="project-meta">
-            <div class="project-type">Bodenverlegung<br>Vinyl &amp; Parkett</div>
-            <div class="project-location">Eschwege · DE</div>
+            <div class="project-type">Fenster<br>Montage &amp; Austausch</div>
+            <div class="project-location"><span data-count>6</span> Projekte</div>
           </div>
-        </article>
+        </a>
 
-        <article class="project-tile">
+        <a href="projekte.html?filter=innentueren" class="project-tile" data-category="innentueren" aria-label="Alle Innentüren-Projekte ansehen">
           <div class="project-num">02</div>
           <span class="project-view" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2952,11 +2989,11 @@
           </span>
           <div class="project-meta">
             <div class="project-type">Innentüren<br>Komplettmontage</div>
-            <div class="project-location">Werra-Meißner-Kreis</div>
+            <div class="project-location"><span data-count>5</span> Projekte</div>
           </div>
-        </article>
+        </a>
 
-        <article class="project-tile">
+        <a href="projekte.html?filter=aussentueren" class="project-tile" data-category="aussentueren" aria-label="Alle Außentüren-Projekte ansehen">
           <div class="project-num">03</div>
           <span class="project-view" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2965,12 +3002,12 @@
             </svg>
           </span>
           <div class="project-meta">
-            <div class="project-type">Fenstereinbau<br>Kunststoff</div>
-            <div class="project-location">Eschwege · DE</div>
+            <div class="project-type">Außentüren<br>Haus- &amp; Balkontüren</div>
+            <div class="project-location"><span data-count>6</span> Projekte</div>
           </div>
-        </article>
+        </a>
 
-        <article class="project-tile">
+        <a href="projekte.html?filter=bodenverlegung" class="project-tile" data-category="bodenverlegung" aria-label="Alle Bodenverlegung-Projekte ansehen">
           <div class="project-num">04</div>
           <span class="project-view" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2979,31 +3016,21 @@
             </svg>
           </span>
           <div class="project-meta">
-            <div class="project-type">Hausmeisterservice<br>Mehrfamilienhaus</div>
-            <div class="project-location">Eschwege · DE</div>
+            <div class="project-type">Bodenverlegung<br>Vinyl, Laminat &amp; Parkett</div>
+            <div class="project-location"><span data-count>3</span> Projekte</div>
           </div>
-        </article>
-
-        <article class="project-tile">
-          <div class="project-num">05</div>
-          <span class="project-view" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </span>
-          <div class="project-meta">
-            <div class="project-type">Materiallieferung<br>Baustelle</div>
-            <div class="project-location">Region Nordhessen</div>
-          </div>
-        </article>
+        </a>
       </div>
 
       <div class="projects-cta">
-        <p class="projects-cta-text">Sie haben ein eigenes Projekt im Kopf?<br>Wir besprechen es gerne mit Ihnen — kostenlos und unverbindlich.</p>
-        <a href="#kontakt" class="btn btn-ghost">
-          Ihr Projekt besprechen
+        <a href="projekte.html" class="btn btn-primary">
+          Alle <span id="projects-cta-count">17</span> Projekte ansehen
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
         </a>
+        <p class="projects-cta-text">Oder besprechen Sie ein eigenes Projekt mit uns — <a href="#kontakt" class="inline-link">kostenlose Beratung</a>.</p>
       </div>
     </div>
   </section>
@@ -3676,6 +3703,62 @@
     if (initialHash === 'impressum' || initialHash === 'datenschutz') {
       openLegal(initialHash);
     }
+  </script>
+
+  <!-- ========================= PROJECTS LIVE DATA =========================
+       Fetches the public projects list from Supabase and refreshes the
+       project counts on the 4 category tiles and in the intro paragraph.
+       The static markup above carries sensible fallback values, so if this
+       script fails (offline, network issue, RLS misconfig), the page still
+       looks correct — just with slightly stale numbers.
+       ========================================================================= -->
+  <script>
+  (function () {
+    'use strict';
+    var SUPABASE_URL = 'https://oevqnbgqxlczpyawdchw.supabase.co';
+    var SUPABASE_KEY = 'sb_publishable_TXtwa82-CZchdpxxKblOqg_49pHSa-6';
+
+    // We only need tags to compute counts per category and the total row count.
+    fetch(
+      SUPABASE_URL + '/rest/v1/projects?select=tags',
+      { headers: { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY } }
+    )
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (rows) {
+        if (!Array.isArray(rows) || rows.length === 0) return;
+
+        // Count projects per category (a single project can appear in multiple)
+        var counts = { fenster: 0, innentueren: 0, aussentueren: 0, bodenverlegung: 0 };
+        rows.forEach(function (p) {
+          (p.tags || []).forEach(function (t) {
+            if (t in counts) counts[t] += 1;
+          });
+        });
+
+        // Update each tile's count + aria-label
+        document.querySelectorAll('#category-tiles .project-tile').forEach(function (tile) {
+          var cat = tile.getAttribute('data-category');
+          var count = counts[cat] || 0;
+          var countEl = tile.querySelector('[data-count]');
+          if (countEl) countEl.textContent = count;
+          var typeEl = tile.querySelector('.project-type');
+          var labelText = typeEl ? typeEl.textContent.split(/\s/)[0] : cat; // first word as label
+          tile.setAttribute('aria-label',
+            'Alle ' + labelText + '-Projekte ansehen (' + count + ' Projekt' + (count === 1 ? '' : 'e') + ')');
+        });
+
+        // Total count in the intro paragraph and the "Alle N Projekte ansehen" button
+        var total = rows.length;
+        var totalEl = document.getElementById('projects-total-count');
+        if (totalEl) totalEl.textContent = total;
+        var ctaEl = document.getElementById('projects-cta-count');
+        if (ctaEl) ctaEl.textContent = total;
+      })
+      .catch(function (err) {
+        // Silent fail — static fallback values stay in place
+        console.warn('Could not refresh projects from Supabase:', err);
+      });
+  })();
   </script>
 </body>
 </html>

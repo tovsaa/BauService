@@ -12,11 +12,13 @@
        the radius of operation.
        ========================================================= -->
   <title>BauService Dionisie Bat – Fenster, Türen &amp; Montage in Eschwege</title>
+  <link rel="icon" type="image/svg+xml" href="icon-mark.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0D0D0D">
   <meta name="description" content="Mobiler Handwerksbetrieb aus Eschwege im Werra-Meißner-Kreis. Fenster- &amp; Türenmontage, Bodenverlegung, Trockenbau, Rollläden und Hausmeisterservice — im Umkreis von 60 km (Kassel, Göttingen, Eisenach, Bad Hersfeld). Kostenlose Beratung &amp; Aufmaß. RAL Montage." />
   <meta name="keywords" content="Handwerker Eschwege, Fenstermontage Eschwege, Türenmontage, Bodenverlegung, Vinyl, Laminat, Parkett, Trockenbau, Rollläden, Hausmeisterservice, Baustoffe, Baumaterialien, Materialhandel, Farben, einzA, Dämmstoffe, EPS, XPS, Mineralwolle, Putz, Fassade, Dachmaterialien, Werra-Meißner-Kreis, Bad Sooden-Allendorf, Witzenhausen, Hessisch Lichtenau, Sontra, Wanfried, Bebra, Bad Hersfeld, Eisenach, Mühlhausen, Göttingen, Kassel, Nordhessen, Südniedersachsen, Westthüringen, RAL Montage, BauService Dionisie Bat" />
   <meta name="author" content="Dionisie Bat" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0a0a0a" />
 
   <!-- Geo tags help search engines and some directories anchor the site
        to the physical location (Eschwege, Hessen, DE). -->
@@ -191,8 +193,7 @@
   }
   </script>
 
-  <!-- Favicon — inline SVG using the BauService brand mark -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 458 430'><rect width='458' height='430' fill='%230a0a0a'/><g transform='translate(0,430) scale(0.1,-0.1)' fill='%23d4a544'><path d='M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z'/><path d='M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z'/></g></svg>" />
+  <!-- Favicon — inline SVG using the BauService brand mark --><rect width='458' height='430' fill='%230a0a0a'/><g transform='translate(0,430) scale(0.1,-0.1)' fill='%23d4a544'><path d='M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z'/><path d='M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z'/></g></svg>" />
 
   <!-- Fonts: self-hosted (no third-party requests, DSGVO-friendly) -->
   <style>
@@ -440,18 +441,19 @@
     .header.scrolled {
       padding: 8px 0;
       background: rgba(10, 10, 10, 0.92);
-      backdrop-filter: blur(16px) saturate(160%);
-      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      backdrop-filter: blur(16px) saturate(120%);
+      -webkit-backdrop-filter: blur(16px) saturate(120%);
       border-bottom-color: rgba(212, 165, 68, 0.12);
       box-shadow: 0 8px 32px -12px rgba(0, 0, 0, 0.6);
     }
 
     .header-inner {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
       gap: 24px;
     }
+    .header-inner > .header-right { justify-self: end; }
 
     /* === LOGO — shrinks slightly when scrolled === */
     .logo {
@@ -460,19 +462,161 @@
       flex-shrink: 0;
     }
 
-    .logo svg {
+    .logo svg,
+    .logo img {
       width: 56px;
-      height: 52px;
+      height: auto;
       display: block;
-      transition: transform var(--transition), width 300ms ease, height 300ms ease;
+      transition: transform var(--transition), width 300ms ease;
     }
 
-    .header.scrolled .logo svg {
+    .header.scrolled .logo svg,
+    .header.scrolled .logo img,
+    .header.scrolled .logo-block img {
       width: 46px;
-      height: 43px;
     }
 
-    .logo:hover svg { transform: scale(1.05); }
+    /* === LOGO-BLOCK — лого + текстовый "именной" блок === */
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 200ms ease;
+    }
+    .logo-block:hover { opacity: 0.85; }
+    .logo-block img {
+      width: 56px;
+      height: auto;
+      display: block;
+      transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 3px;
+      max-width: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-width 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 250ms ease 100ms;
+    }
+    /* На широких экранах текст рядом с лого виден */
+    @media (min-width: 1100px) {
+      .logo-text {
+        max-width: 200px;
+        opacity: 1;
+      }
+    }
+    .header.scrolled .logo-text {
+      max-width: 0;
+      opacity: 0;
+      transition: max-width 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms ease;
+    }
+    .logo-text-brand {
+      font-family: 'Saira Condensed', 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .logo-text-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    /* === NAV PILL — glass-capsule навигация === */
+    .nav.nav-pill {
+      gap: 6px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      flex: 0 1 auto;
+      transition: background 300ms ease, border-color 300ms ease;
+    }
+    .header.scrolled .nav.nav-pill {
+      background: rgba(20, 20, 20, 0.92);
+      border-color: rgba(255, 255, 255, 0.06);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    .nav.nav-pill a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 12.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 14px 28px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      transition: color 200ms ease, background 200ms ease, border-color 200ms ease;
+      position: relative;
+    }
+    .nav.nav-pill a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .nav.nav-pill a.active {
+      color: var(--gold);
+      background: transparent;
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+    /* Скрыть старую анимацию подчёркивания, теперь активный фон сам подсвечивает */
+    .nav.nav-pill a::after { display: none; }
+
+    /* === PHONE ICON — компактная круглая кнопка === */
+    .phone-icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 165, 68, 0.18);
+      color: var(--gold);
+      transition: background 250ms ease, transform 250ms ease, border-color 250ms ease;
+    }
+    .phone-icon-link:hover {
+      background: rgba(212, 165, 68, 0.12);
+      border-color: rgba(212, 165, 68, 0.4);
+      transform: translateY(-1px);
+    }
+    .phone-icon-link svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* === Anfragen pill — round, slightly chunkier === */
+    .header .header-right .btn.btn-primary {
+      border-radius: 999px;
+      padding: 12px 26px;
+      font-size: 12.5px;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .header .header-right .btn.btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .logo:hover svg,
+    .logo:hover img { transform: scale(1.05); }
 
     /* === NAV === */
     .nav {
@@ -916,29 +1060,60 @@
       border-radius: 8px;
       overflow: hidden;
       background:
-        radial-gradient(ellipse at center, #1f1f1f 0%, #0d0d0d 75%);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0.07 0 0 0 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>"),
+        repeating-linear-gradient(115deg,
+          transparent 0px,
+          transparent 2px,
+          rgba(255, 255, 255, 0.012) 2px,
+          rgba(255, 255, 255, 0.012) 3px),
+        radial-gradient(ellipse at center, #0c0a08 0%, #050403 100%);
+      background-size: 220px 220px, auto, cover;
+      background-repeat: repeat, repeat, no-repeat;
       box-shadow:
         0 30px 80px -20px rgba(0, 0, 0, 0.7),
-        0 0 0 1px rgba(212, 165, 68, 0.12) inset;
+        0 0 0 1px rgba(212, 165, 68, 0.15) inset,
+        inset 0 2px 1px rgba(255, 255, 255, 0.07),
+        inset 0 -2px 1px rgba(0, 0, 0, 0.6),
+        inset 0 0 60px rgba(0, 0, 0, 0.5);
+      transform: perspective(900px) rotateX(var(--ry, 0deg)) rotateY(var(--rx, 0deg));
+      transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .hero-visual.is-tilting {
+      transition: none;
     }
 
-    /* Spotlight from above */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual { transform: none !important; transition: none; }
+    }
+
+    /* Matte paper falloff — pure darkening toward the bottom edge,
+       no highlights (any white shine would read as glossy). */
     .hero-visual::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212, 165, 68, 0.2) 0%, transparent 60%);
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        transparent 60%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
       pointer-events: none;
     }
 
-    /* Floor reflection — soft golden gradient at bottom */
+    /* Stronger vignette — matte material absorbs light at the edges,
+       no clean specular highlight reaches the corners */
     .hero-visual::after {
       content: '';
       position: absolute;
-      left: 0; right: 0; bottom: 0;
-      height: 35%;
-      background:
-        linear-gradient(180deg, transparent, rgba(212, 165, 68, 0.06) 70%, rgba(212, 165, 68, 0.12) 100%);
+      inset: 0;
+      background: radial-gradient(
+        ellipse at center,
+        transparent 35%,
+        rgba(0, 0, 0, 0.45) 80%,
+        rgba(0, 0, 0, 0.65) 100%
+      );
       pointer-events: none;
     }
 
@@ -947,8 +1122,8 @@
       position: absolute;
       width: 40px;
       height: 40px;
-      border: 1.5px solid var(--gold);
-      opacity: 0.7;
+      border: 2.5px solid var(--gold);
+      opacity: 0.85;
     }
     .hero-visual .corner-tl { top: 20px; left: 20px; border-right: none; border-bottom: none; }
     .hero-visual .corner-tr { top: 20px; right: 20px; border-left: none; border-bottom: none; }
@@ -968,9 +1143,13 @@
       z-index: 2;
     }
 
+    /* Logo — polished gold; drop-shadow intensity tracks tilt for a 'live metal' feel */
     .hero-brand-logo {
       width: clamp(120px, 28%, 180px);
-      filter: drop-shadow(0 0 30px rgba(212, 165, 68, 0.3));
+      filter:
+        drop-shadow(0 0 18px rgba(255, 220, 130, calc(0.25 + (var(--gx, 50%) - 50%) / 200)))
+        drop-shadow(0 0 4px rgba(212, 165, 68, 0.5))
+        brightness(calc(1 + (var(--gx, 50%) - 50%) / 250));
       animation: floatY 6s ease-in-out infinite;
     }
 
@@ -987,7 +1166,8 @@
     .hero-brand-sub {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 600;
       color: var(--gold);
       text-align: center;
       margin-top: -16px;
@@ -1003,15 +1183,36 @@
     }
     .hero-brand-divider .line {
       flex: 1;
-      height: 1px;
+      height: 2px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
     .hero-brand-divider .diamond {
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       background: var(--gold);
       transform: rotate(45deg);
       flex-shrink: 0;
+    }
+
+    /* Single sweeping sheen across the whole card — gives every gold
+       element (corners, logo, divider, text, diamond) the look of a
+       unified polished metal sheet catching one moving highlight. */
+    .hero-sheen {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+      background: linear-gradient(
+        105deg,
+        transparent 0%,
+        transparent calc(var(--gx, 50%) - 25%),
+        rgba(255, 240, 195, 0.6) calc(var(--gx, 50%) - 19%),
+        rgba(255, 250, 220, 0.85) calc(var(--gx, 50%) - 15%),
+        rgba(255, 240, 195, 0.6) calc(var(--gx, 50%) - 11%),
+        transparent calc(var(--gx, 50%) - 5%),
+        transparent 100%
+      );
+      mix-blend-mode: overlay;
     }
 
     @keyframes floatY {
@@ -1202,34 +1403,6 @@
       color: var(--text-muted);
       line-height: 1.6;
       margin-bottom: 18px;
-    }
-
-    /* Arrow indicator — appears on hover */
-    .service-arrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0;
-      transform: translateY(4px);
-      transition: opacity 250ms ease, transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .service-arrow svg {
-      width: 12px;
-      height: 12px;
-      transition: transform 250ms ease;
-    }
-    .service-card:hover .service-arrow {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .service-card:hover .service-arrow svg {
-      transform: translateX(3px);
     }
 
     /* === Reveal on scroll ===
@@ -1893,9 +2066,10 @@
       flex-direction: column;
       gap: 18px;
     }
-    .footer-brand .logo svg {
+    .footer-brand .logo svg,
+    .footer-brand .logo img {
       width: 64px;
-      height: 60px;
+      height: auto;
     }
     .footer-tagline {
       font-family: 'Cormorant Garamond', serif;
@@ -2055,8 +2229,11 @@
     }
 
     @media (max-width: 768px) {
-      .nav { display: none; }
-      .header-right .phone-link { display: none; }
+      .nav,
+      .nav.nav-pill { display: none; }
+      .header-right .phone-link,
+      .header-right .phone-icon-link { display: none; }
+      .logo-text { display: none; }
       .menu-toggle { display: flex; }
       .header .header-right .btn { display: none; }
       .hero {
@@ -2170,8 +2347,6 @@
         margin-bottom: 0;
         font-size: 12px;
       }
-      .service-arrow { display: none; } /* hide on mobile — whole card is the affordance */
-
       /* Projects: switch from 2-col grid to a single-column horizontal layout.
          Numeral on the left, meta on the right — same pattern as services. */
       .projects-grid { grid-template-columns: 1fr; gap: 10px; }
@@ -2358,6 +2533,11 @@
       .reviews-cta-buttons { flex-direction: column; width: 100%; }
       .reviews-cta-buttons .btn { width: 100%; }
     }
+      @keyframes pageFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    body { animation: pageFadeIn 350ms cubic-bezier(0.4, 0, 0.2, 1) both; }
   </style>
 </head>
 <body>
@@ -2365,57 +2545,22 @@
   <!-- ========================= HEADER ========================= -->
   <header class="header">
     <div class="container header-inner">
-      <a href="#start" class="logo" aria-label="BauService">
-        <!-- Original BauService logo, vectorized from the PDF business card -->
-        <svg viewBox="0 0 458 430" fill="#d4a544" xmlns="http://www.w3.org/2000/svg" aria-label="BauService Logo">
-          <g transform="translate(0,430) scale(0.1,-0.1)">
-            <path d="M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z"/>
-            <path d="M1180 2440 l0 -440 120 0 120 0 0 440 0 440 -120 0 -120 0 0 -440z"/>
-            <path d="M1460 2780 l0 -100 43 0 c60 0 82 -18 82 -70 0 -52 -22 -70 -82 -70 l-43 0 0 -100 0 -100 39 0 c22 0 51 -4 65 -10 23 -8 26 -15 26 -59 0 -59 -14 -71 -84 -71 l-46 0 0 -100 0 -100 104 0 c203 0 270 57 270 230 1 111 -19 154 -87 191 l-48 26 29 12 c67 28 102 95 102 196 0 75 -18 125 -59 166 -46 46 -91 59 -213 59 l-98 0 0 -100z"/>
-            <path d="M2121 2813 c-56 -191 -220 -762 -226 -785 l-7 -28 119 0 120 0 67 263 67 263 -36 140 c-20 76 -41 156 -46 177 -15 57 -35 47 -58 -30z"/>
-            <path d="M2280 2615 l68 -265 -46 0 -47 0 -18 -77 c-9 -43 -20 -88 -23 -100 -6 -22 -4 -22 92 -25 l97 -3 20 -72 19 -73 123 0 123 0 -105 363 c-58 199 -115 396 -127 437 l-22 75 -111 3 -110 3 67 -266z"/>
-            <path d="M2762 2513 c3 -360 3 -369 26 -410 42 -80 121 -112 270 -113 l82 0 0 94 0 94 -56 4 c-40 3 -61 10 -70 23 -11 15 -14 87 -14 347 l0 328 -121 0 -120 0 3 -367z"/>
-            <path d="M3180 2434 l0 -446 43 7 c107 17 168 74 187 174 5 30 10 201 10 382 l0 329 -120 0 -120 0 0 -446z"/>
-            <path d="M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z"/>
-            <path d="M1070 1527 l0 -56 85 -3 85 -3 0 47 c0 26 -3 49 -7 51 -5 3 -43 8 -85 12 l-78 7 0 -55z"/>
-            <path d="M3080 1526 l0 -56 80 0 80 0 0 44 c0 25 -4 47 -9 50 -5 3 -41 9 -80 12 l-71 7 0 -57z"/>
-            <path d="M944 1536 c-32 -32 -34 -37 -34 -106 0 -65 2 -74 28 -100 18 -17 44 -31 68 -35 21 -3 57 -9 79 -13 l40 -7 3 -83 c3 -91 6 -93 67 -68 18 8 41 25 50 39 22 33 30 116 16 159 -18 55 -42 70 -131 82 l-80 10 0 78 0 78 -36 0 c-28 0 -44 -8 -70 -34z"/>
-            <path d="M1350 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-            <path d="M1510 1520 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
-            <path d="M1770 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-            <path d="M1930 1521 l0 -50 38 -3 c35 -3 37 -5 40 -42 4 -43 -7 -56 -50 -56 -27 0 -28 -2 -28 -49 0 -38 4 -50 16 -53 10 -2 27 -31 43 -73 l27 -70 72 -3 c40 -2 72 0 72 3 0 4 -14 41 -32 82 -27 66 -29 77 -16 87 8 6 20 21 26 33 15 27 16 167 2 194 -18 33 -64 49 -140 49 l-70 0 0 -49z"/>
-            <path d="M2200 1558 c1 -7 29 -107 64 -223 l63 -210 68 -3 c52 -2 66 0 63 10 -3 7 -31 109 -63 226 l-58 212 -69 0 c-48 0 -68 -4 -68 -12z"/>
-            <path d="M2460 1445 l-33 -125 26 -96 c26 -97 32 -112 43 -102 5 6 134 427 134 441 0 4 -31 7 -69 7 l-68 0 -33 -125z"/>
-            <path d="M2690 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-            <path d="M2979 1547 c-19 -13 -39 -38 -46 -57 -15 -43 -17 -232 -3 -281 21 -75 95 -105 232 -93 l78 7 0 48 0 49 -80 0 c-68 0 -81 3 -90 19 -6 11 -10 87 -10 175 l0 156 -24 0 c-12 0 -38 -10 -57 -23z"/>
-            <path d="M3320 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-            <path d="M3480 1520 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
-            <path d="M1510 1350 l0 -50 70 0 70 0 0 50 0 50 -70 0 -70 0 0 -50z"/>
-            <path d="M3480 1350 l0 -50 75 0 75 0 0 50 0 50 -75 0 -75 0 0 -50z"/>
-            <path d="M920 1171 l0 -48 68 -6 c128 -13 122 -15 122 48 l0 55 -95 0 -95 0 0 -49z"/>
-            <path d="M1510 1170 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
-            <path d="M3480 1170 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
-          </g>
-        </svg>
-      </a>
+      <a href="#start" class="logo-block" aria-label="BauService Dionisie Bat — zur Startseite">
+        <img src="logo.svg" alt="" width="56">
+        </a>
 
-      <nav class="nav">
-        <a href="#start" class="active">Start</a>
-        <a href="#leistungen">Leistungen</a>
-        <a href="#ueber-uns">Über uns</a>
-        <a href="#projekte">Projekte</a>
+      <nav class="nav nav-pill">
+        <a href="#start">Start</a>
+        <a href="projekte.html">Projekte</a>
         <a href="konfigurator.html">Konfigurator</a>
-        <a href="#bewertungen">Bewertungen</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
       <div class="header-right">
-        <a href="#kontakt" class="btn btn-primary">Angebot anfragen</a>
-        <a href="tel:+4917636321349" class="phone-link">
+        <a href="tel:+4917636321349" class="phone-icon-link" aria-label="Anrufen: +49 176 36321349" title="+49 176 36321349">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          +49 176 36321349
         </a>
       </div>
     </div>
@@ -2430,11 +2575,8 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Hauptmenü" aria-modal="true">
     <nav class="mobile-menu-nav">
       <a href="#start">Start</a>
-      <a href="#leistungen">Leistungen</a>
-      <a href="#ueber-uns">Über uns</a>
-      <a href="#projekte">Projekte</a>
+      <a href="projekte.html">Projekte</a>
       <a href="konfigurator.html">Konfigurator</a>
-      <a href="#bewertungen">Bewertungen</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
 
@@ -2482,37 +2624,7 @@
           <span class="corner corner-br"></span>
 
           <div class="hero-visual-content">
-            <!-- BauService logo, large -->
-            <svg class="hero-brand-logo" viewBox="0 0 458 430" fill="#d4a544" xmlns="http://www.w3.org/2000/svg" aria-label="BauService">
-              <g transform="translate(0,430) scale(0.1,-0.1)">
-                <path d="M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z"/>
-                <path d="M1180 2440 l0 -440 120 0 120 0 0 440 0 440 -120 0 -120 0 0 -440z"/>
-                <path d="M1460 2780 l0 -100 43 0 c60 0 82 -18 82 -70 0 -52 -22 -70 -82 -70 l-43 0 0 -100 0 -100 39 0 c22 0 51 -4 65 -10 23 -8 26 -15 26 -59 0 -59 -14 -71 -84 -71 l-46 0 0 -100 0 -100 104 0 c203 0 270 57 270 230 1 111 -19 154 -87 191 l-48 26 29 12 c67 28 102 95 102 196 0 75 -18 125 -59 166 -46 46 -91 59 -213 59 l-98 0 0 -100z"/>
-                <path d="M2121 2813 c-56 -191 -220 -762 -226 -785 l-7 -28 119 0 120 0 67 263 67 263 -36 140 c-20 76 -41 156 -46 177 -15 57 -35 47 -58 -30z"/>
-                <path d="M2280 2615 l68 -265 -46 0 -47 0 -18 -77 c-9 -43 -20 -88 -23 -100 -6 -22 -4 -22 92 -25 l97 -3 20 -72 19 -73 123 0 123 0 -105 363 c-58 199 -115 396 -127 437 l-22 75 -111 3 -110 3 67 -266z"/>
-                <path d="M2762 2513 c3 -360 3 -369 26 -410 42 -80 121 -112 270 -113 l82 0 0 94 0 94 -56 4 c-40 3 -61 10 -70 23 -11 15 -14 87 -14 347 l0 328 -121 0 -120 0 3 -367z"/>
-                <path d="M3180 2434 l0 -446 43 7 c107 17 168 74 187 174 5 30 10 201 10 382 l0 329 -120 0 -120 0 0 -446z"/>
-                <path d="M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z"/>
-                <path d="M1070 1527 l0 -56 85 -3 85 -3 0 47 c0 26 -3 49 -7 51 -5 3 -43 8 -85 12 l-78 7 0 -55z"/>
-                <path d="M3080 1526 l0 -56 80 0 80 0 0 44 c0 25 -4 47 -9 50 -5 3 -41 9 -80 12 l-71 7 0 -57z"/>
-                <path d="M944 1536 c-32 -32 -34 -37 -34 -106 0 -65 2 -74 28 -100 18 -17 44 -31 68 -35 21 -3 57 -9 79 -13 l40 -7 3 -83 c3 -91 6 -93 67 -68 18 8 41 25 50 39 22 33 30 116 16 159 -18 55 -42 70 -131 82 l-80 10 0 78 0 78 -36 0 c-28 0 -44 -8 -70 -34z"/>
-                <path d="M1350 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-                <path d="M1510 1520 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
-                <path d="M1770 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-                <path d="M1930 1521 l0 -50 38 -3 c35 -3 37 -5 40 -42 4 -43 -7 -56 -50 -56 -27 0 -28 -2 -28 -49 0 -38 4 -50 16 -53 10 -2 27 -31 43 -73 l27 -70 72 -3 c40 -2 72 0 72 3 0 4 -14 41 -32 82 -27 66 -29 77 -16 87 8 6 20 21 26 33 15 27 16 167 2 194 -18 33 -64 49 -140 49 l-70 0 0 -49z"/>
-                <path d="M2200 1558 c1 -7 29 -107 64 -223 l63 -210 68 -3 c52 -2 66 0 63 10 -3 7 -31 109 -63 226 l-58 212 -69 0 c-48 0 -68 -4 -68 -12z"/>
-                <path d="M2460 1445 l-33 -125 26 -96 c26 -97 32 -112 43 -102 5 6 134 427 134 441 0 4 -31 7 -69 7 l-68 0 -33 -125z"/>
-                <path d="M2690 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-                <path d="M2979 1547 c-19 -13 -39 -38 -46 -57 -15 -43 -17 -232 -3 -281 21 -75 95 -105 232 -93 l78 7 0 48 0 49 -80 0 c-68 0 -81 3 -90 19 -6 11 -10 87 -10 175 l0 156 -24 0 c-12 0 -38 -10 -57 -23z"/>
-                <path d="M3320 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-                <path d="M3480 1520 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
-                <path d="M1510 1350 l0 -50 70 0 70 0 0 50 0 50 -70 0 -70 0 0 -50z"/>
-                <path d="M3480 1350 l0 -50 75 0 75 0 0 50 0 50 -75 0 -75 0 0 -50z"/>
-                <path d="M920 1171 l0 -48 68 -6 c128 -13 122 -15 122 48 l0 55 -95 0 -95 0 0 -49z"/>
-                <path d="M1510 1170 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
-                <path d="M3480 1170 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
-              </g>
-            </svg>
+            <img class="hero-brand-logo" src="logo.svg" alt="BauService Dionisie Bat">
 
             <div class="hero-brand-divider">
               <span class="line"></span>
@@ -2523,6 +2635,8 @@
             <div class="hero-brand-tagline">Qualität &amp; Service</div>
             <div class="hero-brand-sub">aus einer Hand</div>
           </div>
+
+          <span class="hero-sheen" aria-hidden="true"></span>
         </div>
       </div>
     </div>
@@ -2557,13 +2671,6 @@
           <div class="service-content">
             <h3>Verlegung von<br>Vinyl, Laminat &amp; Parkett</h3>
             <p>Vinyl, Laminat und Parkett – fachgerecht verlegt, mit sauberem Übergang und langer Lebensdauer.</p>
-            <span class="service-arrow">
-              Mehr erfahren
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
           </div>
         </article>
 
@@ -2580,13 +2687,6 @@
           <div class="service-content">
             <h3>Fenster &amp; Türen</h3>
             <p>Lieferung und passgenaue Montage neuer Fenster und Außentüren – Kunststoff, Holz oder Aluminium.</p>
-            <span class="service-arrow">
-              Mehr erfahren
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
           </div>
         </article>
 
@@ -2603,13 +2703,6 @@
           <div class="service-content">
             <h3>Innentüren</h3>
             <p>Auswahl, Lieferung und Einbau hochwertiger Innentüren – vom klassischen Design bis modern und schlicht.</p>
-            <span class="service-arrow">
-              Mehr erfahren
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
           </div>
         </article>
 
@@ -2624,13 +2717,6 @@
           <div class="service-content">
             <h3>Hausmeisterservice</h3>
             <p>Reparaturen, Wartung und regelmäßige Pflege Ihrer Immobilie – ein verlässlicher Ansprechpartner für alle Fälle.</p>
-            <span class="service-arrow">
-              Mehr erfahren
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
           </div>
         </article>
 
@@ -2649,13 +2735,6 @@
           <div class="service-content">
             <h3>Materialien<br>&amp; Lieferung</h3>
             <p>Farben, Dämmstoffe, Putz, Kleber, Spachtel sowie Befestigungs- und Dachmaterial — direkt auf Ihre Baustelle geliefert.</p>
-            <span class="service-arrow">
-              Mehr erfahren
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
           </div>
         </article>
       </div>
@@ -3103,37 +3182,7 @@
 
         <!-- Column 1: Brand -->
         <div class="footer-brand">
-          <a href="#start" class="logo" aria-label="BauService">
-            <svg viewBox="0 0 458 430" fill="#d4a544" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(0,430) scale(0.1,-0.1)">
-                <path d="M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z"/>
-                <path d="M1180 2440 l0 -440 120 0 120 0 0 440 0 440 -120 0 -120 0 0 -440z"/>
-                <path d="M1460 2780 l0 -100 43 0 c60 0 82 -18 82 -70 0 -52 -22 -70 -82 -70 l-43 0 0 -100 0 -100 39 0 c22 0 51 -4 65 -10 23 -8 26 -15 26 -59 0 -59 -14 -71 -84 -71 l-46 0 0 -100 0 -100 104 0 c203 0 270 57 270 230 1 111 -19 154 -87 191 l-48 26 29 12 c67 28 102 95 102 196 0 75 -18 125 -59 166 -46 46 -91 59 -213 59 l-98 0 0 -100z"/>
-                <path d="M2121 2813 c-56 -191 -220 -762 -226 -785 l-7 -28 119 0 120 0 67 263 67 263 -36 140 c-20 76 -41 156 -46 177 -15 57 -35 47 -58 -30z"/>
-                <path d="M2280 2615 l68 -265 -46 0 -47 0 -18 -77 c-9 -43 -20 -88 -23 -100 -6 -22 -4 -22 92 -25 l97 -3 20 -72 19 -73 123 0 123 0 -105 363 c-58 199 -115 396 -127 437 l-22 75 -111 3 -110 3 67 -266z"/>
-                <path d="M2762 2513 c3 -360 3 -369 26 -410 42 -80 121 -112 270 -113 l82 0 0 94 0 94 -56 4 c-40 3 -61 10 -70 23 -11 15 -14 87 -14 347 l0 328 -121 0 -120 0 3 -367z"/>
-                <path d="M3180 2434 l0 -446 43 7 c107 17 168 74 187 174 5 30 10 201 10 382 l0 329 -120 0 -120 0 0 -446z"/>
-                <path d="M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z"/>
-                <path d="M1070 1527 l0 -56 85 -3 85 -3 0 47 c0 26 -3 49 -7 51 -5 3 -43 8 -85 12 l-78 7 0 -55z"/>
-                <path d="M3080 1526 l0 -56 80 0 80 0 0 44 c0 25 -4 47 -9 50 -5 3 -41 9 -80 12 l-71 7 0 -57z"/>
-                <path d="M944 1536 c-32 -32 -34 -37 -34 -106 0 -65 2 -74 28 -100 18 -17 44 -31 68 -35 21 -3 57 -9 79 -13 l40 -7 3 -83 c3 -91 6 -93 67 -68 18 8 41 25 50 39 22 33 30 116 16 159 -18 55 -42 70 -131 82 l-80 10 0 78 0 78 -36 0 c-28 0 -44 -8 -70 -34z"/>
-                <path d="M1350 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-                <path d="M1510 1520 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
-                <path d="M1770 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-                <path d="M1930 1521 l0 -50 38 -3 c35 -3 37 -5 40 -42 4 -43 -7 -56 -50 -56 -27 0 -28 -2 -28 -49 0 -38 4 -50 16 -53 10 -2 27 -31 43 -73 l27 -70 72 -3 c40 -2 72 0 72 3 0 4 -14 41 -32 82 -27 66 -29 77 -16 87 8 6 20 21 26 33 15 27 16 167 2 194 -18 33 -64 49 -140 49 l-70 0 0 -49z"/>
-                <path d="M2200 1558 c1 -7 29 -107 64 -223 l63 -210 68 -3 c52 -2 66 0 63 10 -3 7 -31 109 -63 226 l-58 212 -69 0 c-48 0 -68 -4 -68 -12z"/>
-                <path d="M2460 1445 l-33 -125 26 -96 c26 -97 32 -112 43 -102 5 6 134 427 134 441 0 4 -31 7 -69 7 l-68 0 -33 -125z"/>
-                <path d="M2690 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-                <path d="M2979 1547 c-19 -13 -39 -38 -46 -57 -15 -43 -17 -232 -3 -281 21 -75 95 -105 232 -93 l78 7 0 48 0 49 -80 0 c-68 0 -81 3 -90 19 -6 11 -10 87 -10 175 l0 156 -24 0 c-12 0 -38 -10 -57 -23z"/>
-                <path d="M3320 1345 l0 -225 70 0 70 0 0 225 0 225 -70 0 -70 0 0 -225z"/>
-                <path d="M3480 1520 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
-                <path d="M1510 1350 l0 -50 70 0 70 0 0 50 0 50 -70 0 -70 0 0 -50z"/>
-                <path d="M3480 1350 l0 -50 75 0 75 0 0 50 0 50 -75 0 -75 0 0 -50z"/>
-                <path d="M920 1171 l0 -48 68 -6 c128 -13 122 -15 122 48 l0 55 -95 0 -95 0 0 -49z"/>
-                <path d="M1510 1170 l0 -50 85 0 85 0 0 50 0 50 -85 0 -85 0 0 -50z"/>
-                <path d="M3480 1170 l0 -50 90 0 90 0 0 50 0 50 -90 0 -90 0 0 -50z"/>
-              </g>
-            </svg>
+          <a href="#start" class="logo" aria-label="BauService"><img src="logo.svg" alt="BauService Dionisie Bat" width="64">
           </a>
           <div class="footer-tagline">
             <span class="footer-tagline-strong">Qualität &amp; Service</span>
@@ -3147,10 +3196,9 @@
           <h4>Navigation</h4>
           <ul class="footer-list">
             <li><a href="#start">Start</a></li>
-            <li><a href="#leistungen">Leistungen</a></li>
-            <li><a href="#ueber-uns">Über uns</a></li>
-            <li><a href="#projekte">Projekte</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
             <li><a href="konfigurator.html">Konfigurator</a></li>
+            <li><a href="#bewertungen">Bewertungen</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </div>
@@ -3189,12 +3237,22 @@
               </a>
             </li>
             <li>
-              <a href="https://maps.app.goo.gl/TYTUQefiNP4CikUP8" target="_blank" rel="noopener" class="footer-contact-item">
+              <a href="https://maps.app.goo.gl/wNxwmtXpaULvotZN6" target="_blank" rel="noopener" class="footer-contact-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
-                Eschwege &amp; Umgebung
+                Burgstraße 16A, 37269 Eschwege
+              </a>
+            </li>
+            <li>
+              <a href="https://www.my-hammer.de/auftragnehmer/bat-dionisie" target="_blank" rel="noopener" class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                MyHammer-Profil
               </a>
             </li>
           </ul>
@@ -3238,118 +3296,58 @@
     // (e.g. hides cards before scroll-reveal animation kicks in).
     document.documentElement.classList.add('js');
 
-    // ===== Active nav item =====
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav a, .mobile-menu a');
-
-    function setActive(id) {
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-      });
-    }
-
-    // Tracks intersection state for each section. We pick whichever section is
-    // currently "in the viewport zone" (not just the one whose middle line was
-    // last crossed) — this fixes corner cases where the observer doesn't fire
-    // again after a smooth scroll back to the top.
-    const visibility = new Map();
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => visibility.set(entry.target.id, entry.intersectionRatio));
-
-      // 1) If we're scrolled to the very top, the first section wins —
-      //    regardless of what the observer thinks. This is the bug fix:
-      //    smooth-scroll back to top wasn't always re-triggering the observer.
-      if (window.scrollY < 80) {
-        setActive(sections[0].id);
-        return;
-      }
-
-      // 2) If we're at the very bottom of the page, the last section wins.
-      //    (Otherwise short last sections can be skipped by the middle-line trick.)
-      const atBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 4;
-      if (atBottom) {
-        setActive(sections[sections.length - 1].id);
-        return;
-      }
-
-      // 3) Otherwise, pick the most-visible section.
-      let bestId = null, best = 0;
-      for (const [id, ratio] of visibility) {
-        if (ratio > best) { best = ratio; bestId = id; }
-      }
-      if (bestId) setActive(bestId);
-    }, {
-      // Small inset on top to discount the area hidden under the fixed header.
-      rootMargin: '-80px 0px -40% 0px',
-      threshold: [0, 0.25, 0.5, 0.75, 1]
-    });
-
-    sections.forEach(s => observer.observe(s));
-
-    // Optimistic highlight: when the user clicks a nav link, switch the
-    // active state immediately rather than waiting for the smooth scroll
-    // and the observer to catch up.
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) setActive(href.slice(1));
-      });
-    });
-
-    // Also re-evaluate on plain scroll, so the top/bottom edge cases get fixed
-    // even when the observer is silent.
-    let scrollTick = false;
-    window.addEventListener('scroll', () => {
-      if (scrollTick) return;
-      scrollTick = true;
-      requestAnimationFrame(() => {
-        scrollTick = false;
-        if (window.scrollY < 80) setActive(sections[0].id);
-        else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
-          setActive(sections[sections.length - 1].id);
-        }
-      });
-    }, { passive: true });
-
     // ===== Header: scrolled state =====
     const header = document.querySelector('.header');
     const setScrolled = () => header.classList.toggle('scrolled', window.scrollY > 24);
     setScrolled();
     window.addEventListener('scroll', setScrolled, { passive: true });
 
-    // ===== Mobile menu =====
+  // ===== Mobile menu (unified across pages) =====
+  (function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
     const body = document.body;
+    if (!menuToggle || !mobileMenu) return;
 
     const closeMenu = () => {
       body.classList.remove('menu-open');
+      mobileMenu.classList.remove('open');
+      menuToggle.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
+      body.style.overflow = '';
     };
     const openMenu = () => {
       body.classList.add('menu-open');
+      mobileMenu.classList.add('open');
+      menuToggle.classList.add('open');
       menuToggle.setAttribute('aria-expanded', 'true');
+      body.style.overflow = 'hidden';
     };
 
     menuToggle.addEventListener('click', () => {
-      body.classList.contains('menu-open') ? closeMenu() : openMenu();
+      (body.classList.contains('menu-open') || mobileMenu.classList.contains('open'))
+        ? closeMenu() : openMenu();
     });
 
-    // Close on link click
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', closeMenu);
-    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+  })();
 
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && body.classList.contains('menu-open')) closeMenu();
+  // ===== Active nav item on click (click only, no scroll-spy) =====
+  (function() {
+    const navLinks = document.querySelectorAll('.nav-pill a');
+    if (!navLinks.length) return;
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Только для якорей на текущей странице (внутри #) — внешние ссылки и так обновят .active при загрузке новой страницы
+        const href = this.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
     });
-
-    // Close if window resized to desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768 && body.classList.contains('menu-open')) closeMenu();
-    });
+  })();
 
     // ===== Scroll-triggered reveal for service cards =====
     const cardObserver = new IntersectionObserver((entries) => {
@@ -3362,6 +3360,81 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.service-card').forEach(card => cardObserver.observe(card));
+
+    // ===== Hero visual: 3D tilt + specular highlight =====
+    // Listener lives on the untransformed wrapper (.hero-image) so the rect
+    // stays stable when the card tilts. Tilt is eased every frame via lerp,
+    // and the gold highlights are derived from the CURRENT eased tilt — so
+    // they slide in lockstep with the card and never jump.
+    (function() {
+      const wrapper = document.querySelector('.hero-image');
+      const card = wrapper && wrapper.querySelector('.hero-visual');
+      if (!card) return;
+      if (!window.matchMedia('(hover: hover)').matches) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const MAX_TILT = 9;     // degrees
+      const EASE     = 0.14;  // 0..1, higher = snappier
+
+      let targetRx = 0, targetRy = 0;
+      let currentRx = 0, currentRy = 0;
+      let tracking = false;
+      let rafId = null;
+
+      function tick() {
+        currentRx += (targetRx - currentRx) * EASE;
+        currentRy += (targetRy - currentRy) * EASE;
+
+        card.style.setProperty('--rx', currentRx.toFixed(3) + 'deg');
+        card.style.setProperty('--ry', currentRy.toFixed(3) + 'deg');
+
+        // Specular highlight position derived from the actual tilt.
+        // currentRx > 0 → right edge tilted back → highlight slides LEFT.
+        // currentRy > 0 → top edge tilted back → highlight slides DOWN.
+        const gx = 50 - (currentRx / MAX_TILT) * 50;
+        const gy = 50 + (currentRy / MAX_TILT) * 50;
+        card.style.setProperty('--gx', gx.toFixed(2) + '%');
+        card.style.setProperty('--gy', gy.toFixed(2) + '%');
+
+        const settled =
+          Math.abs(currentRx - targetRx) < 0.02 &&
+          Math.abs(currentRy - targetRy) < 0.02;
+
+        if (tracking || !settled) {
+          rafId = requestAnimationFrame(tick);
+        } else {
+          // snap to exact target, drop the no-transition class
+          currentRx = targetRx;
+          currentRy = targetRy;
+          card.classList.remove('is-tilting');
+          rafId = null;
+        }
+      }
+
+      function startLoop() {
+        if (rafId == null) {
+          card.classList.add('is-tilting');
+          rafId = requestAnimationFrame(tick);
+        }
+      }
+
+      wrapper.addEventListener('pointermove', (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        const y = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+        targetRx = (x - 0.5) * 2 * MAX_TILT;
+        targetRy = (0.5 - y) * 2 * MAX_TILT;
+        tracking = true;
+        startLoop();
+      });
+
+      wrapper.addEventListener('pointerleave', () => {
+        targetRx = 0;
+        targetRy = 0;
+        tracking = false;
+        // tick() keeps running until it settles at 0,0
+      });
+    })();
 
     // ===== Footer: dynamic current year =====
     const yearEl = document.getElementById('current-year');

@@ -193,7 +193,6 @@
   }
   </script>
 
-  <!-- Favicon — inline SVG using the BauService brand mark --><rect width='458' height='430' fill='%230a0a0a'/><g transform='translate(0,430) scale(0.1,-0.1)' fill='%23d4a544'><path d='M1512 3360 c-403 -125 -735 -229 -737 -232 -8 -7 82 -68 100 -68 9 0 323 95 698 211 375 116 691 211 702 211 11 0 327 -95 702 -211 375 -116 689 -211 698 -211 26 0 108 63 93 71 -31 16 -1480 459 -1501 458 -12 -1 -352 -104 -755 -229z'/><path d='M760 1365 l0 -455 1530 0 1530 0 -2 453 -3 452 -1527 3 -1528 2 0 -455z m3000 0 l0 -405 -1475 0 -1475 0 0 405 0 405 1475 0 1475 0 0 -405z'/></g></svg>" />
 
   <!-- Fonts: self-hosted (no third-party requests, DSGVO-friendly) -->
   <style>
@@ -268,6 +267,7 @@
       /* Якоря (#start, #leistungen и т.д.) учитывают высоту фиксированной шапки —
          иначе клик по пункту меню оставляет верх секции под шапкой. */
       scroll-padding-top: 90px;
+      overflow-x: clip;
     }
 
     body {
@@ -940,8 +940,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(212, 165, 68, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 165, 68, 0.025) 1px, transparent 1px);
+        linear-gradient(rgba(212, 165, 68, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 165, 68, 0.08) 1px, transparent 1px);
       background-size: 64px 64px;
       mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 80%);
       -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 80%);
@@ -2551,8 +2551,8 @@
 
       <nav class="nav nav-pill">
         <a href="#start">Start</a>
-        <a href="projekte.html">Projekte</a>
-        <a href="konfigurator.html">Konfigurator</a>
+        <a href="projekte/">Projekte</a>
+        <a href="konfigurator/">Konfigurator</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
@@ -2575,8 +2575,8 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Hauptmenü" aria-modal="true">
     <nav class="mobile-menu-nav">
       <a href="#start">Start</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="konfigurator.html">Konfigurator</a>
+      <a href="projekte/">Projekte</a>
+      <a href="konfigurator/">Konfigurator</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
 
@@ -2923,11 +2923,11 @@
       </p>
 
       <div class="projects-grid projects-grid--cats" id="category-tiles">
-        <!-- Each tile is a clickable link to /projekte.html with a category
+        <!-- Each tile is a clickable link to /projekte/ with a category
              filter pre-applied. Counts are populated from Supabase by the
              script at the end of <body> — static fallback values keep things
              readable if JS is disabled. -->
-        <a href="projekte.html?filter=fenster" class="project-tile" data-category="fenster" aria-label="Alle Fenster-Projekte ansehen">
+        <a href="projekte/?filter=fenster" class="project-tile" data-category="fenster" aria-label="Alle Fenster-Projekte ansehen">
           <div class="project-num">01</div>
           <span class="project-view" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2941,7 +2941,7 @@
           </div>
         </a>
 
-        <a href="projekte.html?filter=innentueren" class="project-tile" data-category="innentueren" aria-label="Alle Innentüren-Projekte ansehen">
+        <a href="projekte/?filter=innentueren" class="project-tile" data-category="innentueren" aria-label="Alle Innentüren-Projekte ansehen">
           <div class="project-num">02</div>
           <span class="project-view" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2955,7 +2955,7 @@
           </div>
         </a>
 
-        <a href="projekte.html?filter=aussentueren" class="project-tile" data-category="aussentueren" aria-label="Alle Außentüren-Projekte ansehen">
+        <a href="projekte/?filter=aussentueren" class="project-tile" data-category="aussentueren" aria-label="Alle Außentüren-Projekte ansehen">
           <div class="project-num">03</div>
           <span class="project-view" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2969,7 +2969,7 @@
           </div>
         </a>
 
-        <a href="projekte.html?filter=bodenverlegung" class="project-tile" data-category="bodenverlegung" aria-label="Alle Bodenverlegung-Projekte ansehen">
+        <a href="projekte/?filter=bodenverlegung" class="project-tile" data-category="bodenverlegung" aria-label="Alle Bodenverlegung-Projekte ansehen">
           <div class="project-num">04</div>
           <span class="project-view" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -2985,7 +2985,7 @@
       </div>
 
       <div class="projects-cta">
-        <a href="projekte.html" class="btn btn-primary">
+        <a href="projekte/" class="btn btn-primary">
           Alle <span id="projects-cta-count">17</span> Projekte ansehen
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/>
@@ -3196,8 +3196,8 @@
           <h4>Navigation</h4>
           <ul class="footer-list">
             <li><a href="#start">Start</a></li>
-            <li><a href="projekte.html">Projekte</a></li>
-            <li><a href="konfigurator.html">Konfigurator</a></li>
+            <li><a href="projekte/">Projekte</a></li>
+            <li><a href="konfigurator/">Konfigurator</a></li>
             <li><a href="#bewertungen">Bewertungen</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
@@ -3283,8 +3283,8 @@
       <div class="footer-bottom">
         <div class="footer-copy">© <span id="current-year">2026</span> BauService Dionisie Bat <span class="footer-divider">—</span> <span class="footer-rights">Alle Rechte vorbehalten.</span></div>
         <div class="footer-legal">
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
+          <a href="impressum/">Impressum</a>
+          <a href="datenschutz/">Datenschutz</a>
         </div>
       </div>
     </div>

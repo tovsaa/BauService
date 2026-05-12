@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>OG-Image — BauService Dionisie Bat</title>
+
+  <style>
+    /* Self-hosted fonts (same as the main site) */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-display: block;
+      src: url('../fonts/montserrat-latin-700-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: italic;
+      font-weight: 500;
+      font-display: block;
+      src: url('../fonts/cormorant-garamond-latin-500-italic.woff2') format('woff2');
+    }
+
+    :root {
+      --gold: #d4a544;
+      --gold-bright: #f0c66e;
+    }
+
+    /* The page is laid out as a single 1200×630 card —
+       open in browser at any size, then use DevTools
+       "Capture node screenshot" on .og-card for an exact-size PNG. */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #1a1a1a;
+      font-family: 'Montserrat', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .og-card {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 35%, #1f1f1f 0%, #050505 75%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Soft gold top spotlight */
+    .og-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 60% 45% at 50% 0%,
+        rgba(212, 165, 68, 0.28) 0%,
+        transparent 65%
+      );
+      pointer-events: none;
+    }
+    /* Bottom warm reflex */
+    .og-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 55% 35% at 50% 100%,
+        rgba(212, 165, 68, 0.14) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    /* Decorative corner brackets — gold L-shapes */
+    .corner {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border: 3px solid var(--gold);
+      opacity: 0.9;
+      z-index: 2;
+    }
+    .corner-tl { top: 36px; left: 36px;     border-right: none; border-bottom: none; }
+    .corner-tr { top: 36px; right: 36px;    border-left: none;  border-bottom: none; }
+    .corner-bl { bottom: 36px; left: 36px;  border-right: none; border-top: none; }
+    .corner-br { bottom: 36px; right: 36px; border-left: none;  border-top: none; }
+
+    /* Subtle gold grid texture */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212, 165, 68, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 165, 68, 0.07) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 80%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      padding: 0 80px;
+    }
+
+    .logo {
+      width: 260px;
+      height: auto;
+      filter: drop-shadow(0 0 28px rgba(212, 165, 68, 0.42));
+    }
+
+    /* Divider with diamond — matches the hero card */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 320px;
+    }
+    .divider .line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .divider .diamond {
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(135deg, #a8801f 0%, #fff1c2 50%, #a8801f 100%);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      box-shadow: 0 0 6px rgba(212, 165, 68, 0.55);
+    }
+
+    .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 34px;
+      font-weight: 500;
+      color: var(--gold);
+      text-align: center;
+      margin-top: -16px;
+    }
+
+    /* Domain at bottom-right */
+    .url {
+      position: absolute;
+      bottom: 38px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      z-index: 4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Right-click on this card in DevTools → "Capture node screenshot"
+       to get a 1200×630 PNG ready to use as og:image. -->
+  <div class="og-card">
+    <div class="grid"></div>
+
+    <span class="corner corner-tl"></span>
+    <span class="corner corner-tr"></span>
+    <span class="corner corner-bl"></span>
+    <span class="corner corner-br"></span>
+
+    <div class="content">
+      <img class="logo" src="../logo.svg" alt="BauService Dionisie Bat">
+
+      <div class="divider">
+        <span class="line"></span>
+        <span class="diamond"></span>
+        <span class="line"></span>
+      </div>
+
+      <div class="tagline">Qualität &amp; Service</div>
+      <div class="sub">aus einer Hand</div>
+    </div>
+
+    <div class="url">bauservice-esw.de</div>
+  </div>
+</body>
+</html>

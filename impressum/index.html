@@ -1513,13 +1513,17 @@
     
   })();
   
-  // Header: scrolled state
+  // Header: scrolled state via IntersectionObserver — zero forced reflow
   (function() {
     const header = document.querySelector('.header');
     if (!header) return;
-    const setScrolled = () => header.classList.toggle('scrolled', window.scrollY > 24);
-    setScrolled();
-    window.addEventListener('scroll', setScrolled, { passive: true });
+    const sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    sentinel.style.cssText = 'position:absolute;top:24px;left:0;width:1px;height:1px;pointer-events:none;';
+    document.body.insertBefore(sentinel, document.body.firstChild);
+    new IntersectionObserver(([entry]) => {
+      header.classList.toggle('scrolled', !entry.isIntersecting);
+    }).observe(sentinel);
   })();
 
   // Mobile menu (unified across pages)

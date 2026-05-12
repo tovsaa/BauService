@@ -3299,22 +3299,17 @@
     // (e.g. hides cards before scroll-reveal animation kicks in).
     document.documentElement.classList.add('js');
 
-    // ===== Header: scrolled state (RAF-throttled to avoid forced reflow) =====
+    // ===== Header: scrolled state via IntersectionObserver — zero forced reflow =====
     (function() {
       const header = document.querySelector('.header');
       if (!header) return;
-      let ticking = false;
-      const update = () => {
-        header.classList.toggle('scrolled', window.scrollY > 24);
-        ticking = false;
-      };
-      const onScroll = () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(update);
-      };
-      update();
-      window.addEventListener('scroll', onScroll, { passive: true });
+      const sentinel = document.createElement('div');
+      sentinel.setAttribute('aria-hidden', 'true');
+      sentinel.style.cssText = 'position:absolute;top:24px;left:0;width:1px;height:1px;pointer-events:none;';
+      document.body.insertBefore(sentinel, document.body.firstChild);
+      new IntersectionObserver(([entry]) => {
+        header.classList.toggle('scrolled', !entry.isIntersecting);
+      }).observe(sentinel);
     })();
 
   // ===== Mobile menu (unified across pages) =====

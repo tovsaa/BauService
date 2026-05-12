@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>404 – Seite nicht gefunden | BauService Dionisie Bat</title>
+  <link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+  <meta name="theme-color" content="#0D0D0D">
+  <meta name="description" content="Diese Seite existiert nicht oder wurde verschoben. Zurück zur Startseite oder direkt zu Projekten und Konfigurator." />
+  <meta name="robots" content="noindex, follow" />
+
+  <style>
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('/fonts/montserrat-latin-700-normal.woff2') format('woff2'),
+           url('/fonts/montserrat-latin-700-normal.woff')  format('woff');
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url('/fonts/montserrat-latin-800-normal.woff2') format('woff2'),
+           url('/fonts/montserrat-latin-800-normal.woff')  format('woff');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: italic;
+      font-weight: 500;
+      font-display: swap;
+      src: url('/fonts/cormorant-garamond-latin-500-italic.woff2') format('woff2'),
+           url('/fonts/cormorant-garamond-latin-500-italic.woff')  format('woff');
+    }
+    @font-face {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('/fonts/manrope-latin-400-normal.woff2') format('woff2'),
+           url('/fonts/manrope-latin-400-normal.woff')  format('woff');
+    }
+
+    :root {
+      --gold: #d4a544;
+      --gold-bright: #f0c66e;
+      --text: #f5f5f5;
+      --text-muted: #a8a8a8;
+      --text-dim: #8a8a8a;
+      --border: #232323;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; overflow-x: clip; }
+
+    body {
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, #161616 0%, #060606 75%);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Subtle gold grid texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212, 165, 68, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 165, 68, 0.06) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 55% 50% at 50% 50%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 55% 50% at 50% 50%, black 30%, transparent 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(120px, 22vw, 220px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--gold);
+      margin: 0;
+      text-shadow: 0 0 60px rgba(212, 165, 68, 0.2);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 60%;
+      max-width: 240px;
+      margin: 24px auto 28px;
+    }
+    .divider .line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .divider .diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 10px;
+    }
+
+    .sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(20px, 2.6vw, 26px);
+      color: var(--gold);
+      margin: 0 0 32px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 460px;
+      margin: 0 auto 44px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 220ms ease;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0a0a0a;
+    }
+    .btn-primary:hover {
+      background: var(--gold-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px -8px rgba(212, 165, 68, 0.6);
+    }
+    .btn-ghost {
+      border: 1px solid rgba(212, 165, 68, 0.35);
+      color: var(--gold);
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      background: rgba(212, 165, 68, 0.08);
+    }
+    .btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Quick links to main sections */
+    .quick-links {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    .quick-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 200ms ease;
+    }
+    .quick-links a:hover {
+      color: var(--gold);
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      z-index: 1;
+    }
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .buttons .btn { flex: 1 1 100%; justify-content: center; }
+      .quick-links { gap: 18px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h1 class="number">404</h1>
+
+      <div class="divider">
+        <span class="line"></span>
+        <span class="diamond"></span>
+        <span class="line"></span>
+      </div>
+
+      <div class="tagline">Seite nicht gefunden</div>
+      <div class="sub">Diese Seite existiert nicht</div>
+
+      <p class="description">
+        Die angeforderte Seite wurde verschoben, umbenannt oder ist nicht
+        mehr verfügbar. Kein Problem — nutzen Sie die Navigation unten,
+        um zur Startseite oder zu unseren Projekten zu gelangen.
+      </p>
+
+      <div class="buttons">
+        <a href="/" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="19 12 12 5 5 12"/>
+            <line x1="12" y1="5" x2="12" y2="19" transform="rotate(-90 12 12)"/>
+          </svg>
+          Zur Startseite
+        </a>
+        <a href="/#kontakt" class="btn btn-ghost">
+          Kontakt aufnehmen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="quick-links">
+        <a href="/projekte/">Projekte</a>
+        <a href="/konfigurator/">Konfigurator</a>
+        <a href="/#leistungen">Leistungen</a>
+        <a href="/#bewertungen">Bewertungen</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year">2026</span> BauService Dionisie Bat — <a href="/">bauservice-esw.de</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

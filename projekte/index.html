@@ -1293,7 +1293,7 @@
       color: var(--text-muted);
       max-width: 280px;
     }
-    .footer-col h4 {
+    .footer-col h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 12px;
       font-weight: 700;
@@ -1304,7 +1304,7 @@
       position: relative;
       padding-bottom: 12px;
     }
-    .footer-col h4::after {
+    .footer-col h3::after {
       content: '';
       position: absolute;
       bottom: 0; left: 0;
@@ -1401,11 +1401,6 @@
       .footer-copy .footer-rights { display: block; margin-top: 4px; opacity: 0.7; }
     }
 
-      @keyframes pageFadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    body { animation: pageFadeIn 350ms cubic-bezier(0.4, 0, 0.2, 1) both; }
   
     /* FAB-кнопка появляется на мобиле (override базового .menu-toggle display:none) */
     @media (max-width: 768px) {
@@ -1458,6 +1453,8 @@
       </div>
     </div>
   </div>
+
+  <main>
 
   <!-- ==================== PAGE TOP / BREADCRUMB ==================== -->
   <section class="page-top">
@@ -1554,6 +1551,8 @@
     <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
   </div>
 
+  </main>
+
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
@@ -1569,7 +1568,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h3>Navigation</h3>
           <ul class="footer-list">
             <li><a href="../#start">Start</a></li>
             <li><a href="../projekte/">Projekte</a></li>
@@ -1580,7 +1579,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Leistungen</h4>
+          <h3>Leistungen</h3>
           <ul class="footer-list">
             <li><a href="../#leistungen">Boden­verlegung</a></li>
             <li><a href="../#leistungen">Fenster &amp; Türen</a></li>
@@ -1591,7 +1590,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Kontakt</h4>
+          <h3>Kontakt</h3>
           <ul class="footer-list">
             <li>
               <a href="tel:+4917636321349" class="footer-contact-item">

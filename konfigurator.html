@@ -1218,6 +1218,12 @@
       color: var(--text-dim);
       font-weight: 400;
     }
+    textarea.text-input {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.55;
+      font-family: 'Manrope', sans-serif;
+    }
 
     /* Option pills (used for material, opening, color, etc.) */
     .opt-pills {
@@ -1254,52 +1260,6 @@
       margin-top: 2px;
     }
     .opt-pill.active .opt-sub { color: var(--text-muted); }
-
-    /* === Size presets — small clickable chips above the size inputs === */
-    .size-presets {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 12px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 2px 0 6px;
-      /* Hide scrollbar on iOS/Android while keeping swipe */
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      -webkit-overflow-scrolling: touch;
-    }
-    .size-presets::-webkit-scrollbar { display: none; }
-    .size-preset {
-      flex-shrink: 0;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 5px 11px;
-      font-family: 'Manrope', sans-serif;
-      font-size: 12px;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all var(--transition);
-      white-space: nowrap;
-    }
-    .size-preset:hover {
-      border-color: rgba(212, 165, 68, 0.4);
-      color: var(--text);
-    }
-    .size-preset.active {
-      border-color: var(--gold);
-      background: rgba(212, 165, 68, 0.10);
-      color: var(--gold);
-    }
-    .size-presets-label {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      margin-bottom: 8px;
-    }
 
     /* === RIGHT: preview === */
     .config-preview {
@@ -1786,9 +1746,10 @@
       fenster: {
         title: 'Fenster',
         material: {
-          pvc_2fach:  'PVC SALAMANDER, 2-fach Verglasung',
-          pvc_3fach:  'PVC SALAMANDER, 3-fach Wärmeschutzverglasung',
-          aluminium:  'Aluminium ALUPROF'
+          pvc_2fach:  'PVC · 2-fach Verglasung',
+          pvc_3fach:  'PVC · 3-fach Wärmeschutz',
+          aluminium:  'Aluminium',
+          holz:       'Holz'
         },
         opening: {
           fest:      'Festverglasung',
@@ -1823,23 +1784,39 @@
           altgold:      'Altgold',
           braun:        'Braun'
         },
+        sicherheit: {
+          standard:     'Basis-Sicherheit (Standard)',
+          erhoeht:      'Erhöhte Sicherheit (einbruchhemmend)',
+          maximum:      'Maximaler Einbruchschutz'
+        },
         color: {
           weiss:     'Weiß',
           anthrazit: 'Anthrazit',
-          ral:       'RAL-Sonderfarbe'
+          braun:     'Braun',
+          sonder:    'Andere Farbe (siehe Anmerkungen)'
         }
       },
       tuer: {
         title: 'Außentür',
-        material: { pvc: 'PVC', aluminium: 'Aluminium' },
+        material: {
+          pvc:        'PVC',
+          aluminium:  'Aluminium',
+          holz:       'Holz'
+        },
+        segment: {
+          standard:  'Standard',
+          premium:   'Premium',
+          luxus:     'Luxus / Designer-Tür'
+        },
         ausfuehrung: {
           vollblatt:    'Vollblatt (ohne Glas)',
           glaseinsatz:  'Mit Glaseinsatz',
           seitenteile:  'Mit Glaseinsatz + Seitenteilen'
         },
         sicherheit: {
-          standard: 'Standard',
-          rc2:      'Sicherheitsklasse RC2'
+          standard:     'Basis-Sicherheit (Standard)',
+          erhoeht:      'Erhöhte Sicherheit (einbruchhemmend)',
+          maximum:      'Maximaler Einbruchschutz'
         },
         schloss: {
           standard:    'Standardschloss',
@@ -1852,7 +1829,8 @@
         color: {
           weiss:     'Weiß',
           anthrazit: 'Anthrazit',
-          ral:       'RAL-Sonderfarbe'
+          braun:     'Braun',
+          sonder:    'Andere Farbe (siehe Anmerkungen)'
         }
       }
     };
@@ -1865,10 +1843,11 @@
     var TOOLTIPS = {
       fenster: {
         material:
-          'PVC SALAMANDER = wärmegedämmte Kunststoffprofile aus Deutschland. '
-          + '2-fach = Standard-Verglasung. '
+          'PVC = wärmegedämmte Kunststoffprofile, preisgünstig, pflegeleicht. '
+          + '2-fach Verglasung = Standard. '
           + '3-fach Wärmeschutz = Edelgasfüllung, bis ca. 40 % weniger Heizkosten. '
-          + 'Aluminium ALUPROF = Premium-Profile, sehr stabil, schmale Rahmen.',
+          + 'Aluminium = sehr stabil, schmale Rahmen, modernes Aussehen. '
+          + 'Holz = natürlicher Werkstoff, hervorragende Wärmedämmung, klassische Optik.',
         opening:
           'Festverglasung = nicht zu öffnen, am preiswertesten. '
           + 'Drehfenster = seitlich öffenbar wie eine Tür. '
@@ -1902,22 +1881,39 @@
           + 'Silvit = feines geometrisches Muster.',
         griff:
           'Farbe des Fenstergriffs. Standardmäßig weiß. '
-          + 'Bei farbigen Rahmen (Anthrazit, RAL) passt ein silberner oder '
+          + 'Bei farbigen Rahmen (Anthrazit, Braun) passt ein silberner oder '
           + 'farbiger Griff oft besser. Beschlagabdeckkappen werden in der '
-          + 'gleichen Farbe geliefert.'
+          + 'gleichen Farbe geliefert.',
+        sicherheit:
+          'Basis-Sicherheit (Standard) = Pilzkopfzapfen an mehreren Stellen, '
+          + 'Schutz gegen unbefugtes Öffnen. '
+          + 'Erhöhte Sicherheit = mehr Verriegelungspunkte und abschließbarer Griff, '
+          + 'entspricht etwa RC1 nach DIN EN 1627. '
+          + 'Maximaler Einbruchschutz = einbruchhemmende Beschläge und Sicherheitsglas, '
+          + 'entspricht etwa RC2 — empfohlen vom LKA für Erdgeschoss und Souterrain.'
       },
       tuer: {
         material:
-          'PVC = preiswerter, gute Wärmedämmung, pflegeleicht. '
-          + 'Aluminium = stabiler, schmalerer Rahmen, Premium-Optik, höhere Einbruchsicherheit.',
+          'PVC = preisgünstig, gute Wärmedämmung, pflegeleicht. '
+          + 'Aluminium = sehr stabil, schmaler Rahmen, modernes Aussehen, höhere Einbruchsicherheit. '
+          + 'Holz = natürlicher Werkstoff, klassische Optik, sehr gute Wärmedämmung.',
+        segment:
+          'Preissegment richtet sich nach Material, Beschlägen, Design und Hersteller. '
+          + 'Standard = solide Grundausstattung, gute Funktionalität (ca. 1.500–3.000 €). '
+          + 'Premium = hochwertigere Materialien, Designer-Optik, längere Garantie (ca. 3.000–5.500 €). '
+          + 'Luxus = Designer-Türen mit Sonderausstattung, exklusive Oberflächen (ab 5.500 €). '
+          + 'Genaue Preise nennen wir nach Vor-Ort-Aufmaß.',
         ausfuehrung:
           'Vollblatt = ohne Glas, am sichersten und preiswertesten. '
           + 'Mit Glaseinsatz = Teilglasung in der Tür für mehr Tageslicht im Flur. '
           + 'Mit Seitenteilen = zusätzliche schmale Glasfelder links und rechts.',
         sicherheit:
-          'RC2 nach DIN EN 1627 = geprüfter Einbruchschutz gegen Gelegenheitstäter '
-          + 'mit einfachen Werkzeugen (Schraubendreher, Zange). '
-          + '3 Minuten Widerstandszeit. Empfohlen vom LKA für Wohnhäuser.',
+          'Basis-Sicherheit (Standard) = Standardschloss und Standardbeschläge, '
+          + 'Schutz gegen unbefugtes Öffnen. '
+          + 'Erhöhte Sicherheit = einbruchhemmende Beschläge, Mehrpunktverriegelung, '
+          + 'entspricht etwa RC1 nach DIN EN 1627. '
+          + 'Maximaler Einbruchschutz = Sicherheitsbeschläge, Sicherheitsglas, '
+          + 'Aufbohrschutz — entspricht etwa RC2, empfohlen vom LKA für Wohnhäuser.',
         schloss:
           'Mehrfachverriegelung = drei bis fünf Verriegelungspunkte über die '
           + 'gesamte Türhöhe statt nur einem Riegel. Deutlich sicherer und '
@@ -2016,17 +2012,19 @@
         html += '<div class="param-group">'
           +   '<label class="param-label">' + iconHtml('color') + 'Dekor innen</label>'
           +   '<div class="opt-pills" data-field="color_innen">'
-          +     pill('color_innen', 'weiss',     'Weiß',             '',          s.color_innen)
-          +     pill('color_innen', 'anthrazit', 'Anthrazit',        '',          s.color_innen)
-          +     pill('color_innen', 'ral',       'RAL-Sonderfarbe',  '',          s.color_innen)
+          +     pill('color_innen', 'weiss',     'Weiß',      '',                    s.color_innen)
+          +     pill('color_innen', 'anthrazit', 'Anthrazit', '',                    s.color_innen)
+          +     pill('color_innen', 'braun',     'Braun',     '',                    s.color_innen)
+          +     pill('color_innen', 'sonder',    'Andere',    'siehe Anmerkungen',   s.color_innen)
           +   '</div>'
           + '</div>'
           + '<div class="param-group">'
           +   '<label class="param-label">' + iconHtml('color') + 'Dekor außen</label>'
           +   '<div class="opt-pills" data-field="color_aussen">'
-          +     pill('color_aussen', 'weiss',     'Weiß',             '',          s.color_aussen)
-          +     pill('color_aussen', 'anthrazit', 'Anthrazit',        '',          s.color_aussen)
-          +     pill('color_aussen', 'ral',       'RAL-Sonderfarbe',  '',          s.color_aussen)
+          +     pill('color_aussen', 'weiss',     'Weiß',      '',                    s.color_aussen)
+          +     pill('color_aussen', 'anthrazit', 'Anthrazit', '',                    s.color_aussen)
+          +     pill('color_aussen', 'braun',     'Braun',     '',                    s.color_aussen)
+          +     pill('color_aussen', 'sonder',    'Andere',    'siehe Anmerkungen',   s.color_aussen)
           +   '</div>'
           +   '<button type="button" class="dekor-split-toggle expanded" data-dekor-toggle="' + type + '">'
           +     'Innen und außen gleich'
@@ -2037,9 +2035,10 @@
         html += '<div class="param-group">'
           +   '<label class="param-label">' + iconHtml('color') + 'Farbe (innen &amp; außen)</label>'
           +   '<div class="opt-pills" data-field="color_both">'
-          +     pill('color_both', 'weiss',     'Weiß',             '',          s.color_innen)
-          +     pill('color_both', 'anthrazit', 'Anthrazit',        '',          s.color_innen)
-          +     pill('color_both', 'ral',       'RAL-Sonderfarbe',  '',          s.color_innen)
+          +     pill('color_both', 'weiss',     'Weiß',      '',                    s.color_innen)
+          +     pill('color_both', 'anthrazit', 'Anthrazit', '',                    s.color_innen)
+          +     pill('color_both', 'braun',     'Braun',     '',                    s.color_innen)
+          +     pill('color_both', 'sonder',    'Andere',    'siehe Anmerkungen',   s.color_innen)
           +   '</div>'
           +   '<button type="button" class="dekor-split-toggle" data-dekor-toggle="' + type + '">'
           +     'Innen und außen unterschiedlich'
@@ -2053,49 +2052,20 @@
       if (type !== 'fenster') return 0; // Tür has no separate advanced section
       var s = state.fenster, d = DEFAULTS.fenster;
       var n = 0;
-      if (s.oberlicht !== d.oberlicht) n++;
-      if (s.sprossen  !== d.sprossen)  n++;
-      if (s.ornament  !== d.ornament)  n++;
-      if (s.griff     !== d.griff)     n++;
+      if (s.oberlicht  !== d.oberlicht)  n++;
+      if (s.sprossen   !== d.sprossen)   n++;
+      if (s.sicherheit !== d.sicherheit) n++;
+      if (s.ornament   !== d.ornament)   n++;
+      if (s.griff      !== d.griff)      n++;
       return n;
     }
-
-    // ==============================================================
-    // STANDARD SIZE PRESETS — quick-pick chips
-    // ==============================================================
-    // Most common DIN sizes encountered in private homes (Hessen / WMK region).
-    // The label is what the user sees on the chip; w/h are applied directly to
-    // the size inputs when the chip is clicked.
-    var SIZE_PRESETS = {
-      fenster: [
-        { w: 60,  h: 60,  label: 'WC 60×60'      },
-        { w: 80,  h: 80,  label: 'Keller 80×80'  },
-        { w: 100, h: 120, label: '100×120'       },
-        { w: 120, h: 120, label: '120×120'       },
-        { w: 100, h: 140, label: '100×140'       },
-        { w: 120, h: 140, label: '120×140'       },
-        { w: 140, h: 140, label: '140×140'       },
-        { w: 160, h: 140, label: '160×140'       },
-        { w: 180, h: 140, label: '180×140'       },
-        { w: 80,  h: 210, label: 'Balkontür 80×210' }
-      ],
-      tuer: [
-        { w: 75,  h: 200, label: '75×200 (Altbau)'  },
-        { w: 80,  h: 200, label: '80×200'           },
-        { w: 90,  h: 200, label: '90×200'           },
-        { w: 80,  h: 210, label: '80×210'           },
-        { w: 90,  h: 210, label: '90×210 Standard'  },
-        { w: 100, h: 210, label: '100×210'          },
-        { w: 100, h: 220, label: '100×220'          }
-      ]
-    };
 
     // ==============================================================
     // STATE — current configuration
     // ==============================================================
     var state = {
       type: 'fenster',
-      bezeichnung: '',     // free-text label, e.g. "EG Wohnzimmer Nord"
+      anmerkungen: '',     // free-text comments / wishes (was bezeichnung)
       anzahl: 1,           // how many identical elements
       fenster: {
         width:   120,        // cm
@@ -2108,6 +2078,7 @@
         sprossen: 'keine',
         ornament: 'keine',
         griff:    'standard',
+        sicherheit: 'standard',
         color_innen:  'weiss',
         color_aussen: 'weiss'
       },
@@ -2116,6 +2087,7 @@
         width:    90,
         height:   210,
         material: 'aluminium',
+        segment:    'standard',
         ausfuehrung: 'glaseinsatz',
         sicherheit: 'standard',
         schloss:    'standard',
@@ -2135,20 +2107,28 @@
     function commonTemplateTop() {
       return ''
         + '<div class="param-group">'
-        +   '<label class="param-label" for="cBezeichnung">' + iconHtml('position') + 'Position / Raumbezeichnung'
-        +     '<span class="param-sub" style="font-weight:400;color:var(--text-dim);margin-left:6px;font-size:13px">optional</span>'
-        +   '</label>'
-        +   '<input type="text" id="cBezeichnung" class="text-input" maxlength="60"'
-        +     ' placeholder="z.B. EG Wohnzimmer, Bad 1.OG, Schlafzimmer Nord"'
-        +     ' value="' + escapeAttr(state.bezeichnung || '') + '" />'
-        + '</div>'
-
-        + '<div class="param-group">'
         +   '<label class="param-label" for="cAnzahl">' + iconHtml('count') + 'Anzahl gleicher Elemente</label>'
         +   '<div class="size-input" style="max-width:160px">'
         +     '<input type="number" min="1" max="99" step="1" id="cAnzahl" value="' + state.anzahl + '" />'
         +     '<span class="unit">Stück</span>'
         +   '</div>'
+        + '</div>';
+    }
+
+    // Bottom block: free-text Anmerkungen field (general wishes / room name /
+    // RAL-Sonderfarbe-Nr / "vor Termin anrufen" / etc.). Lives at the very
+    // end of the params so it doesn't compete visually with the structured
+    // choices above.
+    function commonTemplateBottom() {
+      return ''
+        + '<div class="param-group">'
+        +   '<label class="param-label" for="cAnmerkungen">' + iconHtml('position') + 'Ihre Anmerkungen'
+        +     '<span class="param-sub" style="font-weight:400;color:var(--text-dim);margin-left:6px;font-size:13px;letter-spacing:normal;text-transform:none">optional</span>'
+        +   '</label>'
+        +   '<textarea id="cAnmerkungen" class="text-input" rows="4" maxlength="600"'
+        +     ' placeholder="z.B. Position im Haus, RAL-Sonderfarbe, gewünschter Termin oder andere Wünsche">'
+        +     escapeHtml(state.anmerkungen || '')
+        +   '</textarea>'
         + '</div>';
     }
 
@@ -2162,7 +2142,6 @@
       var section2 = ''
         + '<div class="param-group">'
         +   '<label class="param-label">' + iconHtml('size') + 'Größe</label>'
-        +   sizePresetsHtml('fenster', s.width, s.height)
         +   '<div class="size-row">'
         +     '<div class="size-input">'
         +       '<input type="number" min="40" max="300" step="5" id="fWidth" value="' + s.width + '" />'
@@ -2179,9 +2158,10 @@
         + '<div class="param-group">'
         +   '<label class="param-label">' + iconHtml('material') + 'Material &amp; Verglasung' + ttIcon(TOOLTIPS.fenster.material) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
-        +     pill('material', 'pvc_2fach',  'PVC SALAMANDER',       '2-fach Verglasung',          s.material)
-        +     pill('material', 'pvc_3fach',  'PVC SALAMANDER',       '3-fach Wärmeschutz',        s.material)
-        +     pill('material', 'aluminium',  'Aluminium ALUPROF',    'Premium-System',             s.material)
+        +     pill('material', 'pvc_2fach',  'PVC',         '2-fach Verglasung',       s.material)
+        +     pill('material', 'pvc_3fach',  'PVC',         '3-fach Wärmeschutz',     s.material)
+        +     pill('material', 'aluminium',  'Aluminium',   'stabil, schmaler Rahmen', s.material)
+        +     pill('material', 'holz',       'Holz',        'klassisch, natürlich',   s.material)
         +   '</div>'
         + '</div>'
 
@@ -2242,6 +2222,15 @@
         + '</div>'
 
         + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('sicherheit') + 'Sicherheit' + ttIcon(TOOLTIPS.fenster.sicherheit) + '</label>'
+        +   '<div class="opt-pills" data-field="sicherheit">'
+        +     pill('sicherheit', 'standard', 'Basis',      'Standard',                s.sicherheit)
+        +     pill('sicherheit', 'erhoeht',  'Erhöht',     'einbruchhemmend (~RC1)',  s.sicherheit)
+        +     pill('sicherheit', 'maximum',  'Maximum',    'Einbruchschutz (~RC2)',   s.sicherheit)
+        +   '</div>'
+        + '</div>'
+
+        + '<div class="param-group">'
         +   '<label class="param-label">' + iconHtml('ornament') + 'Ornamentglas' + ttIcon(TOOLTIPS.fenster.ornament) + '</label>'
         +   '<div class="opt-pills" data-field="ornament">'
         +     pill('ornament', 'keine',      'Klar',        'normales Glas',  s.ornament)
@@ -2263,9 +2252,10 @@
         + '</div>'
       ) : '';
 
-      return sectionHtml(1, 'Position & Anzahl', section1)
+      return sectionHtml(1, 'Allgemein', section1)
         + sectionHtml(2, 'Grundparameter', section2)
-        + sectionHtml(3, 'Erweiterte Optionen', advancedToggleHtml('fenster', advCount) + section3Body);
+        + sectionHtml(3, 'Erweiterte Optionen', advancedToggleHtml('fenster', advCount) + section3Body)
+        + sectionHtml(4, 'Anmerkungen & Wünsche', commonTemplateBottom());
     }
 
     function paramTemplateTuer() {
@@ -2285,7 +2275,6 @@
       if (s.sondermass) {
         sizeSection += ''
           + '<div style="margin-top:14px">'
-          + sizePresetsHtml('tuer', s.width, s.height)
           + '<div class="size-row">'
           +   '<div class="size-input">'
           +     '<input type="number" min="60" max="200" step="5" id="tWidth" value="' + s.width + '" />'
@@ -2305,8 +2294,18 @@
         + '<div class="param-group">'
         +   '<label class="param-label">' + iconHtml('material') + 'Material' + ttIcon(TOOLTIPS.tuer.material) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
-        +     pill('material', 'pvc',        'PVC',                  'preiswerter',    s.material)
-        +     pill('material', 'aluminium',  'Aluminium',            'Premium, sicher', s.material)
+        +     pill('material', 'pvc',        'PVC',         'preisgünstig',     s.material)
+        +     pill('material', 'aluminium',  'Aluminium',   'stabil, modern',   s.material)
+        +     pill('material', 'holz',       'Holz',        'klassisch, warm',  s.material)
+        +   '</div>'
+        + '</div>'
+
+        + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('material') + 'Preissegment' + ttIcon(TOOLTIPS.tuer.segment) + '</label>'
+        +   '<div class="opt-pills" data-field="segment">'
+        +     pill('segment', 'standard',  'Standard',  'solide Ausstattung',   s.segment)
+        +     pill('segment', 'premium',   'Premium',   'höhere Qualität',      s.segment)
+        +     pill('segment', 'luxus',     'Luxus',     'Designer-Tür',         s.segment)
         +   '</div>'
         + '</div>'
 
@@ -2322,8 +2321,9 @@
         + '<div class="param-group">'
         +   '<label class="param-label">' + iconHtml('sicherheit') + 'Sicherheit' + ttIcon(TOOLTIPS.tuer.sicherheit) + '</label>'
         +   '<div class="opt-pills" data-field="sicherheit">'
-        +     pill('sicherheit', 'standard', 'Standard',            '',         s.sicherheit)
-        +     pill('sicherheit', 'rc2',      'RC2 Einbruchschutz',  '',         s.sicherheit)
+        +     pill('sicherheit', 'standard', 'Basis',      'Standard',                s.sicherheit)
+        +     pill('sicherheit', 'erhoeht',  'Erhöht',     'einbruchhemmend (~RC1)',  s.sicherheit)
+        +     pill('sicherheit', 'maximum',  'Maximum',    'Einbruchschutz (~RC2)',   s.sicherheit)
         +   '</div>'
         + '</div>'
 
@@ -2345,8 +2345,9 @@
 
         + dekorBlockHtml('tuer');
 
-      return sectionHtml(1, 'Position & Anzahl', section1)
-        + sectionHtml(2, 'Tür-Parameter', section2);
+      return sectionHtml(1, 'Allgemein', section1)
+        + sectionHtml(2, 'Tür-Parameter', section2)
+        + sectionHtml(3, 'Anmerkungen & Wünsche', commonTemplateBottom());
     }
 
     function pill(field, value, main, sub, current) {
@@ -2354,22 +2355,6 @@
       var subHtml = sub ? '<span class="opt-sub">' + sub + '</span>' : '';
       return '<button type="button" class="opt-pill' + (on ? ' active' : '')
         + '" data-value="' + value + '">' + main + subHtml + '</button>';
-    }
-
-    /**
-     * Render the size-preset chip row for the given type ('fenster' or 'tuer').
-     * The chip whose w/h matches the current state is marked .active.
-     */
-    function sizePresetsHtml(type, currentW, currentH) {
-      var presets = SIZE_PRESETS[type] || [];
-      var chips = presets.map(function (p) {
-        var on = (p.w === currentW && p.h === currentH);
-        return '<button type="button" class="size-preset' + (on ? ' active' : '')
-          + '" data-preset-w="' + p.w + '" data-preset-h="' + p.h + '">'
-          + escapeHtml(p.label) + '</button>';
-      }).join('');
-      return '<span class="size-presets-label">Häufige Maße</span>'
-        + '<div class="size-presets">' + chips + '</div>';
     }
 
     // ==============================================================
@@ -2677,6 +2662,9 @@
       if (s.sprossen && s.sprossen !== 'keine') {
         rows.push({ dt: 'Sprossen', dd: L.sprossen[s.sprossen] });
       }
+      if (s.sicherheit && s.sicherheit !== 'standard') {
+        rows.push({ dt: 'Sicherheit', dd: L.sicherheit[s.sicherheit] });
+      }
       if (s.ornament && s.ornament !== 'keine') {
         rows.push({ dt: 'Ornamentglas', dd: L.ornament[s.ornament] });
       }
@@ -2697,6 +2685,7 @@
       var rows = [
         { dt: 'Größe',         dd: (s.sondermass ? s.width + ' × ' + s.height + ' cm (Sondermaß)' : '90 × 210 cm (Standard)') },
         { dt: 'Material',      dd: L.material[s.material] },
+        { dt: 'Preissegment',  dd: L.segment[s.segment] },
         { dt: 'Ausführung',    dd: L.ausfuehrung[s.ausfuehrung] },
         { dt: 'Sicherheit',    dd: L.sicherheit[s.sicherheit] },
         { dt: 'Schloss',       dd: L.schloss[s.schloss] },
@@ -2741,18 +2730,19 @@
           if (id === 'fHeight') state.fenster.height = v;
           if (id === 'tWidth')  state.tuer.width     = v;
           if (id === 'tHeight') state.tuer.height    = v;
-          // Re-render params (so the matching preset chip lights up), then preview
+          // Re-render params (the panels may depend on Sondermaß state), then preview
           render();
         });
       });
 
-      // Wire up common inputs (Bezeichnung text, Anzahl number).
-      // Bezeichnung uses renderPreview() instead of render() to avoid
-      // re-rendering the input on every keystroke (which would steal focus).
-      var bz = document.getElementById('cBezeichnung');
+      // Wire up common inputs (Anmerkungen textarea, Anzahl number).
+      // Anmerkungen uses renderPreview() instead of render() to avoid
+      // re-rendering the textarea on every keystroke (which would steal focus
+      // and reset the cursor position).
+      var bz = document.getElementById('cAnmerkungen');
       if (bz) {
         bz.addEventListener('input', function () {
-          state.bezeichnung = bz.value;
+          state.anmerkungen = bz.value;
           renderPreview();
         });
       }
@@ -2766,19 +2756,6 @@
           renderPreview();
         });
       }
-
-      // Wire up size-preset chips
-      params.querySelectorAll('.size-preset').forEach(function (chip) {
-        chip.addEventListener('click', function () {
-          var w = parseInt(chip.getAttribute('data-preset-w'), 10);
-          var h = parseInt(chip.getAttribute('data-preset-h'), 10);
-          if (isNaN(w) || isNaN(h)) return;
-          var key = state.type;  // 'fenster' or 'tuer'
-          state[key].width  = w;
-          state[key].height = h;
-          render();
-        });
-      });
 
       // Wire up the "Erweiterte Optionen" accordion toggle
       params.querySelectorAll('[data-advanced-toggle]').forEach(function (btn) {
@@ -2814,16 +2791,21 @@
       var canvas = document.getElementById('canvasContainer');
       canvas.innerHTML = state.type === 'fenster' ? svgFenster() : svgTuer();
 
-      // Summary — prepend common rows (Position, Anzahl) if relevant
+      // Summary — prepend common rows (Anmerkungen, Anzahl) if relevant.
+      // Anmerkungen are truncated to 60 chars in the live preview so they
+      // don't dominate the right column; full text goes into the WhatsApp
+      // message and into a dedicated row at the bottom of the summary.
       var rows = state.type === 'fenster' ? summaryFenster() : summaryTuer();
       var common = [];
-      if (state.bezeichnung && state.bezeichnung.trim()) {
-        common.push({ dt: 'Position', dd: state.bezeichnung.trim() });
-      }
       if (state.anzahl && state.anzahl > 1) {
         common.push({ dt: 'Anzahl', dd: state.anzahl + ' Stück' });
       }
       rows = common.concat(rows);
+      if (state.anmerkungen && state.anmerkungen.trim()) {
+        var note = state.anmerkungen.trim();
+        var short = note.length > 80 ? note.slice(0, 77) + '…' : note;
+        rows.push({ dt: 'Anmerkungen', dd: short });
+      }
       var html = rows.map(function (r) {
         return '<div class="row"><dt>' + escapeHtml(r.dt) + '</dt><dd>' + escapeHtml(r.dd) + '</dd></div>';
       }).join('');
@@ -2870,12 +2852,16 @@
       lines.push('Hallo, ich habe einen Konfigurator-Vorschlag für mein Projekt:');
       lines.push('');
       lines.push('📋 ' + title.toUpperCase() + anz);
-      if (state.bezeichnung && state.bezeichnung.trim()) {
-        lines.push('  • Position: ' + state.bezeichnung.trim());
-      }
       rows.forEach(function (r) {
         lines.push('  • ' + r.dt + ': ' + r.dd);
       });
+      // Free-text Anmerkungen — separate block at the bottom so multi-line
+      // text doesn't break the bullet list above.
+      if (state.anmerkungen && state.anmerkungen.trim()) {
+        lines.push('');
+        lines.push('💬 Anmerkungen / Wünsche:');
+        lines.push(state.anmerkungen.trim());
+      }
       lines.push('');
       lines.push('🔗 Vollständige Konfiguration:');
       lines.push(buildShareUrl());
@@ -2891,10 +2877,11 @@
 
     function encodeConfig(cfg) {
       // Compact representation: only what's needed.
-      // Common fields (Bezeichnung "b", Anzahl "a") are only emitted when they
+      // Common fields (Anmerkungen "b", Anzahl "a") are only emitted when they
       // differ from defaults — keeps URLs short for the common case.
+      // We keep the legacy short key "b" so older URL params decode cleanly.
       var compact = { t: cfg.type, f: cfg.fenster, d: cfg.tuer };
-      if (cfg.bezeichnung && cfg.bezeichnung.trim()) compact.b = cfg.bezeichnung.trim();
+      if (cfg.anmerkungen && cfg.anmerkungen.trim()) compact.b = cfg.anmerkungen.trim();
       if (cfg.anzahl && cfg.anzahl > 1) compact.a = cfg.anzahl;
       var json = JSON.stringify(compact);
       var b64 = btoa(unescape(encodeURIComponent(json)));
@@ -3007,7 +2994,7 @@
         clearStateStorage();
         // Reset state to original defaults (we cloned via JSON inside DEFAULTS below)
         state.type = DEFAULTS.type;
-        state.bezeichnung = DEFAULTS.bezeichnung;
+        state.anmerkungen = DEFAULTS.anmerkungen;
         state.anzahl = DEFAULTS.anzahl;
         Object.assign(state.fenster, JSON.parse(JSON.stringify(DEFAULTS.fenster)));
         Object.assign(state.tuer,    JSON.parse(JSON.stringify(DEFAULTS.tuer)));
@@ -3077,7 +3064,7 @@
           state.type = loaded.t;
           if (loaded.f) Object.assign(state.fenster, loaded.f);
           if (loaded.d) Object.assign(state.tuer, loaded.d);
-          if (typeof loaded.b === 'string') state.bezeichnung = loaded.b;
+          if (typeof loaded.b === 'string') state.anmerkungen = loaded.b;
           if (typeof loaded.a === 'number' && loaded.a >= 1) state.anzahl = loaded.a;
           bootstrapped = true;
         }
@@ -3090,7 +3077,9 @@
         state.type = saved.type;
         if (saved.fenster) Object.assign(state.fenster, saved.fenster);
         if (saved.tuer)    Object.assign(state.tuer,    saved.tuer);
-        if (typeof saved.bezeichnung === 'string') state.bezeichnung = saved.bezeichnung;
+        // Accept both new (anmerkungen) and legacy (bezeichnung) keys.
+        if (typeof saved.anmerkungen === 'string') state.anmerkungen = saved.anmerkungen;
+        else if (typeof saved.bezeichnung === 'string') state.anmerkungen = saved.bezeichnung;
         if (typeof saved.anzahl === 'number' && saved.anzahl >= 1) state.anzahl = saved.anzahl;
       }
     }
@@ -3107,7 +3096,33 @@
         s.color_aussen = s.color;
         delete s.color;
       }
+      // Colour value migration: legacy "ral" → new "sonder" (semantically
+      // the same — "RAL-Sonderfarbe" became "Andere Farbe"). Renamed because
+      // RAL is a colour SYSTEM (not a colour), and the new UI funnels custom
+      // colours through the Anmerkungen field.
+      if (s) {
+        if (s.color_innen === 'ral')  s.color_innen  = 'sonder';
+        if (s.color_aussen === 'ral') s.color_aussen = 'sonder';
+      }
     });
+
+    // Tür Sicherheit: legacy "rc2" → new 3-level system, mapped to "maximum".
+    // The old 2-step (standard / rc2) became (standard / erhoeht / maximum)
+    // with everyday names instead of DIN codes.
+    if (state.tuer && state.tuer.sicherheit === 'rc2') {
+      state.tuer.sicherheit = 'maximum';
+    }
+    // Tür Preissegment: new field. Older saved state won't have it — fall back
+    // to the default. Object.assign already does this if defaults were applied
+    // before the saved state was merged in, but if the saved state predates
+    // this field we set it explicitly here.
+    if (state.tuer && !state.tuer.segment) {
+      state.tuer.segment = 'standard';
+    }
+    // Fenster Sicherheit: same story — new field for older saves.
+    if (state.fenster && !state.fenster.sicherheit) {
+      state.fenster.sicherheit = 'standard';
+    }
 
     // Initial UI state inferences. Used after bootstrap and after Reset to
     // reset the accordion / split-mode in a consistent way.

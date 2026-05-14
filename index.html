@@ -2237,13 +2237,8 @@
         padding: 110px 0 60px;
       }
       .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      .hero-image { order: 2; } /* image AFTER text on mobile */
-      .hero-visual { aspect-ratio: 16 / 11; }
-      .hero-visual .corner { width: 28px; height: 28px; }
-      .hero-visual .corner-tl { top: 14px; left: 14px; }
-      .hero-visual .corner-tr { top: 14px; right: 14px; }
-      .hero-visual .corner-bl { bottom: 14px; left: 14px; }
-      .hero-visual .corner-br { bottom: 14px; right: 14px; }
+      /* Hero card is decorative — hide on mobile (it can't fit full-size next to the text). */
+      .hero-image { display: none; }
       .hero-meta { font-size: 10px; margin-bottom: 20px; }
       .hero-scroll-cue { display: none; }
       .services { padding: 70px 0; }
@@ -2306,6 +2301,7 @@
     @media (max-width: 480px) {
       .hero-buttons { flex-direction: column; align-items: stretch; }
       .hero-buttons .btn { justify-content: center; }
+
 
       /* Cards switch to horizontal layout: icon left, text right.
          Uses a 2-column grid inside each card so the icon column stays narrow. */

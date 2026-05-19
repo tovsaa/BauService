@@ -2231,10 +2231,15 @@
       fenster: {
         title: 'Fenster',
         material: {
-          pvc_2fach:  'PVC · 2-fach Verglasung',
-          pvc_3fach:  'PVC · 3-fach Wärmeschutz',
+          pvc:        'PVC',
           aluminium:  'Aluminium',
           holz:       'Holz'
+        },
+        verglasung: {
+          '2fach':       '2-fach Verglasung (Standard)',
+          '3fach':       '3-fach Wärmeschutz',
+          schallschutz:  'Schallschutzglas',
+          sicherheit:    'Sicherheitsglas (P4A)'
         },
         opening: {
           fest:      'Festverglasung',
@@ -2273,6 +2278,29 @@
           standard:     'Basis-Sicherheit (Standard)',
           erhoeht:      'Erhöhte Sicherheit (einbruchhemmend)',
           maximum:      'Maximaler Einbruchschutz'
+        },
+        profil: {
+          standard:     'Standard-Profil (5-Kammer)',
+          komfort:      'Komfort-Profil (6-Kammer)',
+          premium:      'Premium-Profil (7-Kammer)'
+        },
+        rolladen_typ: {
+          ohne:         'Ohne Rollladen',
+          aufsatz:      'Aufsatzrollladen (auf Fensterrahmen)',
+          vorbau:       'Vorbaurollladen (vor Fassade)',
+          unterputz:    'Unterputzrollladen (im Mauerwerk)'
+        },
+        rolladen_antrieb: {
+          gurt:         'Gurtwickler (manuell)',
+          kurbel:       'Kurbel (manuell)',
+          elektrisch:   'Elektrisch (Wandschalter)',
+          smart:        'Smart (Funk / App / Zeitsteuerung)'
+        },
+        rolladen_farbe: {
+          weiss:        'Weiß',
+          anthrazit:    'Anthrazit',
+          braun:        'Braun',
+          wie_fenster:  'Wie Fenster'
         },
         color: {
           weiss:     'Weiß',
@@ -2329,10 +2357,14 @@
       fenster: {
         material:
           'PVC = wärmegedämmte Kunststoffprofile, preisgünstig, pflegeleicht. '
-          + '2-fach Verglasung = Standard. '
-          + '3-fach Wärmeschutz = Edelgasfüllung, bis ca. 40 % weniger Heizkosten. '
           + 'Aluminium = sehr stabil, schmale Rahmen, modernes Aussehen. '
           + 'Holz = natürlicher Werkstoff, hervorragende Wärmedämmung, klassische Optik.',
+        verglasung:
+          '2-fach Verglasung = Standard, gute Wärmedämmung. '
+          + '3-fach Wärmeschutz = Edelgasfüllung, bis ca. 40 % weniger Heizkosten. '
+          + 'Schallschutzglas = mehrschichtiger Aufbau, reduziert Straßenlärm um bis zu 50 dB. '
+          + 'Sicherheitsglas (P4A) = einbruchhemmend, splittert nicht beim Bruch '
+          + '(Pflicht bei Erdgeschoss-Fenstern in vielen Versicherungspolicen).',
         opening:
           'Festverglasung = nicht zu öffnen, am preiswertesten. '
           + 'Drehfenster = seitlich öffenbar wie eine Tür. '
@@ -2375,7 +2407,27 @@
           + 'Erhöhte Sicherheit = mehr Verriegelungspunkte und abschließbarer Griff, '
           + 'entspricht etwa RC1 nach DIN EN 1627. '
           + 'Maximaler Einbruchschutz = einbruchhemmende Beschläge und Sicherheitsglas, '
-          + 'entspricht etwa RC2 — empfohlen vom LKA für Erdgeschoss und Souterrain.'
+          + 'entspricht etwa RC2 — empfohlen vom LKA für Erdgeschoss und Souterrain.',
+        profil:
+          'Das Rahmen-Profilsystem bestimmt Wärmedämmung, Stabilität und Optik. '
+          + 'Standard (5-Kammer) = solide Grundausstattung, gute Dämmwerte. '
+          + 'Komfort (6-Kammer) = bessere Wärmedämmung, schmaleres Profil möglich. '
+          + 'Premium (7-Kammer) = beste Dämmwerte, höhere Stabilität, modernste Optik. '
+          + 'Die genaue Profilbezeichnung (z.B. Aluplast Ideal 4000, Salamander BluEvolution 82) '
+          + 'wird nach Vor-Ort-Beratung gewählt.',
+        rolladen_typ:
+          'Aufsatzrollladen = direkt auf den Fensterrahmen montiert, '
+          + 'unauffällig, eignet sich für Neubau und Sanierung. '
+          + 'Vorbaurollladen = vor der Fassade installiert, sichtbarer Kasten, '
+          + 'gut bei nachträglichem Einbau ohne Eingriff ins Mauerwerk. '
+          + 'Unterputzrollladen = Kasten verschwindet im Mauerwerk, '
+          + 'beste Optik, aber höherer Bauaufwand (typisch für Neubau).',
+        rolladen_antrieb:
+          'Gurtwickler = klassischer manueller Antrieb mit Gurt an der Wand. '
+          + 'Kurbel = manuelle Bedienung mit abnehmbarer Kurbel. '
+          + 'Elektrisch = motorisiert, Bedienung per Wandschalter. '
+          + 'Smart = Funk, App-Steuerung, automatische Zeitsteuerung möglich '
+          + '(Komfort + Sicherheit durch Anwesenheitssimulation).'
       },
       tuer: {
         material:
@@ -2443,7 +2495,11 @@
       color:       '<svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>',
       ausfuehrung: '<svg viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"/><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17"/><circle cx="15" cy="12" r="1"/></svg>',
       sicherheit:  '<svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg>',
-      schloss:     '<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>'
+      schloss:     '<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+      profil:      '<svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><line x1="7" y1="6" x2="7" y2="18"/><line x1="11" y1="6" x2="11" y2="18"/><line x1="15" y1="6" x2="15" y2="18"/><line x1="19" y1="6" x2="19" y2="18"/></svg>',
+      rolladen:    '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="4" rx="0.5"/><rect x="3" y="9" width="18" height="12" rx="0.5"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
+      antrieb:     '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>',
+      verglasung:  '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><line x1="7" y1="4" x2="7" y2="20"/><line x1="11" y1="4" x2="11" y2="20"/></svg>'
     };
 
     function iconHtml(name) {
@@ -2540,6 +2596,7 @@
       if (s.oberlicht  !== d.oberlicht)  n++;
       if (s.sprossen   !== d.sprossen)   n++;
       if (s.sicherheit !== d.sicherheit) n++;
+      if (s.profil     !== d.profil)     n++;
       if (s.ornament   !== d.ornament)   n++;
       if (s.griff      !== d.griff)      n++;
       return n;
@@ -2555,7 +2612,8 @@
       fenster: {
         width:   120,        // cm
         height:  140,        // cm
-        material: 'pvc_3fach',
+        material:   'pvc',
+        verglasung: '3fach',
         opening: 'dreh_kipp',
         anschlag: 'links',
         fluegel: 1,
@@ -2564,6 +2622,10 @@
         ornament: 'keine',
         griff:    'standard',
         sicherheit: 'standard',
+        profil:   'standard',
+        rolladen_typ:     'ohne',
+        rolladen_antrieb: 'elektrisch',
+        rolladen_farbe:   'wie_fenster',
         color_innen:  'weiss',
         color_aussen: 'weiss'
       },
@@ -2641,12 +2703,21 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('material') + 'Material &amp; Verglasung' + ttIcon(TOOLTIPS.fenster.material) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + 'Material' + ttIcon(TOOLTIPS.fenster.material) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
-        +     pill('material', 'pvc_2fach',  'PVC',         '2-fach Verglasung',       s.material)
-        +     pill('material', 'pvc_3fach',  'PVC',         '3-fach Wärmeschutz',     s.material)
-        +     pill('material', 'aluminium',  'Aluminium',   'stabil, schmaler Rahmen', s.material)
-        +     pill('material', 'holz',       'Holz',        'klassisch, natürlich',   s.material)
+        +     pill('material', 'pvc',        'PVC',         'preisgünstig, pflegeleicht', s.material)
+        +     pill('material', 'aluminium',  'Aluminium',   'stabil, schmaler Rahmen',    s.material)
+        +     pill('material', 'holz',       'Holz',        'klassisch, natürlich',       s.material)
+        +   '</div>'
+        + '</div>'
+
+        + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('verglasung') + 'Verglasung' + ttIcon(TOOLTIPS.fenster.verglasung) + '</label>'
+        +   '<div class="opt-pills" data-field="verglasung">'
+        +     pill('verglasung', '2fach',        '2-fach',       'Standard',           s.verglasung)
+        +     pill('verglasung', '3fach',        '3-fach',       'Wärmeschutz',        s.verglasung)
+        +     pill('verglasung', 'schallschutz', 'Schallschutz', 'bis ~50 dB',         s.verglasung)
+        +     pill('verglasung', 'sicherheit',   'Sicherheit',   'P4A einbruchhemmend', s.verglasung)
         +   '</div>'
         + '</div>'
 
@@ -2716,6 +2787,15 @@
         + '</div>'
 
         + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('profil') + 'Rahmenprofil' + ttIcon(TOOLTIPS.fenster.profil) + '</label>'
+        +   '<div class="opt-pills" data-field="profil">'
+        +     pill('profil', 'standard', 'Standard',  '5-Kammer',  s.profil)
+        +     pill('profil', 'komfort',  'Komfort',   '6-Kammer',  s.profil)
+        +     pill('profil', 'premium',  'Premium',   '7-Kammer',  s.profil)
+        +   '</div>'
+        + '</div>'
+
+        + '<div class="param-group">'
         +   '<label class="param-label">' + iconHtml('ornament') + 'Ornamentglas' + ttIcon(TOOLTIPS.fenster.ornament) + '</label>'
         +   '<div class="opt-pills" data-field="ornament">'
         +     pill('ornament', 'keine',      'Klar',        'normales Glas',  s.ornament)
@@ -2737,10 +2817,48 @@
         + '</div>'
       ) : '';
 
+      // ── Section 4: Rollladen ────────────────────────────────────
+      // Optional add-on for windows. Default "ohne" hides Antrieb + Farbe
+      // rows so the section stays compact when shutters aren't wanted.
+      var section4 = ''
+        + '<div class="param-group">'
+        +   '<label class="param-label">' + iconHtml('rolladen') + 'Rollladen-Typ' + ttIcon(TOOLTIPS.fenster.rolladen_typ) + '</label>'
+        +   '<div class="opt-pills" data-field="rolladen_typ">'
+        +     pill('rolladen_typ', 'ohne',      'Ohne',         '',                 s.rolladen_typ)
+        +     pill('rolladen_typ', 'aufsatz',   'Aufsatz',      'auf Fensterrahmen', s.rolladen_typ)
+        +     pill('rolladen_typ', 'vorbau',    'Vorbau',       'vor Fassade',      s.rolladen_typ)
+        +     pill('rolladen_typ', 'unterputz', 'Unterputz',    'im Mauerwerk',     s.rolladen_typ)
+        +   '</div>'
+        + '</div>';
+
+      if (s.rolladen_typ && s.rolladen_typ !== 'ohne') {
+        section4 += ''
+          + '<div class="param-group">'
+          +   '<label class="param-label">' + iconHtml('antrieb') + 'Antrieb' + ttIcon(TOOLTIPS.fenster.rolladen_antrieb) + '</label>'
+          +   '<div class="opt-pills" data-field="rolladen_antrieb">'
+          +     pill('rolladen_antrieb', 'gurt',       'Gurtwickler', 'manuell',     s.rolladen_antrieb)
+          +     pill('rolladen_antrieb', 'kurbel',     'Kurbel',      'manuell',     s.rolladen_antrieb)
+          +     pill('rolladen_antrieb', 'elektrisch', 'Elektrisch',  'Schalter',    s.rolladen_antrieb)
+          +     pill('rolladen_antrieb', 'smart',      'Smart',       'Funk / App',  s.rolladen_antrieb)
+          +   '</div>'
+          + '</div>'
+
+          + '<div class="param-group">'
+          +   '<label class="param-label">' + iconHtml('color') + 'Rollladen-Farbe</label>'
+          +   '<div class="opt-pills" data-field="rolladen_farbe">'
+          +     pill('rolladen_farbe', 'weiss',       'Weiß',       '',  s.rolladen_farbe)
+          +     pill('rolladen_farbe', 'anthrazit',   'Anthrazit',  '',  s.rolladen_farbe)
+          +     pill('rolladen_farbe', 'braun',       'Braun',      '',  s.rolladen_farbe)
+          +     pill('rolladen_farbe', 'wie_fenster', 'Wie Fenster','passend',  s.rolladen_farbe)
+          +   '</div>'
+          + '</div>';
+      }
+
       return sectionHtml(1, 'Allgemein', section1)
         + sectionHtml(2, 'Grundparameter', section2)
         + sectionHtml(3, 'Erweiterte Optionen', advancedToggleHtml('fenster', advCount) + section3Body)
-        + sectionHtml(4, 'Anmerkungen & Wünsche', commonTemplateBottom());
+        + sectionHtml(4, 'Rollladen', section4)
+        + sectionHtml(5, 'Anmerkungen & Wünsche', commonTemplateBottom());
     }
 
     function paramTemplateTuer() {
@@ -3135,6 +3253,7 @@
       var rows = [
         { dt: 'Größe',      dd: s.width + ' × ' + s.height + ' cm' },
         { dt: 'Material',   dd: L.material[s.material] },
+        { dt: 'Verglasung', dd: L.verglasung[s.verglasung] },
         { dt: 'Öffnung',    dd: L.opening[s.opening] }
       ];
       if (s.opening !== 'fest') {
@@ -3150,6 +3269,9 @@
       if (s.sicherheit && s.sicherheit !== 'standard') {
         rows.push({ dt: 'Sicherheit', dd: L.sicherheit[s.sicherheit] });
       }
+      if (s.profil && s.profil !== 'standard') {
+        rows.push({ dt: 'Rahmenprofil', dd: L.profil[s.profil] });
+      }
       if (s.ornament && s.ornament !== 'keine') {
         rows.push({ dt: 'Ornamentglas', dd: L.ornament[s.ornament] });
       }
@@ -3161,6 +3283,11 @@
       } else {
         rows.push({ dt: 'Dekor innen', dd: L.color[s.color_innen] });
         rows.push({ dt: 'Dekor außen', dd: L.color[s.color_aussen] });
+      }
+      if (s.rolladen_typ && s.rolladen_typ !== 'ohne') {
+        rows.push({ dt: 'Rollladen', dd: L.rolladen_typ[s.rolladen_typ] });
+        rows.push({ dt: 'Antrieb', dd: L.rolladen_antrieb[s.rolladen_antrieb] });
+        rows.push({ dt: 'Rollladen-Farbe', dd: L.rolladen_farbe[s.rolladen_farbe] });
       }
       return rows;
     }
@@ -3607,6 +3734,34 @@
     // Fenster Sicherheit: same story — new field for older saves.
     if (state.fenster && !state.fenster.sicherheit) {
       state.fenster.sicherheit = 'standard';
+    }
+    // Fenster Material/Verglasung split: older state had combined values like
+    // material='pvc_2fach' or 'pvc_3fach'. The new schema is material='pvc'
+    // plus a separate verglasung field. Migrate by parsing the legacy combo.
+    if (state.fenster) {
+      if (state.fenster.material === 'pvc_2fach') {
+        state.fenster.material = 'pvc';
+        state.fenster.verglasung = '2fach';
+      } else if (state.fenster.material === 'pvc_3fach') {
+        state.fenster.material = 'pvc';
+        state.fenster.verglasung = '3fach';
+      }
+      // For Aluminium and Holz the legacy schema implied 2-fach by default,
+      // so backfill that unless the user already has a verglasung value.
+      if (!state.fenster.verglasung) {
+        state.fenster.verglasung = '2fach';
+      }
+    }
+    // Fenster Profil: new field. Older saves don't have it, fall back to standard.
+    if (state.fenster && !state.fenster.profil) {
+      state.fenster.profil = 'standard';
+    }
+    // Fenster Rollladen: new optional section. Older saves don't have any of
+    // the three fields — fall back to "ohne" so the section shows up empty.
+    if (state.fenster) {
+      if (!state.fenster.rolladen_typ)     state.fenster.rolladen_typ     = 'ohne';
+      if (!state.fenster.rolladen_antrieb) state.fenster.rolladen_antrieb = 'elektrisch';
+      if (!state.fenster.rolladen_farbe)   state.fenster.rolladen_farbe   = 'wie_fenster';
     }
 
     // Initial UI state inferences. Used after bootstrap and after Reset to

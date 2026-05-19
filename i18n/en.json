@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "lang": "en",
+    "name": "English",
+    "flag": "🇬🇧"
+  },
+  "nav": {
+    "start": "Home",
+    "projekte": "Projects",
+    "konfigurator": "Configurator",
+    "kontakt": "Contact",
+    "share": "Contact Card"
+  },
+  "header": {
+    "logoAria": "BauService Dionisie Bat — to homepage",
+    "phoneAria": "Call: +49 176 36321349",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "langSwitcherLabel": "Select language"
+  },
+  "mobileMenu": {
+    "ariaLabel": "Main menu",
+    "ctaPrimary": "Request a quote",
+    "directCall": "Direct call"
+  },
+  "footer": {
+    "tagline": "Quality & service from a single source",
+    "servicesHeading": "Services",
+    "navHeading": "Navigation",
+    "contactHeading": "Contact",
+    "impressum": "Imprint (Impressum)",
+    "datenschutz": "Privacy Policy",
+    "copyright": "All rights reserved",
+    "serviceArea": "Serving Werra-Meißner-Kreis and 60 km radius"
+  }
+}

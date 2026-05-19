@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "lang": "de",
+    "name": "Deutsch",
+    "flag": "🇩🇪"
+  },
+  "nav": {
+    "start": "Start",
+    "projekte": "Projekte",
+    "konfigurator": "Konfigurator",
+    "kontakt": "Kontakt",
+    "share": "Visitenkarte"
+  },
+  "header": {
+    "logoAria": "BauService Dionisie Bat — zur Startseite",
+    "phoneAria": "Anrufen: +49 176 36321349",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen",
+    "langSwitcherLabel": "Sprache wählen"
+  },
+  "mobileMenu": {
+    "ariaLabel": "Hauptmenü",
+    "ctaPrimary": "Angebot anfragen",
+    "directCall": "Direkt anrufen"
+  },
+  "footer": {
+    "tagline": "Qualität & Service aus einer Hand",
+    "servicesHeading": "Leistungen",
+    "navHeading": "Navigation",
+    "contactHeading": "Kontakt",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "copyright": "Alle Rechte vorbehalten",
+    "serviceArea": "Tätig im Werra-Meißner-Kreis und 60 km Umkreis"
+  }
+}

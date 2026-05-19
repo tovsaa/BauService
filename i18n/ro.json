@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "lang": "ro",
+    "name": "Română",
+    "flag": "🇷🇴"
+  },
+  "nav": {
+    "start": "Acasă",
+    "projekte": "Proiecte",
+    "konfigurator": "Configurator",
+    "kontakt": "Contact",
+    "share": "Carte de vizită"
+  },
+  "header": {
+    "logoAria": "BauService Dionisie Bat — la pagina principală",
+    "phoneAria": "Sună: +49 176 36321349",
+    "menuOpen": "Deschide meniul",
+    "menuClose": "Închide meniul",
+    "langSwitcherLabel": "Alegeți limba"
+  },
+  "mobileMenu": {
+    "ariaLabel": "Meniu principal",
+    "ctaPrimary": "Solicitați o ofertă",
+    "directCall": "Sunați direct"
+  },
+  "footer": {
+    "tagline": "Calitate și service dintr-o singură mână",
+    "servicesHeading": "Servicii",
+    "navHeading": "Navigare",
+    "contactHeading": "Contact",
+    "impressum": "Impressum",
+    "datenschutz": "Confidențialitate",
+    "copyright": "Toate drepturile rezervate",
+    "serviceArea": "Activ în Werra-Meißner și pe o rază de 60 km"
+  }
+}

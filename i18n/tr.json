@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "lang": "tr",
+    "name": "Türkçe",
+    "flag": "🇹🇷"
+  },
+  "nav": {
+    "start": "Ana Sayfa",
+    "projekte": "Projeler",
+    "konfigurator": "Konfigüratör",
+    "kontakt": "İletişim",
+    "share": "Kartvizit"
+  },
+  "header": {
+    "logoAria": "BauService Dionisie Bat — ana sayfaya",
+    "phoneAria": "Ara: +49 176 36321349",
+    "menuOpen": "Menüyü aç",
+    "menuClose": "Menüyü kapat",
+    "langSwitcherLabel": "Dil seçin"
+  },
+  "mobileMenu": {
+    "ariaLabel": "Ana menü",
+    "ctaPrimary": "Teklif iste",
+    "directCall": "Doğrudan ara"
+  },
+  "footer": {
+    "tagline": "Tek elden kalite ve servis",
+    "servicesHeading": "Hizmetler",
+    "navHeading": "Navigasyon",
+    "contactHeading": "İletişim",
+    "impressum": "Künye (Impressum)",
+    "datenschutz": "Gizlilik",
+    "copyright": "Tüm hakları saklıdır",
+    "serviceArea": "Werra-Meißner ve 60 km yarıçapında hizmet"
+  }
+}

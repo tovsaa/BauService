@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "lang": "ru",
+    "name": "Русский",
+    "flag": "🇷🇺"
+  },
+  "nav": {
+    "start": "Главная",
+    "projekte": "Проекты",
+    "konfigurator": "Конфигуратор",
+    "kontakt": "Контакты",
+    "share": "Визитка"
+  },
+  "header": {
+    "logoAria": "BauService Dionisie Bat — на главную",
+    "phoneAria": "Позвонить: +49 176 36321349",
+    "menuOpen": "Открыть меню",
+    "menuClose": "Закрыть меню",
+    "langSwitcherLabel": "Выбрать язык"
+  },
+  "mobileMenu": {
+    "ariaLabel": "Главное меню",
+    "ctaPrimary": "Запросить расчёт",
+    "directCall": "Прямой звонок"
+  },
+  "footer": {
+    "tagline": "Качество и сервис из одних рук",
+    "servicesHeading": "Услуги",
+    "navHeading": "Навигация",
+    "contactHeading": "Контакты",
+    "impressum": "Impressum",
+    "datenschutz": "Конфиденциальность",
+    "copyright": "Все права защищены",
+    "serviceArea": "Работаем в районе Werra-Meißner и в радиусе 60 км"
+  }
+}

@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+*.log
+
+# Project notes / secrets — never commit
+PROJECT.md

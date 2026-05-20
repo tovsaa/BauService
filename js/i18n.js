@@ -48,7 +48,7 @@
   // Bump VERSION when JSON keys change to invalidate stale browser caches.
   // The query string forces a fresh fetch instead of returning a cached
   // copy from before the new keys existed.
-  var VERSION = '11';
+  var VERSION = '12';
 
   function fetchDict(lang) {
     if (cache[lang]) return Promise.resolve(cache[lang]);
@@ -267,8 +267,9 @@
       + '.lang-switcher{position:relative;display:inline-block;font-family:inherit}'
       + '.lang-switcher-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:inherit;padding:6px 10px;border-radius:6px;cursor:pointer;font:600 13px/1 inherit;letter-spacing:.06em;transition:border-color .2s,background .2s}'
       + '.lang-switcher-btn:hover{border-color:rgba(212,165,68,.6);background:rgba(212,165,68,.06)}'
-      + '.lang-switcher .lang-flag{display:inline-flex;align-items:center;justify-content:center;width:22px;height:14px;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.12)}'
+      + '.lang-switcher .lang-flag{display:inline-flex;align-items:center;justify-content:center;width:16px;height:11px;border-radius:1px;overflow:hidden;opacity:.7;transition:opacity .2s}'
       + '.lang-switcher .flag-svg{width:100%;height:100%;display:block}'
+      + '.lang-switcher .lang-switcher-btn:hover .lang-flag,.lang-switcher.open .lang-flag{opacity:1}'
       + '.lang-switcher-btn .lang-code{font-weight:700;letter-spacing:.1em}'
       + '.lang-switcher-btn .lang-chev{transition:transform .2s;opacity:.7}'
       + '.lang-switcher.open .lang-switcher-btn{border-color:rgba(212,165,68,.6);background:rgba(212,165,68,.08)}'
@@ -279,7 +280,8 @@
       + '.lang-switcher-menu button{display:flex;align-items:center;gap:10px;width:100%;background:transparent;border:0;color:#fff;padding:8px 12px;border-radius:4px;cursor:pointer;font:500 14px/1 inherit;text-align:left}'
       + '.lang-switcher-menu button:hover{background:rgba(212,165,68,.12);color:#f0c66e}'
       + '.lang-switcher-menu button[aria-current="true"]{background:rgba(212,165,68,.08);color:#d4a544}'
-      + '.lang-switcher-menu .lang-flag{width:24px;height:16px}'
+      + '.lang-switcher-menu .lang-flag{width:20px;height:14px;opacity:.85}'
+      + '.lang-switcher-menu button:hover .lang-flag,.lang-switcher-menu button[aria-current="true"] .lang-flag{opacity:1}'
       + '.lang-switcher-menu .lang-name{font-weight:500}'
       + '@media (max-width:560px){.lang-switcher-btn .lang-code{display:none}.lang-switcher-menu{right:auto;left:0}}';
     var s = document.createElement('style');

@@ -89,6 +89,25 @@
     "googleProfile": "Profile on Google",
     "myhammerProfile": "Profile on MyHammer"
   },
+  "notFound": {
+    "tagline": "Page not found",
+    "sub": "This page does not exist",
+    "description": "The requested page has been moved, renamed, or is no longer available. No problem — use the navigation below to get to the homepage or to our projects.",
+    "backHome": "Back to home",
+    "contactBtn": "Get in touch"
+  },
+  "share": {
+    "saveContact": "Save contact",
+    "directReach": "Reach us directly",
+    "whatsappMsg": "WhatsApp message",
+    "socialPlatforms": "Social & platforms",
+    "visitWebsite": "Visit website"
+  },
+  "legal": {
+    "sectionLabel": "Legal",
+    "summaryNoticeTitle": "Language note",
+    "summaryNoticeText": "This text is the legally required version in German. A translation can be provided on request."
+  },
   "konfiguratorPage": {
     "sectionLabel": "Windows & doors",
     "title": "Configurator",

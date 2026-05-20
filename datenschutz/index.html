@@ -1287,6 +1287,35 @@
       word-break: break-word;
     }
     .legal-content a:hover { color: var(--gold-bright); }
+
+    /* Language-notice panel — shown only when the active language is not
+       German. The legal text itself stays in German (required by law). */
+    .lang-notice {
+      display: none;
+      padding: 14px 18px;
+      margin: 0 0 28px;
+      background: rgba(212, 165, 68, 0.07);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+    }
+    html:not([lang="de"]) .lang-notice[hidden] { display: block; }
+    .lang-notice strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .lang-notice p {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
     @media (max-width: 768px) {
       .legal-page { padding: 32px 0 48px; }
       .legal-content h2 { font-size: 17px; margin: 32px 0 10px; }
@@ -1353,11 +1382,11 @@
   <section class="page-top">
     <div class="container">
       <div class="breadcrumb">
-        <a href="../">Startseite</a>
+        <a href="../" data-i18n="projektePage.breadcrumbHome">Startseite</a>
         <span class="sep">›</span>
-        <span class="current">Datenschutz</span>
+        <span class="current" data-i18n="footer.datenschutz">Datenschutz</span>
       </div>
-      <div class="section-label">Rechtliches</div>
+      <div class="section-label" data-i18n="legal.sectionLabel">Rechtliches</div>
       <h1 class="section-title">Datenschutzerklärung</h1>
       <div class="gold-divider"></div>
     </div>
@@ -1367,6 +1396,12 @@
   <section class="legal-page">
     <div class="container">
       <div class="legal-content">
+
+        <!-- Language notice — only visible when ?lang= is not 'de' -->
+        <aside class="lang-notice" hidden>
+          <strong data-i18n="legal.summaryNoticeTitle">Hinweis zur Sprache</strong>
+          <p data-i18n="legal.summaryNoticeText">Dieser Text ist die gesetzlich vorgeschriebene Fassung auf Deutsch. Eine Übersetzung wird auf Anfrage gestellt.</p>
+        </aside>
 
         <h2>1. Verantwortlicher</h2>
         <p>

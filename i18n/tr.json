@@ -89,6 +89,25 @@
     "googleProfile": "Google profili",
     "myhammerProfile": "MyHammer profili"
   },
+  "notFound": {
+    "tagline": "Sayfa bulunamadı",
+    "sub": "Bu sayfa mevcut değil",
+    "description": "İstenen sayfa taşınmış, yeniden adlandırılmış veya artık mevcut değil. Sorun değil — ana sayfaya veya projelerimize ulaşmak için aşağıdaki navigasyonu kullanın.",
+    "backHome": "Ana sayfaya dön",
+    "contactBtn": "İletişime geç"
+  },
+  "share": {
+    "saveContact": "Kişiyi kaydet",
+    "directReach": "Doğrudan ulaşın",
+    "whatsappMsg": "WhatsApp mesajı",
+    "socialPlatforms": "Sosyal & platformlar",
+    "visitWebsite": "Web sitesini ziyaret et"
+  },
+  "legal": {
+    "sectionLabel": "Yasal bilgiler",
+    "summaryNoticeTitle": "Dil notu",
+    "summaryNoticeText": "Bu metin, yasal olarak gerekli Almanca sürümdür. İsteğe bağlı olarak çeviri sağlanabilir."
+  },
   "konfiguratorPage": {
     "sectionLabel": "Pencere ve kapılar",
     "title": "Konfigüratör",

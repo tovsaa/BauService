@@ -89,6 +89,25 @@
     "googleProfile": "Profil auf Google",
     "myhammerProfile": "Profil auf MyHammer"
   },
+  "notFound": {
+    "tagline": "Seite nicht gefunden",
+    "sub": "Diese Seite existiert nicht",
+    "description": "Die angeforderte Seite wurde verschoben, umbenannt oder ist nicht mehr verfügbar. Kein Problem — nutzen Sie die Navigation unten, um zur Startseite oder zu unseren Projekten zu gelangen.",
+    "backHome": "Zur Startseite",
+    "contactBtn": "Kontakt aufnehmen"
+  },
+  "share": {
+    "saveContact": "Kontakt speichern",
+    "directReach": "Direkt erreichen",
+    "whatsappMsg": "WhatsApp Nachricht",
+    "socialPlatforms": "Social & Plattformen",
+    "visitWebsite": "Webseite besuchen"
+  },
+  "legal": {
+    "sectionLabel": "Rechtliches",
+    "summaryNoticeTitle": "Hinweis zur Sprache",
+    "summaryNoticeText": "Dieser Text ist die gesetzlich vorgeschriebene Fassung auf Deutsch. Eine Übersetzung wird auf Anfrage gestellt."
+  },
   "konfiguratorPage": {
     "sectionLabel": "Fenster & Türen",
     "title": "Konfigurator",

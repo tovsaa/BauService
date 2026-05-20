@@ -89,6 +89,25 @@
     "googleProfile": "Profil pe Google",
     "myhammerProfile": "Profil pe MyHammer"
   },
+  "notFound": {
+    "tagline": "Pagina nu a fost găsită",
+    "sub": "Această pagină nu există",
+    "description": "Pagina solicitată a fost mutată, redenumită sau nu mai este disponibilă. Nicio problemă — folosiți navigarea de mai jos pentru a ajunge la pagina principală sau la proiectele noastre.",
+    "backHome": "La pagina principală",
+    "contactBtn": "Contactați-ne"
+  },
+  "share": {
+    "saveContact": "Salvează contactul",
+    "directReach": "Contact direct",
+    "whatsappMsg": "Mesaj WhatsApp",
+    "socialPlatforms": "Social & platforme",
+    "visitWebsite": "Vizitează site-ul"
+  },
+  "legal": {
+    "sectionLabel": "Informații legale",
+    "summaryNoticeTitle": "Notă privind limba",
+    "summaryNoticeText": "Acest text este versiunea obligatorie din punct de vedere legal în germană. O traducere poate fi furnizată la cerere."
+  },
   "konfiguratorPage": {
     "sectionLabel": "Ferestre și uși",
     "title": "Configurator",

@@ -89,6 +89,23 @@
     "googleProfile": "Profil auf Google",
     "myhammerProfile": "Profil auf MyHammer"
   },
+  "projektePage": {
+    "breadcrumbHome": "Startseite",
+    "sectionLabel": "Portfolio",
+    "intro": "aus Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach und der weiteren Region. Klicken Sie auf eine Karte, um Details und alle Bilder zu sehen.",
+    "filterAriaLabel": "Projekte filtern",
+    "filterAll": "Alle",
+    "emptyTitle": "Keine Projekte in dieser Kategorie",
+    "emptyDesc": "Wechseln Sie auf einen anderen Filter, um weitere Arbeiten zu sehen.",
+    "errorTitle": "Projekte konnten nicht geladen werden",
+    "errorDesc": "Bitte versuchen Sie es später noch einmal oder rufen Sie uns direkt an:",
+    "ctaText": "Ihr Projekt ist nicht dabei?",
+    "ctaText2": "Lassen Sie es uns gemeinsam besprechen — kostenlos und unverbindlich.",
+    "lightboxAria": "Bildansicht",
+    "closeAria": "Schließen",
+    "prevAria": "Vorheriges Bild",
+    "nextAria": "Nächstes Bild"
+  },
   "contact": {
     "label": "Kontakt",
     "title": "Kontaktieren Sie uns",

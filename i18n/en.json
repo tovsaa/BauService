@@ -89,6 +89,23 @@
     "googleProfile": "Profile on Google",
     "myhammerProfile": "Profile on MyHammer"
   },
+  "projektePage": {
+    "breadcrumbHome": "Home",
+    "sectionLabel": "Portfolio",
+    "intro": "in Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach and the wider region. Click a card to see details and all photos.",
+    "filterAriaLabel": "Filter projects",
+    "filterAll": "All",
+    "emptyTitle": "No projects in this category",
+    "emptyDesc": "Switch to another filter to see more work.",
+    "errorTitle": "Projects could not be loaded",
+    "errorDesc": "Please try again later or call us directly:",
+    "ctaText": "Your project isn't listed here?",
+    "ctaText2": "Let's discuss it together — free and with no obligation.",
+    "lightboxAria": "Image view",
+    "closeAria": "Close",
+    "prevAria": "Previous image",
+    "nextAria": "Next image"
+  },
   "contact": {
     "label": "Contact",
     "title": "Get in touch",

@@ -89,6 +89,23 @@
     "googleProfile": "Profil pe Google",
     "myhammerProfile": "Profil pe MyHammer"
   },
+  "projektePage": {
+    "breadcrumbHome": "Acasă",
+    "sectionLabel": "Portofoliu",
+    "intro": "în Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach și regiunea mai largă. Faceți clic pe un card pentru a vedea detalii și toate imaginile.",
+    "filterAriaLabel": "Filtrare proiecte",
+    "filterAll": "Toate",
+    "emptyTitle": "Nu există proiecte în această categorie",
+    "emptyDesc": "Comutați pe un alt filtru pentru a vedea alte lucrări.",
+    "errorTitle": "Proiectele nu au putut fi încărcate",
+    "errorDesc": "Vă rugăm să încercați din nou mai târziu sau să ne sunați direct:",
+    "ctaText": "Proiectul dumneavoastră nu este aici?",
+    "ctaText2": "Hai să-l discutăm împreună — gratuit și fără obligație.",
+    "lightboxAria": "Vizualizare imagine",
+    "closeAria": "Închide",
+    "prevAria": "Imaginea anterioară",
+    "nextAria": "Imaginea următoare"
+  },
   "contact": {
     "label": "Contact",
     "title": "Contactați-ne",

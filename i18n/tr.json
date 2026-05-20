@@ -89,6 +89,23 @@
     "googleProfile": "Google profili",
     "myhammerProfile": "MyHammer profili"
   },
+  "projektePage": {
+    "breadcrumbHome": "Ana Sayfa",
+    "sectionLabel": "Portföy",
+    "intro": "Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach ve daha geniş bölgeden. Detaylar ve tüm fotoğraflar için bir karta tıklayın.",
+    "filterAriaLabel": "Projeleri filtrele",
+    "filterAll": "Tümü",
+    "emptyTitle": "Bu kategoride proje yok",
+    "emptyDesc": "Daha fazla iş görmek için başka bir filtreye geçin.",
+    "errorTitle": "Projeler yüklenemedi",
+    "errorDesc": "Lütfen daha sonra tekrar deneyin veya bizi doğrudan arayın:",
+    "ctaText": "Projeniz burada listelenmiyor mu?",
+    "ctaText2": "Birlikte konuşalım — ücretsiz ve yükümlülüksüz.",
+    "lightboxAria": "Görüntüleyici",
+    "closeAria": "Kapat",
+    "prevAria": "Önceki görüntü",
+    "nextAria": "Sonraki görüntü"
+  },
   "contact": {
     "label": "İletişim",
     "title": "Bize ulaşın",

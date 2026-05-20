@@ -1472,15 +1472,15 @@
   <section class="page-top">
     <div class="container">
       <div class="breadcrumb">
-        <a href="../">Startseite</a>
+        <a href="../" data-i18n="projektePage.breadcrumbHome">Startseite</a>
         <span class="sep">›</span>
-        <span class="current">Projekte</span>
+        <span class="current" data-i18n="nav.projekte">Projekte</span>
       </div>
-      <div class="section-label">Portfolio</div>
-      <h1 class="section-title">Unsere Arbeiten</h1>
+      <div class="section-label" data-i18n="projektePage.sectionLabel">Portfolio</div>
+      <h1 class="section-title" data-i18n="projects.title">Unsere Arbeiten</h1>
       <div class="gold-divider"></div>
       <p class="page-top-meta">
-        <strong><span id="projects-count">17</span> abgeschlossene Projekte</strong> aus Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach und der weiteren Region. Klicken Sie auf eine Karte, um Details und alle Bilder zu sehen.
+        <strong><span id="projects-count">17</span> <span data-i18n="projects.introPrefix">abgeschlossene Projekte</span></strong> <span data-i18n="projektePage.intro">aus Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach und der weiteren Region. Klicken Sie auf eine Karte, um Details und alle Bilder zu sehen.</span>
       </p>
     </div>
   </section>
@@ -1488,21 +1488,21 @@
   <!-- ==================== FILTER BAR ==================== -->
   <div class="filter-bar">
     <div class="container">
-      <div class="filter-pills" role="tablist" aria-label="Projekte filtern">
+      <div class="filter-pills" role="tablist" aria-label="Projekte filtern" data-i18n-attr="aria-label:projektePage.filterAriaLabel">
         <button class="filter-pill active" data-filter="alle" role="tab" aria-selected="true">
-          Alle <span class="count" data-count="alle">0</span>
+          <span data-i18n="projektePage.filterAll">Alle</span> <span class="count" data-count="alle">0</span>
         </button>
         <button class="filter-pill" data-filter="fenster" role="tab" aria-selected="false">
-          Fenster <span class="count" data-count="fenster">0</span>
+          <span data-i18n="projects.cat1Title">Fenster</span> <span class="count" data-count="fenster">0</span>
         </button>
         <button class="filter-pill" data-filter="innentueren" role="tab" aria-selected="false">
-          Innentüren <span class="count" data-count="innentueren">0</span>
+          <span data-i18n="projects.cat2Title">Innentüren</span> <span class="count" data-count="innentueren">0</span>
         </button>
         <button class="filter-pill" data-filter="aussentueren" role="tab" aria-selected="false">
-          Außentüren <span class="count" data-count="aussentueren">0</span>
+          <span data-i18n="projects.cat3Title">Außentüren</span> <span class="count" data-count="aussentueren">0</span>
         </button>
         <button class="filter-pill" data-filter="bodenverlegung" role="tab" aria-selected="false">
-          Bodenverlegung <span class="count" data-count="bodenverlegung">0</span>
+          <span data-i18n="projects.cat4Title">Bodenverlegung</span> <span class="count" data-count="bodenverlegung">0</span>
         </button>
       </div>
     </div>
@@ -1524,21 +1524,21 @@
         <div class="proj-skeleton" aria-hidden="true"></div>
 
         <div class="empty-state" id="empty-state">
-          <div class="empty-state-title">Keine Projekte in dieser Kategorie</div>
-          <p>Wechseln Sie auf einen anderen Filter, um weitere Arbeiten zu sehen.</p>
+          <div class="empty-state-title" data-i18n="projektePage.emptyTitle">Keine Projekte in dieser Kategorie</div>
+          <p data-i18n="projektePage.emptyDesc">Wechseln Sie auf einen anderen Filter, um weitere Arbeiten zu sehen.</p>
         </div>
 
         <div class="error-state hidden" id="error-state">
-          <div class="empty-state-title">Projekte konnten nicht geladen werden</div>
-          <p>Bitte versuchen Sie es später noch einmal oder rufen Sie uns direkt an: <a href="tel:+4917636321349" style="color:var(--gold)">+49 176 36321349</a></p>
+          <div class="empty-state-title" data-i18n="projektePage.errorTitle">Projekte konnten nicht geladen werden</div>
+          <p><span data-i18n="projektePage.errorDesc">Bitte versuchen Sie es später noch einmal oder rufen Sie uns direkt an:</span> <a href="tel:+4917636321349" style="color:var(--gold)">+49 176 36321349</a></p>
         </div>
 
       </div>
 
       <div class="projects-cta">
-        <p class="projects-cta-text">Ihr Projekt ist nicht dabei?<br>Lassen Sie es uns gemeinsam besprechen — kostenlos und unverbindlich.</p>
+        <p class="projects-cta-text"><span data-i18n="projektePage.ctaText">Ihr Projekt ist nicht dabei?</span><br><span data-i18n="projektePage.ctaText2">Lassen Sie es uns gemeinsam besprechen — kostenlos und unverbindlich.</span></p>
         <a href="../#kontakt" class="btn btn-primary">
-          Angebot anfragen
+          <span data-i18n="mobileMenu.ctaPrimary">Angebot anfragen</span>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>
@@ -1549,14 +1549,14 @@
   </section>
 
   <!-- ==================== LIGHTBOX ==================== -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Bildansicht" aria-modal="true">
-    <button class="lightbox-close" aria-label="Schließen">
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Bildansicht" aria-modal="true" data-i18n-attr="aria-label:projektePage.lightboxAria">
+    <button class="lightbox-close" aria-label="Schließen" data-i18n-attr="aria-label:projektePage.closeAria">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <button class="lightbox-prev" aria-label="Vorheriges Bild">
+    <button class="lightbox-prev" aria-label="Vorheriges Bild" data-i18n-attr="aria-label:projektePage.prevAria">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <button class="lightbox-next" aria-label="Nächstes Bild">
+    <button class="lightbox-next" aria-label="Nächstes Bild" data-i18n-attr="aria-label:projektePage.nextAria">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
     <img class="lightbox-img" id="lightbox-img" src="" alt="" />

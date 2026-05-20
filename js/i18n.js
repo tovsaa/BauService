@@ -116,10 +116,38 @@
           return fetchDict(lang).then(applyDict);          // overlay
         }
       })
-      .then(function () { renderSwitcher(); })
+      .then(function () {
+        renderSwitcher();
+        // Notify JS-rendered widgets (e.g. konfigurator) so they can
+        // re-render with the new language. Listeners use .t() lookups.
+        document.dispatchEvent(new CustomEvent('i18n:languagechange', {
+          detail: { lang: current }
+        }));
+      })
       .catch(function (err) {
         console.warn('[i18n]', err);
       });
+  }
+
+  // -----------------------------------------------------------
+  // t(key, fallback) — synchronous lookup against the loaded dict
+  // Returns translation, or fallback (or empty string) if missing.
+  // Falls back through current → DE → empty.
+  // -----------------------------------------------------------
+  function t(key, fallback) {
+    var dict = cache[current];
+    if (dict) {
+      var v = lookup(dict, key);
+      if (v != null) return v;
+    }
+    if (current !== DEFAULT_LANG) {
+      var de = cache[DEFAULT_LANG];
+      if (de) {
+        var dv = lookup(de, key);
+        if (dv != null) return dv;
+      }
+    }
+    return (fallback != null) ? fallback : '';
   }
 
   // -----------------------------------------------------------
@@ -241,5 +269,9 @@
   }
 
   // Expose for debugging / external triggers
-  window.BauI18n = { setLang: setLang, current: function () { return current; } };
+  window.BauI18n = {
+    setLang: setLang,
+    current: function () { return current; },
+    t: t
+  };
 })();

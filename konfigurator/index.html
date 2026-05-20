@@ -2028,14 +2028,14 @@
   <section class="page-top">
     <div class="container">
       <div class="breadcrumb">
-        <a href="../">Startseite</a>
+        <a href="../" data-i18n="projektePage.breadcrumbHome">Startseite</a>
         <span class="sep">›</span>
-        <span class="current">Konfigurator</span>
+        <span class="current" data-i18n="nav.konfigurator">Konfigurator</span>
       </div>
-      <div class="section-label">Fenster &amp; Türen</div>
-      <h1 class="section-title">Konfigurator</h1>
+      <div class="section-label" data-i18n="konfiguratorPage.sectionLabel">Fenster &amp; Türen</div>
+      <h1 class="section-title" data-i18n="konfiguratorPage.title">Konfigurator</h1>
       <div class="gold-divider"></div>
-      <p class="page-top-meta">
+      <p class="page-top-meta" data-i18n="konfiguratorPage.intro">
         Stellen Sie Ihre Wunsch-Konfiguration für Fenster oder Außentüren zusammen
         und senden Sie uns anschließend Ihre Anfrage.
       </p>
@@ -2048,13 +2048,13 @@
 
       <!-- Type selector + reset link -->
       <div class="config-toolbar">
-        <div class="type-tabs" role="tablist" aria-label="Produkttyp">
-          <button class="type-tab active" data-type="fenster" role="tab" aria-selected="true">Fenster</button>
-          <button class="type-tab" data-type="tuer" role="tab" aria-selected="false">Außentür</button>
+        <div class="type-tabs" role="tablist" aria-label="Produkttyp" data-i18n-attr="aria-label:konfiguratorPage.tabsAriaLabel">
+          <button class="type-tab active" data-type="fenster" role="tab" aria-selected="true" data-i18n="konfiguratorPage.tabFenster">Fenster</button>
+          <button class="type-tab" data-type="tuer" role="tab" aria-selected="false" data-i18n="konfiguratorPage.tabTuer">Außentür</button>
         </div>
-        <button class="reset-link" id="btnReset" type="button" title="Konfiguration auf Standardwerte zurücksetzen">
+        <button class="reset-link" id="btnReset" type="button" title="Konfiguration auf Standardwerte zurücksetzen" data-i18n-attr="title:konfiguratorPage.resetBtnTitle">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
-          Zurücksetzen
+          <span data-i18n="konfiguratorPage.resetBtn">Zurücksetzen</span>
         </button>
       </div>
 
@@ -2070,7 +2070,7 @@
             <!-- SVG visualization -->
           </div>
           <div class="preview-summary">
-            <h4>Ihre Konfiguration</h4>
+            <h4 data-i18n="konfiguratorPage.yourConfiguration">Ihre Konfiguration</h4>
             <dl id="summaryList"></dl>
           </div>
         </aside>
@@ -2080,27 +2080,26 @@
       <div class="config-actions">
         <a class="action-btn primary" id="btnWhatsApp" href="#" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2.5-1.3c-.3-.2-.7-.1-1 .2l-.7.8c-.2.2-.4.2-.6.1-.7-.4-1.6-.9-2.3-1.6-.7-.7-1.2-1.5-1.6-2.3-.1-.2-.1-.4.1-.6l.8-.7c.3-.3.4-.7.2-1L8.6 5.5c-.2-.4-.7-.5-1.1-.2-1 .8-1.5 1.8-1.5 3 0 1.4.5 2.8 1.4 4.2.9 1.4 2 2.6 3.4 3.4 1.4.9 2.8 1.3 4.2 1.3 1.2 0 2.2-.5 3-1.5.3-.4.2-.9-.2-1.1zM12 2c5.5 0 10 4.5 10 10 0 1.8-.5 3.4-1.3 4.9L22 22l-5.2-1.4c-1.4.8-3.1 1.3-4.8 1.3-5.5 0-10-4.5-10-10S6.5 2 12 2z"/></svg>
-          WhatsApp
+          <span data-i18n="konfiguratorPage.actionWhatsapp">WhatsApp</span>
         </a>
         <a class="action-btn" id="btnEmail" href="#">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          E-Mail
+          <span data-i18n="konfiguratorPage.actionEmail">E-Mail</span>
         </a>
         <button class="action-btn" id="btnCopyText" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          Text kopieren
+          <span data-i18n="konfiguratorPage.actionCopyText">Text kopieren</span>
         </button>
         <button class="action-btn" id="btnCopyLink" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          Link kopieren
+          <span data-i18n="konfiguratorPage.actionCopyLink">Link kopieren</span>
         </button>
       </div>
 
       <!-- Disclaimer -->
       <div class="config-disclaimer">
-        <strong>Hinweis:</strong> Der endgültige Preis hängt von Ihrer konkreten
-        Einbausituation ab. Ein <strong>verbindliches Angebot</strong> erhalten Sie
-        nach einer kostenlosen Vor-Ort-Beratung.
+        <strong data-i18n="konfiguratorPage.disclaimerNote">Hinweis:</strong> <span data-i18n="konfiguratorPage.disclaimerText">Der endgültige Preis hängt von Ihrer konkreten Einbausituation ab. Ein</span>
+        <strong data-i18n="konfiguratorPage.disclaimerBoldOffer">verbindliches Angebot</strong> <span data-i18n="konfiguratorPage.disclaimerSuffix">erhalten Sie nach einer kostenlosen Vor-Ort-Beratung.</span>
       </div>
 
     </div>
@@ -2542,13 +2541,17 @@
 
     function advancedToggleHtml(type, count) {
       var open = !!ui.advancedOpen[type];
-      var badge = (count > 0) ? '<span class="toggle-badge">' + count
-        + (count === 1 ? ' angepasst' : ' angepasst') + '</span>' : '';
+      var T = (window.BauI18n && window.BauI18n.t) ? window.BauI18n.t : function(k,f){ return f; };
+      var badgeSuffix = T('konfiguratorPage.advancedBadgeSuffix', 'angepasst');
+      var badge = (count > 0) ? '<span class="toggle-badge">' + count + ' ' + badgeSuffix + '</span>' : '';
       var chevron = '<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
         + ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+      var label = open
+        ? T('konfiguratorPage.advancedHide', 'Erweiterte Optionen verbergen')
+        : T('konfiguratorPage.advancedShow', 'Erweiterte Optionen anzeigen');
       return '<button type="button" class="param-section-toggle' + (open ? ' open' : '')
         + '" data-advanced-toggle="' + type + '">'
-        + '<span class="toggle-left">' + (open ? 'Erweiterte Optionen verbergen' : 'Erweiterte Optionen anzeigen')
+        + '<span class="toggle-left">' + label
         + badge + '</span>' + chevron + '</button>';
     }
 
@@ -2864,11 +2867,12 @@
           + '</div>';
       }
 
-      return sectionHtml(1, 'Allgemein', section1)
-        + sectionHtml(2, 'Grundparameter', section2)
-        + sectionHtml(3, 'Erweiterte Optionen', advancedToggleHtml('fenster', advCount) + section3Body)
-        + sectionHtml(4, 'Rollladen', section4)
-        + sectionHtml(5, 'Anmerkungen & Wünsche', commonTemplateBottom());
+      var T = (window.BauI18n && window.BauI18n.t) ? window.BauI18n.t : function(k,f){ return f; };
+      return sectionHtml(1, T('konfiguratorPage.section1Title', 'Allgemein'), section1)
+        + sectionHtml(2, T('konfiguratorPage.section2TitleFenster', 'Grundparameter'), section2)
+        + sectionHtml(3, T('konfiguratorPage.section3Title', 'Erweiterte Optionen'), advancedToggleHtml('fenster', advCount) + section3Body)
+        + sectionHtml(4, T('konfiguratorPage.section4Title', 'Rollladen'), section4)
+        + sectionHtml(5, T('konfiguratorPage.section5Title', 'Anmerkungen & Wünsche'), commonTemplateBottom());
     }
 
     function paramTemplateTuer() {
@@ -2958,9 +2962,10 @@
 
         + dekorBlockHtml('tuer');
 
-      return sectionHtml(1, 'Allgemein', section1)
-        + sectionHtml(2, 'Tür-Parameter', section2)
-        + sectionHtml(3, 'Anmerkungen & Wünsche', commonTemplateBottom());
+      var T = (window.BauI18n && window.BauI18n.t) ? window.BauI18n.t : function(k,f){ return f; };
+      return sectionHtml(1, T('konfiguratorPage.section1Title', 'Allgemein'), section1)
+        + sectionHtml(2, T('konfiguratorPage.section2TitleTuer', 'Tür-Parameter'), section2)
+        + sectionHtml(3, T('konfiguratorPage.section5Title', 'Anmerkungen & Wünsche'), commonTemplateBottom());
     }
 
     function pill(field, value, main, sub, current) {
@@ -3558,13 +3563,20 @@
       }
     }
 
+    function _t(key, fallback) {
+      return (window.BauI18n && window.BauI18n.t) ? window.BauI18n.t(key, fallback) : fallback;
+    }
     document.getElementById('btnCopyText').addEventListener('click', async function () {
       var ok = await copyToClipboard(buildMessage());
-      showToast(ok ? 'Konfiguration kopiert' : 'Kopieren fehlgeschlagen');
+      showToast(ok
+        ? _t('konfiguratorPage.toastConfigCopied', 'Konfiguration kopiert')
+        : _t('konfiguratorPage.toastCopyFailed',  'Kopieren fehlgeschlagen'));
     });
     document.getElementById('btnCopyLink').addEventListener('click', async function () {
       var ok = await copyToClipboard(buildShareUrl());
-      showToast(ok ? 'Link kopiert' : 'Kopieren fehlgeschlagen');
+      showToast(ok
+        ? _t('konfiguratorPage.toastLinkCopied', 'Link kopiert')
+        : _t('konfiguratorPage.toastCopyFailed', 'Kopieren fehlgeschlagen'));
     });
 
     // ==============================================================
@@ -3612,7 +3624,7 @@
     var resetBtn = document.getElementById('btnReset');
     if (resetBtn) {
       resetBtn.addEventListener('click', function () {
-        if (!confirm('Möchten Sie die Konfiguration wirklich zurücksetzen?')) return;
+        if (!confirm(_t('konfiguratorPage.resetConfirm', 'Möchten Sie die Konfiguration wirklich zurücksetzen?'))) return;
         clearStateStorage();
         // Reset state to original defaults (we cloned via JSON inside DEFAULTS below)
         state.type = DEFAULTS.type;
@@ -3633,9 +3645,15 @@
           t.setAttribute('aria-selected', on ? 'true' : 'false');
         });
         render();
-        showToast('Konfiguration zurückgesetzt');
+        showToast(_t('konfiguratorPage.toastResetDone', 'Konfiguration zurückgesetzt'));
       });
     }
+
+    // Re-render params when language switches so JS-generated section
+    // titles and advanced-toggle labels pick up the new translation.
+    document.addEventListener('i18n:languagechange', function () {
+      if (typeof render === 'function') render();
+    });
 
     // ==============================================================
     // TOOLTIPS — on mobile we toggle on tap, on desktop CSS :hover handles it.

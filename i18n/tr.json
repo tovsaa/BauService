@@ -504,5 +504,21 @@
     "svcInnentueren": "İç kapılar",
     "svcTrockenbau": "Alçıpan işleri",
     "svcBaustoff": "Yapı malzemesi ve teslimat"
+  },
+  "meta": {
+    "indexTitle": "BauService Dionisie Bat — Eschwege'de pencere, kapı ve montaj",
+    "indexDesc": "Eschwege ve Werra-Meißner bölgesinde mobil ustalık firması. Pencere ve kapı montajı, zemin döşeme, alçıpan ve panjur işleri — 60 km yarıçapında. Ücretsiz danışmanlık ve yerinde ölçüm.",
+    "projekteTitle": "Projeler — Çalışmalarımız | BauService Dionisie Bat",
+    "projekteDesc": "Portföyümüzden tamamlanmış projeler: pencereler, kapılar, zemin döşeme ve daha fazlası — Eschwege, Kassel, Göttingen, Bebra, Eisenach ve Werra-Meißner bölgesinde.",
+    "konfTitle": "Konfigüratör — Pencere ve kapılar | BauService Dionisie Bat",
+    "konfDesc": "Pencere veya dış kapı konfigürasyonunu yapın — boyut, malzeme, açılma tipi ve renk. WhatsApp veya e-posta ile bağlayıcı olmayan teklif alın.",
+    "shareTitle": "İletişim — BauService Dionisie Bat",
+    "shareDesc": "BauService Dionisie Bat ile iletişim için tüm yöntemler — telefon, WhatsApp, e-posta, adres, sosyal medya. Kartvizitimizi doğrudan akıllı telefonunuza kaydedin.",
+    "notFoundTitle": "404 — Sayfa bulunamadı | BauService Dionisie Bat",
+    "notFoundDesc": "Bu sayfa mevcut değil veya taşındı. Ana sayfaya dönün veya doğrudan projeler ve konfigüratöre gidin.",
+    "impressumTitle": "Künye | BauService Dionisie Bat",
+    "impressumDesc": "Künye — Werra-Meißner bölgesindeki Eschwege'de bulunan BauService Dionisie Bat için TMG § 5 uyarınca bilgiler.",
+    "datenschutzTitle": "Gizlilik | BauService Dionisie Bat",
+    "datenschutzDesc": "Eschwege'deki BauService Dionisie Bat'a ait bauservice-esw.de web sitesi için GDPR gizlilik politikası."
   }
 }

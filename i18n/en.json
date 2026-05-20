@@ -504,5 +504,21 @@
     "svcInnentueren": "Interior doors",
     "svcTrockenbau": "Drywall",
     "svcBaustoff": "Building materials with delivery"
+  },
+  "meta": {
+    "indexTitle": "BauService Dionisie Bat — Windows, Doors & Installation in Eschwege",
+    "indexDesc": "Mobile craftsman business from Eschwege in the Werra-Meißner district. Window & door installation, flooring, drywall and roller shutters — within a 60 km radius. Free consultation and measurement.",
+    "projekteTitle": "Projects — Our Work | BauService Dionisie Bat",
+    "projekteDesc": "Completed projects from our portfolio: windows, doors, flooring and more — in Eschwege, Kassel, Göttingen, Bebra, Eisenach and the Werra-Meißner region.",
+    "konfTitle": "Configurator — Windows & Doors | BauService Dionisie Bat",
+    "konfDesc": "Configure windows or exterior doors — size, material, opening type and colour. Receive a non-binding quote via WhatsApp or email.",
+    "shareTitle": "Contact — BauService Dionisie Bat",
+    "shareDesc": "All contact options for BauService Dionisie Bat — phone, WhatsApp, email, address, social media. Save our contact card directly to your smartphone.",
+    "notFoundTitle": "404 — Page Not Found | BauService Dionisie Bat",
+    "notFoundDesc": "This page does not exist or has been moved. Return to the homepage or go straight to projects and configurator.",
+    "impressumTitle": "Imprint | BauService Dionisie Bat",
+    "impressumDesc": "Imprint — disclosures per § 5 German Telemedia Act (TMG) for BauService Dionisie Bat from Eschwege in the Werra-Meißner district.",
+    "datenschutzTitle": "Privacy Policy | BauService Dionisie Bat",
+    "datenschutzDesc": "GDPR privacy policy for the website bauservice-esw.de of BauService Dionisie Bat from Eschwege."
   }
 }

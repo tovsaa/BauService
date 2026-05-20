@@ -504,5 +504,21 @@
     "svcInnentueren": "Межкомнатные двери",
     "svcTrockenbau": "Сухое строительство",
     "svcBaustoff": "Стройматериалы с доставкой"
+  },
+  "meta": {
+    "indexTitle": "BauService Dionisie Bat — окна, двери и монтаж в Эшвеге",
+    "indexDesc": "Мобильная ремонтно-монтажная компания из Эшвеге, район Werra-Meißner. Монтаж окон и дверей, укладка полов, сухое строительство и рольставни — в радиусе 60 км. Бесплатная консультация и замер.",
+    "projekteTitle": "Проекты — наши работы | BauService Dionisie Bat",
+    "projekteDesc": "Завершённые проекты из нашего портфолио: окна, двери, напольные покрытия и многое другое — в Эшвеге, Касселе, Гёттингене, Бебре, Айзенахе и районе Werra-Meißner.",
+    "konfTitle": "Конфигуратор — окна и двери | BauService Dionisie Bat",
+    "konfDesc": "Соберите конфигурацию окна или входной двери — размер, материал, тип открывания и цвет. Получите необязывающее предложение через WhatsApp или email.",
+    "shareTitle": "Контакты — BauService Dionisie Bat",
+    "shareDesc": "Все способы связи с BauService Dionisie Bat — телефон, WhatsApp, email, адрес, соцсети. Сохраните нашу визитку прямо на смартфоне.",
+    "notFoundTitle": "404 — страница не найдена | BauService Dionisie Bat",
+    "notFoundDesc": "Эта страница не существует или была перемещена. Вернитесь на главную или сразу к проектам и конфигуратору.",
+    "impressumTitle": "Impressum | BauService Dionisie Bat",
+    "impressumDesc": "Юридическая информация (Impressum) согласно § 5 TMG для BauService Dionisie Bat из Эшвеге, район Werra-Meißner.",
+    "datenschutzTitle": "Конфиденциальность | BauService Dionisie Bat",
+    "datenschutzDesc": "Политика конфиденциальности по DSGVO для сайта bauservice-esw.de компании BauService Dionisie Bat из Эшвеге."
   }
 }

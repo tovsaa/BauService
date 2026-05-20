@@ -504,5 +504,21 @@
     "svcInnentueren": "Innentüren",
     "svcTrockenbau": "Trockenbau",
     "svcBaustoff": "Baustoffverkauf inkl. Lieferung"
+  },
+  "meta": {
+    "indexTitle": "BauService Dionisie Bat – Fenster, Türen & Montage in Eschwege",
+    "indexDesc": "Mobiler Handwerksbetrieb aus Eschwege im Werra-Meißner-Kreis. Fenster- & Türenmontage, Bodenverlegung, Trockenbau und Rollläden — im Umkreis von 60 km. Kostenlose Beratung & Aufmaß.",
+    "projekteTitle": "Projekte – Unsere Arbeiten | BauService Dionisie Bat",
+    "projekteDesc": "Abgeschlossene Projekte aus unserem Portfolio: Fenster, Türen, Bodenverlegung und mehr — in Eschwege, Kassel, Göttingen, Bebra, Eisenach und der Region Werra-Meißner.",
+    "konfTitle": "Konfigurator – Fenster & Türen | BauService Dionisie Bat",
+    "konfDesc": "Konfigurieren Sie Fenster oder Außentüren — Größe, Material, Öffnungsart und Farbe. Sie erhalten ein unverbindliches Angebot per WhatsApp oder E-Mail.",
+    "shareTitle": "Kontakt — BauService Dionisie Bat",
+    "shareDesc": "Alle Kontaktwege zu BauService Dionisie Bat — Telefon, WhatsApp, E-Mail, Adresse, Social Media. Speichern Sie unsere Visitenkarte direkt auf Ihrem Smartphone.",
+    "notFoundTitle": "404 – Seite nicht gefunden | BauService Dionisie Bat",
+    "notFoundDesc": "Diese Seite existiert nicht oder wurde verschoben. Zurück zur Startseite oder direkt zu Projekten und Konfigurator.",
+    "impressumTitle": "Impressum | BauService Dionisie Bat",
+    "impressumDesc": "Impressum — Angaben gemäß § 5 TMG für BauService Dionisie Bat aus Eschwege im Werra-Meißner-Kreis.",
+    "datenschutzTitle": "Datenschutz | BauService Dionisie Bat",
+    "datenschutzDesc": "Datenschutzerklärung nach DSGVO für die Website bauservice-esw.de der BauService Dionisie Bat aus Eschwege."
   }
 }

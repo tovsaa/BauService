@@ -351,7 +351,86 @@
       }
     },
     "share": {
-      "equalSuffix": "× одинаковых"
+      "equalSuffix": "× одинаковых",
+      "msgIntro": "Здравствуйте, у меня есть предложение из конфигуратора для моего проекта:",
+      "msgAnmerkungen": "Примечания / пожелания:",
+      "msgFullConfig": "Полная конфигурация:",
+      "msgRequest": "Прошу прислать необязывающее предложение.",
+      "titleFenster": "Окно",
+      "titleTuer": "Входная дверь"
+    },
+    "subs": {
+      "material": {
+        "pvc": "недорого, неприхотлив",
+        "aluminium": "прочный, узкая рама",
+        "holz": "классика, натурально"
+      },
+      "verglasung": {
+        "2fach": "стандарт",
+        "3fach": "теплоизоляция",
+        "schallschutz": "до ~50 дБ",
+        "sicherheit": "P4A противовзломное"
+      },
+      "opening": {
+        "fest": "не открывается",
+        "dreh": "боковое открывание",
+        "dreh_kipp": "боковое + откидное"
+      },
+      "anschlag": {
+        "links": "петли слева",
+        "rechts": "петли справа"
+      },
+      "oberlicht": {
+        "oberlicht": "глухой блок сверху",
+        "unterlicht": "глухой блок снизу"
+      },
+      "sprossen": {
+        "h2v1": "шесть секций"
+      },
+      "sicherheit": {
+        "standard": "стандарт",
+        "erhoeht": "противовзломная (~RC1)",
+        "maximum": "противовзлом (~RC2)"
+      },
+      "profil": {
+        "standard": "5 камер",
+        "komfort": "6 камер",
+        "premium": "7 камер"
+      },
+      "ornament": {
+        "keine": "обычное стекло",
+        "satiniert": "матовое",
+        "chinchilla": "структура",
+        "silvit": "тонкий узор"
+      },
+      "griff": {
+        "standard": "белая"
+      },
+      "rolladenTyp": {
+        "aufsatz": "на оконной раме",
+        "vorbau": "перед фасадом",
+        "unterputz": "в стене"
+      },
+      "rolladenAntrieb": {
+        "gurt": "вручную",
+        "kurbel": "вручную",
+        "elektrisch": "выключатель",
+        "smart": "радио / app"
+      },
+      "rolladenFarbe": {
+        "wie_fenster": "в тон"
+      },
+      "color": {
+        "sonder": "см. примечания"
+      },
+      "segment": {
+        "standard": "надёжная комплектация",
+        "premium": "повышенное качество",
+        "luxus": "дизайнерская"
+      },
+      "ausfuehrung": {
+        "vollblatt": "без стекла"
+      }
     }
   },
   "projektePage": {

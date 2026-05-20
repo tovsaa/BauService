@@ -351,7 +351,86 @@
       }
     },
     "share": {
-      "equalSuffix": "× gleich"
+      "equalSuffix": "× gleich",
+      "msgIntro": "Hallo, ich habe einen Konfigurator-Vorschlag für mein Projekt:",
+      "msgAnmerkungen": "Anmerkungen / Wünsche:",
+      "msgFullConfig": "Vollständige Konfiguration:",
+      "msgRequest": "Ich bitte um ein unverbindliches Angebot.",
+      "titleFenster": "Fenster",
+      "titleTuer": "Außentür"
+    },
+    "subs": {
+      "material": {
+        "pvc": "preisgünstig, pflegeleicht",
+        "aluminium": "stabil, schmaler Rahmen",
+        "holz": "klassisch, natürlich"
+      },
+      "verglasung": {
+        "2fach": "Standard",
+        "3fach": "Wärmeschutz",
+        "schallschutz": "bis ~50 dB",
+        "sicherheit": "P4A einbruchhemmend"
+      },
+      "opening": {
+        "fest": "nicht zu öffnen",
+        "dreh": "seitlich öffnen",
+        "dreh_kipp": "seitlich + kippbar"
+      },
+      "anschlag": {
+        "links": "Bänder links",
+        "rechts": "Bänder rechts"
+      },
+      "oberlicht": {
+        "oberlicht": "festes Feld oben",
+        "unterlicht": "festes Feld unten"
+      },
+      "sprossen": {
+        "h2v1": "Sechserteilung"
+      },
+      "sicherheit": {
+        "standard": "Standard",
+        "erhoeht": "einbruchhemmend (~RC1)",
+        "maximum": "Einbruchschutz (~RC2)"
+      },
+      "profil": {
+        "standard": "5-Kammer",
+        "komfort": "6-Kammer",
+        "premium": "7-Kammer"
+      },
+      "ornament": {
+        "keine": "normales Glas",
+        "satiniert": "mattiert",
+        "chinchilla": "Struktur",
+        "silvit": "feines Muster"
+      },
+      "griff": {
+        "standard": "weiß"
+      },
+      "rolladenTyp": {
+        "aufsatz": "auf Fensterrahmen",
+        "vorbau": "vor Fassade",
+        "unterputz": "im Mauerwerk"
+      },
+      "rolladenAntrieb": {
+        "gurt": "manuell",
+        "kurbel": "manuell",
+        "elektrisch": "Schalter",
+        "smart": "Funk / App"
+      },
+      "rolladenFarbe": {
+        "wie_fenster": "passend"
+      },
+      "color": {
+        "sonder": "siehe Anmerkungen"
+      },
+      "segment": {
+        "standard": "solide Ausstattung",
+        "premium": "höhere Qualität",
+        "luxus": "Designer-Tür"
+      },
+      "ausfuehrung": {
+        "vollblatt": "ohne Glas"
+      }
     }
   },
   "projektePage": {

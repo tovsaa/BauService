@@ -351,7 +351,86 @@
       }
     },
     "share": {
-      "equalSuffix": "× identice"
+      "equalSuffix": "× identice",
+      "msgIntro": "Bună ziua, am o propunere din configurator pentru proiectul meu:",
+      "msgAnmerkungen": "Observații / dorințe:",
+      "msgFullConfig": "Configurație completă:",
+      "msgRequest": "Vă rog să-mi trimiteți o ofertă neangajantă.",
+      "titleFenster": "Fereastră",
+      "titleTuer": "Ușă exterioară"
+    },
+    "subs": {
+      "material": {
+        "pvc": "accesibil, întreținere ușoară",
+        "aluminium": "rezistent, ramă subțire",
+        "holz": "clasic, natural"
+      },
+      "verglasung": {
+        "2fach": "standard",
+        "3fach": "termoizolant",
+        "schallschutz": "până la ~50 dB",
+        "sicherheit": "P4A anti-efracție"
+      },
+      "opening": {
+        "fest": "nu se deschide",
+        "dreh": "deschidere laterală",
+        "dreh_kipp": "lateral + basculant"
+      },
+      "anschlag": {
+        "links": "balamale stânga",
+        "rechts": "balamale dreapta"
+      },
+      "oberlicht": {
+        "oberlicht": "panou fix sus",
+        "unterlicht": "panou fix jos"
+      },
+      "sprossen": {
+        "h2v1": "șase secțiuni"
+      },
+      "sicherheit": {
+        "standard": "standard",
+        "erhoeht": "anti-efracție (~RC1)",
+        "maximum": "anti-efracție (~RC2)"
+      },
+      "profil": {
+        "standard": "5 camere",
+        "komfort": "6 camere",
+        "premium": "7 camere"
+      },
+      "ornament": {
+        "keine": "sticlă normală",
+        "satiniert": "mat",
+        "chinchilla": "texturat",
+        "silvit": "model fin"
+      },
+      "griff": {
+        "standard": "albă"
+      },
+      "rolladenTyp": {
+        "aufsatz": "pe cadrul ferestrei",
+        "vorbau": "în fața fațadei",
+        "unterputz": "în zid"
+      },
+      "rolladenAntrieb": {
+        "gurt": "manual",
+        "kurbel": "manual",
+        "elektrisch": "comutator",
+        "smart": "radio / aplicație"
+      },
+      "rolladenFarbe": {
+        "wie_fenster": "asortat"
+      },
+      "color": {
+        "sonder": "vezi observații"
+      },
+      "segment": {
+        "standard": "dotare solidă",
+        "premium": "calitate superioară",
+        "luxus": "ușă designer"
+      },
+      "ausfuehrung": {
+        "vollblatt": "fără geam"
+      }
     }
   },
   "projektePage": {

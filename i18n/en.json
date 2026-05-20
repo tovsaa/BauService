@@ -351,7 +351,86 @@
       }
     },
     "share": {
-      "equalSuffix": "× identical"
+      "equalSuffix": "× identical",
+      "msgIntro": "Hello, I've put together a configurator proposal for my project:",
+      "msgAnmerkungen": "Notes / wishes:",
+      "msgFullConfig": "Full configuration:",
+      "msgRequest": "I would like to request a non-binding quote.",
+      "titleFenster": "Window",
+      "titleTuer": "Exterior door"
+    },
+    "subs": {
+      "material": {
+        "pvc": "affordable, low-maintenance",
+        "aluminium": "sturdy, slim frame",
+        "holz": "classic, natural"
+      },
+      "verglasung": {
+        "2fach": "standard",
+        "3fach": "thermal insulation",
+        "schallschutz": "up to ~50 dB",
+        "sicherheit": "P4A burglar-resistant"
+      },
+      "opening": {
+        "fest": "non-opening",
+        "dreh": "side opening",
+        "dreh_kipp": "side + tilt"
+      },
+      "anschlag": {
+        "links": "hinges on left",
+        "rechts": "hinges on right"
+      },
+      "oberlicht": {
+        "oberlicht": "fixed pane above",
+        "unterlicht": "fixed pane below"
+      },
+      "sprossen": {
+        "h2v1": "six-pane grid"
+      },
+      "sicherheit": {
+        "standard": "standard",
+        "erhoeht": "burglar-resistant (~RC1)",
+        "maximum": "burglar protection (~RC2)"
+      },
+      "profil": {
+        "standard": "5-chamber",
+        "komfort": "6-chamber",
+        "premium": "7-chamber"
+      },
+      "ornament": {
+        "keine": "plain glass",
+        "satiniert": "frosted",
+        "chinchilla": "textured",
+        "silvit": "fine pattern"
+      },
+      "griff": {
+        "standard": "white"
+      },
+      "rolladenTyp": {
+        "aufsatz": "above the window",
+        "vorbau": "in front of the facade",
+        "unterputz": "inside the wall"
+      },
+      "rolladenAntrieb": {
+        "gurt": "manual",
+        "kurbel": "manual",
+        "elektrisch": "switch",
+        "smart": "radio / app"
+      },
+      "rolladenFarbe": {
+        "wie_fenster": "matching"
+      },
+      "color": {
+        "sonder": "see notes"
+      },
+      "segment": {
+        "standard": "solid build",
+        "premium": "higher quality",
+        "luxus": "designer door"
+      },
+      "ausfuehrung": {
+        "vollblatt": "no glass"
+      }
     }
   },
   "projektePage": {

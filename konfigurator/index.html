@@ -23,7 +23,7 @@
   <link rel="alternate" hreflang="tr" href="https://bauservice-esw.de/konfigurator/?lang=tr" />
   <link rel="alternate" hreflang="x-default" href="https://bauservice-esw.de/konfigurator/" />
 
-  <script src="/js/i18n.js?v=5" defer></script>
+  <script src="/js/i18n.js?v=6" defer></script>
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Konfigurator – Fenster &amp; Türen | BauService Dionisie Bat" />
@@ -2990,6 +2990,12 @@
         var lookupField = field.replace(/_both$|_innen$|_aussen$/, '');
         main = T('konf.vals.' + lookupField + '.' + value + 'Short',
                T('konf.vals.' + lookupField + '.' + value, main));
+        // Also auto-translate the SUB label via konf.subs.<field>.<value>.
+        // Only override when the value is non-empty (preserves '' fallback
+        // for pills that intentionally have no sub).
+        if (sub) {
+          sub = T('konf.subs.' + lookupField + '.' + value, sub);
+        }
       }
       var on = value === current;
       var subHtml = sub ? '<span class="opt-sub">' + sub + '</span>' : '';
@@ -3503,11 +3509,15 @@
     // ==============================================================
     function buildMessage() {
       var rows = state.type === 'fenster' ? summaryFenster() : summaryTuer();
-      var title = state.type === 'fenster' ? 'Fenster' : 'Außentür';
-      var anz = (state.anzahl > 1) ? (' (' + state.anzahl + '× gleich)') : '';
+      var title = state.type === 'fenster'
+        ? K('share.titleFenster', 'Fenster')
+        : K('share.titleTuer', 'Außentür');
+      var anz = (state.anzahl > 1)
+        ? (' (' + state.anzahl + K('share.equalSuffix', '× gleich') + ')')
+        : '';
 
       var lines = [];
-      lines.push('Hallo, ich habe einen Konfigurator-Vorschlag für mein Projekt:');
+      lines.push(K('share.msgIntro', 'Hallo, ich habe einen Konfigurator-Vorschlag für mein Projekt:'));
       lines.push('');
       lines.push('=== ' + title.toUpperCase() + anz + ' ===');
       rows.forEach(function (r) {
@@ -3517,14 +3527,14 @@
       // text doesn't break the bullet list above.
       if (state.anmerkungen && state.anmerkungen.trim()) {
         lines.push('');
-        lines.push('Anmerkungen / Wünsche:');
+        lines.push(K('share.msgAnmerkungen', 'Anmerkungen / Wünsche:'));
         lines.push(state.anmerkungen.trim());
       }
       lines.push('');
-      lines.push('Vollständige Konfiguration:');
+      lines.push(K('share.msgFullConfig', 'Vollständige Konfiguration:'));
       lines.push(buildShareUrl());
       lines.push('');
-      lines.push('Ich bitte um ein unverbindliches Angebot.');
+      lines.push(K('share.msgRequest', 'Ich bitte um ein unverbindliches Angebot.'));
       return lines.join('\n');
     }
 

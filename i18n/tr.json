@@ -351,7 +351,86 @@
       }
     },
     "share": {
-      "equalSuffix": "× aynı"
+      "equalSuffix": "× aynı",
+      "msgIntro": "Merhaba, projem için konfigüratör üzerinden bir teklif hazırladım:",
+      "msgAnmerkungen": "Notlar / istekler:",
+      "msgFullConfig": "Tam konfigürasyon:",
+      "msgRequest": "Bağlayıcı olmayan bir teklif rica ediyorum.",
+      "titleFenster": "Pencere",
+      "titleTuer": "Dış kapı"
+    },
+    "subs": {
+      "material": {
+        "pvc": "uygun fiyat, kolay bakım",
+        "aluminium": "sağlam, ince çerçeve",
+        "holz": "klasik, doğal"
+      },
+      "verglasung": {
+        "2fach": "standart",
+        "3fach": "ısı yalıtımı",
+        "schallschutz": "~50 dB-ye kadar",
+        "sicherheit": "P4A hırsızlığa karşı"
+      },
+      "opening": {
+        "fest": "açılmaz",
+        "dreh": "yan açılır",
+        "dreh_kipp": "yan + tilt"
+      },
+      "anschlag": {
+        "links": "menteşeler solda",
+        "rechts": "menteşeler sağda"
+      },
+      "oberlicht": {
+        "oberlicht": "üstte sabit panel",
+        "unterlicht": "altta sabit panel"
+      },
+      "sprossen": {
+        "h2v1": "altı bölmeli"
+      },
+      "sicherheit": {
+        "standard": "standart",
+        "erhoeht": "hırsızlığa karşı (~RC1)",
+        "maximum": "hırsızlık koruması (~RC2)"
+      },
+      "profil": {
+        "standard": "5 odalı",
+        "komfort": "6 odalı",
+        "premium": "7 odalı"
+      },
+      "ornament": {
+        "keine": "normal cam",
+        "satiniert": "mat",
+        "chinchilla": "dokulu",
+        "silvit": "ince desen"
+      },
+      "griff": {
+        "standard": "beyaz"
+      },
+      "rolladenTyp": {
+        "aufsatz": "pencere çerçevesi üzerinde",
+        "vorbau": "cephe önünde",
+        "unterputz": "duvar içinde"
+      },
+      "rolladenAntrieb": {
+        "gurt": "manuel",
+        "kurbel": "manuel",
+        "elektrisch": "anahtar",
+        "smart": "radyo / uygulama"
+      },
+      "rolladenFarbe": {
+        "wie_fenster": "uyumlu"
+      },
+      "color": {
+        "sonder": "notlara bakın"
+      },
+      "segment": {
+        "standard": "sağlam donanım",
+        "premium": "yüksek kalite",
+        "luxus": "tasarım kapı"
+      },
+      "ausfuehrung": {
+        "vollblatt": "camsız"
+      }
     }
   },
   "projektePage": {

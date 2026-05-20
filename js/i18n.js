@@ -48,7 +48,7 @@
   // Bump VERSION when JSON keys change to invalidate stale browser caches.
   // The query string forces a fresh fetch instead of returning a cached
   // copy from before the new keys existed.
-  var VERSION = '3';
+  var VERSION = '5';
 
   function fetchDict(lang) {
     if (cache[lang]) return Promise.resolve(cache[lang]);

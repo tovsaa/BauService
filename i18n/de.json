@@ -141,6 +141,219 @@
     "toastResetDone": "Konfiguration zurückgesetzt",
     "resetConfirm": "Konfiguration wirklich auf Standardwerte zurücksetzen?"
   },
+  "konf": {
+    "param": {
+      "anzahl": "Anzahl gleicher Elemente",
+      "stueck": "Stück",
+      "groesse": "Größe",
+      "breite": "cm Breite",
+      "hoehe": "cm Höhe",
+      "material": "Material",
+      "verglasung": "Verglasung",
+      "oeffnungsart": "Öffnungsart",
+      "anschlag": "DIN-Anschlag",
+      "fluegel": "Anzahl Flügel",
+      "fluegelEnd": "Flügel",
+      "oberlicht": "Oberlicht / Unterlicht",
+      "sprossen": "Sprossen",
+      "sicherheit": "Sicherheit",
+      "profil": "Rahmenprofil",
+      "ornament": "Ornamentglas",
+      "griff": "Fenstergriff",
+      "rolladenTyp": "Rollladen-Typ",
+      "rolladenAntrieb": "Antrieb",
+      "rolladenFarbe": "Rollladen-Farbe",
+      "farbe": "Farbe",
+      "farbeBoth": "Farbe (innen & außen)",
+      "farbeInnen": "Farbe innen",
+      "farbeAussen": "Farbe außen",
+      "splitToggle": "Innen und außen unterschiedlich",
+      "anmerkungen": "Ihre Anmerkungen",
+      "anmerkungenOptional": "optional",
+      "anmerkungenPlaceholder": "z.B. Position im Haus, RAL-Sonderfarbe, gewünschter Termin oder andere Wünsche",
+      "groesseTuer": "Größe",
+      "standardmass": "Standardmaß",
+      "sondermass": "Sondermaß",
+      "eigeneWerte": "eigene Werte",
+      "preissegment": "Preissegment",
+      "ausfuehrung": "Ausführung",
+      "schloss": "Schloss",
+      "splitToggleGleich": "Innen und außen gleich",
+      "anzahl_short": "Anzahl"
+    },
+    "summary": {
+      "groesse": "Größe",
+      "material": "Material",
+      "verglasung": "Verglasung",
+      "oeffnung": "Öffnung",
+      "anschlag": "DIN-Anschlag",
+      "fluegelSingle": "1 Flügel",
+      "fluegelN": "Flügel",
+      "aufteilung": "Aufteilung",
+      "sprossen": "Sprossen",
+      "sicherheit": "Sicherheit",
+      "profil": "Rahmenprofil",
+      "ornament": "Ornamentglas",
+      "griff": "Fenstergriff",
+      "farbe": "Farbe",
+      "dekorInnen": "Dekor innen",
+      "dekorAussen": "Dekor außen",
+      "rolladen": "Rollladen",
+      "rolladenAntrieb": "Antrieb",
+      "rolladenFarbe": "Rollladen-Farbe",
+      "groesseStd": "90 × 210 cm (Standard)",
+      "groesseSondersuffix": "(Sondermaß)",
+      "preissegment": "Preissegment",
+      "ausfuehrung": "Ausführung",
+      "schloss": "Schloss"
+    },
+    "vals": {
+      "material": {
+        "pvc": "PVC",
+        "aluminium": "Aluminium",
+        "holz": "Holz"
+      },
+      "verglasung": {
+        "2fach": "2-fach Verglasung",
+        "2fachShort": "2-fach",
+        "3fach": "3-fach Wärmeschutz",
+        "3fachShort": "3-fach",
+        "schallschutz": "Schallschutzglas",
+        "schallschutzShort": "Schallschutz",
+        "sicherheit": "Sicherheitsglas (P4A)",
+        "sicherheitShort": "Sicherheit"
+      },
+      "opening": {
+        "fest": "Festverglasung",
+        "dreh": "Drehfenster",
+        "dreh_kipp": "Dreh-Kipp-Fenster"
+      },
+      "anschlag": {
+        "links": "DIN links",
+        "rechts": "DIN rechts",
+        "linksFull": "DIN links (Bänder links)",
+        "rechtsFull": "DIN rechts (Bänder rechts)"
+      },
+      "sprossen": {
+        "keine": "Keine Sprossen",
+        "keineShort": "Keine",
+        "h1": "1 Sprosse horizontal",
+        "h1Short": "1 horizontal",
+        "v1": "1 Sprosse vertikal",
+        "v1Short": "1 vertikal",
+        "kreuz": "Kreuzsprosse",
+        "kreuzShort": "Kreuz",
+        "h2v1": "2 horizontal + 1 vertikal",
+        "h2v1Short": "2H + 1V"
+      },
+      "oberlicht": {
+        "keine": "Ohne Oberlicht / Unterlicht",
+        "keineShort": "Ohne",
+        "oberlicht": "Mit Oberlicht (Festverglasung oben)",
+        "oberlichtShort": "Oberlicht",
+        "unterlicht": "Mit Unterlicht (Festverglasung unten)",
+        "unterlichtShort": "Unterlicht"
+      },
+      "ornament": {
+        "keine": "Klares Glas",
+        "keineShort": "Klar",
+        "satiniert": "Satiniertes Glas (mattiert)",
+        "satiniertShort": "Satiniert",
+        "chinchilla": "Chinchilla (strukturiert)",
+        "chinchillaShort": "Chinchilla",
+        "silvit": "Silvit (feines Muster)",
+        "silvitShort": "Silvit"
+      },
+      "griff": {
+        "standard": "Standardgriff (weiß)",
+        "standardShort": "Standard",
+        "silber": "Silber",
+        "altgold": "Altgold",
+        "braun": "Braun"
+      },
+      "sicherheit": {
+        "standard": "Basis-Sicherheit (Standard)",
+        "standardShort": "Basis",
+        "erhoeht": "Erhöhte Sicherheit (einbruchhemmend)",
+        "erhoehtShort": "Erhöht",
+        "maximum": "Maximaler Einbruchschutz",
+        "maximumShort": "Maximum"
+      },
+      "profil": {
+        "standard": "Standard-Profil (5-Kammer)",
+        "standardShort": "Standard",
+        "komfort": "Komfort-Profil (6-Kammer)",
+        "komfortShort": "Komfort",
+        "premium": "Premium-Profil (7-Kammer)",
+        "premiumShort": "Premium"
+      },
+      "rolladenTyp": {
+        "ohne": "Ohne Rollladen",
+        "ohneShort": "Ohne",
+        "aufsatz": "Aufsatzrollladen (auf Fensterrahmen)",
+        "aufsatzShort": "Aufsatz",
+        "vorbau": "Vorbaurollladen (vor Fassade)",
+        "vorbauShort": "Vorbau",
+        "unterputz": "Unterputzrollladen (im Mauerwerk)",
+        "unterputzShort": "Unterputz"
+      },
+      "rolladenAntrieb": {
+        "gurt": "Gurtwickler (manuell)",
+        "gurtShort": "Gurtwickler",
+        "kurbel": "Kurbel (manuell)",
+        "kurbelShort": "Kurbel",
+        "elektrisch": "Elektrisch (Wandschalter)",
+        "elektrischShort": "Elektrisch",
+        "smart": "Smart (Funk / App / Zeitsteuerung)",
+        "smartShort": "Smart"
+      },
+      "rolladenFarbe": {
+        "weiss": "Weiß",
+        "anthrazit": "Anthrazit",
+        "braun": "Braun",
+        "wie_fenster": "Wie Fenster"
+      },
+      "color": {
+        "weiss": "Weiß",
+        "anthrazit": "Anthrazit",
+        "braun": "Braun",
+        "sonder": "Andere Farbe (siehe Anmerkungen)",
+        "sonderShort": "Andere"
+      },
+      "segment": {
+        "standard": "Standard",
+        "premium": "Premium",
+        "luxus": "Luxus / Designer-Tür",
+        "luxusShort": "Luxus"
+      },
+      "ausfuehrung": {
+        "vollblatt": "Vollblatt (ohne Glas)",
+        "vollblattShort": "Vollblatt",
+        "glaseinsatz": "Mit Glaseinsatz",
+        "glaseinsatzShort": "Glaseinsatz",
+        "seitenteile": "Mit Glaseinsatz + Seitenteilen",
+        "seitenteileShort": "Seitenteile"
+      },
+      "schloss": {
+        "standard": "Standardschloss",
+        "standardShort": "Standard",
+        "mehrfach": "Mehrfachverriegelung",
+        "mehrfachShort": "Mehrfach"
+      },
+      "fluegel": {
+        "1": "1 Flügel",
+        "2": "2 Flügel",
+        "3": "3 Flügel"
+      },
+      "sondermass": {
+        "false": "Standardmaß",
+        "true": "Sondermaß"
+      }
+    },
+    "share": {
+      "equalSuffix": "× gleich"
+    }
+  },
   "projektePage": {
     "breadcrumbHome": "Startseite",
     "sectionLabel": "Portfolio",
@@ -173,6 +386,12 @@
     "datenschutz": "Datenschutz",
     "copyright": "Alle Rechte vorbehalten.",
     "serviceArea": "Tätig im Werra-Meißner-Kreis und 60 km Umkreis",
-    "brandDesc": "Ihr Partner für Fenster, Türen und Bodenbeläge in Eschwege & Umgebung."
+    "brandDesc": "Ihr Partner für Fenster, Türen und Bodenbeläge in Eschwege & Umgebung.",
+    "linkBewertungen": "Bewertungen",
+    "svcBoden": "Bodenverlegung",
+    "svcFensterTueren": "Fenster & Türen",
+    "svcInnentueren": "Innentüren",
+    "svcTrockenbau": "Trockenbau",
+    "svcBaustoff": "Baustoffverkauf inkl. Lieferung"
   }
 }

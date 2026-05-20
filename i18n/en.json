@@ -141,6 +141,219 @@
     "toastResetDone": "Configuration reset",
     "resetConfirm": "Reset configuration to default values?"
   },
+  "konf": {
+    "param": {
+      "anzahl": "Number of identical elements",
+      "stueck": "pcs",
+      "groesse": "Size",
+      "breite": "cm width",
+      "hoehe": "cm height",
+      "material": "Material",
+      "verglasung": "Glazing",
+      "oeffnungsart": "Opening type",
+      "anschlag": "Hinge side (DIN)",
+      "fluegel": "Number of sashes",
+      "fluegelEnd": "sashes",
+      "oberlicht": "Top / bottom light",
+      "sprossen": "Muntins",
+      "sicherheit": "Security",
+      "profil": "Frame profile",
+      "ornament": "Patterned glass",
+      "griff": "Window handle",
+      "rolladenTyp": "Shutter type",
+      "rolladenAntrieb": "Drive",
+      "rolladenFarbe": "Shutter colour",
+      "farbe": "Colour",
+      "farbeBoth": "Colour (inside & outside)",
+      "farbeInnen": "Colour inside",
+      "farbeAussen": "Colour outside",
+      "splitToggle": "Different inside and outside",
+      "anmerkungen": "Your notes",
+      "anmerkungenOptional": "optional",
+      "anmerkungenPlaceholder": "e.g. position in the house, special RAL colour, preferred date or other wishes",
+      "groesseTuer": "Size",
+      "standardmass": "Standard size",
+      "sondermass": "Custom size",
+      "eigeneWerte": "own values",
+      "preissegment": "Price segment",
+      "ausfuehrung": "Execution",
+      "schloss": "Lock",
+      "splitToggleGleich": "Inside and outside the same",
+      "anzahl_short": "Quantity"
+    },
+    "summary": {
+      "groesse": "Size",
+      "material": "Material",
+      "verglasung": "Glazing",
+      "oeffnung": "Opening",
+      "anschlag": "Hinge side",
+      "fluegelSingle": "1 sash",
+      "fluegelN": "Sashes",
+      "aufteilung": "Division",
+      "sprossen": "Muntins",
+      "sicherheit": "Security",
+      "profil": "Profile",
+      "ornament": "Patterned glass",
+      "griff": "Handle",
+      "farbe": "Colour",
+      "dekorInnen": "Colour inside",
+      "dekorAussen": "Colour outside",
+      "rolladen": "Shutter",
+      "rolladenAntrieb": "Drive",
+      "rolladenFarbe": "Shutter colour",
+      "groesseStd": "90 × 210 cm (standard)",
+      "groesseSondersuffix": "(custom size)",
+      "preissegment": "Price segment",
+      "ausfuehrung": "Execution",
+      "schloss": "Lock"
+    },
+    "vals": {
+      "material": {
+        "pvc": "PVC",
+        "aluminium": "Aluminium",
+        "holz": "Wood"
+      },
+      "verglasung": {
+        "2fach": "Double glazing",
+        "2fachShort": "Double",
+        "3fach": "Triple glazing (thermal)",
+        "3fachShort": "Triple",
+        "schallschutz": "Acoustic glass",
+        "schallschutzShort": "Acoustic",
+        "sicherheit": "Safety glass (P4A)",
+        "sicherheitShort": "Safety"
+      },
+      "opening": {
+        "fest": "Fixed (non-opening)",
+        "dreh": "Casement",
+        "dreh_kipp": "Tilt-and-turn"
+      },
+      "anschlag": {
+        "links": "DIN left",
+        "rechts": "DIN right",
+        "linksFull": "DIN left (hinges on left)",
+        "rechtsFull": "DIN right (hinges on right)"
+      },
+      "sprossen": {
+        "keine": "No muntins",
+        "keineShort": "None",
+        "h1": "1 horizontal",
+        "h1Short": "1 horizontal",
+        "v1": "1 vertical",
+        "v1Short": "1 vertical",
+        "kreuz": "Cross",
+        "kreuzShort": "Cross",
+        "h2v1": "2 horizontal + 1 vertical",
+        "h2v1Short": "2H + 1V"
+      },
+      "oberlicht": {
+        "keine": "Without top / bottom light",
+        "keineShort": "None",
+        "oberlicht": "With top light (fixed pane above)",
+        "oberlichtShort": "Top",
+        "unterlicht": "With bottom light (fixed pane below)",
+        "unterlichtShort": "Bottom"
+      },
+      "ornament": {
+        "keine": "Clear glass",
+        "keineShort": "Clear",
+        "satiniert": "Satin (frosted)",
+        "satiniertShort": "Satin",
+        "chinchilla": "Chinchilla (textured)",
+        "chinchillaShort": "Chinchilla",
+        "silvit": "Silvit (fine pattern)",
+        "silvitShort": "Silvit"
+      },
+      "griff": {
+        "standard": "Standard handle (white)",
+        "standardShort": "Standard",
+        "silber": "Silver",
+        "altgold": "Antique gold",
+        "braun": "Brown"
+      },
+      "sicherheit": {
+        "standard": "Basic security",
+        "standardShort": "Basic",
+        "erhoeht": "Enhanced (burglar-resistant)",
+        "erhoehtShort": "Enhanced",
+        "maximum": "Maximum burglar protection",
+        "maximumShort": "Maximum"
+      },
+      "profil": {
+        "standard": "Standard profile (5-chamber)",
+        "standardShort": "Standard",
+        "komfort": "Comfort profile (6-chamber)",
+        "komfortShort": "Comfort",
+        "premium": "Premium profile (7-chamber)",
+        "premiumShort": "Premium"
+      },
+      "rolladenTyp": {
+        "ohne": "No shutter",
+        "ohneShort": "None",
+        "aufsatz": "On-frame (above window)",
+        "aufsatzShort": "On-frame",
+        "vorbau": "Surface-mounted (in front of façade)",
+        "vorbauShort": "Surface",
+        "unterputz": "Built-in (inside the wall)",
+        "unterputzShort": "Built-in"
+      },
+      "rolladenAntrieb": {
+        "gurt": "Strap winder (manual)",
+        "gurtShort": "Strap",
+        "kurbel": "Crank (manual)",
+        "kurbelShort": "Crank",
+        "elektrisch": "Electric (wall switch)",
+        "elektrischShort": "Electric",
+        "smart": "Smart (radio / app)",
+        "smartShort": "Smart"
+      },
+      "rolladenFarbe": {
+        "weiss": "White",
+        "anthrazit": "Anthracite",
+        "braun": "Brown",
+        "wie_fenster": "Same as window"
+      },
+      "color": {
+        "weiss": "White",
+        "anthrazit": "Anthracite",
+        "braun": "Brown",
+        "sonder": "Other (see notes)",
+        "sonderShort": "Other"
+      },
+      "segment": {
+        "standard": "Standard",
+        "premium": "Premium",
+        "luxus": "Luxury / designer door",
+        "luxusShort": "Luxury"
+      },
+      "ausfuehrung": {
+        "vollblatt": "Solid panel (no glass)",
+        "vollblattShort": "Solid",
+        "glaseinsatz": "With glass inset",
+        "glaseinsatzShort": "Glass",
+        "seitenteile": "With glass + side panels",
+        "seitenteileShort": "Side panels"
+      },
+      "schloss": {
+        "standard": "Standard lock",
+        "standardShort": "Standard",
+        "mehrfach": "Multi-point locking",
+        "mehrfachShort": "Multi-point"
+      },
+      "fluegel": {
+        "1": "1 sash",
+        "2": "2 sashes",
+        "3": "3 sashes"
+      },
+      "sondermass": {
+        "false": "Standard",
+        "true": "Custom"
+      }
+    },
+    "share": {
+      "equalSuffix": "× identical"
+    }
+  },
   "projektePage": {
     "breadcrumbHome": "Home",
     "sectionLabel": "Portfolio",
@@ -173,6 +386,12 @@
     "datenschutz": "Privacy Policy",
     "copyright": "All rights reserved.",
     "serviceArea": "Serving Werra-Meißner-Kreis and 60 km radius",
-    "brandDesc": "Your partner for windows, doors and flooring in Eschwege & the surrounding area."
+    "brandDesc": "Your partner for windows, doors and flooring in Eschwege & the surrounding area.",
+    "linkBewertungen": "Reviews",
+    "svcBoden": "Flooring",
+    "svcFensterTueren": "Windows & doors",
+    "svcInnentueren": "Interior doors",
+    "svcTrockenbau": "Drywall",
+    "svcBaustoff": "Building materials with delivery"
   }
 }

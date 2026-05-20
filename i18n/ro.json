@@ -141,6 +141,219 @@
     "toastResetDone": "Configurație resetată",
     "resetConfirm": "Resetați configurația la valorile implicite?"
   },
+  "konf": {
+    "param": {
+      "anzahl": "Număr de elemente identice",
+      "stueck": "buc.",
+      "groesse": "Dimensiune",
+      "breite": "cm lățime",
+      "hoehe": "cm înălțime",
+      "material": "Material",
+      "verglasung": "Geam",
+      "oeffnungsart": "Tip de deschidere",
+      "anschlag": "Sensul balamalelor (DIN)",
+      "fluegel": "Număr de canate",
+      "fluegelEnd": "canate",
+      "oberlicht": "Lumină sus / jos",
+      "sprossen": "Șprosuri",
+      "sicherheit": "Securitate",
+      "profil": "Profil de cadru",
+      "ornament": "Geam ornament",
+      "griff": "Mâner fereastră",
+      "rolladenTyp": "Tip rulou",
+      "rolladenAntrieb": "Acționare",
+      "rolladenFarbe": "Culoare rulou",
+      "farbe": "Culoare",
+      "farbeBoth": "Culoare (interior și exterior)",
+      "farbeInnen": "Culoare interior",
+      "farbeAussen": "Culoare exterior",
+      "splitToggle": "Interior și exterior diferite",
+      "anmerkungen": "Observațiile dvs.",
+      "anmerkungenOptional": "opțional",
+      "anmerkungenPlaceholder": "ex. poziție în casă, RAL special, dată dorită sau alte cerințe",
+      "groesseTuer": "Dimensiune",
+      "standardmass": "Dimensiune standard",
+      "sondermass": "Dimensiune specială",
+      "eigeneWerte": "valori proprii",
+      "preissegment": "Segment de preț",
+      "ausfuehrung": "Execuție",
+      "schloss": "Yală",
+      "splitToggleGleich": "Interior și exterior la fel",
+      "anzahl_short": "Cantitate"
+    },
+    "summary": {
+      "groesse": "Dimensiune",
+      "material": "Material",
+      "verglasung": "Geam",
+      "oeffnung": "Deschidere",
+      "anschlag": "Sens balamale",
+      "fluegelSingle": "1 canat",
+      "fluegelN": "Canate",
+      "aufteilung": "Împărțire",
+      "sprossen": "Șprosuri",
+      "sicherheit": "Securitate",
+      "profil": "Profil",
+      "ornament": "Geam ornament",
+      "griff": "Mâner",
+      "farbe": "Culoare",
+      "dekorInnen": "Culoare interior",
+      "dekorAussen": "Culoare exterior",
+      "rolladen": "Rulou",
+      "rolladenAntrieb": "Acționare",
+      "rolladenFarbe": "Culoare rulou",
+      "groesseStd": "90 × 210 cm (standard)",
+      "groesseSondersuffix": "(dimensiune specială)",
+      "preissegment": "Segment de preț",
+      "ausfuehrung": "Execuție",
+      "schloss": "Yală"
+    },
+    "vals": {
+      "material": {
+        "pvc": "PVC",
+        "aluminium": "Aluminiu",
+        "holz": "Lemn"
+      },
+      "verglasung": {
+        "2fach": "Geam dublu (termoizolant)",
+        "2fachShort": "Dublu",
+        "3fach": "Geam triplu (termoizolant superior)",
+        "3fachShort": "Triplu",
+        "schallschutz": "Geam fonoizolant",
+        "schallschutzShort": "Fonoizol.",
+        "sicherheit": "Geam de siguranță (P4A)",
+        "sicherheitShort": "Siguranță"
+      },
+      "opening": {
+        "fest": "Fix (nu se deschide)",
+        "dreh": "Batant",
+        "dreh_kipp": "Oscilo-batant"
+      },
+      "anschlag": {
+        "links": "DIN stânga",
+        "rechts": "DIN dreapta",
+        "linksFull": "DIN stânga (balamale în stânga)",
+        "rechtsFull": "DIN dreapta (balamale în dreapta)"
+      },
+      "sprossen": {
+        "keine": "Fără șprosuri",
+        "keineShort": "Niciunul",
+        "h1": "1 orizontal",
+        "h1Short": "1 orizontal",
+        "v1": "1 vertical",
+        "v1Short": "1 vertical",
+        "kreuz": "Cruce",
+        "kreuzShort": "Cruce",
+        "h2v1": "2 orizontale + 1 vertical",
+        "h2v1Short": "2O + 1V"
+      },
+      "oberlicht": {
+        "keine": "Fără lumină sus / jos",
+        "keineShort": "Fără",
+        "oberlicht": "Cu lumină sus (panou fix deasupra)",
+        "oberlichtShort": "Sus",
+        "unterlicht": "Cu lumină jos (panou fix dedesubt)",
+        "unterlichtShort": "Jos"
+      },
+      "ornament": {
+        "keine": "Geam transparent",
+        "keineShort": "Transparent",
+        "satiniert": "Satinat (mat)",
+        "satiniertShort": "Satinat",
+        "chinchilla": "Chinchilla (texturat)",
+        "chinchillaShort": "Chinchilla",
+        "silvit": "Silvit (model fin)",
+        "silvitShort": "Silvit"
+      },
+      "griff": {
+        "standard": "Mâner standard (alb)",
+        "standardShort": "Standard",
+        "silber": "Argintiu",
+        "altgold": "Auriu vechi",
+        "braun": "Maro"
+      },
+      "sicherheit": {
+        "standard": "Securitate de bază",
+        "standardShort": "Bază",
+        "erhoeht": "Sporită (anti-efracție)",
+        "erhoehtShort": "Sporită",
+        "maximum": "Protecție maximă anti-efracție",
+        "maximumShort": "Maxim"
+      },
+      "profil": {
+        "standard": "Profil standard (5 camere)",
+        "standardShort": "Standard",
+        "komfort": "Profil confort (6 camere)",
+        "komfortShort": "Confort",
+        "premium": "Profil premium (7 camere)",
+        "premiumShort": "Premium"
+      },
+      "rolladenTyp": {
+        "ohne": "Fără rulou",
+        "ohneShort": "Fără",
+        "aufsatz": "Pe cadrul ferestrei",
+        "aufsatzShort": "Pe cadru",
+        "vorbau": "Aplicat (în fața fațadei)",
+        "vorbauShort": "Aplicat",
+        "unterputz": "Încastrat (în zid)",
+        "unterputzShort": "Încastrat"
+      },
+      "rolladenAntrieb": {
+        "gurt": "Cu chingă (manual)",
+        "gurtShort": "Chingă",
+        "kurbel": "Cu manivelă (manual)",
+        "kurbelShort": "Manivelă",
+        "elektrisch": "Electric (cu întrerupător)",
+        "elektrischShort": "Electric",
+        "smart": "Smart (radio / aplicație)",
+        "smartShort": "Smart"
+      },
+      "rolladenFarbe": {
+        "weiss": "Alb",
+        "anthrazit": "Antracit",
+        "braun": "Maro",
+        "wie_fenster": "Ca fereastra"
+      },
+      "color": {
+        "weiss": "Alb",
+        "anthrazit": "Antracit",
+        "braun": "Maro",
+        "sonder": "Altă culoare (vezi observații)",
+        "sonderShort": "Alta"
+      },
+      "segment": {
+        "standard": "Standard",
+        "premium": "Premium",
+        "luxus": "Lux / ușă designer",
+        "luxusShort": "Lux"
+      },
+      "ausfuehrung": {
+        "vollblatt": "Plină (fără geam)",
+        "vollblattShort": "Plină",
+        "glaseinsatz": "Cu geam",
+        "glaseinsatzShort": "Cu geam",
+        "seitenteile": "Cu geam + panouri laterale",
+        "seitenteileShort": "Pan. lat."
+      },
+      "schloss": {
+        "standard": "Yală standard",
+        "standardShort": "Standard",
+        "mehrfach": "Yală multipunct",
+        "mehrfachShort": "Multipunct"
+      },
+      "fluegel": {
+        "1": "1 canat",
+        "2": "2 canate",
+        "3": "3 canate"
+      },
+      "sondermass": {
+        "false": "Standard",
+        "true": "Personalizat"
+      }
+    },
+    "share": {
+      "equalSuffix": "× identice"
+    }
+  },
   "projektePage": {
     "breadcrumbHome": "Acasă",
     "sectionLabel": "Portofoliu",
@@ -173,6 +386,12 @@
     "datenschutz": "Confidențialitate",
     "copyright": "Toate drepturile rezervate.",
     "serviceArea": "Activ în Werra-Meißner și pe o rază de 60 km",
-    "brandDesc": "Partenerul dumneavoastră pentru ferestre, uși și pardoseli în Eschwege și împrejurimi."
+    "brandDesc": "Partenerul dumneavoastră pentru ferestre, uși și pardoseli în Eschwege și împrejurimi.",
+    "linkBewertungen": "Recenzii",
+    "svcBoden": "Pardoseli",
+    "svcFensterTueren": "Ferestre și uși",
+    "svcInnentueren": "Uși de interior",
+    "svcTrockenbau": "Rigips",
+    "svcBaustoff": "Materiale de construcții cu livrare"
   }
 }

@@ -141,6 +141,219 @@
     "toastResetDone": "Konfigürasyon sıfırlandı",
     "resetConfirm": "Konfigürasyonu varsayılan değerlere sıfırlayalım mı?"
   },
+  "konf": {
+    "param": {
+      "anzahl": "Aynı eleman sayısı",
+      "stueck": "adet",
+      "groesse": "Boyut",
+      "breite": "cm genişlik",
+      "hoehe": "cm yükseklik",
+      "material": "Malzeme",
+      "verglasung": "Cam",
+      "oeffnungsart": "Açılma tipi",
+      "anschlag": "Menteşe yönü (DIN)",
+      "fluegel": "Kanat sayısı",
+      "fluegelEnd": "kanat",
+      "oberlicht": "Üst / alt ışık",
+      "sprossen": "Bölmeler",
+      "sicherheit": "Güvenlik",
+      "profil": "Çerçeve profili",
+      "ornament": "Desenli cam",
+      "griff": "Pencere kolu",
+      "rolladenTyp": "Panjur tipi",
+      "rolladenAntrieb": "Tahrik",
+      "rolladenFarbe": "Panjur rengi",
+      "farbe": "Renk",
+      "farbeBoth": "Renk (iç ve dış)",
+      "farbeInnen": "İç renk",
+      "farbeAussen": "Dış renk",
+      "splitToggle": "İç ve dış farklı",
+      "anmerkungen": "Notlarınız",
+      "anmerkungenOptional": "isteğe bağlı",
+      "anmerkungenPlaceholder": "örn. evdeki konum, özel RAL renk, tercih edilen tarih veya diğer istekler",
+      "groesseTuer": "Boyut",
+      "standardmass": "Standart boyut",
+      "sondermass": "Özel boyut",
+      "eigeneWerte": "kendi değerleriniz",
+      "preissegment": "Fiyat segmenti",
+      "ausfuehrung": "Uygulama",
+      "schloss": "Kilit",
+      "splitToggleGleich": "İç ve dış aynı",
+      "anzahl_short": "Adet"
+    },
+    "summary": {
+      "groesse": "Boyut",
+      "material": "Malzeme",
+      "verglasung": "Cam",
+      "oeffnung": "Açılma",
+      "anschlag": "Menteşe yönü",
+      "fluegelSingle": "1 kanat",
+      "fluegelN": "Kanat",
+      "aufteilung": "Bölüm",
+      "sprossen": "Bölmeler",
+      "sicherheit": "Güvenlik",
+      "profil": "Profil",
+      "ornament": "Desenli cam",
+      "griff": "Kol",
+      "farbe": "Renk",
+      "dekorInnen": "İç renk",
+      "dekorAussen": "Dış renk",
+      "rolladen": "Panjur",
+      "rolladenAntrieb": "Tahrik",
+      "rolladenFarbe": "Panjur rengi",
+      "groesseStd": "90 × 210 cm (standart)",
+      "groesseSondersuffix": "(özel boyut)",
+      "preissegment": "Fiyat segmenti",
+      "ausfuehrung": "Uygulama",
+      "schloss": "Kilit"
+    },
+    "vals": {
+      "material": {
+        "pvc": "PVC",
+        "aluminium": "Alüminyum",
+        "holz": "Ahşap"
+      },
+      "verglasung": {
+        "2fach": "Çift cam (standart)",
+        "2fachShort": "Çift",
+        "3fach": "Üçlü cam (ısı yalıtımı)",
+        "3fachShort": "Üçlü",
+        "schallschutz": "Ses yalıtımlı cam",
+        "schallschutzShort": "Ses yal.",
+        "sicherheit": "Güvenlik camı (P4A)",
+        "sicherheitShort": "Güvenlik"
+      },
+      "opening": {
+        "fest": "Sabit (açılmaz)",
+        "dreh": "Açılır",
+        "dreh_kipp": "Çift açılım"
+      },
+      "anschlag": {
+        "links": "DIN sol",
+        "rechts": "DIN sağ",
+        "linksFull": "DIN sol (menteşe solda)",
+        "rechtsFull": "DIN sağ (menteşe sağda)"
+      },
+      "sprossen": {
+        "keine": "Bölme yok",
+        "keineShort": "Yok",
+        "h1": "1 yatay",
+        "h1Short": "1 yatay",
+        "v1": "1 dikey",
+        "v1Short": "1 dikey",
+        "kreuz": "Çapraz",
+        "kreuzShort": "Çapraz",
+        "h2v1": "2 yatay + 1 dikey",
+        "h2v1Short": "2Y + 1D"
+      },
+      "oberlicht": {
+        "keine": "Üst/alt ışık yok",
+        "keineShort": "Yok",
+        "oberlicht": "Üstte sabit cam",
+        "oberlichtShort": "Üst",
+        "unterlicht": "Altta sabit cam",
+        "unterlichtShort": "Alt"
+      },
+      "ornament": {
+        "keine": "Şeffaf cam",
+        "keineShort": "Şeffaf",
+        "satiniert": "Saten (mat)",
+        "satiniertShort": "Saten",
+        "chinchilla": "Chinchilla (dokulu)",
+        "chinchillaShort": "Chinchilla",
+        "silvit": "Silvit (ince desen)",
+        "silvitShort": "Silvit"
+      },
+      "griff": {
+        "standard": "Standart kol (beyaz)",
+        "standardShort": "Standart",
+        "silber": "Gümüş",
+        "altgold": "Antik altın",
+        "braun": "Kahverengi"
+      },
+      "sicherheit": {
+        "standard": "Temel güvenlik",
+        "standardShort": "Temel",
+        "erhoeht": "Yüksek (hırsızlığa karşı)",
+        "erhoehtShort": "Yüksek",
+        "maximum": "Maksimum hırsızlık koruması",
+        "maximumShort": "Maks."
+      },
+      "profil": {
+        "standard": "Standart profil (5 odalı)",
+        "standardShort": "Standart",
+        "komfort": "Konfor profili (6 odalı)",
+        "komfortShort": "Konfor",
+        "premium": "Premium profil (7 odalı)",
+        "premiumShort": "Premium"
+      },
+      "rolladenTyp": {
+        "ohne": "Panjur yok",
+        "ohneShort": "Yok",
+        "aufsatz": "Pencere çerçevesi üzerinde",
+        "aufsatzShort": "Çerçeve üstü",
+        "vorbau": "Cephe önünde",
+        "vorbauShort": "Cephe",
+        "unterputz": "Duvar içinde",
+        "unterputzShort": "Duvar içi"
+      },
+      "rolladenAntrieb": {
+        "gurt": "Kayışlı (manuel)",
+        "gurtShort": "Kayış",
+        "kurbel": "Kollu (manuel)",
+        "kurbelShort": "Kol",
+        "elektrisch": "Elektrikli (düğmeli)",
+        "elektrischShort": "Elektrik",
+        "smart": "Akıllı (radyo / uygulama)",
+        "smartShort": "Akıllı"
+      },
+      "rolladenFarbe": {
+        "weiss": "Beyaz",
+        "anthrazit": "Antrasit",
+        "braun": "Kahverengi",
+        "wie_fenster": "Pencereyle aynı"
+      },
+      "color": {
+        "weiss": "Beyaz",
+        "anthrazit": "Antrasit",
+        "braun": "Kahverengi",
+        "sonder": "Diğer (notlara bakın)",
+        "sonderShort": "Diğer"
+      },
+      "segment": {
+        "standard": "Standart",
+        "premium": "Premium",
+        "luxus": "Lüks / tasarım kapı",
+        "luxusShort": "Lüks"
+      },
+      "ausfuehrung": {
+        "vollblatt": "Tam panel (camsız)",
+        "vollblattShort": "Tam panel",
+        "glaseinsatz": "Cam ekli",
+        "glaseinsatzShort": "Cam",
+        "seitenteile": "Cam + yan panel",
+        "seitenteileShort": "Yan panel"
+      },
+      "schloss": {
+        "standard": "Standart kilit",
+        "standardShort": "Standart",
+        "mehrfach": "Çoklu kilit sistemi",
+        "mehrfachShort": "Çoklu"
+      },
+      "fluegel": {
+        "1": "1 kanat",
+        "2": "2 kanat",
+        "3": "3 kanat"
+      },
+      "sondermass": {
+        "false": "Standart",
+        "true": "Özel"
+      }
+    },
+    "share": {
+      "equalSuffix": "× aynı"
+    }
+  },
   "projektePage": {
     "breadcrumbHome": "Ana Sayfa",
     "sectionLabel": "Portföy",
@@ -173,6 +386,12 @@
     "datenschutz": "Gizlilik",
     "copyright": "Tüm hakları saklıdır.",
     "serviceArea": "Werra-Meißner ve 60 km yarıçapında hizmet",
-    "brandDesc": "Eschwege ve çevresinde pencere, kapı ve zemin döşeme için partneriniz."
+    "brandDesc": "Eschwege ve çevresinde pencere, kapı ve zemin döşeme için partneriniz.",
+    "linkBewertungen": "Yorumlar",
+    "svcBoden": "Zemin döşeme",
+    "svcFensterTueren": "Pencere ve kapılar",
+    "svcInnentueren": "İç kapılar",
+    "svcTrockenbau": "Alçıpan işleri",
+    "svcBaustoff": "Yapı malzemesi ve teslimat"
   }
 }

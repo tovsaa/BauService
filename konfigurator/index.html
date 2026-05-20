@@ -23,7 +23,7 @@
   <link rel="alternate" hreflang="tr" href="https://bauservice-esw.de/konfigurator/?lang=tr" />
   <link rel="alternate" hreflang="x-default" href="https://bauservice-esw.de/konfigurator/" />
 
-  <script src="/js/i18n.js?v=3" defer></script>
+  <script src="/js/i18n.js?v=5" defer></script>
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Konfigurator – Fenster &amp; Türen | BauService Dionisie Bat" />
@@ -2129,7 +2129,7 @@
             <li><a href="../#start" data-i18n="nav.start">Start</a></li>
             <li><a href="../projekte/" data-i18n="nav.projekte">Projekte</a></li>
             <li><a href="../konfigurator/" data-i18n="nav.konfigurator">Konfigurator</a></li>
-            <li><a href="../#bewertungen">Bewertungen</a></li>
+            <li><a href="../#bewertungen" data-i18n="footer.linkBewertungen">Bewertungen</a></li>
             <li><a href="../#kontakt" data-i18n="nav.kontakt">Kontakt</a></li>
           </ul>
         </div>
@@ -2137,11 +2137,11 @@
         <div class="footer-col">
           <h3 data-i18n="footer.servicesHeading">Leistungen</h3>
           <ul class="footer-list">
-            <li><a href="../#leistungen">Boden­verlegung</a></li>
-            <li><a href="../#leistungen">Fenster &amp; Türen</a></li>
-            <li><a href="../#leistungen">Innentüren</a></li>
-            <li><a href="../#leistungen">Trockenbau</a></li>
-            <li><a href="../#leistungen">Baustoffverkauf inkl. Lieferung</a></li>
+            <li><a href="../#leistungen" data-i18n="footer.svcBoden">Bodenverlegung</a></li>
+            <li><a href="../#leistungen" data-i18n="footer.svcFensterTueren">Fenster &amp; Türen</a></li>
+            <li><a href="../#leistungen" data-i18n="footer.svcInnentueren">Innentüren</a></li>
+            <li><a href="../#leistungen" data-i18n="footer.svcTrockenbau">Trockenbau</a></li>
+            <li><a href="../#leistungen" data-i18n="footer.svcBaustoff">Baustoffverkauf inkl. Lieferung</a></li>
           </ul>
         </div>
 
@@ -2235,7 +2235,16 @@
     // ==============================================================
     var STANDARD_TUER_SIZE = { w: 90, h: 210 };  // cm
 
-    // German labels for summary / share messages
+    // Translation helper — wraps window.BauI18n.t() with a 'konf.' prefix
+    // and falls back to the inline German string when i18n hasn't loaded.
+    function K(path, fb) {
+      return (window.BauI18n && window.BauI18n.t)
+        ? window.BauI18n.t('konf.' + path, fb)
+        : fb;
+    }
+
+    // German labels for summary / share messages (DE fallback;
+    // summaryFenster/Tuer re-resolve through K() so translations apply).
     var LABELS = {
       fenster: {
         title: 'Fenster',
@@ -2564,7 +2573,7 @@
       var html = '';
       if (split) {
         html += '<div class="param-group">'
-          +   '<label class="param-label">' + iconHtml('color') + 'Dekor innen</label>'
+          +   '<label class="param-label">' + iconHtml('color') + K('summary.dekorInnen', 'Dekor innen') + '</label>'
           +   '<div class="opt-pills" data-field="color_innen">'
           +     pill('color_innen', 'weiss',     'Weiß',      '',                    s.color_innen)
           +     pill('color_innen', 'anthrazit', 'Anthrazit', '',                    s.color_innen)
@@ -2573,7 +2582,7 @@
           +   '</div>'
           + '</div>'
           + '<div class="param-group">'
-          +   '<label class="param-label">' + iconHtml('color') + 'Dekor außen</label>'
+          +   '<label class="param-label">' + iconHtml('color') + K('summary.dekorAussen', 'Dekor außen') + '</label>'
           +   '<div class="opt-pills" data-field="color_aussen">'
           +     pill('color_aussen', 'weiss',     'Weiß',      '',                    s.color_aussen)
           +     pill('color_aussen', 'anthrazit', 'Anthrazit', '',                    s.color_aussen)
@@ -2581,13 +2590,13 @@
           +     pill('color_aussen', 'sonder',    'Andere',    'siehe Anmerkungen',   s.color_aussen)
           +   '</div>'
           +   '<button type="button" class="dekor-split-toggle expanded" data-dekor-toggle="' + type + '">'
-          +     'Innen und außen gleich'
+          +     K('param.splitToggleGleich', 'Innen und außen gleich')
           +   '</button>'
           + '</div>';
       } else {
         // Compact: single Farbe row that controls BOTH sides
         html += '<div class="param-group">'
-          +   '<label class="param-label">' + iconHtml('color') + 'Farbe (innen &amp; außen)</label>'
+          +   '<label class="param-label">' + iconHtml('color') + K('param.farbeBoth', 'Farbe (innen & außen)') + '</label>'
           +   '<div class="opt-pills" data-field="color_both">'
           +     pill('color_both', 'weiss',     'Weiß',      '',                    s.color_innen)
           +     pill('color_both', 'anthrazit', 'Anthrazit', '',                    s.color_innen)
@@ -2595,7 +2604,7 @@
           +     pill('color_both', 'sonder',    'Andere',    'siehe Anmerkungen',   s.color_innen)
           +   '</div>'
           +   '<button type="button" class="dekor-split-toggle" data-dekor-toggle="' + type + '">'
-          +     'Innen und außen unterschiedlich'
+          +     K('param.splitToggle', 'Innen und außen unterschiedlich')
           +   '</button>'
           + '</div>';
       }
@@ -2667,10 +2676,10 @@
     function commonTemplateTop() {
       return ''
         + '<div class="param-group">'
-        +   '<label class="param-label" for="cAnzahl">' + iconHtml('count') + 'Anzahl gleicher Elemente</label>'
+        +   '<label class="param-label" for="cAnzahl">' + iconHtml('count') + K('param.anzahl', 'Anzahl gleicher Elemente') + '</label>'
         +   '<div class="size-input" style="max-width:160px">'
         +     '<input type="number" min="1" max="99" step="1" id="cAnzahl" value="' + state.anzahl + '" />'
-        +     '<span class="unit">Stück</span>'
+        +     '<span class="unit">' + K('param.stueck', 'Stück') + '</span>'
         +   '</div>'
         + '</div>';
     }
@@ -2682,11 +2691,11 @@
     function commonTemplateBottom() {
       return ''
         + '<div class="param-group">'
-        +   '<label class="param-label" for="cAnmerkungen">' + iconHtml('position') + 'Ihre Anmerkungen'
-        +     '<span class="param-sub" style="font-weight:400;color:var(--text-dim);margin-left:6px;font-size:13px;letter-spacing:normal;text-transform:none">optional</span>'
+        +   '<label class="param-label" for="cAnmerkungen">' + iconHtml('position') + K('param.anmerkungen', 'Ihre Anmerkungen')
+        +     '<span class="param-sub" style="font-weight:400;color:var(--text-dim);margin-left:6px;font-size:13px;letter-spacing:normal;text-transform:none">' + K('param.anmerkungenOptional', 'optional') + '</span>'
         +   '</label>'
         +   '<textarea id="cAnmerkungen" class="text-input" rows="4" maxlength="600"'
-        +     ' placeholder="z.B. Position im Haus, RAL-Sonderfarbe, gewünschter Termin oder andere Wünsche">'
+        +     ' placeholder="' + escapeHtml(K('param.anmerkungenPlaceholder', 'z.B. Position im Haus, RAL-Sonderfarbe, gewünschter Termin oder andere Wünsche')) + '">'
         +     escapeHtml(state.anmerkungen || '')
         +   '</textarea>'
         + '</div>';
@@ -2701,22 +2710,22 @@
       // ── Section 2: Grundparameter ────────────────────────────────
       var section2 = ''
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('size') + 'Größe</label>'
+        +   '<label class="param-label">' + iconHtml('size') + K('param.groesse', 'Größe') + '</label>'
         +   '<div class="size-row">'
         +     '<div class="size-input">'
         +       '<input type="number" min="40" max="300" step="5" id="fWidth" value="' + s.width + '" />'
-        +       '<span class="unit">cm Breite</span>'
+        +       '<span class="unit">' + K('param.breite', 'cm Breite') + '</span>'
         +     '</div>'
         +     '<span class="x">×</span>'
         +     '<div class="size-input">'
         +       '<input type="number" min="40" max="300" step="5" id="fHeight" value="' + s.height + '" />'
-        +       '<span class="unit">cm Höhe</span>'
+        +       '<span class="unit">' + K('param.hoehe', 'cm Höhe') + '</span>'
         +     '</div>'
         +   '</div>'
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('material') + 'Material' + ttIcon(TOOLTIPS.fenster.material) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + K('param.material', 'Material') + ttIcon(TOOLTIPS.fenster.material) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
         +     pill('material', 'pvc',        'PVC',         'preisgünstig, pflegeleicht', s.material)
         +     pill('material', 'aluminium',  'Aluminium',   'stabil, schmaler Rahmen',    s.material)
@@ -2725,7 +2734,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('verglasung') + 'Verglasung' + ttIcon(TOOLTIPS.fenster.verglasung) + '</label>'
+        +   '<label class="param-label">' + iconHtml('verglasung') + K('param.verglasung', 'Verglasung') + ttIcon(TOOLTIPS.fenster.verglasung) + '</label>'
         +   '<div class="opt-pills" data-field="verglasung">'
         +     pill('verglasung', '2fach',        '2-fach',       'Standard',           s.verglasung)
         +     pill('verglasung', '3fach',        '3-fach',       'Wärmeschutz',        s.verglasung)
@@ -2735,7 +2744,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('opening') + 'Öffnungsart' + ttIcon(TOOLTIPS.fenster.opening) + '</label>'
+        +   '<label class="param-label">' + iconHtml('opening') + K('param.oeffnungsart', 'Öffnungsart') + ttIcon(TOOLTIPS.fenster.opening) + '</label>'
         +   '<div class="opt-pills" data-field="opening">'
         +     pill('opening', 'fest',       'Festverglasung',     'nicht zu öffnen',         s.opening)
         +     pill('opening', 'dreh',       'Drehfenster',        'seitlich öffnen',         s.opening)
@@ -2745,7 +2754,7 @@
 
         + (s.opening !== 'fest' ?
             '<div class="param-group">'
-          +   '<label class="param-label">' + iconHtml('anschlag') + 'DIN-Anschlag' + ttIcon(TOOLTIPS.fenster.anschlag) + '</label>'
+          +   '<label class="param-label">' + iconHtml('anschlag') + K('param.anschlag', 'DIN-Anschlag') + ttIcon(TOOLTIPS.fenster.anschlag) + '</label>'
           +   '<div class="opt-pills" data-field="anschlag">'
           +     pill('anschlag', 'links',   'DIN links',   'Bänder links',  s.anschlag)
           +     pill('anschlag', 'rechts',  'DIN rechts',  'Bänder rechts', s.anschlag)
@@ -2755,7 +2764,7 @@
         )
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('fluegel') + 'Anzahl Flügel' + ttIcon(TOOLTIPS.fenster.fluegel) + '</label>'
+        +   '<label class="param-label">' + iconHtml('fluegel') + K('param.fluegel', 'Anzahl Flügel') + ttIcon(TOOLTIPS.fenster.fluegel) + '</label>'
         +   '<div class="opt-pills" data-field="fluegel">'
         +     pill('fluegel', '1', '1 Flügel', '', String(s.fluegel))
         +     pill('fluegel', '2', '2 Flügel', '', String(s.fluegel))
@@ -2771,7 +2780,7 @@
       var section3Body = advOpen ? (''
         + '<div class="param-section-body">'
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('oberlicht') + 'Oberlicht / Unterlicht' + ttIcon(TOOLTIPS.fenster.oberlicht) + '</label>'
+        +   '<label class="param-label">' + iconHtml('oberlicht') + K('param.oberlicht', 'Oberlicht / Unterlicht') + ttIcon(TOOLTIPS.fenster.oberlicht) + '</label>'
         +   '<div class="opt-pills" data-field="oberlicht">'
         +     pill('oberlicht', 'keine',      'Ohne',        '',                       s.oberlicht)
         +     pill('oberlicht', 'oberlicht',  'Oberlicht',   'festes Feld oben',       s.oberlicht)
@@ -2780,7 +2789,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('sprossen') + 'Sprossen' + ttIcon(TOOLTIPS.fenster.sprossen) + '</label>'
+        +   '<label class="param-label">' + iconHtml('sprossen') + K('param.sprossen', 'Sprossen') + ttIcon(TOOLTIPS.fenster.sprossen) + '</label>'
         +   '<div class="opt-pills" data-field="sprossen">'
         +     pill('sprossen', 'keine', 'Keine',        '',                   s.sprossen)
         +     pill('sprossen', 'h1',    '1 horizontal', '',                   s.sprossen)
@@ -2791,7 +2800,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('sicherheit') + 'Sicherheit' + ttIcon(TOOLTIPS.fenster.sicherheit) + '</label>'
+        +   '<label class="param-label">' + iconHtml('sicherheit') + K('param.sicherheit', 'Sicherheit') + ttIcon(TOOLTIPS.fenster.sicherheit) + '</label>'
         +   '<div class="opt-pills" data-field="sicherheit">'
         +     pill('sicherheit', 'standard', 'Basis',      'Standard',                s.sicherheit)
         +     pill('sicherheit', 'erhoeht',  'Erhöht',     'einbruchhemmend (~RC1)',  s.sicherheit)
@@ -2800,7 +2809,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('profil') + 'Rahmenprofil' + ttIcon(TOOLTIPS.fenster.profil) + '</label>'
+        +   '<label class="param-label">' + iconHtml('profil') + K('param.profil', 'Rahmenprofil') + ttIcon(TOOLTIPS.fenster.profil) + '</label>'
         +   '<div class="opt-pills" data-field="profil">'
         +     pill('profil', 'standard', 'Standard',  '5-Kammer',  s.profil)
         +     pill('profil', 'komfort',  'Komfort',   '6-Kammer',  s.profil)
@@ -2809,7 +2818,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('ornament') + 'Ornamentglas' + ttIcon(TOOLTIPS.fenster.ornament) + '</label>'
+        +   '<label class="param-label">' + iconHtml('ornament') + K('param.ornament', 'Ornamentglas') + ttIcon(TOOLTIPS.fenster.ornament) + '</label>'
         +   '<div class="opt-pills" data-field="ornament">'
         +     pill('ornament', 'keine',      'Klar',        'normales Glas',  s.ornament)
         +     pill('ornament', 'satiniert',  'Satiniert',   'mattiert',       s.ornament)
@@ -2819,7 +2828,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('griff') + 'Fenstergriff' + ttIcon(TOOLTIPS.fenster.griff) + '</label>'
+        +   '<label class="param-label">' + iconHtml('griff') + K('param.griff', 'Fenstergriff') + ttIcon(TOOLTIPS.fenster.griff) + '</label>'
         +   '<div class="opt-pills" data-field="griff">'
         +     pill('griff', 'standard', 'Standard',  'weiß',  s.griff)
         +     pill('griff', 'silber',   'Silber',    '',      s.griff)
@@ -2835,7 +2844,7 @@
       // rows so the section stays compact when shutters aren't wanted.
       var section4 = ''
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('rolladen') + 'Rollladen-Typ' + ttIcon(TOOLTIPS.fenster.rolladen_typ) + '</label>'
+        +   '<label class="param-label">' + iconHtml('rolladen') + K('param.rolladenTyp', 'Rollladen-Typ') + ttIcon(TOOLTIPS.fenster.rolladen_typ) + '</label>'
         +   '<div class="opt-pills" data-field="rolladen_typ">'
         +     pill('rolladen_typ', 'ohne',      'Ohne',         '',                 s.rolladen_typ)
         +     pill('rolladen_typ', 'aufsatz',   'Aufsatz',      'auf Fensterrahmen', s.rolladen_typ)
@@ -2847,7 +2856,7 @@
       if (s.rolladen_typ && s.rolladen_typ !== 'ohne') {
         section4 += ''
           + '<div class="param-group">'
-          +   '<label class="param-label">' + iconHtml('antrieb') + 'Antrieb' + ttIcon(TOOLTIPS.fenster.rolladen_antrieb) + '</label>'
+          +   '<label class="param-label">' + iconHtml('antrieb') + K('param.rolladenAntrieb', 'Antrieb') + ttIcon(TOOLTIPS.fenster.rolladen_antrieb) + '</label>'
           +   '<div class="opt-pills" data-field="rolladen_antrieb">'
           +     pill('rolladen_antrieb', 'gurt',       'Gurtwickler', 'manuell',     s.rolladen_antrieb)
           +     pill('rolladen_antrieb', 'kurbel',     'Kurbel',      'manuell',     s.rolladen_antrieb)
@@ -2857,7 +2866,7 @@
           + '</div>'
 
           + '<div class="param-group">'
-          +   '<label class="param-label">' + iconHtml('color') + 'Rollladen-Farbe</label>'
+          +   '<label class="param-label">' + iconHtml('color') + K('param.rolladenFarbe', 'Rollladen-Farbe') + '</label>'
           +   '<div class="opt-pills" data-field="rolladen_farbe">'
           +     pill('rolladen_farbe', 'weiss',       'Weiß',       '',  s.rolladen_farbe)
           +     pill('rolladen_farbe', 'anthrazit',   'Anthrazit',  '',  s.rolladen_farbe)
@@ -2884,10 +2893,10 @@
       // ── Section 2: Tür-Parameter ─────────────────────────────────
       var sizeSection = ''
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('size') + 'Größe</label>'
+        +   '<label class="param-label">' + iconHtml('size') + K('param.groesse', 'Größe') + '</label>'
         +   '<div class="opt-pills" data-field="sondermass">'
-        +     pill('sondermass', 'false',  'Standardmaß',  '90 × 210 cm',  String(s.sondermass))
-        +     pill('sondermass', 'true',   'Sondermaß',    'eigene Werte', String(s.sondermass))
+        +     pill('sondermass', 'false',  K('param.standardmass', 'Standardmaß'),  '90 × 210 cm',  String(s.sondermass))
+        +     pill('sondermass', 'true',   K('param.sondermass', 'Sondermaß'),    K('param.eigeneWerte', 'eigene Werte'), String(s.sondermass))
         +   '</div>';
       if (s.sondermass) {
         sizeSection += ''
@@ -2895,12 +2904,12 @@
           + '<div class="size-row">'
           +   '<div class="size-input">'
           +     '<input type="number" min="60" max="200" step="5" id="tWidth" value="' + s.width + '" />'
-          +     '<span class="unit">cm Breite</span>'
+          +     '<span class="unit">' + K('param.breite', 'cm Breite') + '</span>'
           +   '</div>'
           +   '<span class="x">×</span>'
           +   '<div class="size-input">'
           +     '<input type="number" min="180" max="260" step="5" id="tHeight" value="' + s.height + '" />'
-          +     '<span class="unit">cm Höhe</span>'
+          +     '<span class="unit">' + K('param.hoehe', 'cm Höhe') + '</span>'
           +   '</div>'
           + '</div>'
           + '</div>';
@@ -2909,7 +2918,7 @@
 
       var section2 = sizeSection
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('material') + 'Material' + ttIcon(TOOLTIPS.tuer.material) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + K('param.material', 'Material') + ttIcon(TOOLTIPS.tuer.material) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
         +     pill('material', 'pvc',        'PVC',         'preisgünstig',     s.material)
         +     pill('material', 'aluminium',  'Aluminium',   'stabil, modern',   s.material)
@@ -2918,7 +2927,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('material') + 'Preissegment' + ttIcon(TOOLTIPS.tuer.segment) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + K('param.preissegment', 'Preissegment') + ttIcon(TOOLTIPS.tuer.segment) + '</label>'
         +   '<div class="opt-pills" data-field="segment">'
         +     pill('segment', 'standard',  'Standard',  'solide Ausstattung',   s.segment)
         +     pill('segment', 'premium',   'Premium',   'höhere Qualität',      s.segment)
@@ -2927,7 +2936,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('ausfuehrung') + 'Ausführung' + ttIcon(TOOLTIPS.tuer.ausfuehrung) + '</label>'
+        +   '<label class="param-label">' + iconHtml('ausfuehrung') + K('param.ausfuehrung', 'Ausführung') + ttIcon(TOOLTIPS.tuer.ausfuehrung) + '</label>'
         +   '<div class="opt-pills" data-field="ausfuehrung">'
         +     pill('ausfuehrung', 'vollblatt',   'Vollblatt',            'ohne Glas',     s.ausfuehrung)
         +     pill('ausfuehrung', 'glaseinsatz', 'Mit Glaseinsatz',      '',              s.ausfuehrung)
@@ -2936,7 +2945,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('sicherheit') + 'Sicherheit' + ttIcon(TOOLTIPS.tuer.sicherheit) + '</label>'
+        +   '<label class="param-label">' + iconHtml('sicherheit') + K('param.sicherheit', 'Sicherheit') + ttIcon(TOOLTIPS.tuer.sicherheit) + '</label>'
         +   '<div class="opt-pills" data-field="sicherheit">'
         +     pill('sicherheit', 'standard', 'Basis',      'Standard',                s.sicherheit)
         +     pill('sicherheit', 'erhoeht',  'Erhöht',     'einbruchhemmend (~RC1)',  s.sicherheit)
@@ -2945,7 +2954,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('schloss') + 'Schloss' + ttIcon(TOOLTIPS.tuer.schloss) + '</label>'
+        +   '<label class="param-label">' + iconHtml('schloss') + K('param.schloss', 'Schloss') + ttIcon(TOOLTIPS.tuer.schloss) + '</label>'
         +   '<div class="opt-pills" data-field="schloss">'
         +     pill('schloss', 'standard',  'Standardschloss',         '',       s.schloss)
         +     pill('schloss', 'mehrfach',  'Mehrfachverriegelung',    '',       s.schloss)
@@ -2953,7 +2962,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('anschlag') + 'DIN-Anschlag' + ttIcon(TOOLTIPS.tuer.anschlag) + '</label>'
+        +   '<label class="param-label">' + iconHtml('anschlag') + K('param.anschlag', 'DIN-Anschlag') + ttIcon(TOOLTIPS.tuer.anschlag) + '</label>'
         +   '<div class="opt-pills" data-field="anschlag">'
         +     pill('anschlag', 'links',   'DIN links',   'Bänder links',  s.anschlag)
         +     pill('anschlag', 'rechts',  'DIN rechts',  'Bänder rechts', s.anschlag)
@@ -2969,6 +2978,19 @@
     }
 
     function pill(field, value, main, sub, current) {
+      // Auto-translate the main label if i18n is available.
+      // Lookup order:
+      //   1. konf.vals.<field>.<value>Short  (compact pill form)
+      //   2. konf.vals.<field>.<value>       (full form, if no Short)
+      //   3. inline German `main` argument as final fallback
+      if (window.BauI18n && window.BauI18n.t) {
+        var T = window.BauI18n.t;
+        // Normalize compound field names (color_both / color_innen / color_aussen
+        // all share the same vals.color.* dictionary).
+        var lookupField = field.replace(/_both$|_innen$|_aussen$/, '');
+        main = T('konf.vals.' + lookupField + '.' + value + 'Short',
+               T('konf.vals.' + lookupField + '.' + value, main));
+      }
       var on = value === current;
       var subHtml = sub ? '<span class="opt-sub">' + sub + '</span>' : '';
       return '<button type="button" class="opt-pill' + (on ? ' active' : '')
@@ -3265,64 +3287,73 @@
     function summaryFenster() {
       var s = state.fenster;
       var L = LABELS.fenster;
+      // Helpers — look up via K() with LABELS as the German fallback
+      function val(field, key) { return K('vals.' + field + '.' + key, L[field][key]); }
+      function dt(k, fb) { return K('summary.' + k, fb); }
       var rows = [
-        { dt: 'Größe',      dd: s.width + ' × ' + s.height + ' cm' },
-        { dt: 'Material',   dd: L.material[s.material] },
-        { dt: 'Verglasung', dd: L.verglasung[s.verglasung] },
-        { dt: 'Öffnung',    dd: L.opening[s.opening] }
+        { dt: dt('groesse',    'Größe'),      dd: s.width + ' × ' + s.height + ' cm' },
+        { dt: dt('material',   'Material'),   dd: val('material',   s.material) },
+        { dt: dt('verglasung', 'Verglasung'), dd: val('verglasung', s.verglasung) },
+        { dt: dt('oeffnung',   'Öffnung'),    dd: val('opening',    s.opening) }
       ];
       if (s.opening !== 'fest') {
-        rows.push({ dt: 'DIN-Anschlag', dd: L.anschlag[s.anschlag] });
+        rows.push({ dt: dt('anschlag', 'DIN-Anschlag'), dd: K('vals.anschlag.' + s.anschlag + 'Full', L.anschlag[s.anschlag]) });
       }
-      rows.push({ dt: 'Flügel', dd: s.fluegel + ' Flügel' });
+      var fluegelEnd = K('vals.fluegel.' + s.fluegel, s.fluegel + ' Flügel');
+      rows.push({ dt: dt('fluegelN', 'Flügel'), dd: fluegelEnd });
       if (s.oberlicht && s.oberlicht !== 'keine') {
-        rows.push({ dt: 'Aufteilung', dd: L.oberlicht[s.oberlicht] });
+        rows.push({ dt: dt('aufteilung', 'Aufteilung'), dd: val('oberlicht', s.oberlicht) });
       }
       if (s.sprossen && s.sprossen !== 'keine') {
-        rows.push({ dt: 'Sprossen', dd: L.sprossen[s.sprossen] });
+        rows.push({ dt: dt('sprossen', 'Sprossen'), dd: val('sprossen', s.sprossen) });
       }
       if (s.sicherheit && s.sicherheit !== 'standard') {
-        rows.push({ dt: 'Sicherheit', dd: L.sicherheit[s.sicherheit] });
+        rows.push({ dt: dt('sicherheit', 'Sicherheit'), dd: val('sicherheit', s.sicherheit) });
       }
       if (s.profil && s.profil !== 'standard') {
-        rows.push({ dt: 'Rahmenprofil', dd: L.profil[s.profil] });
+        rows.push({ dt: dt('profil', 'Rahmenprofil'), dd: val('profil', s.profil) });
       }
       if (s.ornament && s.ornament !== 'keine') {
-        rows.push({ dt: 'Ornamentglas', dd: L.ornament[s.ornament] });
+        rows.push({ dt: dt('ornament', 'Ornamentglas'), dd: val('ornament', s.ornament) });
       }
       if (s.griff && s.griff !== 'standard') {
-        rows.push({ dt: 'Fenstergriff', dd: L.griff[s.griff] });
+        rows.push({ dt: dt('griff', 'Fenstergriff'), dd: val('griff', s.griff) });
       }
       if (s.color_innen === s.color_aussen) {
-        rows.push({ dt: 'Farbe', dd: L.color[s.color_innen] });
+        rows.push({ dt: dt('farbe', 'Farbe'), dd: val('color', s.color_innen) });
       } else {
-        rows.push({ dt: 'Dekor innen', dd: L.color[s.color_innen] });
-        rows.push({ dt: 'Dekor außen', dd: L.color[s.color_aussen] });
+        rows.push({ dt: dt('dekorInnen', 'Dekor innen'),  dd: val('color', s.color_innen) });
+        rows.push({ dt: dt('dekorAussen', 'Dekor außen'), dd: val('color', s.color_aussen) });
       }
       if (s.rolladen_typ && s.rolladen_typ !== 'ohne') {
-        rows.push({ dt: 'Rollladen', dd: L.rolladen_typ[s.rolladen_typ] });
-        rows.push({ dt: 'Antrieb', dd: L.rolladen_antrieb[s.rolladen_antrieb] });
-        rows.push({ dt: 'Rollladen-Farbe', dd: L.rolladen_farbe[s.rolladen_farbe] });
+        rows.push({ dt: dt('rolladen', 'Rollladen'),               dd: val('rolladenTyp',     s.rolladen_typ) });
+        rows.push({ dt: dt('rolladenAntrieb', 'Antrieb'),          dd: val('rolladenAntrieb', s.rolladen_antrieb) });
+        rows.push({ dt: dt('rolladenFarbe', 'Rollladen-Farbe'),    dd: val('rolladenFarbe',   s.rolladen_farbe) });
       }
       return rows;
     }
     function summaryTuer() {
       var s = state.tuer;
       var L = LABELS.tuer;
+      function val(field, key) { return K('vals.' + field + '.' + key, L[field][key]); }
+      function dt(k, fb) { return K('summary.' + k, fb); }
+      var groesseDd = s.sondermass
+        ? s.width + ' × ' + s.height + ' cm ' + K('summary.groesseSondersuffix', '(Sondermaß)')
+        : K('summary.groesseStd', '90 × 210 cm (Standard)');
       var rows = [
-        { dt: 'Größe',         dd: (s.sondermass ? s.width + ' × ' + s.height + ' cm (Sondermaß)' : '90 × 210 cm (Standard)') },
-        { dt: 'Material',      dd: L.material[s.material] },
-        { dt: 'Preissegment',  dd: L.segment[s.segment] },
-        { dt: 'Ausführung',    dd: L.ausfuehrung[s.ausfuehrung] },
-        { dt: 'Sicherheit',    dd: L.sicherheit[s.sicherheit] },
-        { dt: 'Schloss',       dd: L.schloss[s.schloss] },
-        { dt: 'DIN-Anschlag',  dd: L.anschlag[s.anschlag] }
+        { dt: dt('groesse',      'Größe'),         dd: groesseDd },
+        { dt: dt('material',     'Material'),      dd: val('material',    s.material) },
+        { dt: dt('preissegment', 'Preissegment'),  dd: val('segment',     s.segment) },
+        { dt: dt('ausfuehrung',  'Ausführung'),    dd: val('ausfuehrung', s.ausfuehrung) },
+        { dt: dt('sicherheit',   'Sicherheit'),    dd: val('sicherheit',  s.sicherheit) },
+        { dt: dt('schloss',      'Schloss'),       dd: val('schloss',     s.schloss) },
+        { dt: dt('anschlag',     'DIN-Anschlag'),  dd: K('vals.anschlag.' + s.anschlag + 'Full', L.anschlag[s.anschlag]) }
       ];
       if (s.color_innen === s.color_aussen) {
-        rows.push({ dt: 'Farbe', dd: L.color[s.color_innen] });
+        rows.push({ dt: dt('farbe', 'Farbe'), dd: val('color', s.color_innen) });
       } else {
-        rows.push({ dt: 'Dekor innen', dd: L.color[s.color_innen] });
-        rows.push({ dt: 'Dekor außen', dd: L.color[s.color_aussen] });
+        rows.push({ dt: dt('dekorInnen', 'Dekor innen'),  dd: val('color', s.color_innen) });
+        rows.push({ dt: dt('dekorAussen', 'Dekor außen'), dd: val('color', s.color_aussen) });
       }
       return rows;
     }
@@ -3425,7 +3456,7 @@
       var rows = state.type === 'fenster' ? summaryFenster() : summaryTuer();
       var common = [];
       if (state.anzahl && state.anzahl > 1) {
-        common.push({ dt: 'Anzahl', dd: state.anzahl + ' Stück' });
+        common.push({ dt: K('param.anzahl_short', 'Anzahl'), dd: state.anzahl + ' ' + K('param.stueck', 'Stück') });
       }
       rows = common.concat(rows);
       if (state.anmerkungen && state.anmerkungen.trim()) {

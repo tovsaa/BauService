@@ -141,6 +141,219 @@
     "toastResetDone": "Конфигурация сброшена",
     "resetConfirm": "Действительно сбросить конфигурацию к значениям по умолчанию?"
   },
+  "konf": {
+    "param": {
+      "anzahl": "Количество одинаковых элементов",
+      "stueck": "шт.",
+      "groesse": "Размер",
+      "breite": "см ширина",
+      "hoehe": "см высота",
+      "material": "Материал",
+      "verglasung": "Остекление",
+      "oeffnungsart": "Тип открывания",
+      "anschlag": "Сторона петель (DIN)",
+      "fluegel": "Количество створок",
+      "fluegelEnd": "створок",
+      "oberlicht": "Фрамуга сверху/снизу",
+      "sprossen": "Переплёт",
+      "sicherheit": "Безопасность",
+      "profil": "Профиль рамы",
+      "ornament": "Узорное стекло",
+      "griff": "Оконная ручка",
+      "rolladenTyp": "Тип рольставен",
+      "rolladenAntrieb": "Привод",
+      "rolladenFarbe": "Цвет рольставен",
+      "farbe": "Цвет",
+      "farbeBoth": "Цвет (внутри и снаружи)",
+      "farbeInnen": "Цвет внутри",
+      "farbeAussen": "Цвет снаружи",
+      "splitToggle": "Внутри и снаружи разные",
+      "anmerkungen": "Ваши примечания",
+      "anmerkungenOptional": "необязательно",
+      "anmerkungenPlaceholder": "напр., расположение в доме, особый RAL-цвет, желаемая дата или другие пожелания",
+      "groesseTuer": "Размер",
+      "standardmass": "Стандартный размер",
+      "sondermass": "Свой размер",
+      "eigeneWerte": "свои значения",
+      "preissegment": "Ценовой сегмент",
+      "ausfuehrung": "Исполнение",
+      "schloss": "Замок",
+      "splitToggleGleich": "Внутри и снаружи одинаковые",
+      "anzahl_short": "Количество"
+    },
+    "summary": {
+      "groesse": "Размер",
+      "material": "Материал",
+      "verglasung": "Остекление",
+      "oeffnung": "Открывание",
+      "anschlag": "Сторона петель",
+      "fluegelSingle": "1 створка",
+      "fluegelN": "Створки",
+      "aufteilung": "Разделение",
+      "sprossen": "Переплёт",
+      "sicherheit": "Безопасность",
+      "profil": "Профиль",
+      "ornament": "Узорное стекло",
+      "griff": "Ручка",
+      "farbe": "Цвет",
+      "dekorInnen": "Цвет внутри",
+      "dekorAussen": "Цвет снаружи",
+      "rolladen": "Рольставни",
+      "rolladenAntrieb": "Привод",
+      "rolladenFarbe": "Цвет рольставен",
+      "groesseStd": "90 × 210 см (стандарт)",
+      "groesseSondersuffix": "(свой размер)",
+      "preissegment": "Ценовой сегмент",
+      "ausfuehrung": "Исполнение",
+      "schloss": "Замок"
+    },
+    "vals": {
+      "material": {
+        "pvc": "ПВХ",
+        "aluminium": "Алюминий",
+        "holz": "Дерево"
+      },
+      "verglasung": {
+        "2fach": "2-камерный стеклопакет",
+        "2fachShort": "2-камер.",
+        "3fach": "3-камерный теплоизоляционный",
+        "3fachShort": "3-камер.",
+        "schallschutz": "Шумоизоляционное стекло",
+        "schallschutzShort": "Шумоизоляц.",
+        "sicherheit": "Защитное стекло (P4A)",
+        "sicherheitShort": "Защитное"
+      },
+      "opening": {
+        "fest": "Глухое (не открывается)",
+        "dreh": "Поворотное",
+        "dreh_kipp": "Поворотно-откидное"
+      },
+      "anschlag": {
+        "links": "DIN слева",
+        "rechts": "DIN справа",
+        "linksFull": "DIN слева (петли слева)",
+        "rechtsFull": "DIN справа (петли справа)"
+      },
+      "sprossen": {
+        "keine": "Без переплёта",
+        "keineShort": "Нет",
+        "h1": "1 горизонтальная",
+        "h1Short": "1 горизонт.",
+        "v1": "1 вертикальная",
+        "v1Short": "1 вертик.",
+        "kreuz": "Крест",
+        "kreuzShort": "Крест",
+        "h2v1": "2 горизонт. + 1 вертик.",
+        "h2v1Short": "2Г + 1В"
+      },
+      "oberlicht": {
+        "keine": "Без фрамуги",
+        "keineShort": "Нет",
+        "oberlicht": "С фрамугой сверху (глухой блок)",
+        "oberlichtShort": "Сверху",
+        "unterlicht": "С фрамугой снизу (глухой блок)",
+        "unterlichtShort": "Снизу"
+      },
+      "ornament": {
+        "keine": "Прозрачное стекло",
+        "keineShort": "Прозрачное",
+        "satiniert": "Сатинированное (матовое)",
+        "satiniertShort": "Сатин.",
+        "chinchilla": "Шиншилла (структурное)",
+        "chinchillaShort": "Шиншилла",
+        "silvit": "Сильвит (тонкий узор)",
+        "silvitShort": "Сильвит"
+      },
+      "griff": {
+        "standard": "Стандартная ручка (белая)",
+        "standardShort": "Стандарт",
+        "silber": "Серебро",
+        "altgold": "Старое золото",
+        "braun": "Коричневая"
+      },
+      "sicherheit": {
+        "standard": "Базовая безопасность",
+        "standardShort": "Базовая",
+        "erhoeht": "Повышенная (противовзломная)",
+        "erhoehtShort": "Повышенная",
+        "maximum": "Максимальная защита от взлома",
+        "maximumShort": "Максимум"
+      },
+      "profil": {
+        "standard": "Стандарт (5 камер)",
+        "standardShort": "Стандарт",
+        "komfort": "Комфорт (6 камер)",
+        "komfortShort": "Комфорт",
+        "premium": "Премиум (7 камер)",
+        "premiumShort": "Премиум"
+      },
+      "rolladenTyp": {
+        "ohne": "Без рольставен",
+        "ohneShort": "Нет",
+        "aufsatz": "Накладной (на оконной раме)",
+        "aufsatzShort": "Накладной",
+        "vorbau": "Внешний (перед фасадом)",
+        "vorbauShort": "Внешний",
+        "unterputz": "Встраиваемый (в стене)",
+        "unterputzShort": "Встраив."
+      },
+      "rolladenAntrieb": {
+        "gurt": "Ленточный (ручной)",
+        "gurtShort": "Ленточный",
+        "kurbel": "Кривошипный (ручной)",
+        "kurbelShort": "Кривош.",
+        "elektrisch": "Электрический (настенный)",
+        "elektrischShort": "Электрич.",
+        "smart": "Умный (радио / app)",
+        "smartShort": "Smart"
+      },
+      "rolladenFarbe": {
+        "weiss": "Белый",
+        "anthrazit": "Антрацит",
+        "braun": "Коричневый",
+        "wie_fenster": "Как окно"
+      },
+      "color": {
+        "weiss": "Белый",
+        "anthrazit": "Антрацит",
+        "braun": "Коричневый",
+        "sonder": "Другой (см. примечания)",
+        "sonderShort": "Другой"
+      },
+      "segment": {
+        "standard": "Стандарт",
+        "premium": "Премиум",
+        "luxus": "Люкс / дизайнерская дверь",
+        "luxusShort": "Люкс"
+      },
+      "ausfuehrung": {
+        "vollblatt": "Глухая (без стекла)",
+        "vollblattShort": "Глухая",
+        "glaseinsatz": "Со стеклом",
+        "glaseinsatzShort": "Стекло",
+        "seitenteile": "С боковыми панелями",
+        "seitenteileShort": "Бок. пан."
+      },
+      "schloss": {
+        "standard": "Стандартный замок",
+        "standardShort": "Стандарт",
+        "mehrfach": "Многозапорный",
+        "mehrfachShort": "Многозапор"
+      },
+      "fluegel": {
+        "1": "1 створка",
+        "2": "2 створки",
+        "3": "3 створки"
+      },
+      "sondermass": {
+        "false": "Стандартный",
+        "true": "Свой размер"
+      }
+    },
+    "share": {
+      "equalSuffix": "× одинаковых"
+    }
+  },
   "projektePage": {
     "breadcrumbHome": "Главная",
     "sectionLabel": "Портфолио",
@@ -173,6 +386,12 @@
     "datenschutz": "Конфиденциальность",
     "copyright": "Все права защищены.",
     "serviceArea": "Работаем в районе Werra-Meißner и в радиусе 60 км",
-    "brandDesc": "Ваш партнёр по окнам, дверям и напольным покрытиям в Эшвеге и окрестностях."
+    "brandDesc": "Ваш партнёр по окнам, дверям и напольным покрытиям в Эшвеге и окрестностях.",
+    "linkBewertungen": "Отзывы",
+    "svcBoden": "Напольные покрытия",
+    "svcFensterTueren": "Окна и двери",
+    "svcInnentueren": "Межкомнатные двери",
+    "svcTrockenbau": "Сухое строительство",
+    "svcBaustoff": "Стройматериалы с доставкой"
   }
 }

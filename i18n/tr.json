@@ -463,6 +463,10 @@
         "sicherheit": "Temel = standart kilit ve donanım. Yüksek = hırsızlığa dayanıklı donanım, çoklu kilit, yaklaşık RC1. Maks = güvenlik donanımı, güvenlik camı, delme koruması — yaklaşık RC2, evler için LKA tarafından önerilir.",
         "schloss": "Standart kilit = tek sürgü. Çoklu kilit = kapı yüksekliği boyunca birden fazla sürgü — önemli ölçüde daha güvenli ve dış kapılar için önerilir."
       }
+    },
+    "svg": {
+      "gesamt": "toplam",
+      "tuer": "Kapı"
     }
   },
   "projektePage": {
@@ -480,7 +484,11 @@
     "lightboxAria": "Görüntüleyici",
     "closeAria": "Kapat",
     "prevAria": "Önceki görüntü",
-    "nextAria": "Sonraki görüntü"
+    "nextAria": "Sonraki görüntü",
+    "photoSingle": "1 fotoğraf",
+    "photoMulti": "{n} fotoğraf",
+    "imageOfTotal": "Görsel {i} / {n}",
+    "enlargeAria": "{i} / {n} görseli büyüt"
   },
   "contact": {
     "label": "İletişim",

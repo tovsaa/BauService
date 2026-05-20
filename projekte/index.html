@@ -23,7 +23,7 @@
   <link rel="alternate" hreflang="tr" href="https://bauservice-esw.de/projekte/?lang=tr" />
   <link rel="alternate" hreflang="x-default" href="https://bauservice-esw.de/projekte/" />
 
-  <script src="/js/i18n.js?v=9" defer></script>
+  <script src="/js/i18n.js?v=10" defer></script>
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Projekte – Unsere Arbeiten | BauService Dionisie Bat" />
@@ -1745,29 +1745,52 @@
     // ==============================================================
     // RENDER — one card
     // ==============================================================
+    // i18n helper: tries window.BauI18n.t() with DE fallback
+    function PT(key, fb) {
+      return (window.BauI18n && window.BauI18n.t)
+        ? window.BauI18n.t('projektePage.' + key, fb)
+        : fb;
+    }
+    // Tag labels: i18n-aware lookup; falls back to inline German.
+    function tagLabelI18n(t) {
+      // Reuse the existing projects.cat<N>Title keys from index page
+      var map = { fenster: 'projects.cat1Title', innentueren: 'projects.cat2Title',
+                  aussentueren: 'projects.cat3Title', bodenverlegung: 'projects.cat4Title' };
+      var key = map[t];
+      if (key && window.BauI18n && window.BauI18n.t) {
+        return window.BauI18n.t(key, TAG_LABELS[t] || t);
+      }
+      return TAG_LABELS[t] || t;
+    }
+
     function renderCard(p) {
       var tags = Array.isArray(p.tags) ? p.tags : [];
       var photos = Array.isArray(p.photos) ? p.photos : [];
       var cover = p.cover_url || (photos[0] && (photos[0].thumb_url || photos[0].url)) || '';
       var photoCount = photos.length;
-      var photoCountText = photoCount === 1 ? '1 Foto' : photoCount + ' Fotos';
+      var photoCountText = photoCount === 1
+        ? PT('photoSingle', '1 Foto')
+        : PT('photoMulti', '{n} Fotos').replace('{n}', photoCount);
       var detailId = 'proj-detail-' + p.id;
 
       // Tag pills (small static badges in the card summary)
       var tagPillsHtml = tags.map(function (t) {
-        return '<span class="proj-tag">' + escapeHtml(TAG_LABELS[t] || t) + '</span>';
+        return '<span class="proj-tag">' + escapeHtml(tagLabelI18n(t)) + '</span>';
       }).join('');
 
       // Gallery items — each is a button that opens the lightbox.
       // data-full / data-alt are read by the lightbox wiring below.
       var galleryHtml = photos.map(function (ph, i) {
-        var alt = (p.title || '') + ' – ' + (p.location || '') + ' – Bild ' + (i + 1) + ' von ' + photoCount;
+        var alt = (p.title || '') + ' – ' + (p.location || '') + ' – '
+          + PT('imageOfTotal', 'Bild {i} von {n}').replace('{i}', (i + 1)).replace('{n}', photoCount);
+        var enlargeLabel = PT('enlargeAria', 'Bild {i} von {n} vergrößern')
+          .replace('{i}', (i + 1)).replace('{n}', photoCount);
         var full = ph.url || ph.thumb_url || '';
         var thumb = ph.thumb_url || ph.url || '';
         return (
           '<button class="gallery-item" data-full="' + escapeAttr(full) +
           '" data-alt="' + escapeAttr(alt) +
-          '" type="button" aria-label="Bild ' + (i + 1) + ' von ' + photoCount + ' vergrößern">' +
+          '" type="button" aria-label="' + escapeAttr(enlargeLabel) + '">' +
             '<img src="' + escapeAttr(thumb) + '" alt="' + escapeAttr(alt) + '" loading="lazy" decoding="async" />' +
           '</button>'
         );
@@ -2032,8 +2055,14 @@
         document.getElementById('empty-state').classList.remove('visible');
       });
 
+    // Re-render cards when the language switches so JS-generated content
+    // (photo counts, image alt texts, tag pills) picks up the new locale.
+    document.addEventListener('i18n:languagechange', function () {
+      if (state.projects && state.projects.length > 0) renderGrid();
+    });
+
   })();
-  
+
   // Header: scrolled state via IntersectionObserver — zero forced reflow
   (function() {
     const header = document.querySelector('.header');

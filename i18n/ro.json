@@ -463,6 +463,10 @@
         "sicherheit": "De bază = yală și feronerie standard. Sporită = feronerie anti-efracție, yală multipunct, ≈ RC1. Maximă = feronerie de siguranță, geam de siguranță, protecție anti-forare — ≈ RC2, recomandat de LKA pentru locuințe.",
         "schloss": "Yală standard = un singur zăvor. Multipunct = mai multe zăvoare pe toată înălțimea ușii — semnificativ mai sigur și recomandat pentru ușile exterioare."
       }
+    },
+    "svg": {
+      "gesamt": "total",
+      "tuer": "Ușă"
     }
   },
   "projektePage": {
@@ -480,7 +484,11 @@
     "lightboxAria": "Vizualizare imagine",
     "closeAria": "Închide",
     "prevAria": "Imaginea anterioară",
-    "nextAria": "Imaginea următoare"
+    "nextAria": "Imaginea următoare",
+    "photoSingle": "1 foto",
+    "photoMulti": "{n} foto",
+    "imageOfTotal": "Imaginea {i} din {n}",
+    "enlargeAria": "Mărește imaginea {i} din {n}"
   },
   "contact": {
     "label": "Contact",

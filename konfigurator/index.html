@@ -23,7 +23,7 @@
   <link rel="alternate" hreflang="tr" href="https://bauservice-esw.de/konfigurator/?lang=tr" />
   <link rel="alternate" hreflang="x-default" href="https://bauservice-esw.de/konfigurator/" />
 
-  <script src="/js/i18n.js?v=9" defer></script>
+  <script src="/js/i18n.js?v=10" defer></script>
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Konfigurator – Fenster &amp; Türen | BauService Dionisie Bat" />
@@ -3271,12 +3271,12 @@
       if (hasSeitenteile) {
         var totalCm = w_cm + sideWcm * 2;
         parts.push('<text x="' + (padLeft + totalContentW / 2) + '" y="' + (dy + h + 24) + '" text-anchor="middle" style="'
-          + labelStyle + ';fill:#8a8a8a">gesamt ' + totalCm + ' cm (Tür ' + w_cm + ' + 2× ' + sideWcm + ')</text>');
+          + labelStyle + ';fill:#8a8a8a">' + K('svg.gesamt', 'gesamt') + ' ' + totalCm + ' cm (' + K('svg.tuer', 'Tür') + ' ' + w_cm + ' + 2× ' + sideWcm + ')</text>');
         // Hide the door-only label in this case to avoid stacking
         parts.pop();
         parts.pop();
         parts.push('<text x="' + (padLeft + totalContentW / 2) + '" y="' + (dy + h + 24) + '" text-anchor="middle" style="'
-          + labelStyle + '">gesamt ' + totalCm + ' cm</text>');
+          + labelStyle + '">' + K('svg.gesamt', 'gesamt') + ' ' + totalCm + ' cm</text>');
       }
 
       // Height label on the right (next to the door, since the side panel ends at the same height)

@@ -463,6 +463,10 @@
         "sicherheit": "Basis = Standardschloss und -beschläge. Erhöht = einbruchhemmende Beschläge, Mehrpunktverriegelung, etwa RC1. Maximum = Sicherheitsbeschläge, Sicherheitsglas, Aufbohrschutz — etwa RC2, vom LKA für Wohnhäuser empfohlen.",
         "schloss": "Standardschloss = einfacher Riegel. Mehrfachverriegelung = mehrere Riegel über die gesamte Türhöhe — deutlich sicherer und empfohlen für Außentüren."
       }
+    },
+    "svg": {
+      "gesamt": "gesamt",
+      "tuer": "Tür"
     }
   },
   "projektePage": {
@@ -480,7 +484,11 @@
     "lightboxAria": "Bildansicht",
     "closeAria": "Schließen",
     "prevAria": "Vorheriges Bild",
-    "nextAria": "Nächstes Bild"
+    "nextAria": "Nächstes Bild",
+    "photoSingle": "1 Foto",
+    "photoMulti": "{n} Fotos",
+    "imageOfTotal": "Bild {i} von {n}",
+    "enlargeAria": "Bild {i} von {n} vergrößern"
   },
   "contact": {
     "label": "Kontakt",

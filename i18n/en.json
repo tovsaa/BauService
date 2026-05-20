@@ -463,6 +463,10 @@
         "sicherheit": "Basic = standard lock and hardware. Enhanced = burglar-resistant hardware, multi-point locking, roughly RC1. Maximum = security fittings, safety glass, anti-drill protection — roughly RC2, recommended by the LKA for homes.",
         "schloss": "Standard lock = a single deadbolt. Multi-point = several bolts along the full door height — significantly more secure and recommended for exterior doors."
       }
+    },
+    "svg": {
+      "gesamt": "total",
+      "tuer": "Door"
     }
   },
   "projektePage": {
@@ -480,7 +484,11 @@
     "lightboxAria": "Image view",
     "closeAria": "Close",
     "prevAria": "Previous image",
-    "nextAria": "Next image"
+    "nextAria": "Next image",
+    "photoSingle": "1 photo",
+    "photoMulti": "{n} photos",
+    "imageOfTotal": "Image {i} of {n}",
+    "enlargeAria": "Enlarge image {i} of {n}"
   },
   "contact": {
     "label": "Contact",

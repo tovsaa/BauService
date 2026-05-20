@@ -48,7 +48,7 @@
   // Bump VERSION when JSON keys change to invalidate stale browser caches.
   // The query string forces a fresh fetch instead of returning a cached
   // copy from before the new keys existed.
-  var VERSION = '10';
+  var VERSION = '11';
 
   function fetchDict(lang) {
     if (cache[lang]) return Promise.resolve(cache[lang]);
@@ -162,12 +162,41 @@
     var hosts = document.querySelectorAll('[data-i18n-switcher]');
     if (!hosts.length) return;
 
+    // Inline SVG flags — render consistently across all OS / fonts.
+    // Emoji flags (🇩🇪 etc.) break on Windows where they render as
+    // two regional-indicator letters (DE), duplicating with the code label.
+    var FLAGS = {
+      de: '<svg class="flag-svg" viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        + '<rect width="5" height="1" fill="#000"/>'
+        + '<rect width="5" height="1" y="1" fill="#dd0000"/>'
+        + '<rect width="5" height="1" y="2" fill="#ffce00"/></svg>',
+      ru: '<svg class="flag-svg" viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        + '<rect width="5" height="1" fill="#fff"/>'
+        + '<rect width="5" height="1" y="1" fill="#0039a6"/>'
+        + '<rect width="5" height="1" y="2" fill="#d52b1e"/></svg>',
+      ro: '<svg class="flag-svg" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        + '<rect width="1" height="2" fill="#002b7f"/>'
+        + '<rect width="1" height="2" x="1" fill="#fcd116"/>'
+        + '<rect width="1" height="2" x="2" fill="#ce1126"/></svg>',
+      en: '<svg class="flag-svg" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        + '<clipPath id="ukcl"><path d="M0,0 v30 h60 v-30 z"/></clipPath>'
+        + '<rect width="60" height="30" fill="#012169"/>'
+        + '<path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>'
+        + '<path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#ukcl)"/>'
+        + '<path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>'
+        + '<path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg>',
+      tr: '<svg class="flag-svg" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        + '<rect width="30" height="20" fill="#E30A17"/>'
+        + '<circle cx="11" cy="10" r="5" fill="#fff"/>'
+        + '<circle cx="12" cy="10" r="4" fill="#E30A17"/>'
+        + '<path d="M16.5,7.5 L17.6,9.4 L19.8,9.6 L18.1,10.9 L18.7,13 L16.8,11.8 L14.9,13 L15.5,10.9 L13.8,9.6 L16,9.4 Z" fill="#fff"/></svg>',
+    };
     var META = {
-      de: { name: 'Deutsch',  flag: '🇩🇪' },
-      ru: { name: 'Русский',  flag: '🇷🇺' },
-      ro: { name: 'Română',   flag: '🇷🇴' },
-      en: { name: 'English',  flag: '🇬🇧' },
-      tr: { name: 'Türkçe',   flag: '🇹🇷' }
+      de: { name: 'Deutsch' },
+      ru: { name: 'Русский' },
+      ro: { name: 'Română'  },
+      en: { name: 'English' },
+      tr: { name: 'Türkçe'  }
     };
 
     hosts.forEach(function (host) {
@@ -179,7 +208,7 @@
       btn.className = 'lang-switcher-btn';
       btn.setAttribute('aria-haspopup', 'true');
       btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = '<span class="lang-flag">' + META[current].flag + '</span>'
+      btn.innerHTML = '<span class="lang-flag">' + FLAGS[current] + '</span>'
         + '<span class="lang-code">' + current.toUpperCase() + '</span>'
         + '<svg class="lang-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="6 9 12 15 18 9"/></svg>';
 
@@ -194,7 +223,7 @@
         a.setAttribute('role', 'menuitem');
         a.setAttribute('data-lang', lang);
         if (lang === current) a.setAttribute('aria-current', 'true');
-        a.innerHTML = '<span class="lang-flag">' + META[lang].flag + '</span>'
+        a.innerHTML = '<span class="lang-flag">' + FLAGS[lang] + '</span>'
           + '<span class="lang-name">' + META[lang].name + '</span>';
         a.addEventListener('click', function () {
           close();
@@ -238,7 +267,8 @@
       + '.lang-switcher{position:relative;display:inline-block;font-family:inherit}'
       + '.lang-switcher-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:inherit;padding:6px 10px;border-radius:6px;cursor:pointer;font:600 13px/1 inherit;letter-spacing:.06em;transition:border-color .2s,background .2s}'
       + '.lang-switcher-btn:hover{border-color:rgba(212,165,68,.6);background:rgba(212,165,68,.06)}'
-      + '.lang-switcher-btn .lang-flag{font-size:14px;line-height:1}'
+      + '.lang-switcher .lang-flag{display:inline-flex;align-items:center;justify-content:center;width:22px;height:14px;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.12)}'
+      + '.lang-switcher .flag-svg{width:100%;height:100%;display:block}'
       + '.lang-switcher-btn .lang-code{font-weight:700;letter-spacing:.1em}'
       + '.lang-switcher-btn .lang-chev{transition:transform .2s;opacity:.7}'
       + '.lang-switcher.open .lang-switcher-btn{border-color:rgba(212,165,68,.6);background:rgba(212,165,68,.08)}'
@@ -249,7 +279,7 @@
       + '.lang-switcher-menu button{display:flex;align-items:center;gap:10px;width:100%;background:transparent;border:0;color:#fff;padding:8px 12px;border-radius:4px;cursor:pointer;font:500 14px/1 inherit;text-align:left}'
       + '.lang-switcher-menu button:hover{background:rgba(212,165,68,.12);color:#f0c66e}'
       + '.lang-switcher-menu button[aria-current="true"]{background:rgba(212,165,68,.08);color:#d4a544}'
-      + '.lang-switcher-menu .lang-flag{font-size:16px}'
+      + '.lang-switcher-menu .lang-flag{width:24px;height:16px}'
       + '.lang-switcher-menu .lang-name{font-weight:500}'
       + '@media (max-width:560px){.lang-switcher-btn .lang-code{display:none}.lang-switcher-menu{right:auto;left:0}}';
     var s = document.createElement('style');

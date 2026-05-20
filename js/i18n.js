@@ -45,10 +45,15 @@
   // -----------------------------------------------------------
   // Dictionary fetch with caching
   // -----------------------------------------------------------
+  // Bump VERSION when JSON keys change to invalidate stale browser caches.
+  // The query string forces a fresh fetch instead of returning a cached
+  // copy from before the new keys existed.
+  var VERSION = '3';
+
   function fetchDict(lang) {
     if (cache[lang]) return Promise.resolve(cache[lang]);
     // Build absolute-from-root path so it works at /, /projekte/, etc.
-    return fetch('/i18n/' + lang + '.json', { cache: 'force-cache' })
+    return fetch('/i18n/' + lang + '.json?v=' + VERSION, { cache: 'no-cache' })
       .then(function (r) {
         if (!r.ok) throw new Error('i18n fetch failed: ' + lang);
         return r.json();

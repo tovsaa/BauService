@@ -431,6 +431,30 @@
       "ausfuehrung": {
         "vollblatt": "camsız"
       }
+    },
+    "tip": {
+      "fenster": {
+        "material": "PVC = ısı yalıtımlı plastik profiller, uygun fiyat, kolay bakım. Alüminyum = çok sağlam, ince çerçeve, modern görünüm. Ahşap = doğal malzeme, mükemmel ısı yalıtımı, klasik görünüm.",
+        "verglasung": "Çift cam = standart, iyi yalıtım. Üçlü cam = soy gaz dolgusu, yaklaşık %40'a kadar daha az ısıtma maliyeti. Ses yalıtımlı cam = çok katmanlı yapı, sokak gürültüsünü 50 dB'ye kadar azaltır. Güvenlik camı (P4A) = hırsızlığa karşı, kırıldığında dağılmaz (birçok sigorta poliçesinde zemin kat pencereleri için zorunlu).",
+        "opening": "Sabit = açılmaz, en ekonomik. Açılır = yan tarafa kapı gibi açılır. Çift açılım = yan + üstten basma, esintisiz havalandırma.",
+        "fluegel": "140 cm genişlikten itibaren çok kanatlı pencereler yaygındır. Ek bir kanat pencereyi daha pahalı ama daha kullanışlı yapar.",
+        "oberlicht": "Üst ışık = ana pencerenin üzerinde sabit ek bir cam. Alt ışık = aynısı altta. Hareketli alanı büyütmeden daha fazla gün ışığı için kullanılır.",
+        "anschlag": "DIN menteşe yönü = içeriden bakıldığında menteşelerin bulunduğu taraf. DIN sol = menteşe sol, kol sağ. DIN sağ = menteşe sağ, kol sol. Üreticiye doğru sipariş için önemlidir.",
+        "sprossen": "Bölmeler = pencereyi görsel olarak bölen dekoratif çubuklar (kır veya antika tarzı). Standart olarak uygulamalı bölmeler veya camlar arası bölmeler sunuyoruz. Tam uygulama yerinde görüşülür.",
+        "ornament": "Desenli cam = dokulu veya mat cam, tam ışık geçirgenliği ile gizlilik için. Saten = düzgün mat (banyo, WC). Chinchilla = düzensiz bitki deseni. Silvit = ince geometrik desen.",
+        "griff": "Pencere kolu rengi. Varsayılan beyaz. Renkli çerçevelerde (antrasit, kahverengi) gümüş veya renkli kol genellikle daha iyi uyar.",
+        "sicherheit": "Temel = mantar başlı kapaklar, izinsiz açılmaya karşı koruma. Yüksek = daha fazla kilit noktası ve kilitlenebilir kol, yaklaşık DIN EN 1627 RC1. Maks = hırsızlığa dayanıklı parçalar ve güvenlik camı, yaklaşık RC2 — zemin katı için LKA tarafından önerilir.",
+        "profil": "Çerçeve profil sistemi ısı yalıtımı, dayanıklılık ve görünümü belirler. Standart (5 odalı) = sağlam temel. Konfor (6 odalı) = daha iyi yalıtım. Premium (7 odalı) = en iyi değerler. Tam profil yerinde danışmandan sonra seçilir.",
+        "rolladen_typ": "Çerçeve üstü = doğrudan pencere çerçevesi üzerinde, gözden uzak. Cephe önü = cephenin önünde, görünür kasa, renovasyona uygun. Duvar içi = kasa duvarın içinde, en iyi görünüm (yeni yapılar için tipik).",
+        "rolladen_antrieb": "Kayışlı = klasik manuel sürüş. Kollu = çıkarılabilir kol ile manuel. Elektrikli = duvar anahtarı ile motorlu. Akıllı = radyo, uygulama, otomatik zamanlama (varlık simülasyonu)."
+      },
+      "tuer": {
+        "material": "PVC = uygun fiyat, iyi yalıtım, kolay bakım. Alüminyum = çok sağlam, ince çerçeve, modern görünüm, yüksek güvenlik. Ahşap = doğal malzeme, klasik görünüm, mükemmel yalıtım.",
+        "segment": "Fiyat segmenti malzeme, donanım, tasarım ve üreticiye bağlıdır. Standart ≈ 1.500–3.000 €. Premium ≈ 3.000–5.500 €. Lüks 5.500 € üzeri. Tam fiyatlar yerinde ölçümden sonra verilir.",
+        "ausfuehrung": "Tam panel = camsız, en güvenli ve uygun fiyat. Camlı = koridorda gün ışığı için kısmi camlı. Yan panelli = sol-sağ ek dar cam panelleri.",
+        "sicherheit": "Temel = standart kilit ve donanım. Yüksek = hırsızlığa dayanıklı donanım, çoklu kilit, yaklaşık RC1. Maks = güvenlik donanımı, güvenlik camı, delme koruması — yaklaşık RC2, evler için LKA tarafından önerilir.",
+        "schloss": "Standart kilit = tek sürgü. Çoklu kilit = kapı yüksekliği boyunca birden fazla sürgü — önemli ölçüde daha güvenli ve dış kapılar için önerilir."
+      }
     }
   },
   "projektePage": {

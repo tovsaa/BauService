@@ -23,7 +23,7 @@
   <link rel="alternate" hreflang="tr" href="https://bauservice-esw.de/konfigurator/?lang=tr" />
   <link rel="alternate" hreflang="x-default" href="https://bauservice-esw.de/konfigurator/" />
 
-  <script src="/js/i18n.js?v=6" defer></script>
+  <script src="/js/i18n.js?v=7" defer></script>
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Konfigurator – Fenster &amp; Türen | BauService Dionisie Bat" />
@@ -2725,7 +2725,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('material') + K('param.material', 'Material') + ttIcon(TOOLTIPS.fenster.material) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + K('param.material', 'Material') + ttIcon(K('tip.fenster.material', TOOLTIPS.fenster.material)) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
         +     pill('material', 'pvc',        'PVC',         'preisgünstig, pflegeleicht', s.material)
         +     pill('material', 'aluminium',  'Aluminium',   'stabil, schmaler Rahmen',    s.material)
@@ -2734,7 +2734,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('verglasung') + K('param.verglasung', 'Verglasung') + ttIcon(TOOLTIPS.fenster.verglasung) + '</label>'
+        +   '<label class="param-label">' + iconHtml('verglasung') + K('param.verglasung', 'Verglasung') + ttIcon(K('tip.fenster.verglasung', TOOLTIPS.fenster.verglasung)) + '</label>'
         +   '<div class="opt-pills" data-field="verglasung">'
         +     pill('verglasung', '2fach',        '2-fach',       'Standard',           s.verglasung)
         +     pill('verglasung', '3fach',        '3-fach',       'Wärmeschutz',        s.verglasung)
@@ -2744,7 +2744,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('opening') + K('param.oeffnungsart', 'Öffnungsart') + ttIcon(TOOLTIPS.fenster.opening) + '</label>'
+        +   '<label class="param-label">' + iconHtml('opening') + K('param.oeffnungsart', 'Öffnungsart') + ttIcon(K('tip.fenster.opening', TOOLTIPS.fenster.opening)) + '</label>'
         +   '<div class="opt-pills" data-field="opening">'
         +     pill('opening', 'fest',       'Festverglasung',     'nicht zu öffnen',         s.opening)
         +     pill('opening', 'dreh',       'Drehfenster',        'seitlich öffnen',         s.opening)
@@ -2754,7 +2754,7 @@
 
         + (s.opening !== 'fest' ?
             '<div class="param-group">'
-          +   '<label class="param-label">' + iconHtml('anschlag') + K('param.anschlag', 'DIN-Anschlag') + ttIcon(TOOLTIPS.fenster.anschlag) + '</label>'
+          +   '<label class="param-label">' + iconHtml('anschlag') + K('param.anschlag', 'DIN-Anschlag') + ttIcon(K('tip.fenster.anschlag', TOOLTIPS.fenster.anschlag)) + '</label>'
           +   '<div class="opt-pills" data-field="anschlag">'
           +     pill('anschlag', 'links',   'DIN links',   'Bänder links',  s.anschlag)
           +     pill('anschlag', 'rechts',  'DIN rechts',  'Bänder rechts', s.anschlag)
@@ -2764,7 +2764,7 @@
         )
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('fluegel') + K('param.fluegel', 'Anzahl Flügel') + ttIcon(TOOLTIPS.fenster.fluegel) + '</label>'
+        +   '<label class="param-label">' + iconHtml('fluegel') + K('param.fluegel', 'Anzahl Flügel') + ttIcon(K('tip.fenster.fluegel', TOOLTIPS.fenster.fluegel)) + '</label>'
         +   '<div class="opt-pills" data-field="fluegel">'
         +     pill('fluegel', '1', '1 Flügel', '', String(s.fluegel))
         +     pill('fluegel', '2', '2 Flügel', '', String(s.fluegel))
@@ -2780,7 +2780,7 @@
       var section3Body = advOpen ? (''
         + '<div class="param-section-body">'
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('oberlicht') + K('param.oberlicht', 'Oberlicht / Unterlicht') + ttIcon(TOOLTIPS.fenster.oberlicht) + '</label>'
+        +   '<label class="param-label">' + iconHtml('oberlicht') + K('param.oberlicht', 'Oberlicht / Unterlicht') + ttIcon(K('tip.fenster.oberlicht', TOOLTIPS.fenster.oberlicht)) + '</label>'
         +   '<div class="opt-pills" data-field="oberlicht">'
         +     pill('oberlicht', 'keine',      'Ohne',        '',                       s.oberlicht)
         +     pill('oberlicht', 'oberlicht',  'Oberlicht',   'festes Feld oben',       s.oberlicht)
@@ -2789,7 +2789,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('sprossen') + K('param.sprossen', 'Sprossen') + ttIcon(TOOLTIPS.fenster.sprossen) + '</label>'
+        +   '<label class="param-label">' + iconHtml('sprossen') + K('param.sprossen', 'Sprossen') + ttIcon(K('tip.fenster.sprossen', TOOLTIPS.fenster.sprossen)) + '</label>'
         +   '<div class="opt-pills" data-field="sprossen">'
         +     pill('sprossen', 'keine', 'Keine',        '',                   s.sprossen)
         +     pill('sprossen', 'h1',    '1 horizontal', '',                   s.sprossen)
@@ -2800,7 +2800,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('sicherheit') + K('param.sicherheit', 'Sicherheit') + ttIcon(TOOLTIPS.fenster.sicherheit) + '</label>'
+        +   '<label class="param-label">' + iconHtml('sicherheit') + K('param.sicherheit', 'Sicherheit') + ttIcon(K('tip.fenster.sicherheit', TOOLTIPS.fenster.sicherheit)) + '</label>'
         +   '<div class="opt-pills" data-field="sicherheit">'
         +     pill('sicherheit', 'standard', 'Basis',      'Standard',                s.sicherheit)
         +     pill('sicherheit', 'erhoeht',  'Erhöht',     'einbruchhemmend (~RC1)',  s.sicherheit)
@@ -2809,7 +2809,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('profil') + K('param.profil', 'Rahmenprofil') + ttIcon(TOOLTIPS.fenster.profil) + '</label>'
+        +   '<label class="param-label">' + iconHtml('profil') + K('param.profil', 'Rahmenprofil') + ttIcon(K('tip.fenster.profil', TOOLTIPS.fenster.profil)) + '</label>'
         +   '<div class="opt-pills" data-field="profil">'
         +     pill('profil', 'standard', 'Standard',  '5-Kammer',  s.profil)
         +     pill('profil', 'komfort',  'Komfort',   '6-Kammer',  s.profil)
@@ -2818,7 +2818,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('ornament') + K('param.ornament', 'Ornamentglas') + ttIcon(TOOLTIPS.fenster.ornament) + '</label>'
+        +   '<label class="param-label">' + iconHtml('ornament') + K('param.ornament', 'Ornamentglas') + ttIcon(K('tip.fenster.ornament', TOOLTIPS.fenster.ornament)) + '</label>'
         +   '<div class="opt-pills" data-field="ornament">'
         +     pill('ornament', 'keine',      'Klar',        'normales Glas',  s.ornament)
         +     pill('ornament', 'satiniert',  'Satiniert',   'mattiert',       s.ornament)
@@ -2828,7 +2828,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('griff') + K('param.griff', 'Fenstergriff') + ttIcon(TOOLTIPS.fenster.griff) + '</label>'
+        +   '<label class="param-label">' + iconHtml('griff') + K('param.griff', 'Fenstergriff') + ttIcon(K('tip.fenster.griff', TOOLTIPS.fenster.griff)) + '</label>'
         +   '<div class="opt-pills" data-field="griff">'
         +     pill('griff', 'standard', 'Standard',  'weiß',  s.griff)
         +     pill('griff', 'silber',   'Silber',    '',      s.griff)
@@ -2844,7 +2844,7 @@
       // rows so the section stays compact when shutters aren't wanted.
       var section4 = ''
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('rolladen') + K('param.rolladenTyp', 'Rollladen-Typ') + ttIcon(TOOLTIPS.fenster.rolladen_typ) + '</label>'
+        +   '<label class="param-label">' + iconHtml('rolladen') + K('param.rolladenTyp', 'Rollladen-Typ') + ttIcon(K('tip.fenster.rolladen_typ', TOOLTIPS.fenster.rolladen_typ)) + '</label>'
         +   '<div class="opt-pills" data-field="rolladen_typ">'
         +     pill('rolladen_typ', 'ohne',      'Ohne',         '',                 s.rolladen_typ)
         +     pill('rolladen_typ', 'aufsatz',   'Aufsatz',      'auf Fensterrahmen', s.rolladen_typ)
@@ -2856,7 +2856,7 @@
       if (s.rolladen_typ && s.rolladen_typ !== 'ohne') {
         section4 += ''
           + '<div class="param-group">'
-          +   '<label class="param-label">' + iconHtml('antrieb') + K('param.rolladenAntrieb', 'Antrieb') + ttIcon(TOOLTIPS.fenster.rolladen_antrieb) + '</label>'
+          +   '<label class="param-label">' + iconHtml('antrieb') + K('param.rolladenAntrieb', 'Antrieb') + ttIcon(K('tip.fenster.rolladen_antrieb', TOOLTIPS.fenster.rolladen_antrieb)) + '</label>'
           +   '<div class="opt-pills" data-field="rolladen_antrieb">'
           +     pill('rolladen_antrieb', 'gurt',       'Gurtwickler', 'manuell',     s.rolladen_antrieb)
           +     pill('rolladen_antrieb', 'kurbel',     'Kurbel',      'manuell',     s.rolladen_antrieb)
@@ -2918,7 +2918,7 @@
 
       var section2 = sizeSection
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('material') + K('param.material', 'Material') + ttIcon(TOOLTIPS.tuer.material) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + K('param.material', 'Material') + ttIcon(K('tip.tuer.material', TOOLTIPS.tuer.material)) + '</label>'
         +   '<div class="opt-pills" data-field="material">'
         +     pill('material', 'pvc',        'PVC',         'preisgünstig',     s.material)
         +     pill('material', 'aluminium',  'Aluminium',   'stabil, modern',   s.material)
@@ -2927,7 +2927,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('material') + K('param.preissegment', 'Preissegment') + ttIcon(TOOLTIPS.tuer.segment) + '</label>'
+        +   '<label class="param-label">' + iconHtml('material') + K('param.preissegment', 'Preissegment') + ttIcon(K('tip.tuer.segment', TOOLTIPS.tuer.segment)) + '</label>'
         +   '<div class="opt-pills" data-field="segment">'
         +     pill('segment', 'standard',  'Standard',  'solide Ausstattung',   s.segment)
         +     pill('segment', 'premium',   'Premium',   'höhere Qualität',      s.segment)
@@ -2936,7 +2936,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('ausfuehrung') + K('param.ausfuehrung', 'Ausführung') + ttIcon(TOOLTIPS.tuer.ausfuehrung) + '</label>'
+        +   '<label class="param-label">' + iconHtml('ausfuehrung') + K('param.ausfuehrung', 'Ausführung') + ttIcon(K('tip.tuer.ausfuehrung', TOOLTIPS.tuer.ausfuehrung)) + '</label>'
         +   '<div class="opt-pills" data-field="ausfuehrung">'
         +     pill('ausfuehrung', 'vollblatt',   'Vollblatt',            'ohne Glas',     s.ausfuehrung)
         +     pill('ausfuehrung', 'glaseinsatz', 'Mit Glaseinsatz',      '',              s.ausfuehrung)
@@ -2945,7 +2945,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('sicherheit') + K('param.sicherheit', 'Sicherheit') + ttIcon(TOOLTIPS.tuer.sicherheit) + '</label>'
+        +   '<label class="param-label">' + iconHtml('sicherheit') + K('param.sicherheit', 'Sicherheit') + ttIcon(K('tip.tuer.sicherheit', TOOLTIPS.tuer.sicherheit)) + '</label>'
         +   '<div class="opt-pills" data-field="sicherheit">'
         +     pill('sicherheit', 'standard', 'Basis',      'Standard',                s.sicherheit)
         +     pill('sicherheit', 'erhoeht',  'Erhöht',     'einbruchhemmend (~RC1)',  s.sicherheit)
@@ -2954,7 +2954,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('schloss') + K('param.schloss', 'Schloss') + ttIcon(TOOLTIPS.tuer.schloss) + '</label>'
+        +   '<label class="param-label">' + iconHtml('schloss') + K('param.schloss', 'Schloss') + ttIcon(K('tip.tuer.schloss', TOOLTIPS.tuer.schloss)) + '</label>'
         +   '<div class="opt-pills" data-field="schloss">'
         +     pill('schloss', 'standard',  'Standardschloss',         '',       s.schloss)
         +     pill('schloss', 'mehrfach',  'Mehrfachverriegelung',    '',       s.schloss)
@@ -2962,7 +2962,7 @@
         + '</div>'
 
         + '<div class="param-group">'
-        +   '<label class="param-label">' + iconHtml('anschlag') + K('param.anschlag', 'DIN-Anschlag') + ttIcon(TOOLTIPS.tuer.anschlag) + '</label>'
+        +   '<label class="param-label">' + iconHtml('anschlag') + K('param.anschlag', 'DIN-Anschlag') + ttIcon(K('tip.tuer.anschlag', TOOLTIPS.tuer.anschlag)) + '</label>'
         +   '<div class="opt-pills" data-field="anschlag">'
         +     pill('anschlag', 'links',   'DIN links',   'Bänder links',  s.anschlag)
         +     pill('anschlag', 'rechts',  'DIN rechts',  'Bänder rechts', s.anschlag)

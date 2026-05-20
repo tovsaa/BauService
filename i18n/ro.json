@@ -431,6 +431,30 @@
       "ausfuehrung": {
         "vollblatt": "fără geam"
       }
+    },
+    "tip": {
+      "fenster": {
+        "material": "PVC = profile termoizolante din plastic, accesibile, ușor de întreținut. Aluminiu = foarte rezistent, ramă subțire, aspect modern. Lemn = material natural, izolație termică excelentă, aspect clasic.",
+        "verglasung": "Geam dublu = standard, bună izolație. Geam triplu = umplere cu gaz nobil, până la 40 % mai puține costuri de încălzire. Geam fonoizolant = construcție multistrat, reduce zgomotul cu până la 50 dB. Geam de siguranță (P4A) = anti-efracție, nu se sparge în cioburi (obligatoriu la parter în multe polițe de asigurare).",
+        "opening": "Fix = nu se deschide, cea mai ieftină variantă. Batant = se deschide lateral ca o ușă. Oscilo-batant = lateral + basculare în sus pentru aerisire fără curent.",
+        "fluegel": "Mai multe canate sunt obișnuite la ferestre de la 140 cm lățime. Un canat suplimentar face fereastra mai scumpă, dar mai ușor de utilizat.",
+        "oberlicht": "Lumină sus = panou fix suplimentar deasupra ferestrei principale. Lumină jos = același jos. Folosit pentru mai multă lumină naturală fără a mări zona mobilă.",
+        "anschlag": "Sens DIN = partea pe care se află balamalele, văzut din interior. DIN stânga = balamale stânga, mâner dreapta. DIN dreapta = balamale dreapta, mâner stânga. Important la comanda către producător.",
+        "sprossen": "Șprosurile = bare decorative care împart fereastra în mai multe secțiuni (stil rustic sau de epocă). Standard oferim șprosuri aplicate sau șprosuri între geamuri. Execuția exactă se discută la fața locului.",
+        "ornament": "Geam ornament = sticlă texturată sau mată pentru intimitate cu lumină completă. Satinat = mat uniform (baie, WC). Chinchilla = model floral neregulat. Silvit = model geometric fin.",
+        "griff": "Culoarea mânerului ferestrei. Standard alb. La rame colorate (antracit, maro) se potrivește adesea un mâner argintiu sau colorat.",
+        "sicherheit": "De bază = boțuri ciuperci, protecție împotriva deschiderii neautorizate. Sporită = mai multe puncte de blocare și mâner cu cheie, ≈ RC1 conform DIN EN 1627. Maximă = feronerie anti-efracție și geam de siguranță, ≈ RC2 — recomandat de LKA pentru parter.",
+        "profil": "Sistemul de profil determină izolația termică, stabilitatea și aspectul. Standard (5 camere) = bază solidă. Confort (6 camere) = izolație mai bună. Premium (7 camere) = cele mai bune valori. Profilul exact se alege după consultația la fața locului.",
+        "rolladen_typ": "Pe cadru = direct pe rama ferestrei, discret. Aplicat = în fața fațadei, casetă vizibilă, bun la renovare. Încastrat = caseta dispare în zid, cel mai bun aspect (tipic la construcții noi).",
+        "rolladen_antrieb": "Cu chingă = acționare manuală clasică. Manivelă = operare manuală cu manivelă detașabilă. Electric = motorizat cu întrerupător de perete. Smart = radio, app, programare automată (simulare prezență)."
+      },
+      "tuer": {
+        "material": "PVC = accesibil, bună izolație termică, ușor de întreținut. Aluminiu = foarte rezistent, ramă subțire, aspect modern, securitate sporită. Lemn = material natural, aspect clasic, izolație excelentă.",
+        "segment": "Segmentul de preț depinde de material, feronerie, design și producător. Standard ≈ 1.500–3.000 €. Premium ≈ 3.000–5.500 €. Lux peste 5.500 €. Prețuri exacte după măsurătoare la fața locului.",
+        "ausfuehrung": "Plină = fără geam, cea mai sigură și ieftină. Cu geam = parțial vitrată pentru mai multă lumină pe hol. Cu panouri laterale = panouri suplimentare înguste stânga-dreapta.",
+        "sicherheit": "De bază = yală și feronerie standard. Sporită = feronerie anti-efracție, yală multipunct, ≈ RC1. Maximă = feronerie de siguranță, geam de siguranță, protecție anti-forare — ≈ RC2, recomandat de LKA pentru locuințe.",
+        "schloss": "Yală standard = un singur zăvor. Multipunct = mai multe zăvoare pe toată înălțimea ușii — semnificativ mai sigur și recomandat pentru ușile exterioare."
+      }
     }
   },
   "projektePage": {

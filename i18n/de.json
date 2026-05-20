@@ -431,6 +431,30 @@
       "ausfuehrung": {
         "vollblatt": "ohne Glas"
       }
+    },
+    "tip": {
+      "fenster": {
+        "material": "PVC = wärmegedämmte Kunststoffprofile, preisgünstig, pflegeleicht. Aluminium = sehr stabil, schmale Rahmen, modernes Aussehen. Holz = natürlicher Werkstoff, hervorragende Wärmedämmung, klassische Optik.",
+        "verglasung": "2-fach Verglasung = Standard, gute Wärmedämmung. 3-fach Wärmeschutz = Edelgasfüllung, bis ca. 40 % weniger Heizkosten. Schallschutzglas = mehrschichtiger Aufbau, reduziert Straßenlärm um bis zu 50 dB. Sicherheitsglas (P4A) = einbruchhemmend, splittert nicht beim Bruch (Pflicht bei Erdgeschoss-Fenstern in vielen Versicherungspolicen).",
+        "opening": "Festverglasung = nicht zu öffnen, am preiswertesten. Drehfenster = seitlich öffenbar wie eine Tür. Dreh-Kipp = seitlich + oben kippbar zum Lüften ohne Zugluft.",
+        "fluegel": "Mehrere Flügel sind übliche Bauart bei Fenstern ab 140 cm Breite. Ein zusätzlicher Flügel macht das Fenster teurer, aber leichter zu bedienen.",
+        "oberlicht": "Oberlicht = ein zusätzliches, festverglastes Feld oben über dem eigentlichen Fenster. Unterlicht = das gleiche unten. Wird verwendet, um mehr Tageslicht zu bekommen, ohne den beweglichen Bereich zu vergrößern.",
+        "anschlag": "DIN-Anschlag = Seite, auf der die Bänder (Scharniere) sitzen, gesehen von innen. DIN links = Bänder links, Griff rechts. DIN rechts = Bänder rechts, Griff links. Wichtig für die richtige Bestellung beim Hersteller.",
+        "sprossen": "Sprossen = dekorative Leisten, die das Fenster optisch in mehrere Felder unterteilen (Landhaus- oder Altbau-Stil). Wir bieten standardmäßig aufgesetzte Sprossen oder Sprossen im Scheibenzwischenraum. Genaue Ausführung wird vor Ort besprochen.",
+        "ornament": "Ornamentglas = strukturiertes oder mattiertes Glas für Sichtschutz bei voller Lichtdurchlässigkeit. Satiniert = gleichmäßig mattiert (Bad, WC). Chinchilla = unregelmäßiges Pflanzen-Muster. Silvit = feines geometrisches Muster.",
+        "griff": "Farbe des Fenstergriffs. Standardmäßig weiß. Bei farbigen Rahmen (Anthrazit, Braun) passt ein silberner oder farbiger Griff oft besser.",
+        "sicherheit": "Basis (Standard) = Pilzkopfzapfen, Schutz gegen unbefugtes Öffnen. Erhöht = mehr Verriegelungspunkte und abschließbarer Griff, entspricht etwa RC1 nach DIN EN 1627. Maximum = einbruchhemmende Beschläge und Sicherheitsglas, entspricht etwa RC2 — empfohlen vom LKA für Erdgeschoss.",
+        "profil": "Das Rahmen-Profilsystem bestimmt Wärmedämmung, Stabilität und Optik. Standard (5-Kammer) = solide Grundausstattung. Komfort (6-Kammer) = bessere Wärmedämmung. Premium (7-Kammer) = beste Dämmwerte. Genaue Profilbezeichnung wird nach Vor-Ort-Beratung gewählt.",
+        "rolladen_typ": "Aufsatzrollladen = direkt auf dem Fensterrahmen, unauffällig. Vorbaurollladen = vor der Fassade, sichtbarer Kasten, gut bei Sanierung. Unterputzrollladen = Kasten verschwindet im Mauerwerk, beste Optik (typisch für Neubau).",
+        "rolladen_antrieb": "Gurtwickler = klassischer manueller Antrieb. Kurbel = manuelle Bedienung mit abnehmbarer Kurbel. Elektrisch = motorisiert per Wandschalter. Smart = Funk, App, automatische Zeitsteuerung (Anwesenheitssimulation)."
+      },
+      "tuer": {
+        "material": "PVC = preisgünstig, gute Wärmedämmung, pflegeleicht. Aluminium = sehr stabil, schmaler Rahmen, modernes Aussehen, höhere Einbruchsicherheit. Holz = natürlicher Werkstoff, klassische Optik, sehr gute Wärmedämmung.",
+        "segment": "Preissegment richtet sich nach Material, Beschlägen, Design und Hersteller. Standard ≈ 1.500–3.000 €. Premium ≈ 3.000–5.500 €. Luxus ab 5.500 €. Genaue Preise nennen wir nach Vor-Ort-Aufmaß.",
+        "ausfuehrung": "Vollblatt = ohne Glas, am sichersten und preiswertesten. Mit Glaseinsatz = Teilglasung für mehr Tageslicht im Flur. Mit Seitenteilen = zusätzliche schmale Glasfelder links und rechts.",
+        "sicherheit": "Basis = Standardschloss und -beschläge. Erhöht = einbruchhemmende Beschläge, Mehrpunktverriegelung, etwa RC1. Maximum = Sicherheitsbeschläge, Sicherheitsglas, Aufbohrschutz — etwa RC2, vom LKA für Wohnhäuser empfohlen.",
+        "schloss": "Standardschloss = einfacher Riegel. Mehrfachverriegelung = mehrere Riegel über die gesamte Türhöhe — deutlich sicherer und empfohlen für Außentüren."
+      }
     }
   },
   "projektePage": {

@@ -431,6 +431,30 @@
       "ausfuehrung": {
         "vollblatt": "no glass"
       }
+    },
+    "tip": {
+      "fenster": {
+        "material": "PVC = thermally insulated plastic profiles, affordable, low-maintenance. Aluminium = very sturdy, slim frame, modern look. Wood = natural material, excellent thermal insulation, classic appearance.",
+        "verglasung": "Double glazing = standard, good insulation. Triple glazing = noble gas fill, up to ~40% lower heating costs. Acoustic glass = multi-layer build, reduces street noise by up to 50 dB. Safety glass (P4A) = burglar-resistant, does not shatter (required for ground-floor windows in many insurance policies).",
+        "opening": "Fixed = non-opening, cheapest. Casement = opens sideways like a door. Tilt-and-turn = side + top tilt for draft-free ventilation.",
+        "fluegel": "Multiple sashes are common for windows from 140 cm width. An extra sash makes the window more expensive but easier to operate.",
+        "oberlicht": "Top light = an additional fixed pane above the main window. Bottom light = the same below. Used to bring in more daylight without enlarging the moving section.",
+        "anschlag": "DIN hinge side = the side the hinges are on, seen from inside. DIN left = hinges left, handle right. DIN right = hinges right, handle left. Important for ordering correctly from the manufacturer.",
+        "sprossen": "Muntins = decorative bars that visually divide the window into sections (country or vintage style). We offer applied muntins or muntins between the panes. Exact execution discussed on site.",
+        "ornament": "Patterned glass = textured or frosted glass for privacy with full light transmission. Satin = evenly frosted (bath, WC). Chinchilla = irregular plant pattern. Silvit = fine geometric pattern.",
+        "griff": "Window handle colour. White by default. With coloured frames (anthracite, brown) silver or coloured handles often suit better.",
+        "sicherheit": "Basic = mushroom-head cams, protection against unauthorised opening. Enhanced = more locking points and lockable handle, roughly RC1 per DIN EN 1627. Maximum = burglar-resistant fittings and safety glass, roughly RC2 — recommended by the LKA for ground floor.",
+        "profil": "The frame profile system determines thermal insulation, stability and looks. Standard (5-chamber) = solid baseline. Comfort (6-chamber) = better insulation. Premium (7-chamber) = best values. The exact profile is chosen after the on-site consultation.",
+        "rolladen_typ": "On-frame = mounted directly on the window frame, unobtrusive. Surface-mounted = in front of the façade, visible box, good for renovation. Built-in = box disappears into the masonry, best looks (typical for new builds).",
+        "rolladen_antrieb": "Strap winder = classic manual drive. Crank = manual operation with a detachable handle. Electric = motorised via wall switch. Smart = radio, app, automatic timer (presence simulation)."
+      },
+      "tuer": {
+        "material": "PVC = affordable, good insulation, low-maintenance. Aluminium = very sturdy, slim frame, modern look, higher security. Wood = natural material, classic look, excellent insulation.",
+        "segment": "Price segment depends on material, hardware, design and manufacturer. Standard ≈ €1,500–3,000. Premium ≈ €3,000–5,500. Luxury from €5,500. Exact prices given after on-site measurement.",
+        "ausfuehrung": "Solid panel = no glass, most secure and cheapest. With glass inset = partial glazing for daylight in the hall. With side panels = additional narrow glass panels left and right.",
+        "sicherheit": "Basic = standard lock and hardware. Enhanced = burglar-resistant hardware, multi-point locking, roughly RC1. Maximum = security fittings, safety glass, anti-drill protection — roughly RC2, recommended by the LKA for homes.",
+        "schloss": "Standard lock = a single deadbolt. Multi-point = several bolts along the full door height — significantly more secure and recommended for exterior doors."
+      }
     }
   },
   "projektePage": {

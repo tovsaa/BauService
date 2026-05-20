@@ -87,7 +87,15 @@
     "customerFromRegion": "Bölgeden müşteri",
     "ctaText": "Tüm yorumları profillerimizde bulabilirsiniz.",
     "googleProfile": "Google profili",
-    "myhammerProfile": "MyHammer profili"
+    "myhammerProfile": "MyHammer profili",
+    "r1text": "BauService işi tekliften uygulamaya kadar çok hızlı tamamladı. Net bir tavsiye. Çok temiz ve hassas çalışıldı. Birkaç saat içinde 3 pencere söküldü ve yenileriyle değiştirildi.",
+    "r1job": "Pencere montajı ve değişimi",
+    "r2text": "Kapılar kasalarıyla birlikte yenileriyle değiştirildi. Hızlı ve sorunsuz süreç. Çok iyi iş. Çok memnunum. Tekrar tercih ederim!",
+    "r2job": "Kapı montajı ve değişimi",
+    "r3text": "Çok sempatik bir kişi, çit birkaç gün içinde tamamen monte edildi. Gerçekten çok güzel oldu. Çok teşekkürler.",
+    "r3job": "Çit montajı ve değişimi",
+    "r4text": "Çok güvenilir ve profesyonel.",
+    "r4job": "Küçük el işleri ve montaj hizmetleri"
   },
   "notFound": {
     "tagline": "Sayfa bulunamadı",

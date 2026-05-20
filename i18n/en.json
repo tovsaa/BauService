@@ -87,7 +87,15 @@
     "customerFromRegion": "Customer from the region",
     "ctaText": "You can find all reviews on our profiles.",
     "googleProfile": "Profile on Google",
-    "myhammerProfile": "Profile on MyHammer"
+    "myhammerProfile": "Profile on MyHammer",
+    "r1text": "BauService completed the job very quickly, from quote to execution. A clear recommendation. The work was very clean and precise. Three windows were removed and replaced with new ones in just a few hours.",
+    "r1job": "Window installation and replacement",
+    "r2text": "Doors replaced with new ones including frames. Quick and easy handling. Very good work. Very satisfied. Will book again!",
+    "r2job": "Door installation and replacement",
+    "r3text": "Very pleasant person, and the fence was fully installed within a few days. Really turned out beautifully. Many thanks.",
+    "r3job": "Fence installation and replacement",
+    "r4text": "Very reliable and professional.",
+    "r4job": "Small handyman and installation jobs"
   },
   "notFound": {
     "tagline": "Page not found",

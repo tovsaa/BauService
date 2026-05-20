@@ -87,7 +87,15 @@
     "customerFromRegion": "Kunde aus der Region",
     "ctaText": "Alle Bewertungen finden Sie auf unseren Profilen.",
     "googleProfile": "Profil auf Google",
-    "myhammerProfile": "Profil auf MyHammer"
+    "myhammerProfile": "Profil auf MyHammer",
+    "r1text": "Die Fa. BauService hat ihren Auftrag sehr schnell vom Angebot bis zur Ausführung erledigt. Eine klare Weiterempfehlung. Es wurde sehr sauber und genau gearbeitet. In wenigen Stunden wurden 3 Fenster ausgebaut und durch neue ersetzt.",
+    "r1job": "Einbau und Austausch von Fenstern",
+    "r2text": "Türen ausgetauscht und durch neue mit Zarge ersetzt. Schnelle und unkomplizierte Abwicklung. Sehr gute Arbeit. Sehr zufrieden. Gerne wieder!",
+    "r2job": "Einbau und Austausch von Türen",
+    "r3text": "Sehr sympathisch und der Zaun war innerhalb weniger Tage vollständig montiert. Wirklich sehr schön geworden. Herzlichen Dank.",
+    "r3job": "Aufbau und Austausch von Zäunen",
+    "r4text": "Sehr zuverlässig und professionell.",
+    "r4job": "Kleine Handwerks- und Montageleistungen"
   },
   "notFound": {
     "tagline": "Seite nicht gefunden",

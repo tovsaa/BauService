@@ -87,7 +87,15 @@
     "customerFromRegion": "Client din regiune",
     "ctaText": "Toate recenziile le găsiți pe profilele noastre.",
     "googleProfile": "Profil pe Google",
-    "myhammerProfile": "Profil pe MyHammer"
+    "myhammerProfile": "Profil pe MyHammer",
+    "r1text": "Firma BauService și-a îndeplinit comanda foarte rapid, de la ofertă până la execuție. Recomandare clară. S-a lucrat foarte curat și exact. În câteva ore au fost demontate 3 ferestre și înlocuite cu altele noi.",
+    "r1job": "Montaj și înlocuire de ferestre",
+    "r2text": "Uși înlocuite cu altele noi cu toc. Procedură rapidă și simplă. Lucru foarte bun. Foarte mulțumit. Cu plăcere din nou!",
+    "r2job": "Montaj și înlocuire de uși",
+    "r3text": "Foarte simpatic, iar gardul a fost montat complet în câteva zile. A ieșit chiar frumos. Multe mulțumiri.",
+    "r3job": "Montaj și înlocuire de garduri",
+    "r4text": "Foarte de încredere și profesionist.",
+    "r4job": "Mici lucrări de meșteșugărie și montaj"
   },
   "notFound": {
     "tagline": "Pagina nu a fost găsită",

@@ -23,6 +23,78 @@
     "ctaPrimary": "Solicitați o ofertă",
     "directCall": "Sunați direct"
   },
+  "hero": {
+    "qualitaet": "Calitate",
+    "service": "Service",
+    "subtitle": "dintr-o singură mână",
+    "description": "Firmă de meșteri de încredere pentru montaj ferestre & uși, montaj pardoseli și rigips în Eschwege și pe o rază de 60 km.",
+    "ctaQuote": "Solicitați o ofertă",
+    "ctaWhatsapp": "Scrie pe WhatsApp",
+    "scrollCue": "Derulare"
+  },
+  "services": {
+    "label": "Serviciile noastre",
+    "title": "Totul dintr-o singură mână",
+    "card1Title": "Montaj vinil, laminat și parchet",
+    "card1Desc": "Vinil, laminat și parchet — montate profesional, cu îmbinări curate și durată mare de viață.",
+    "card2Title": "Ferestre și uși",
+    "card2Desc": "Livrare și montaj precis al ferestrelor și ușilor de exterior — PVC, lemn sau aluminiu.",
+    "card3Title": "Uși de interior",
+    "card3Desc": "Selecție, livrare și montaj de uși de interior de calitate — de la design clasic la modern și minimalist.",
+    "card4Title": "Rigips",
+    "card4Desc": "Pereți din gips-carton, tavane suspendate, placări de pereți și izolație fonică — curat și la dimensiunile exacte.",
+    "card5Title": "Vânzare materiale de construcții cu livrare",
+    "card5Desc": "Vopsele, izolații, tencuieli, adezivi, gleturi, precum și materiale de fixare și pentru acoperișuri — livrate direct la șantierul dumneavoastră."
+  },
+  "about": {
+    "label": "Despre noi",
+    "title1": "Sigur.",
+    "title2": "Curat.",
+    "title3": "Profesional.",
+    "signatureLabel": "Proprietar",
+    "description": "BauService Dionisie Bat înseamnă calitate, fiabilitate și prețuri corecte. Lucrăm curat, la termen și cu cele mai înalte standarde la fiecare proiect — de la prima consultație până la predarea lucrării.",
+    "feature1": "Consultație gratuită",
+    "feature2": "Măsurare gratuită",
+    "feature3": "Montaj RAL",
+    "feature4": "Prețuri fixe corecte — fără costuri ascunse",
+    "feature5": "Lucru curat și la termen"
+  },
+  "projects": {
+    "label": "Proiecte",
+    "title": "Lucrările noastre",
+    "introPrefix": "proiecte finalizate",
+    "introSuffix": "în Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach și regiune — sortate pe categorii. Faceți clic pe o categorie pentru toate imaginile și detaliile.",
+    "cat1Title": "Ferestre",
+    "cat1Sub": "Montaj și înlocuire",
+    "cat2Title": "Uși de interior",
+    "cat2Sub": "Montaj complet",
+    "cat3Title": "Uși exterioare",
+    "cat3Sub": "Uși de casă și de balcon",
+    "cat4Title": "Pardoseli",
+    "cat4Sub": "Vinil, laminat și parchet",
+    "countLabel": "proiecte",
+    "ctaPrefix": "Toate cele",
+    "ctaSuffix": "proiecte",
+    "ctaText": "Sau discutați un proiect propriu cu noi —",
+    "ctaLink": "consultație gratuită"
+  },
+  "reviews": {
+    "label": "Recenzii",
+    "title": "Părerile clienților noștri",
+    "starsAria": "5 din 5 stele",
+    "customerFromEschwege": "Client din Eschwege",
+    "customerFromWerra": "Client din Werra-Meißner",
+    "customerFromRegion": "Client din regiune",
+    "ctaText": "Toate recenziile le găsiți pe profilele noastre.",
+    "googleProfile": "Profil pe Google",
+    "myhammerProfile": "Profil pe MyHammer"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Contactați-ne",
+    "socialsLabel": "Urmăriți-ne",
+    "qrLabel": "Scanați și deschideți WhatsApp"
+  },
   "footer": {
     "tagline": "Calitate și service dintr-o singură mână",
     "servicesHeading": "Servicii",
@@ -30,7 +102,8 @@
     "contactHeading": "Contact",
     "impressum": "Impressum",
     "datenschutz": "Confidențialitate",
-    "copyright": "Toate drepturile rezervate",
-    "serviceArea": "Activ în Werra-Meißner și pe o rază de 60 km"
+    "copyright": "Toate drepturile rezervate.",
+    "serviceArea": "Activ în Werra-Meißner și pe o rază de 60 km",
+    "brandDesc": "Partenerul dumneavoastră pentru ferestre, uși și pardoseli în Eschwege și împrejurimi."
   }
 }

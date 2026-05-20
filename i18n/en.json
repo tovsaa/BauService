@@ -23,6 +23,78 @@
     "ctaPrimary": "Request a quote",
     "directCall": "Direct call"
   },
+  "hero": {
+    "qualitaet": "Quality",
+    "service": "Service",
+    "subtitle": "from a single source",
+    "description": "Your reliable craftsmen for window & door installation, floor laying, and drywall work in Eschwege and within a 60 km radius.",
+    "ctaQuote": "Request a quote",
+    "ctaWhatsapp": "Message on WhatsApp",
+    "scrollCue": "Scroll"
+  },
+  "services": {
+    "label": "Our services",
+    "title": "Everything from a single source",
+    "card1Title": "Vinyl, laminate & parquet flooring",
+    "card1Desc": "Vinyl, laminate and parquet — professionally installed with clean transitions and a long lifespan.",
+    "card2Title": "Windows & doors",
+    "card2Desc": "Supply and precise installation of new windows and exterior doors — PVC, wood or aluminium.",
+    "card3Title": "Interior doors",
+    "card3Desc": "Selection, supply and installation of high-quality interior doors — from classic design to modern and minimalist.",
+    "card4Title": "Drywall",
+    "card4Desc": "Plasterboard walls, suspended ceilings, wall cladding and acoustic insulation — clean and dimensionally accurate.",
+    "card5Title": "Building materials with delivery",
+    "card5Desc": "Paints, insulation, plaster, adhesives, fillers, plus fastening and roofing materials — delivered directly to your site."
+  },
+  "about": {
+    "label": "About us",
+    "title1": "Reliable.",
+    "title2": "Clean.",
+    "title3": "Professional.",
+    "signatureLabel": "Owner",
+    "description": "BauService Dionisie Bat stands for quality, reliability and fair prices. We work cleanly, on schedule, and to the highest standards on every project — from the first consultation to the finished handover.",
+    "feature1": "Free consultation",
+    "feature2": "Free on-site measurement",
+    "feature3": "RAL-certified installation",
+    "feature4": "Fair fixed prices — no hidden costs",
+    "feature5": "Clean and punctual work"
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Our work",
+    "introPrefix": "completed projects",
+    "introSuffix": "in Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach and the region — sorted by category. Click a category for all photos and details.",
+    "cat1Title": "Windows",
+    "cat1Sub": "Installation & replacement",
+    "cat2Title": "Interior doors",
+    "cat2Sub": "Complete installation",
+    "cat3Title": "Exterior doors",
+    "cat3Sub": "Front doors & balcony doors",
+    "cat4Title": "Flooring",
+    "cat4Sub": "Vinyl, laminate & parquet",
+    "countLabel": "projects",
+    "ctaPrefix": "View all",
+    "ctaSuffix": "projects",
+    "ctaText": "Or discuss your own project with us —",
+    "ctaLink": "free consultation"
+  },
+  "reviews": {
+    "label": "Reviews",
+    "title": "What our customers say",
+    "starsAria": "5 out of 5 stars",
+    "customerFromEschwege": "Customer from Eschwege",
+    "customerFromWerra": "Customer from Werra-Meißner",
+    "customerFromRegion": "Customer from the region",
+    "ctaText": "You can find all reviews on our profiles.",
+    "googleProfile": "Profile on Google",
+    "myhammerProfile": "Profile on MyHammer"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Get in touch",
+    "socialsLabel": "Follow us",
+    "qrLabel": "Scan & open WhatsApp"
+  },
   "footer": {
     "tagline": "Quality & service from a single source",
     "servicesHeading": "Services",
@@ -30,7 +102,8 @@
     "contactHeading": "Contact",
     "impressum": "Imprint (Impressum)",
     "datenschutz": "Privacy Policy",
-    "copyright": "All rights reserved",
-    "serviceArea": "Serving Werra-Meißner-Kreis and 60 km radius"
+    "copyright": "All rights reserved.",
+    "serviceArea": "Serving Werra-Meißner-Kreis and 60 km radius",
+    "brandDesc": "Your partner for windows, doors and flooring in Eschwege & the surrounding area."
   }
 }

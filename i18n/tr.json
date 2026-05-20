@@ -23,6 +23,78 @@
     "ctaPrimary": "Teklif iste",
     "directCall": "Doğrudan ara"
   },
+  "hero": {
+    "qualitaet": "Kalite",
+    "service": "Servis",
+    "subtitle": "tek elden",
+    "description": "Eschwege ve 60 km yarıçapta pencere & kapı montajı, zemin döşeme ve alçıpan işleri için güvenilir ustalık firması.",
+    "ctaQuote": "Teklif iste",
+    "ctaWhatsapp": "WhatsApp'tan yaz",
+    "scrollCue": "Kaydır"
+  },
+  "services": {
+    "label": "Hizmetlerimiz",
+    "title": "Her şey tek elden",
+    "card1Title": "Vinil, laminat ve parke döşeme",
+    "card1Desc": "Vinil, laminat ve parke — profesyonel döşeme, temiz birleşimler ve uzun ömür.",
+    "card2Title": "Pencere ve kapılar",
+    "card2Desc": "Yeni pencere ve dış kapıların tedariki ve hassas montajı — PVC, ahşap veya alüminyum.",
+    "card3Title": "İç kapılar",
+    "card3Desc": "Kaliteli iç kapıların seçimi, tedariki ve montajı — klasik tasarımdan modern ve sade olana kadar.",
+    "card4Title": "Alçıpan işleri",
+    "card4Desc": "Alçıpan duvarlar, asma tavanlar, duvar kaplaması ve ses yalıtımı — temiz ve ölçüsüne göre.",
+    "card5Title": "Yapı malzemesi satışı ve teslimat",
+    "card5Desc": "Boyalar, yalıtım malzemeleri, sıva, yapıştırıcı, dolgu macunu, ayrıca sabitleme ve çatı malzemeleri — doğrudan şantiyenize teslim."
+  },
+  "about": {
+    "label": "Hakkımızda",
+    "title1": "Güvenilir.",
+    "title2": "Temiz.",
+    "title3": "Profesyonel.",
+    "signatureLabel": "Sahibi",
+    "description": "BauService Dionisie Bat; kalite, güvenilirlik ve adil fiyat demektir. Her projeye temiz, zamanında ve en yüksek standartlarla yaklaşırız — ilk danışmanlıktan teslimata kadar.",
+    "feature1": "Ücretsiz danışmanlık",
+    "feature2": "Ücretsiz yerinde ölçüm",
+    "feature3": "RAL standartlarına uygun montaj",
+    "feature4": "Adil sabit fiyatlar — gizli ücret yok",
+    "feature5": "Temiz ve zamanında iş"
+  },
+  "projects": {
+    "label": "Projeler",
+    "title": "Çalışmalarımız",
+    "introPrefix": "tamamlanmış proje",
+    "introSuffix": "Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach ve çevre bölgeden — kategorilere göre sıralı. Tüm fotoğraflar ve detaylar için bir kategoriye tıklayın.",
+    "cat1Title": "Pencereler",
+    "cat1Sub": "Montaj ve değişim",
+    "cat2Title": "İç kapılar",
+    "cat2Sub": "Komple montaj",
+    "cat3Title": "Dış kapılar",
+    "cat3Sub": "Bina ve balkon kapıları",
+    "cat4Title": "Zemin döşeme",
+    "cat4Sub": "Vinil, laminat ve parke",
+    "countLabel": "proje",
+    "ctaPrefix": "Tüm",
+    "ctaSuffix": "projeyi görüntüle",
+    "ctaText": "Veya kendi projenizi bizimle konuşun —",
+    "ctaLink": "ücretsiz danışmanlık"
+  },
+  "reviews": {
+    "label": "Yorumlar",
+    "title": "Müşterilerimizin sözleri",
+    "starsAria": "5 üzerinden 5 yıldız",
+    "customerFromEschwege": "Eschwege'den müşteri",
+    "customerFromWerra": "Werra-Meißner'den müşteri",
+    "customerFromRegion": "Bölgeden müşteri",
+    "ctaText": "Tüm yorumları profillerimizde bulabilirsiniz.",
+    "googleProfile": "Google profili",
+    "myhammerProfile": "MyHammer profili"
+  },
+  "contact": {
+    "label": "İletişim",
+    "title": "Bize ulaşın",
+    "socialsLabel": "Bizi takip edin",
+    "qrLabel": "Tara & WhatsApp aç"
+  },
   "footer": {
     "tagline": "Tek elden kalite ve servis",
     "servicesHeading": "Hizmetler",
@@ -30,7 +102,8 @@
     "contactHeading": "İletişim",
     "impressum": "Künye (Impressum)",
     "datenschutz": "Gizlilik",
-    "copyright": "Tüm hakları saklıdır",
-    "serviceArea": "Werra-Meißner ve 60 km yarıçapında hizmet"
+    "copyright": "Tüm hakları saklıdır.",
+    "serviceArea": "Werra-Meißner ve 60 km yarıçapında hizmet",
+    "brandDesc": "Eschwege ve çevresinde pencere, kapı ve zemin döşeme için partneriniz."
   }
 }

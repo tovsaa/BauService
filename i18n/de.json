@@ -23,6 +23,78 @@
     "ctaPrimary": "Angebot anfragen",
     "directCall": "Direkt anrufen"
   },
+  "hero": {
+    "qualitaet": "Qualität",
+    "service": "Service",
+    "subtitle": "aus einer Hand",
+    "description": "Ihr zuverlässiger Handwerksbetrieb für Fenster- & Türenmontage, Bodenverlegung und Trockenbau in Eschwege und im Umkreis von 60 km.",
+    "ctaQuote": "Angebot anfragen",
+    "ctaWhatsapp": "WhatsApp schreiben",
+    "scrollCue": "Scroll"
+  },
+  "services": {
+    "label": "Unsere Leistungen",
+    "title": "Alles aus einer Hand",
+    "card1Title": "Verlegung von Vinyl, Laminat & Parkett",
+    "card1Desc": "Vinyl, Laminat und Parkett – fachgerecht verlegt, mit sauberem Übergang und langer Lebensdauer.",
+    "card2Title": "Fenster & Türen",
+    "card2Desc": "Lieferung und passgenaue Montage neuer Fenster und Außentüren – Kunststoff, Holz oder Aluminium.",
+    "card3Title": "Innentüren",
+    "card3Desc": "Auswahl, Lieferung und Einbau hochwertiger Innentüren – vom klassischen Design bis modern und schlicht.",
+    "card4Title": "Trockenbau",
+    "card4Desc": "Gipskartonwände, abgehängte Decken, Wandverkleidung und Schallschutz – sauber und maßgenau.",
+    "card5Title": "Baustoffverkauf inkl. Lieferung",
+    "card5Desc": "Farben, Dämmstoffe, Putz, Kleber, Spachtel sowie Befestigungs- und Dachmaterial — direkt auf Ihre Baustelle geliefert."
+  },
+  "about": {
+    "label": "Über uns",
+    "title1": "Zuverlässig.",
+    "title2": "Sauber.",
+    "title3": "Professionell.",
+    "signatureLabel": "Inhaber",
+    "description": "BauService Dionisie Bat steht für Qualität, Zuverlässigkeit und faire Preise. Wir arbeiten sauber, termingerecht und mit höchstem Anspruch an jedes Projekt — vom ersten Beratungstermin bis zur fertigen Übergabe.",
+    "feature1": "Kostenlose Beratung",
+    "feature2": "Kostenloses Aufmaß",
+    "feature3": "RAL Montage",
+    "feature4": "Faire Festpreise – ohne versteckte Kosten",
+    "feature5": "Saubere & termingerechte Arbeit"
+  },
+  "projects": {
+    "label": "Projekte",
+    "title": "Unsere Arbeiten",
+    "introPrefix": "abgeschlossene Projekte",
+    "introSuffix": "aus Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach und der Region — sortiert nach Kategorie. Klicken Sie auf eine Kategorie für alle Bilder und Details.",
+    "cat1Title": "Fenster",
+    "cat1Sub": "Montage & Austausch",
+    "cat2Title": "Innentüren",
+    "cat2Sub": "Komplettmontage",
+    "cat3Title": "Außentüren",
+    "cat3Sub": "Haus- & Balkontüren",
+    "cat4Title": "Bodenverlegung",
+    "cat4Sub": "Vinyl, Laminat & Parkett",
+    "countLabel": "Projekte",
+    "ctaPrefix": "Alle",
+    "ctaSuffix": "Projekte ansehen",
+    "ctaText": "Oder besprechen Sie ein eigenes Projekt mit uns —",
+    "ctaLink": "kostenlose Beratung"
+  },
+  "reviews": {
+    "label": "Bewertungen",
+    "title": "Stimmen unserer Kunden",
+    "starsAria": "5 von 5 Sternen",
+    "customerFromEschwege": "Kunde aus Eschwege",
+    "customerFromWerra": "Kunde aus Werra-Meißner",
+    "customerFromRegion": "Kunde aus der Region",
+    "ctaText": "Alle Bewertungen finden Sie auf unseren Profilen.",
+    "googleProfile": "Profil auf Google",
+    "myhammerProfile": "Profil auf MyHammer"
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Kontaktieren Sie uns",
+    "socialsLabel": "Folgen Sie uns",
+    "qrLabel": "Scannen & WhatsApp öffnen"
+  },
   "footer": {
     "tagline": "Qualität & Service aus einer Hand",
     "servicesHeading": "Leistungen",
@@ -30,7 +102,8 @@
     "contactHeading": "Kontakt",
     "impressum": "Impressum",
     "datenschutz": "Datenschutz",
-    "copyright": "Alle Rechte vorbehalten",
-    "serviceArea": "Tätig im Werra-Meißner-Kreis und 60 km Umkreis"
+    "copyright": "Alle Rechte vorbehalten.",
+    "serviceArea": "Tätig im Werra-Meißner-Kreis und 60 km Umkreis",
+    "brandDesc": "Ihr Partner für Fenster, Türen und Bodenbeläge in Eschwege & Umgebung."
   }
 }

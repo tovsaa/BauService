@@ -2538,6 +2538,61 @@
       .reviews-cta-buttons { flex-direction: column; width: 100%; }
       .reviews-cta-buttons .btn { width: 100%; }
     }
+
+    /* ===== FAQ ===== */
+    .faq { background: var(--bg); padding: 100px 0; }
+    .faq-header { text-align: center; margin-bottom: 56px; }
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .faq-item[open],
+    .faq-item:hover { border-color: var(--gold); background: var(--card-hover); }
+    .faq-question {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      letter-spacing: 0.01em;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question::after {
+      content: '+';
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      transition: transform var(--transition);
+      flex-shrink: 0;
+    }
+    .faq-item[open] .faq-question::after { transform: rotate(45deg); }
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    @media (max-width: 600px) {
+      .faq { padding: 72px 0; }
+      .faq-question { padding: 16px 18px; font-size: 14px; }
+      .faq-answer { padding: 0 18px 18px; font-size: 13px; }
+    }
   </style>
 </head>
 <body>
@@ -2924,7 +2979,7 @@
       </div>
 
       <p class="projects-intro">
-        <strong><span id="projects-total-count">17</span> <span data-i18n="projects.introPrefix">abgeschlossene Projekte</span></strong> <span data-i18n="projects.introSuffix">aus Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach und der Region — sortiert nach Kategorie. Klicken Sie auf eine Kategorie für alle Bilder und Details.</span>
+        <span data-i18n="projects.introSuffix">Eine Auswahl unserer Arbeiten aus Eschwege, Kassel, Göttingen, Bebra, Bad Sooden-Allendorf, Eisenach und der Region — sortiert nach Kategorie. Klicken Sie auf eine Kategorie für alle Bilder und Details.</span>
       </p>
 
       <div class="projects-grid projects-grid--cats" id="category-tiles">
@@ -3099,6 +3154,72 @@
             Profil auf MyHammer
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= FAQ ========================= -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="faq-header">
+        <div class="section-label" data-i18n="faq.label">FAQ</div>
+        <h2 class="section-title" data-i18n="faq.title">Häufige Fragen</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q1">Bieten Sie ein kostenloses Aufmaß an?</summary>
+          <div class="faq-answer" data-i18n="faq.a1">Ja, wir bieten in Eschwege und Umgebung ein kostenloses Aufmaß nach Absprache an.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q2">Arbeiten Sie mit RAL-Montage?</summary>
+          <div class="faq-answer" data-i18n="faq.a2">Ja, wir führen Fenster- und Türmontagen fachgerecht nach RAL-Richtlinien aus – je nach baulicher Situation.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q3">In welchem Gebiet arbeiten Sie?</summary>
+          <div class="faq-answer" data-i18n="faq.a3">Wir sind als mobiler Service in Eschwege und Umgebung für unsere Kunden unterwegs.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q4">Montieren Sie nur Fenster oder liefern Sie diese auch?</summary>
+          <div class="faq-answer" data-i18n="faq.a4">Wir bieten sowohl die Lieferung als auch die fachgerechte Montage von Fenstern und Türen an.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q5">Bauen Sie alte Fenster und Türen aus?</summary>
+          <div class="faq-answer" data-i18n="faq.a5">Ja, auf Wunsch übernehmen wir die Demontage alter Fenster und Türen sowie die fachgerechte Entsorgung.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q6">Welche Türen montieren Sie?</summary>
+          <div class="faq-answer" data-i18n="faq.a6">Wir montieren Haustüren, Innentüren, Nebeneingangstüren und weitere Türsysteme.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q7">Verlegen Sie auch Böden?</summary>
+          <div class="faq-answer" data-i18n="faq.a7">Ja, wir verlegen Vinyl, Laminat, Parkett und übernehmen bei Bedarf auch Untergrundvorbereitung.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q8">Bieten Sie Trockenbauarbeiten an?</summary>
+          <div class="faq-answer" data-i18n="faq.a8">Ja, wir übernehmen kleinere bis mittlere Trockenbauarbeiten und Innenausbau.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q9">Verkaufen Sie auch Baumaterialien?</summary>
+          <div class="faq-answer" data-i18n="faq.a9">Ja, wir bieten ausgewählte Baustoffe inklusive Lieferung für Ihr Projekt an.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q10">Wie schnell bekomme ich ein Angebot?</summary>
+          <div class="faq-answer" data-i18n="faq.a10">In der Regel erhalten Sie nach Besichtigung oder klaren Maßen schnell ein individuelles Angebot.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q11">Kann ich Sie per WhatsApp kontaktieren?</summary>
+          <div class="faq-answer" data-i18n="faq.a11">Ja, Sie können uns bequem per WhatsApp kontaktieren.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q12">Arbeiten Sie auch am Wochenende?</summary>
+          <div class="faq-answer" data-i18n="faq.a12">Je nach Auslastung und Projektumfang nach Absprache möglich.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q13">Sind Sie ein lokaler Betrieb in Eschwege?</summary>
+          <div class="faq-answer" data-i18n="faq.a13">Ja, BauService Dionisie Bat ist Ihr Ansprechpartner in Eschwege und Umgebung.</div>
+        </details>
       </div>
     </div>
   </section>
